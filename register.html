@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>Cadatre</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/core-img/favicon.png">
@@ -26,61 +26,11 @@
     <!-- /Preloader -->
 
     <!-- Header Area Start -->
-    <header class="header-area">
-        <div class="classy-nav-container breakpoint-off">
-            <div class="container">
-                <!-- Classy Menu -->
-                <nav class="classy-navbar justify-content-between" id="conferNav">
-
-                    <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/core-img/logo.png" alt=""></a>
-
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
-
-                    <!-- Menu -->
-                    <div class="classy-menu">
-                        <!-- Menu Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
-                        <!-- Nav Start -->
-                        <div class="classynav">
-                            <ul id="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">- Home</a></li>
-                                        <li><a href="about.html">- About Us</a></li>
-                                        <li><a href="speakers.html">- Speakears</a></li>
-                                        <li><a href="schedule.html">- Schedule</a></li>
-                                        <li><a href="tickets.html">- Tickets</a></li>
-                                        <li><a href="blog.html">- Blog</a></li>
-                                        <li><a href="single-blog.html">- Single Blog</a></li>
-                                        <li><a href="contact.html">- Contact</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li><a href="speakers.html">Speakears</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-
-                            <!-- Get Tickets Button -->
-                            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                        <!-- Nav End -->
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+    
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg); height: 100px;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -115,23 +65,23 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
-                            <h4>Contact us</h4>
-                            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae</p>
+                            <h4>Inscrever-se na educa</h4>
+                            <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
-                            <form action="mail.php" method="post">
+                            <form action="process.php" method="post">
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Your Name" required>
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name-2" placeholder="Last Name" required>
+                                                <input type="text" class="form-control mb-30" name="last_name" id="last-name" placeholder="Apelido" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -143,23 +93,28 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Your Number">
+                                                <input type="text" class="form-control mb-30" name="password" id="password" placeholder="Palavra-passe">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Message" required></textarea>
-                                            </div>
-                                        </div>
+                                        
                                         <!-- Button -->
+                                       
                                         <div class="col-12">
-                                            <button type="submit" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="register" name="register" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        
+                                        <div class="row d-flex justify-content-center " style="margin: 2px;">
+                                            <p class="text-info">Ja tens uma conta?</p>
+                                            <button onclick="window.location.href='login/index.html'" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                                        </div>
+
                     </div>
                 </div>
             </div>

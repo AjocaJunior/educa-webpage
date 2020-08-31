@@ -4,7 +4,7 @@
   "description": "Confer - Conference Event HTML Template",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "index.js"
   },
   "author": "colorlib",
   "license": "CC-BY-3.0",
