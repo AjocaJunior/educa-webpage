@@ -1,0 +1,13 @@
+{
+    "name": "onemedia4/plugin",
+    "authors": [
+        {
+            "name": "AgostinhoDossantos",
+            "email": "agostinhodossantos27@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "4.17",
+        "google/cloud-firestore": "^1.14"
+    }
+}

@@ -1,5 +1,7 @@
 <?php 
 
+include_once('includes/dbconfig.php');
+//When button register clicked 
 if(isset($_POST['register'])){
     $role = "user";
     $name =  trim($_POST['name']);
@@ -11,7 +13,17 @@ if(isset($_POST['register'])){
 
 }
 
+if(isset($_POST['createAcount'])){
+   header('location: ../register.html');
+}
 
+if(isset($_POST['login'])){
+     $email = trim($_POST['email']);
+     $password =  trim($_POST['password']);
+
+     echo $email.$password;
+     
+}
 
 if(isset($_POST['complete_data'])){
     $province = trim($_POST['province']);
