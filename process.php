@@ -1,6 +1,10 @@
 <?php 
+//include file with database settings
+require_once 'Firestore.php';
+    
+//name of the document reference in the firestore 
+$fs = new Firestore("users");
 
-include_once('includes/dbconfig.php');
 //When button register clicked 
 if(isset($_POST['register'])){
     $role = "user";
@@ -8,8 +12,22 @@ if(isset($_POST['register'])){
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-    header('Location: complete_userdata.html');
-    echo  $name.$last_name.$email.$password;
+
+        $data = [
+            'id' =>"id",
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+            'last_name' => $last_name,
+            'role' => $role
+
+        ];
+        echo "<hr>";
+        var_dump($fs);
+        $fs->newDocument( "a" , $data);
+        var_dump($fs);
+       
+   
 
 }
 
