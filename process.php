@@ -1,6 +1,7 @@
 <?php 
 //include file with database settings
 require_once 'Firestore.php';
+require 'includes/dbconfig.php';
     
 //name of the document reference in the firestore 
 $fs = new Firestore("users");
@@ -22,10 +23,13 @@ if(isset($_POST['register'])){
             'role' => $role
 
         ];
-        echo "<hr>";
-        var_dump($fs);
-        $fs->newDocument( "a" , $data);
-        var_dump($fs);
+
+       
+       $auth = $firebase->getAuth();
+       $user = $auth->createUserWithEmailAndPassword($email,$password);
+        
+       // $fs->newDocument( "a" , $data);
+        // var_dump($fs);
        
    
 
