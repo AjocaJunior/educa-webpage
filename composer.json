@@ -1,0 +1,15 @@
+{
+    "name": "onemedia4/firestore",
+    "authors": [
+        {
+            "name": "AgostinhoDossantos",
+            "email": "agostinhodossantos27@gmail.com"
+        }
+    ],
+    "require": {
+        "google/cloud": "^0.138.0",
+        "grpc/grpc": "v1.27.0"
+    }
+
+    
+}
