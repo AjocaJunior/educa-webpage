@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="login" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/google/crc32" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud" />
+      <path value="$PROJECT_DIR$/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/google/gax" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/google/grpc-gcp" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1hJZ4RKq5pjPvMMdceCdjzy3gVB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../admin" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="" />
+      <created>1599730967401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599730967401</updated>
+      <workItem from="1599730973186" duration="10636000" />
+      <workItem from="1600065115924" duration="295000" />
+      <workItem from="1600327540439" duration="14873000" />
+      <workItem from="1600418262268" duration="12726000" />
+    </task>
+    <task id="LOCAL-00001" summary="auth">
+      <created>1599731028617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599731028617</updated>
+    </task>
+    <task id="LOCAL-00002" summary="intro.html">
+      <created>1600327958959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600327958959</updated>
+    </task>
+    <task id="LOCAL-00003" summary="login">
+      <created>1600433399977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600433399977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="auth" />
+    <MESSAGE value="intro.html" />
+    <MESSAGE value="set user data in db" />
+    <MESSAGE value="login" />
+    <option name="LAST_COMMIT_MESSAGE" value="login" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="390" y="7" key="#PHP" timestamp="1599731195986">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1599731195986" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1600329268321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600329268321" />
+    <state width="1323" height="164" key="GridCell.Tab.0.bottom" timestamp="1599732665609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
+    <state width="1323" height="164" key="GridCell.Tab.0.center" timestamp="1599732665609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
+    <state width="1323" height="164" key="GridCell.Tab.0.left" timestamp="1599732665609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
+    <state width="1323" height="164" key="GridCell.Tab.0.right" timestamp="1599732665609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1600433446750">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600433446750" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599740461412">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599740461412" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600428718404">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600428718404" />
+  </component>
+</project>
