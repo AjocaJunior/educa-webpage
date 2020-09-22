@@ -1463,6 +1463,19 @@ input:required {
   .single-speaker-area:hover .social-info, .single-speaker-area:focus .social-info {
     top: 0; }
 
+
+    /* ADICIONADO */
+.speaker-info-out h6 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 10px; }
+
+    /* FIM DA ADIÇÃO */
+
 /* :: 13.0 Breadcrumb CSS */
 .breadcrumb-area {
   position: relative;
@@ -1595,7 +1608,7 @@ input:required {
     padding: 30px 30px 50px 30px;
     border-radius: 0 0 10px 10px; }
     .single-blog-area .single-blog-text .blog-title {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 600;
       color: #111343;
       margin-bottom: 5px;
@@ -2330,6 +2343,62 @@ input:required {
         border-right: none;
         border-radius: 0 10px 10px 0; }
 
+/* ADICIONADO PARA CALENDARIO */
+.our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+  color: #9293bc;
+  background-color: #1f2371;
+  text-align: center;
+  border-radius: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid #4c4f8d; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 14px; } }
+  @media only screen and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 10px;
+      padding: 10px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 12px;
+      padding: 15px 20px; } }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 14px; } }
+  .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: capitalize; }
+    @media only screen and (max-width: 767px) {
+      .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+        font-size: 9px; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+        font-size: 10px; } }
+  .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link.active {
+    background-color: #5d5e8d;
+    color: #ffffff; }
+.our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario:nth-child(1) .nav-link {
+  border-radius: 10px 0 0 10px; }
+        .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario:last-child .nav-link {
+      
+          border-radius: 10px; }
+
+.descricao-calendario{
+  padding: 10px;
+  text-align: center;
+}
+
+/*FIM DO CONTEÚDO ADICIONADO*/
+
 .single-schedule-area {
   border: 1px solid #444675;
   border-radius: 10px;
@@ -2569,6 +2638,21 @@ input:required {
   .single-ticket-pricing-table.style-2 {
     background-color: #ffffff;
     box-shadow: 0px 8px 27px 0px rgba(90, 111, 120, 0.15); }
+
+/*ADICIONADO*/
+
+.ticket-plan-jogo {
+ 
+  padding: 10px 25px;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f2871c;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 25px;
+  line-height: 1; }
+
+  /* FIM DO CONTEÚDO ADICIONADO*/
 
 /* :: 19.0 Sponsor Area CSS */
 .our-sponsor-client-area {
