@@ -1505,6 +1505,10 @@ input:required {
       color: #ffffff;
       font-weight: 400;
       font-size: 18px; }
+      .breadcrumb-content .breadcrumb .breadcrumb-item-blue {
+        color: #111343;
+        font-weight: 400;
+        font-size: 18px; }
       .breadcrumb-content .breadcrumb .breadcrumb-item a {
         font-size: 16px;
         color: #ffffff;
