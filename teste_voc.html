@@ -15,6 +15,8 @@
 
     <!-- Stylesheet -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/stepform.css">
 
@@ -69,7 +71,7 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading" style="text-align: center;">
-                            <h4>Teste de Orientação Vocacional</h4>
+                            <h4 style="visibility: hidden;">Teste de Orientação Vocacional</h4>
                             <!-- <p>Descubra qual é sua vocação como estudante</p> -->
                         </div>
                         <div class="contact_form" id="regForm" method="post" action="test_voc_result.html">
@@ -185,8 +187,8 @@
                                     <div class="form-row">
                                         <div class="input-group">
                                             <div class="input-group-prepend"">
-                                                <span for="endereco"
-                                                    class="input-group-text" style="margin-bottom: 10%;">Endereço </span>
+                                                <span for=" endereco" class="input-group-text"
+                                                style="margin-bottom: 10%;">Endereço </span>
                                             </div>
                                             <input type="text" class="form-control input_text" id="endereco">
                                         </div>
@@ -246,19 +248,307 @@
                                 <!--process.php-->
                                 <div class="contact_input_area" style="text-align: center;">
                                     <!--PERGUNTA 1-->
-                                    <p>Nesta prova pede-se que idiques os teus gostos e preferências a respeito das frases contidas neste caderno.
-                                    </p>
-                                    <P>Nas páginas seguintes são referidas várias actividades e profissões. Lê atentamente cada frase e marca a tua resposta seguindo as indicações escritas no quadro abaixo.
-                                    </P>
-                                 <P>Deves indicar as tuas preferências prescindindo de outras considerações tais como recursos económicos, capacidade para estudar, possibilidades, prestígio ou dinheiro que queres obter, etc.
-                                </P>
-                                <P>Não há respostas certas nem erradas visto que nelas se reflecte, simplesmente, a opinião ou os interesses de cada pessoa
-                                </P>
-                                <P>Proucura responder a todas as questões marcando a resposta que te ocorra espontaneamente, sem pensares demasiado e sem consultar outras pessoas. As tuas respostas deves ser tu a decidi-las.
-                                </P>
+                                    <ul class="list-display list-checkmarks">
+
+                                        <li>Nas páginas seguintes são referidas várias actividades e profissões. Lê
+                                            atentamente cada frase e marca a tua resposta seguindo as indicações
+                                            escritas no quadro abaixo.
+                                        </li>
+                                        <li>Deves indicar as tuas preferências prescindindo de outras considerações tais
+                                            como recursos económicos, capacidade para estudar, possibilidades, prestígio
+                                            ou dinheiro que queres obter, etc.
+                                        </li>
+                                        <li>Não há respostas certas nem erradas visto que nelas se reflecte,
+                                            simplesmente, a opinião ou os interesses de cada pessoa
+                                        </li>
+                                        <li>Proucura responder a todas as questões marcando a resposta que te ocorra
+                                            espontaneamente, sem pensares demasiado e sem consultar outras pessoas. As
+                                            tuas respostas deves ser tu a decidi-las.
+                                        </li>
+                                    </ul>
                                     <!--PERGUNTA 2-->
-                                    
-                                 
+
+                                </div>
+
+
+                            </div>
+                            <!--TAB-->
+                            <div class="tab">
+                                <h5 style="text-align: center;margin-bottom: 3%;">Instruções</h5>
+
+                                <!--process.php-->
+                                <div class="contact_input_area" style="text-align: center;">
+                                    <h6>Investigar e fazer experiências no campo da mecânica, da óptica, da física
+                                        nuclear, etc
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Estudar a composição e estrutura da atmosfera e os astros (plantas, satélites, etc)
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Trabalhar como analista clínico
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Projectar e dirigir a construção de edifícios. Preparar os planos para edíficios ou zonas completas das cidades (bairros, parques, zonas comerciais, etc)
+
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Ser arquitecto                              </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Diagnosticar e tratar doenças do corpo humano
+
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Ser médico                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Ser farmacêutico                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Exercer a profissião de antropólogo
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+                                    <h6>Escrever novelas, contos, ou outras obras literárias para publicação
+                                    </h6>
+                                    <div class="col-12">
+                                        <div class="row" style="text-align: center;margin-bottom: 2%;">
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ1" value="Q1">
+                                                <label class="form-check-label" for="radioGen">Gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ2" value="Q2">
+                                                <label class="form-check-label" for="radioGen">Indiferente</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ3" value="Q3">
+                                                <label class="form-check-label" for="radioGen">Não gosto</label>
+                                            </div>
+                                            <div class="form-check col-sm-3">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="radioQ4" value="Q4">
+                                                <label class="form-check-label" for="radioGen">Não conheço</label>
+                                            </div>
+
+                                        </div>
+                                    </div><!--COL-12-->
+
 
 
                                 </div>
@@ -269,7 +559,7 @@
                         </div>
 
                         <div class="container-fluid">
-                            <div class="row" >
+                            <div class="row">
                                 <H6 style="visibility:hidden ;">ss</H6>
                                 <div class="col-5">
                                     <button type="" name="" id="prevBtn" class="btn btn-primary btn-lg btn-block"
@@ -287,7 +577,8 @@
                                 <span class="step"></span>
                                 <span class="step"></span>
                                 <span class="step"></span>
-                             
+                                <span class="step"></span>
+
                             </div>
                         </div>
 
