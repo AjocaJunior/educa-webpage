@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+   
     <!-- Title -->
     <title>Seja Bem-Vinda ao educa</title>
 
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
     <!-- Preloader -->
@@ -66,25 +65,25 @@
                             <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
-                            <form action="process.php" method="post">
+                            <form>
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo" required>
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo" >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="genre" id="genre" placeholder="Género" required>
+                                                <input type="text" class="form-control mb-30" name="genre" id="genre" placeholder="Género">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30 textbox-n"  onfocus="(this.type='date')" name="date_of_birth" id="date_of_birth" placeholder="Data de nascimento" required>
+                                                <input type="text" class="form-control mb-30 textbox-n"  onfocus="(this.type='date')" name="date_of_birth" id="date_of_birth" placeholder="Data de nascimento">
                                             </div>
                                         </div>
 
@@ -98,7 +97,7 @@
 
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <select class="browser-default custom-select" name="category">
+                                                <select class="browser-default custom-select" id="category">
                                                     <option selected>Seleciona categoria</option>
                                                     <option value="Estudante">Estudante</option>
                                                     <option value="Pai ou encarregados de Educação">Pai ou encarregados de Educação</option>
@@ -136,32 +135,30 @@
                                         
                                         <!-- Button -->
                                        
-                                        <div class="col-12">
-                                            <button type="register" name="register_intro" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
-                                        </div>
 
 
                                     </div>
                                 </div>
                             </form>
+
+                            
+                            <div class="col-12">
+                                            <button type="register"  id="addButton" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                        </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
                             <p class="text-info">Ja tens uma conta?</p>
-                            <button onclick="window.location.href='login/index.php'" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Us Area End -->
+    <!-- Contact Us Area End -->>
 
-    
   
-
-    <!-- Footer Area End -->
-
-    <!-- **** All JS Files ***** -->
+    <script src="js/myscript.js"></script>
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>
     <!-- Popper -->
@@ -172,6 +169,10 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
+
 
 </body>
 
