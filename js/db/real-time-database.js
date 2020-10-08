@@ -1,34 +1,50 @@
 
-// Botoes
-var addButton = document.getElementById('addButton');
-var register_institution = document.getElementById('register_institution');
+function loginUser(name , password){
+    console.log(name);
+}
 
-register_institution.addEventListener('click' , function(){
-    'institution_name =' => $institution_name,
-    'location' => $location,
-    'contact' => $contact,
-    'contact ' => $contact ,
-    'website' => $website,
-    'video_link ' => $video_link ,
-    'institution_description ' => $institution_description ,
-    'email' => $email,
-    'password' => $password
-});
+//add institution
+function register_institution(){
+    var institution_name = document.getElementById('institution_name').value;
+    var location = document.getElementById('location').value;
+    var contact  = document.getElementById('contact').value;
+    var website  = document.getElementById('website').value;
+    var video_link = document.getElementById('video_link').value;
+    var institution_description = document.getElementById('institution_description').value;
+    var email      = document.getElementById('email').value;
+    var password   = document.getElementById('password').value;
 
 
-addButton.addEventListener('click', function () {
-var name = document.getElementById('name').value;
-var email = document.getElementById('email').value;
-var password = document.getElementById('password').value;
-var contact = document.getElementById('contact').value;
-var genre = document.getElementById('genre').value;
-var date_of_birth = document.getElementById('date_of_birth').value;
-var category = document.getElementById('category').value;
-var residence = document.getElementById('residence').value;
-var userId = "aaa";
-var imageUrl = "ddd";
-create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence)
-});
+    addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password);
+}
+
+function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password){
+    var data = {
+        institution_name : institution_name ,
+        location : location ,
+        contact  : contact,
+        website  : website,
+        video_link : video_link,
+        institution_description : institution_description ,
+        email:email,
+        password: password
+    }
+    return firebase.database().ref().child('institution').push(data);
+}
+
+function addButton() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var contact = document.getElementById('contact').value;
+    var genre = document.getElementById('genre').value;
+    var date_of_birth = document.getElementById('date_of_birth').value;
+    var category = document.getElementById('category').value;
+    var residence = document.getElementById('residence').value;
+    var userId = "aaa";
+    var imageUrl = "ddd";
+    create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence)
+}
 
 function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
     var data = {

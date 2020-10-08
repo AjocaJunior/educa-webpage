@@ -65,33 +65,22 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
-                            <h4>Inscreva-se na educa</h4>
+                            <h4>Login</h4>
                             <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
-                            <form action="process.php" method="post">
+                            <form>
                                 <div class="contact_input_area">
                                     <div class="row">
+                                   
                                         <!-- Form Group -->
-                                        <div class="col-12 col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome" required>
-                                            </div>
-                                        </div>
-                                        <!-- Form Group -->
-                                        <div class="col-12 col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="last_name" id="last-name" placeholder="Apelido" required>
-                                            </div>
-                                        </div>
-                                        <!-- Form Group -->
-                                        <div class="col-12 col-lg-6">
+                                        <div class="col-12 col-lg-12">
                                             <div class="form-group">
                                                 <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
-                                        <div class="col-12 col-lg-6">
+                                        <div class="col-12 col-lg-12">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="password" id="password" placeholder="Palavra-passe">
                                             </div>
@@ -99,20 +88,23 @@
                                         <!-- Form Group -->
                                         
                                         <!-- Button -->
-                                       
-                                        <div class="col-12">
-                                            <button type="register" name="register" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
-                                        </div>
-
-
+                                    
+                                      
                                     </div>
                                 </div>
                             </form>
+                           
                         </div>
+
+                        <div class="row d-flex justify-content-center" style="margin: 2px;">
+                            <button type="register" name="register" class="btn btn-primary btn-lg btn-block">Entrar <i class="zmdi zmdi-long-arrow-right"></i></button>
+               
+                        </div>
+                      
                         
                                         <div class="row d-flex justify-content-center " style="margin: 2px;">
-                                            <p class="text-info">Ja tens uma conta?</p>
-                                            <button onclick="window.location.href='login/index.php'" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                                            <p class="text-info">Nao tens uma conta?</p>
+                                            <button onclick="window.location.href='intro.php'" class="btn btn btn-outline-info btn-lg btn-block">Registar</button>
                                         </div>
 
                     </div>
@@ -138,7 +130,9 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
 </body>
 
 </html>

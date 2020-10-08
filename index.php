@@ -25,25 +25,7 @@
     </div>
     <!-- /Preloader -->
 
-    <?php
-    //check if the user is logging in for the first time
 
-    session_start();
-
-    $timeout = 7200; //time in seconds
-
-    if(isset($_SESSION['timeout'])) {
-        $duracao = time() - (int) $_SESSION['timeout'];
-        if($duracao > $timeout) {
-            session_start();
-            session_destroy();
-            session_unset();
-            echo "<script type='text/javascript'>location.href='intro.php'</script>";
-        }
-    }else{
-        echo "<script type='text/javascript'>location.href='intro.php'</script>";
-    }
-    ?>
 
     <!-- Header Area Start -->
     <header class="header-area">

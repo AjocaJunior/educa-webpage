@@ -1888,6 +1888,7 @@
       <change afterPath="$PROJECT_DIR$/admin/vendor/jquery/jquery.slim.min.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/js/myscript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro.php" beforeDir="false" afterPath="$PROJECT_DIR$/intro.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/process.php" afterDir="false" />
     </list>
@@ -1965,6 +1966,7 @@
       <workItem from="1600418262268" duration="12999000" />
       <workItem from="1600678328317" duration="6129000" />
       <workItem from="1601284595783" duration="781000" />
+      <workItem from="1602151861277" duration="7500000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
@@ -2045,10 +2047,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600433446750" />
-    <state x="676" y="0" width="697" height="735" maximized="true" key="dock-window-1" timestamp="1601285580483">
+    <state x="676" y="0" width="697" height="735" key="dock-window-1" timestamp="1602159417973">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="676" y="0" width="697" height="735" maximized="true" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1601285580483" />
+    <state x="676" y="0" width="697" height="735" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1602159417973" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1599740461412">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -34,27 +34,27 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4 text-uppercase">Cadastrar instituição</h1>
               </div>
-              <form class="user" method="post" action="../process.php">
+              <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" name="institution_name" class="form-control form-control-user" placeholder="Nome da instituição">
+                    <input type="text" id="institution_name" class="form-control form-control-user" placeholder="Nome da instituição">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" name="location" class="form-control form-control-user"  placeholder="Localizacao">
+                    <input type="text" id="location" class="form-control form-control-user"  placeholder="Localizacao">
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" name="contact" class="form-control form-control-user" id="exampleFirstName" placeholder="Contacto">
+                    <input type="text" id="contact" class="form-control form-control-user" id="exampleFirstName" placeholder="Contacto">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" name="website" class="form-control form-control-user"  placeholder="Website">
+                    <input type="text" id="website" class="form-control form-control-user"  placeholder="Website">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <input type="text" name="video_link" class="form-control form-control-user"  placeholder="Link do video de apresentação">
+                  <input type="text" id="video_link" class="form-control form-control-user"  placeholder="Link do video de apresentação">
                 </div>
 
                 <div class="form-group">
@@ -90,7 +90,7 @@
 
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1" class="text-uppercase">Descreva instituição</label>
-                  <textarea class="form-control" name="institution_description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" id="institution_description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -98,31 +98,29 @@
                 </div>
 
                 <div class="form-group">
-                  <input type="text" name="verification_code" class="form-control form-control-user"  placeholder="Codigo de verificação">
+                  <input type="text" id="verification_code" class="form-control form-control-user"  placeholder="Codigo de verificação">
                 </div>
 
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control form-control-user"  placeholder="Email">
+                  <input type="email" id="email" class="form-control form-control-user"  placeholder="Email">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" id="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" name="confirm_password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repetir  Password">
+                    <input type="password" id="confirm_password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repetir  Password">
                   </div>
                 </div>
-                <!-- <button id="" class="btn btn-primary btn-user btn-block"></button> -->
+              
                   
                 </button>
                 <hr>
-               <button class="btn  btn-primary btn-user btn-block">
-                 <i class="fab fa-sign-in fa-fw"></i> Registar a instituição
-             </button>
-<!--                <a href="index.html" class="btn btn-facebook btn-user btn-block">-->
-<!--                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook-->
-<!--                </a>-->
+            
               </form>
+              <button onclick="register_institution()"  class="btn  btn-primary btn-user btn-block">
+                <i class="fab fa-sign-in fa-fw"></i> Registar a instituição
+            </button>
               <hr>
               <div class="text-center">
 <!--                <a class="small" href="forgot-password.html">Forgot Password?</a>-->
@@ -149,8 +147,8 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-  <script src="js/db/app.js"></script>
-  <script src="js/db/real-time-database.js"></script>
+  <script src="../js/db/app.js"></script>
+  <script src="../js/db/real-time-database.js"></script>
 
 
 </body>
