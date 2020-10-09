@@ -143,7 +143,7 @@
                             <button onclick="register_institution()"  class="btn  btn-primary btn-user btn-block">
                 <i class="fab fa-sign-in fa-fw"></i> Registar a instituição
             </button>
-                            
+                           
                             <div class="col-12">
                                             <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Registahjdfhjlbbhjbhjfdhjr <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
@@ -178,48 +178,51 @@
 
     
     <script>
-        function addButton() {
-   
-    // var name = document.getElementById('name').value;
-    // var email = document.getElementById('email').value;
-    // var password = document.getElementById('password').value;
-    // var contact = document.getElementById('contact').value;
-    // var genre = document.getElementById('genre').value;
-    // var date_of_birth = document.getElementById('date_of_birth').value;
-    // var category = document.getElementById('category').value;
-    // var residence = document.getElementById('residence').value;
-    // var userId = "aaa";
-    // var imageUrl = "ddd";
+    function addButton() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var contact = document.getElementById('contact').value;
+    var genre = document.getElementById('genre').value;
+    var date_of_birth = document.getElementById('date_of_birth').value;
+    var category = document.getElementById('category').value;
+    var residence = document.getElementById('residence').value;
+    var userId = "aaa";
+    var imageUrl = "ddd";
+
+    firebase.auth().createUserWithEmailAndPassword(email, password )
+    .then(function(data){
+        userId = data.user.uid;
+        alert("helo");
+        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence);
 
 
-  
-    firebase.auth().createUserWithEmailAndPassword("textaaser@gmail.com","dkkd22")
-.then(function(data){
-  console.log('uid',)
-
-  //Here if you want you can sign in the user
-}).catch(function(error) {
+    //Here if you want you can sign in the user
+    }).catch(function(error) {
+        alert("ola");
     //Handle error
 });
-    // firebase.auth().signInWithEmailAndPassword("Agos00@gmail.com", "password").then(function (result) {
-    //     alert("Usuário Conectado!");
-    //     console.log("Success!");
-    //     window.location.replace('initial-page.html');
 
-    // }).catch(function (error) {
-    //     // Handle Errors here.
-    //     var errorCode = error.code;
-    //     var errorMessage = error.message;
-    //     // ...
-
-    //     alert(errorMessage);
-    //     console.log("Failure!")
-    // });
-
-
-
-   /// create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence)
 }
+
+
+function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
+    var data = {
+               userId:userId,
+               name:name, 
+               email:email, 
+               password:password,
+               imageUrl:imageUrl, 
+               contact:contact,
+               genre:genre, 
+               date_of_birth:date_of_birth, 
+               category:category,
+               residence:residence
+    };
+
+    return firebase.database().ref().child('users').push(data);
+}
+
     </script>
 
 

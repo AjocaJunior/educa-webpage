@@ -1,6 +1,3 @@
-var btn = document.getElementById('btn-b');
-
-document.getElementById("btn").addEventListener("click", addButton());
 
 function loginUser(name , password){
     console.log(name);
