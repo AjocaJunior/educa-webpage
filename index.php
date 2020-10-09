@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>educa - Feira e conferência Internacional de Educação</title>
+    <title>Educa - Feira e Conferência Internacional de Educação</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="./img/educa/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -24,25 +24,27 @@
         <div class="loader"></div>
     </div>
     <!-- /Preloader -->
-
+<!-- 
+    check if the user is logging in for the first time -->
+    
     <?php
-    //check if the user is logging in for the first time
 
-    session_start();
 
-    $timeout = 7200; //time in seconds
+    // session_start();
 
-    if(isset($_SESSION['timeout'])) {
-        $duracao = time() - (int) $_SESSION['timeout'];
-        if($duracao > $timeout) {
-            session_start();
-            session_destroy();
-            session_unset();
-            echo "<script type='text/javascript'>location.href='intro.php'</script>";
-        }
-    }else{
-        echo "<script type='text/javascript'>location.href='intro.php'</script>";
-    }
+    // $timeout = 7200; 
+
+    // if(isset($_SESSION['timeout'])) {
+    //     $duracao = time() - (int) $_SESSION['timeout'];
+    //     if($duracao > $timeout) {
+    //         session_start();
+    //         session_destroy();
+    //         session_unset();
+    //         echo "<script type='text/javascript'>location.href='intro.php'</script>";
+    //     }
+    // }else{
+    //     echo "<script type='text/javascript'>location.href='intro.php'</script>";
+    // }
     ?>
 
     <!-- Header Area Start -->
@@ -53,7 +55,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -69,34 +71,31 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Inicio</a></li>
-                                <li><a href="#">Paginas</a>
+                                <li class="active"><a href="index.php">Inicio</a></li>
+                                <li><a href="evento.html">Evento</a>
                                     <ul class="dropdown">
-                                        <li><a href="index.html">- Inicio</a></li>
-                                        <li><a href="#about">- Sobre</a></li>
-                                        <li><a href="#speakers">- Instituições</a></li>
-                                        <li><a href="#schedule">- PROGRAMAÇÃO</a></li>
-                                        <li><a href="#tickets">- Videos</a></li>
-                                        <li><a href="chat.html">- Chat</a></li>
-                                        <li><a href="#blog">- Explorar</a></li>
-                                        <li><a href="#contact">- Contactos</a></li>
-                                        <!-- <li><a href="#">- Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                            </ul>
-                                        </li> -->
+                                        <li><a href="evento.html#abertura">Abertura</a></li>
+                                        <li><a href="evento.html#conferencias">Conferências</a></li>
+                                        <li><a href="evento.html#webinares">Webinares</a></li>
+                                        <li><a href="evento.html#encerramento">Encerramento</a></li>
+                                    
                                     </ul>
                                 </li>
-                                <li><a href="#speakers">Instituições</a></li>
-                                <li><a href="#blog">Explorar</a></li>
+                                <li><a href="feira.html">Feira</a>
+
+                            </li>
+                                <li><a href="actividades-culturais.html">Cultura</a>
+                                <ul class="dropdown">
+                                        <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
+                                        <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
+    </ul>
+                            </li>
+                                <li><a href="informacoes-diversas.html">Informações</a></li>
                                 <li><a href="#contact">Contactos</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="register.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">REGISTRE-SE AGORA <i class="zmdi zmdi-sign-in"></i></a>
+                            <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -194,7 +193,7 @@
 
                     <div class="col-12 col-md-9">
                         <div class="countdown-timer mb-100 wow fadeInUp" data-wow-delay="300ms">
-                            <div id="clock"></div>
+                            <div id="clock"></div> <!-- active.js -->
                         </div>
                     </div>
                 </div>
@@ -663,6 +662,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+    <script src="js/myscript.js">
+
+</script>
 
 </body>
 
