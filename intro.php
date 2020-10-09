@@ -135,15 +135,17 @@
                                         
                                         <!-- Button -->
                                        
-
-
                                     </div>
                                 </div>
                             </form>
 
+
+                            <button onclick="register_institution()"  class="btn  btn-primary btn-user btn-block">
+                <i class="fab fa-sign-in fa-fw"></i> Registar a instituição
+            </button>
                             
                             <div class="col-12">
-                                            <button type="register"  id="addButton" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Registahjdfhjlbbhjbhjfdhjr <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
@@ -155,7 +157,7 @@
             </div>
         </div>
     </section>
-    <!-- Contact Us Area End -->>
+    <!-- Contact Us Area End -->
 
   
     <script src="js/myscript.js"></script>
@@ -172,6 +174,54 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
+
+
+    
+    <script>
+        function addButton() {
+   
+    // var name = document.getElementById('name').value;
+    // var email = document.getElementById('email').value;
+    // var password = document.getElementById('password').value;
+    // var contact = document.getElementById('contact').value;
+    // var genre = document.getElementById('genre').value;
+    // var date_of_birth = document.getElementById('date_of_birth').value;
+    // var category = document.getElementById('category').value;
+    // var residence = document.getElementById('residence').value;
+    // var userId = "aaa";
+    // var imageUrl = "ddd";
+
+
+  
+    firebase.auth().createUserWithEmailAndPassword("textaaser@gmail.com","dkkd22")
+.then(function(data){
+  console.log('uid',)
+
+  //Here if you want you can sign in the user
+}).catch(function(error) {
+    //Handle error
+});
+    // firebase.auth().signInWithEmailAndPassword("Agos00@gmail.com", "password").then(function (result) {
+    //     alert("Usuário Conectado!");
+    //     console.log("Success!");
+    //     window.location.replace('initial-page.html');
+
+    // }).catch(function (error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // ...
+
+    //     alert(errorMessage);
+    //     console.log("Failure!")
+    // });
+
+
+
+   /// create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence)
+}
+    </script>
+
 
 
 </body>

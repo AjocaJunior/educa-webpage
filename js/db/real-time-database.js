@@ -1,3 +1,6 @@
+var btn = document.getElementById('btn-b');
+
+document.getElementById("btn").addEventListener("click", addButton());
 
 function loginUser(name , password){
     console.log(name);
@@ -13,7 +16,6 @@ function register_institution(){
     var institution_description = document.getElementById('institution_description').value;
     var email      = document.getElementById('email').value;
     var password   = document.getElementById('password').value;
-
 
     addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password);
 }
@@ -32,36 +34,8 @@ function addInstitution(institution_name ,location , contact , website , video_l
     return firebase.database().ref().child('institution').push(data);
 }
 
-function addButton() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var contact = document.getElementById('contact').value;
-    var genre = document.getElementById('genre').value;
-    var date_of_birth = document.getElementById('date_of_birth').value;
-    var category = document.getElementById('category').value;
-    var residence = document.getElementById('residence').value;
-    var userId = "aaa";
-    var imageUrl = "ddd";
-    create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence)
-}
 
-function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
-    var data = {
-               userId:userId,
-               name:name, 
-               email:email, 
-               password:password,
-               imageUrl:imageUrl, 
-               contact:contact,
-               genre:genre, 
-               date_of_birth:date_of_birth, 
-               category:category,
-               residence:residence
-    };
 
-    return firebase.database().ref().child('users').push(data);
-}
 
 
 
