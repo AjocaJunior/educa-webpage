@@ -1,10 +1,12 @@
 .choice-container {
   display: flex;
   margin-bottom: 0.5rem;
+  margin-left: 0.1rem;
   width: 100%;
   font-size: 1.8rem;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color:#56a5eb;
+  background-color:#151853;
+  border-radius: 23px;
 }
 
 #question{
@@ -65,13 +67,13 @@ height: 5px;
 #progressBar {
   width: 20rem;
   height: 4rem;
-  border: 0.3rem solid #56a5eb;
+  border: 0.3rem solid #151853;
   margin-top: 1.5rem;
 }
 
 #progressBarFull {
   height: 3.4rem;
-  background-color: #56a5eb;
+  background-color: #151853;
   width: 0%;
 }
 
@@ -79,7 +81,7 @@ height: 5px;
 #loader {
   border: 1.6rem solid white;
   border-radius: 50%;
-  border-top: 1.6rem solid #56a5eb;
+  border-top: 1.6rem solid #151853;
   width: 12rem;
   height: 12rem;
   animation: spin 2s linear infinite;
