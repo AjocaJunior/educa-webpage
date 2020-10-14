@@ -18,6 +18,7 @@ function register_institution(){
 }
 
 function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password){
+
     var data = {
         institution_name : institution_name ,
         location : location ,
@@ -28,6 +29,8 @@ function addInstitution(institution_name ,location , contact , website , video_l
         email:email,
         password: password
     }
+
+    
     return firebase.database().ref().child('institution').push(data);
 }
 

@@ -190,13 +190,12 @@
     firebase.auth().createUserWithEmailAndPassword(email, password )
     .then(function(data){
         userId = data.user.uid;
-        alert("helo");
+    
         create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence);
-
-
+        
     //Here if you want you can sign in the user
     }).catch(function(error) {
-        alert("ola");
+        alert(""+error);
     //Handle error
 });
 
@@ -217,7 +216,15 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
                residence:residence
     };
 
-    return firebase.database().ref().child('users').push(data);
+    firebase.database().ref().child('users').child(userId).set(data , function(error){
+            if (error) {
+                alert("Data could not be saved." + error);
+                location.href="intro.php";
+            } else {
+                location.href="index.php";
+         }
+    });
+      
 }
 
     </script>
