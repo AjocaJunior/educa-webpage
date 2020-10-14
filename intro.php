@@ -61,7 +61,7 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
-                            <h4>Seja Bem-Vinda ao educa</h4>
+                            <h4>Seja Bem-Vindo ao educa</h4>
                             <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
