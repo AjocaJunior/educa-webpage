@@ -24,7 +24,6 @@
         <div class="loader"></div>
     </div>
     <!-- /Preloader -->
-<<<<<<< HEAD
 <!-- 
     check if the user is logging in for the first time -->
     
@@ -47,10 +46,6 @@
     //     echo "<script type='text/javascript'>location.href='intro.php'</script>";
     // }
     ?>
-=======
-
-
->>>>>>> 27bbca111f85fbd05c32d26c81076a99a06633d8
 
     <!-- Header Area Start -->
     <header class="header-area">
