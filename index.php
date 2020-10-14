@@ -78,7 +78,7 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="register.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">REGISTRE-SE AGORA <i class="zmdi zmdi-sign-in"></i></a>
+                            <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5" id="user-name">REGISTRE-SE AGORA <i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -200,6 +200,18 @@
 
             <div class="row">
                 <!-- Single Speaker Area -->
+                                <?php 
+
+                include_once('includes/dbconfig.php');
+                $ref = 'institution/'; 
+                $fetchdata = $database->getReference($ref)->getValue();
+                 
+                ?>
+
+                <?php 
+                foreach( $fetchdata as $key => $row):
+                ?>
+
                 <div class="col-12 col-md-6 col-lg-4">
                     <a href="institute.html">
                         <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
@@ -210,7 +222,7 @@
     
                             
                             <div class="speaker-info">
-                                <h5>Universidade Eduardo Modlane</h5>
+                                <h5><?php echo $row['institution_name']; ?></h5>
                                
                             </div>
                           
@@ -218,96 +230,14 @@
                     </a>
                 </div>
 
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
-                        <div class="speaker-single-thumb">
-                            <img src="img/educa/ujc.jpg" alt="" style="height:350px ; width: 100%;">
-                        </div>
-                        
-                        <div class="speaker-info">
-                            <h5>Universidade Joaquim Chissano</h5>
-                           
-                        </div>
-                     
-                    </div>
-                </div>
 
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
-                        <div class="speaker-single-thumb">
-                            <img src="img/educa/ul.jpg" alt="" style="height:350px ; width: 100%;">
-                        </div>
-                      
-                        <div class="speaker-info">
-                            <h5>Universidade Licungo</h5>
-                           
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                endforeach;
+                ?>
+               
+               
 
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
-                        <div class="speaker-single-thumb">
-                            <img src="img/educa/6.jpg" alt="" style="height:350px ; width: 100%;">
-                        </div>
-                      
-                       
-                        <div class="speaker-info">
-                            <h5>Universidade Eduardo Modlane</h5>
-                           
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
-                        <div class="speaker-single-thumb">
-                            <img src="img/educa/9.jpg" alt="" style="height:350px ; width: 100%;">
-                        </div>
-                      
-                        <!-- Info -->
-                        
-                        <div class="speaker-info">
-                            <h5>Universidade Eduardo Modlane</h5>
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
-                        <div class="speaker-single-thumb">
-                            <img src="img/educa/10.jpg" alt="" style="height:350px ; width: 100%;">
-                        </div>
-                        
-                        <!-- Info -->
-                        
-                        <div class="speaker-info">
-                            <h5>Universidade Eduardo Modlane</h5>
-                           
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
-                        <a class="btn confer-btn-white" href="#">ver todas instituicoes <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Our Speakings Area End -->
 
     <!-- Our Schedule Area Start -->
@@ -645,6 +575,41 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+
+    
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+  <script src="js/db/app.js"></script>
+  <script src="js/db/real-time-database.js"></script>
+
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+    
+    if (user) {   
+        firebase.database().ref('users').on('value', function(snapshot){
+            snapshot.forEach(function (item) {
+               
+                if(item.val().userId !== null && user.uid !== null){
+                    var db_uid = item.val().userId.toString().trim();
+                    var user_uid = user.uid.toString().trim();
+
+                    if(db_uid == user_uid){
+                        var user_name = document.getElementById("user-name");
+                        user_name.innerHTML= item.val().name; 
+                        return;
+                    }
+
+                }
+               
+            });
+        });
+
+    } else {
+        location.href='login.html';
+    }   
+
+  });
+  </script>
+
 
 </body>
 

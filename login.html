@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="row d-flex justify-content-center" style="margin: 2px;">
-                            <button type="register" name="register" class="btn btn-primary btn-lg btn-block">Entrar <i class="zmdi zmdi-long-arrow-right"></i></button>
+                            <button onclick="login()" type="register" name="register" class="btn btn-primary btn-lg btn-block">Entrar <i class="zmdi zmdi-long-arrow-right"></i></button>
                
                         </div>
                       
@@ -133,6 +133,30 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
+
+    <script>
+
+        function login(){
+            firebase.auth().signInWithEmailAndPassword(email.value, password.value).then(function (result) {
+            
+               window.location="index.php?uid="+result.user.uid;
+        
+
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+
+            alert(errorMessage);
+            console.log("Failure!")
+        });
+
+
+
+        }
+    
+    </script>
 </body>
 
 </html>

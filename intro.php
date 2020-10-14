@@ -139,18 +139,15 @@
                                 </div>
                             </form>
 
-
-                            <button onclick="register_institution()"  class="btn  btn-primary btn-user btn-block">
-                <i class="fab fa-sign-in fa-fw"></i> Registar a instituição
-            </button>
                            
                             <div class="col-12">
-                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Registahjdfhjlbbhjbhjfdhjr <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Entrar<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
                             <p class="text-info">Ja tens uma conta?</p>
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                        
+                            <button id="btn" name="btn" onClick="location.href='login.html'"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
                         </div>
                     </div>
                 </div>
