@@ -61,7 +61,7 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
-                            <h4>Seja Bem-Vinda ao educa</h4>
+                            <h4>Seja Bem-Vindo ao educa</h4>
                             <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
@@ -135,27 +135,26 @@
                                         
                                         <!-- Button -->
                                        
-
-
                                     </div>
                                 </div>
                             </form>
 
-                            
+                           
                             <div class="col-12">
-                                            <button type="register"  id="addButton" class="btn btn-primary btn-lg btn-block">Registar <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Entrar<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
                             <p class="text-info">Ja tens uma conta?</p>
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                        
+                            <button id="btn" name="btn" onClick="location.href='login.html'"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Us Area End -->>
+    <!-- Contact Us Area End -->
 
   
     <script src="js/myscript.js"></script>
@@ -172,6 +171,64 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
+
+
+    
+    <script>
+    function addButton() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var contact = document.getElementById('contact').value;
+    var genre = document.getElementById('genre').value;
+    var date_of_birth = document.getElementById('date_of_birth').value;
+    var category = document.getElementById('category').value;
+    var residence = document.getElementById('residence').value;
+    var userId = "aaa";
+    var imageUrl = "ddd";
+
+    firebase.auth().createUserWithEmailAndPassword(email, password )
+    .then(function(data){
+        userId = data.user.uid;
+    
+        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence);
+        
+    //Here if you want you can sign in the user
+    }).catch(function(error) {
+        alert(""+error);
+    //Handle error
+});
+
+}
+
+
+function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
+    var data = {
+               userId:userId,
+               name:name, 
+               email:email, 
+               password:password,
+               imageUrl:imageUrl, 
+               contact:contact,
+               genre:genre, 
+               date_of_birth:date_of_birth, 
+               category:category,
+               residence:residence
+    };
+
+    firebase.database().ref().child('users').child(userId).set(data , function(error){
+            if (error) {
+                alert("Data could not be saved." + error);
+                location.href="intro.php";
+            } else {
+                location.href="index.php";
+         }
+    });
+      
+}
+
+    </script>
+
 
 
 </body>
