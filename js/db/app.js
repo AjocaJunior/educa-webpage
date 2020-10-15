@@ -1,3 +1,5 @@
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyCyEWBBohOwW8IFtrlg02PK9VDK-xtZFZk",
     authDomain: "apptraining-4e270.firebaseapp.com",
