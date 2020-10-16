@@ -109,7 +109,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/1.jpg);">
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -127,7 +127,7 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/45.jpg);">
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -712,7 +712,7 @@
     <!-- Our Schedule Area End -->
 
     <!-- Our Speakings Area Start -->
-    <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(img/bg-img/3.jpg);" id="speakers">
+    <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);" id="speakers">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -778,7 +778,7 @@
 
     <!-- Our Ticket Pricing Table Area Start -->
                                      
-    <section id="tickets" class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/14.jpg);">
+    <section id="tickets" class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -828,14 +828,14 @@
     <!-- Our Ticket Pricing Table Area End -->
 
     <!-- Our Sponsor And Client Area Start -->
-    <section class="our-sponsor-client-area section-padding-100">
+    <section class="our-sponsor-client-area section-padding-80">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
                 <div class="col-12">
-                    <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
+                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h4>PATROCINADORES & PARCEIROS</h4>
+                        <h4>ORGANIZAÇÃO</h4>
                     </div>
                 </div>
             </div>
@@ -845,50 +845,74 @@
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex flex-wrap">
                         <!-- Single Sponsor -->
+                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/NewCADELogoSlogan.png" alt=""></a>
+                        </div>
+                      
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <p>Partners &amp; Sponsors</p> -->
+                        <h4>PRODUÇÃO</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- Our Sponsor area -->
+                    <div class="our-sponsor-area d-flex  flex-wrap" style="text-align:center;">
+                        <!-- Single Sponsor -->
+                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/ONEMEDIA.png" alt=""></a>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <p>Partners &amp; Sponsors</p> -->
+                        <h4>PARCEIROS</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- Our Sponsor area -->
+                    <div class="our-sponsor-area d-flex flex-wrap">
+                        <!-- Single Sponsor -->
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-1.png" alt=""></a>
+                            <a href="#"><img src="img/logos/logonew01.png" alt=""></a>
                         </div>
                         <!-- Single Sponsor -->
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-2.png" alt=""></a>
+                            <a href="#"><img src="img/logos/UP.png" alt=""></a>
                         </div>
                         <!-- Single Sponsor -->
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-3.png" alt=""></a>
+                            <a href="#"><img src="img/logos/UEMLOGO.png" alt=""></a>
                         </div>
                         <!-- Single Sponsor -->
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-4.png" alt=""></a>
+                            <a href="#"><img src="img/logos/GPDNET.png" alt=""></a>
                         </div>
+                       
                         <!-- Single Sponsor -->
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-5.png" alt=""></a>
-                        </div>
-                        <!-- Single Sponsor -->
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-6.png" alt=""></a>
-                        </div>
-                        <!-- Single Sponsor -->
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-7.png" alt=""></a>
-                        </div>
-                        <!-- Single Sponsor -->
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/core-img/p-8.png" alt=""></a>
+                            <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
                         </div>
                     </div>
                 </div>
-
               
                                 <!-- Single client Icon -->
-                                <div class="client-icon">
-                                    <i class="zmdi zmdi-quote"></i>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <!-- Heading -->
+               
+            </div>
+            
         </div>
     </section>
     <!-- Our Sponsor And Client Area End -->
