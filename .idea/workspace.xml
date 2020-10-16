@@ -20,16 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
-      <change afterPath="$PROJECT_DIR$/admin/add_course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/educa-mozambique-firebase-adminsdk-qahz4-0778a0fa8c.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/dbconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dbconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/institute.html" beforeDir="false" afterPath="$PROJECT_DIR$/institute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro.php" beforeDir="false" afterPath="$PROJECT_DIR$/intro.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/db/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/db/real-time-database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/real-time-database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/myscript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_course.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +105,7 @@
       <workItem from="1601284595783" duration="781000" />
       <workItem from="1602151861277" duration="7500000" />
       <workItem from="1602829937180" duration="14107000" />
-      <workItem from="1602848749395" duration="5249000" />
+      <workItem from="1602848749395" duration="6290000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
@@ -143,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602831979282</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="query institute">
+      <created>1602855268573</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602855268573</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
