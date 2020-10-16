@@ -87,7 +87,6 @@
                                             </div>
                                         </div>
 
-
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
@@ -118,6 +117,7 @@
                                                 <input type="text" class="form-control mb-30" name="contact" id="contact" placeholder="Contacto">
                                             </div>
                                         </div>
+
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
@@ -171,8 +171,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
-
-
     
     <script>
     function addButton() {

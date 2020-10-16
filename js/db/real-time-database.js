@@ -13,11 +13,11 @@ function register_institution(){
     var institution_description = document.getElementById('institution_description').value;
     var email      = document.getElementById('email').value;
     var password   = document.getElementById('password').value;
-
-    addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password);
+    var uid        = uuidv4();
+    addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid);
 }
 
-function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password){
+function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid){
 
     var data = {
         institution_name : institution_name ,
@@ -27,14 +27,26 @@ function addInstitution(institution_name ,location , contact , website , video_l
         video_link : video_link,
         institution_description : institution_description ,
         email:email,
-        password: password
+        password: password,
+        uid:uid
     }
 
-    
-    return firebase.database().ref().child('institution').push(data);
-}
+    firebase.database().ref().child('institution').child(uid).set(data , function(error){
+        if (error) {
+            alert("Data could not be saved." + error);
+        } else {
+            location.href="index.php";
+     }
+    });
+    }
 
 
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+        });
+    }
 
 
 
