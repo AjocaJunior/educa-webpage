@@ -200,15 +200,15 @@
 
             <div class="row">
                 <!-- Single Speaker Area -->
-                                <?php 
+                                <?php
 
                 include_once('includes/dbconfig.php');
-                $ref = 'institution/'; 
+                $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
-                 
+                var_dump( $fetchdata);
                 ?>
 
-                <?php 
+                <?php
                 foreach( $fetchdata as $key => $row):
                 ?>
 
@@ -219,29 +219,29 @@
                             <div class="speaker-single-thumb">
                                 <img src="img/educa/uem_1.jpg" alt="" style="height:350px ; width: 100%;">
                             </div>
-    
-                            
+
+
                             <div class="speaker-info">
                                 <h5><?php echo $row['institution_name']; ?></h5>
-                               
+
                             </div>
-                          
+
                         </div>
                     </a>
                 </div>
 
 
-                <?php 
+                <?php
                 endforeach;
                 ?>
-               
-               
+
+
 
 
     <!-- Our Speakings Area End -->
 
     <!-- Our Schedule Area Start -->
-  
+
 
 
 
@@ -583,29 +583,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
 
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
-    
-    if (user) {   
+
+    if (user) {
+
         firebase.database().ref('users').on('value', function(snapshot){
             snapshot.forEach(function (item) {
-               
+
                 if(item.val().userId !== null && user.uid !== null){
                     var db_uid = item.val().userId.toString().trim();
                     var user_uid = user.uid.toString().trim();
 
                     if(db_uid == user_uid){
                         var user_name = document.getElementById("user-name");
-                        user_name.innerHTML= item.val().name; 
+                        user_name.innerHTML= item.val().name;
                         return;
                     }
 
                 }
-               
+
             });
         });
 
     } else {
-        location.href='login.html';
-    }   
+        location.href='intro.html';
+    }
 
   });
   </script>

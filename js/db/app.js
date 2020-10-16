@@ -1,14 +1,14 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyCyEWBBohOwW8IFtrlg02PK9VDK-xtZFZk",
-    authDomain: "apptraining-4e270.firebaseapp.com",
-    databaseURL: "https://apptraining-4e270.firebaseio.com",
-    projectId: "apptraining-4e270",
-    storageBucket: "apptraining-4e270.appspot.com",
-    messagingSenderId: "425561837713",
-    appId: "1:425561837713:web:c28ab9ec3aad08f4c86f30",
-    measurementId: "G-XKL4VV63NG"
-  };
-  
-  // Initialize Firebase
+    apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
+    authDomain: "educa-mozambique.firebaseapp.com",
+    databaseURL: "https://educa-mozambique.firebaseio.com",
+    projectId: "educa-mozambique",
+    storageBucket: "educa-mozambique.appspot.com",
+    messagingSenderId: "812293792882",
+    appId: "1:812293792882:web:2cb3eb0096285cfdec0eeb",
+    measurementId: "G-29BMBQ8P6Y"
+};
+
+// Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();

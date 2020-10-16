@@ -156,8 +156,7 @@
     </section>
     <!-- Contact Us Area End -->
 
-  
-    <script src="js/myscript.js"></script>
+
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>
     <!-- Popper -->

@@ -19,12 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="login">
+    <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
+      <change afterPath="$PROJECT_DIR$/admin/add_course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/educa-mozambique-firebase-adminsdk-qahz4-0778a0fa8c.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dbconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dbconfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/institute.html" beforeDir="false" afterPath="$PROJECT_DIR$/institute.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro.php" beforeDir="false" afterPath="$PROJECT_DIR$/intro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/db/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/db/real-time-database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/real-time-database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/myscript.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +87,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\educa\admin" />
+      <recent name="C:\xampp\htdocs\educa\includes" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -101,7 +112,8 @@
       <workItem from="1600678328317" duration="6129000" />
       <workItem from="1601284595783" duration="781000" />
       <workItem from="1602151861277" duration="7500000" />
-      <workItem from="1602829937180" duration="1674000" />
+      <workItem from="1602829937180" duration="14107000" />
+      <workItem from="1602848749395" duration="5249000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
@@ -124,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600433399977</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="query institute">
+      <created>1602831979282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602831979282</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +166,8 @@
     <MESSAGE value="intro.html" />
     <MESSAGE value="set user data in db" />
     <MESSAGE value="login" />
-    <option name="LAST_COMMIT_MESSAGE" value="login" />
+    <MESSAGE value="query institute" />
+    <option name="LAST_COMMIT_MESSAGE" value="query institute" />
   </component>
   <component name="WindowStateProjectService">
     <state x="390" y="7" key="#PHP" timestamp="1599731195986">
@@ -178,10 +198,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1600433446750">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1602850640138">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600433446750" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1602850640138" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602851715403">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1602851715403" />
     <state x="676" y="0" width="697" height="735" key="dock-window-1" timestamp="1602159417973">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
