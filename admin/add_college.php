@@ -46,11 +46,11 @@
                   <textarea class="form-control" id="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <button onclick="addCourse()" type="button" class="btn btn-secondary btn-lg btn-block">ADICIONAR CURSO</button>
+                <button onclick="addCourse()" type="button" class="btn btn-secondary btn-lg btn-block">ADICIONAR FACULDADE</button>
                 <br>
                 <div class="list-group">
                   <a href="#" class="list-group-item list-group-item-action active">
-                    CURSOS CADASTRADOS
+                    FACULDADE CADASTRADOS
                   </a>
                   <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                   <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
