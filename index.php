@@ -726,52 +726,48 @@
 
             <div class="row">
                 <!-- Single Speaker Area -->
-                                <?php 
+                                <?php
 
-                // include_once('includes/dbconfig.php');
-                // $ref = 'institution/'; 
-                // $fetchdata = $database->getReference($ref)->getValue();
-                 
+                include_once('includes/dbconfig.php');
+                $ref = 'institution/';
+                $fetchdata = $database->getReference($ref)->getValue();
+
                 ?>
 
-                <?php 
-                // foreach( $fetchdata as $key => $row):
+                <?php
+                foreach( $fetchdata as $key => $row):
                 ?>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="feira.html">
+                    <a href="institute.php?id=<?php echo $row['uid']; ?>">
                         <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                             <!-- Thumb -->
                             <div class="speaker-single-thumb">
                                 <img src="img/educa/uem_1.jpg" alt="" style="height:350px ; width: 100%;">
                             </div>
-    
-                            
+
+
                             <div class="speaker-info">
-                                <!-- <h5>
-                                    <?php 
-                                    // echo $row['institution_name'];
-                                     ?>
-                                </h5> -->
-                               
+                                <h5><?php echo $row['institution_name']; ?></h5>
+
                             </div>
-                          
+
                         </div>
                     </a>
                 </div>
 
 
-                <?php 
-                // endforeach;
+                <?php
+                endforeach;
                 ?>
-               
-               
+
+
 
 
     <!-- Our Speakings Area End -->
 
     <!-- Our Schedule Area Start -->
-  
+
 
 
 
@@ -932,7 +928,7 @@
                         <h4>CONTACTOS</h4>
                     </div>
                 </div>
-            </div>
+           </div>
 
             <div class="row justify-content-between">
                 <div class="col-12 col-sm-3">
@@ -1069,30 +1065,31 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
   <script src="js/db/real-time-database.js"></script>
 
   <script>
-//     firebase.auth().onAuthStateChanged(function(user) {
-    
-//     if (user) {   
-//         firebase.database().ref('users').on('value', function(snapshot){
-//             snapshot.forEach(function (item) {
-               
-//                 if(item.val().userId !== null && user.uid !== null){
-//                     var db_uid = item.val().userId.toString().trim();
-//                     var user_uid = user.uid.toString().trim();
+    firebase.auth().onAuthStateChanged(function(user) {
 
-//                     if(db_uid == user_uid){
-//                         var user_name = document.getElementById("user-name");
-//                         user_name.innerHTML= item.val().name; 
-//                         return;
-//                     }
+    if (user) {
 
-//                 }
-               
-//             });
-//         });
+        firebase.database().ref('users').on('value', function(snapshot){
+            snapshot.forEach(function (item) {
 
-//     } else {
-//         location.href='login.html';
-//     }   
+                if(item.val().userId !== null && user.uid !== null){
+                    var db_uid = item.val().userId.toString().trim();
+                    var user_uid = user.uid.toString().trim();
+
+                    if(db_uid == user_uid){
+                        var user_name = document.getElementById("user-name");
+                        user_name.innerHTML= item.val().name;
+                        return;
+                    }
+
+                }
+
+            });
+        });
+
+    } else {
+        location.href='intro.php';
+    }
 
 //   });
   </script>

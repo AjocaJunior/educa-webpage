@@ -87,7 +87,6 @@
                                             </div>
                                         </div>
 
-
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
@@ -118,6 +117,7 @@
                                                 <input type="text" class="form-control mb-30" name="contact" id="contact" placeholder="Contacto">
                                             </div>
                                         </div>
+
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
@@ -156,8 +156,7 @@
     </section>
     <!-- Contact Us Area End -->
 
-  
-    <script src="js/myscript.js"></script>
+
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>
     <!-- Popper -->
@@ -171,8 +170,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
-
-
     
     <script>
     function addButton() {
