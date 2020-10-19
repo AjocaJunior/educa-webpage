@@ -20,80 +20,75 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-    <!-- /Preloader -->
 
-    <!-- Header Area Start -->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 20px; padding-bottom:20px ;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">INICIO</a>
-          
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <!-- <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> -->
-               
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
-              </form>
-            </div>
-          </nav>
+    <input type="file" id="photo" />
+    <br>
+    <input type="file" id="photo_1" />
 
-          <hr style="min-width:85%; background-color:#a1a1a1 !important; height:1px;"/>
-</div>
-    </header>
-    <!-- Header Area End -->
-
-   
-    <!-- Breadcrumb Area End -->
+    <button onclick="uploadImage()">Upload Image</button>
 
 
-                    <!-- Tab Content -->
-                    <div class="tab-content" id="conferScheduleTabContent"></div>
-                        <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
-                            <!-- Single Tab Content -->
-                            <div class="single-tab-content">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <!-- Single Schedule Area -->
-                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/bg-img/10.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <h6>Universidade Eduardo Modlane</h6>
-                                                    <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn"> Entrar<i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
 
-                                      
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Our Schedule Area End -->
+
+    
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  <script>
+   var firebaseConfig = {
+    apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
+    authDomain: "educa-mozambique.firebaseapp.com",
+    databaseURL: "https://educa-mozambique.firebaseio.com",
+    projectId: "educa-mozambique",
+    storageBucket: "educa-mozambique.appspot.com",
+    messagingSenderId: "812293792882",
+    appId: "1:812293792882:web:2cb3eb0096285cfdec0eeb",
+    measurementId: "G-29BMBQ8P6Y"
+   };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+
+    function uploadImage() {
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#photo").files[0];
+      const name = +new Date() + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = ref.child(name).put(file, metadata);
+      task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+            console.log("1-"+url);
+          uploadImageSec();
+          //document.querySelector("#image").src = url;
+        })
+        .catch(console.error);
+    }
+
+    function uploadImageSec() {
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#photo_1").files[0];
+      const name = +new Date() + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = ref.child(name).put(file, metadata);
+      task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          console.log("2-"+url);
+
+          //document.querySelector("#image").src = url;
+        })
+        .catch(console.error);
+    }
+
+
+
+
+</script>
 
     <!-- Footer Area End -->
 

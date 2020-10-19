@@ -32,18 +32,13 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4 text-uppercase">Cadastrar curso</h1>
+                <h1 class="h4 text-gray-900 mb-4 text-uppercase">Cadastrar Faculdade</h1>
               </div>
               <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-12 mb-6 mb-sm-0">
-                    <input type="text" id="course" class="form-control form-control-user" placeholder="Curso">
+                    <input type="text" id="college" class="form-control form-control-user" placeholder="Faculdade">
                   </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1" class="text-uppercase">Descrição do curso</label>
-                  <textarea class="form-control" id="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
                 <button onclick="addCourse()" type="button" class="btn btn-secondary btn-lg btn-block">ADICIONAR FACULDADE</button>
@@ -52,10 +47,35 @@
                   <a href="#" class="list-group-item list-group-item-action active">
                     FACULDADE CADASTRADOS
                   </a>
-                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+
+                             <?php
+                                 $id = '';
+                                 if(isset($_GET['id'])) {
+                                     $id = $_GET['id'];
+
+                                 } else {
+                                     header('Location: register.html');
+                                 }
+
+                                  include_once('includes/dbconfig.php');
+                                  $ref = 'institution/'.$uid.'/course';
+
+                                  $fetchdata = $database->getReference($ref)->getValue();
+
+                                  ?>
+
+
+
+                                 <?php if($fetchdata != null):?>
+                                   <?php foreach( $fetchdata as $key => $row): ?>
+
+                                        <a href="#" class="list-group-item list-group-item-action"><?php echo $row['course']; ?></a>
+
+                                   <?php endforeach ?>
+
+
+                                 <?php endif?>
+
                 </div>
 
             </div>
@@ -85,20 +105,21 @@
 
 
     function addCourse(){
-      var course         = document.getElementById("course").value;
-      var description    = document.getElementById("description").value;
-      var uid            = "672cf065-2140-4ab7-9fef-f9977c11aed6";
+      var course         = document.getElementById("college").value;
+      var uid            = "<?php echo $_GET['id']; ?>";
+      var uidCollege     = uuidv4();
 
       var data = {
         course : course,
-        description : description
+        uid : uidCollege
       }
 
-      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
+      firebase.database().ref().child('institution').child(uid).child("college").child(uidCollege).set(data , function(error){
         if (error) {
           alert("Data could not be saved." + error);
         } else {
           alert("Success");
+           window.location.reload();
         }
       });
     }

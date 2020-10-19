@@ -47,6 +47,7 @@
                 </div>
 
                 <button onclick="addCourse()" type="button" class="btn btn-secondary btn-lg btn-block">ADICIONAR CURSO</button>
+
                 <br>
                 <div class="list-group">
                   <a href="#" class="list-group-item list-group-item-action active">
@@ -84,6 +85,11 @@
 
 
                 </div>
+
+                <br>
+
+               <?php $href = "add_college.php?id=".$_GET['id']; ?>
+               <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">ADICIONAR FACULDADES</button>
 
             </div>
           </div>

@@ -57,32 +57,17 @@
                   <input type="text" id="video_link" class="form-control form-control-user"  placeholder="Link do video de apresentação">
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1" class="text-uppercase">Fotos da instituição</label>
-                </div>
-
                 <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
+               
+                  <div class="col-sm-12">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <img src="img/logo.png"  height="38" class="input-group-text"/>
                       </div>
                       <div class="custom-file">
-                        <input type="file" name="photo_1" class="custom-file-input"
+                        <input type="file" name="photo" class="custom-file-input" id="photo"
                                aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Primeira Foto</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <img src="img/logo.png"  height="38" class="input-group-text"/>
-                      </div>
-                      <div class="custom-file">
-                        <input type="file" name="photo_2" class="custom-file-input" id="inputGroupFile01"
-                               aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Segunda Foto</label>
+                        <label class="custom-file-label" for="photo">Foto de perfil</label>
                       </div>
                     </div>
                   </div>
@@ -178,6 +163,8 @@
         institution_description : institution_description ,
         email:email,
         password: password,
+        img1 : "",
+        img2 : "",
         uid:uid
       }
 

@@ -25,6 +25,35 @@
     </div>
     <!-- /Preloader -->
 
+
+    <?php
+
+      include_once('includes/dbconfig.php');
+      $ref = 'institution/';
+      $fetchdata = $database->getReference($ref)->getValue();
+      $uid  = $_GET['id'];
+      $title           = "";
+      $localization    = "";
+      $institution_description = "";
+      $phone                   = "";
+      $email                   = "";
+      $website                 = "";
+      $video_link              = "";
+
+      foreach($fetchdata as $key => $row){
+          if($row['uid'] == $uid ){
+            $title           = $row['institution_name'];
+            $localization    = $row['location'];
+            $institution_description = $row['institution_description'];
+            $phone                   = $row['contact'];
+            $email                   = $row['email'];
+            $website                 = $row['website'];
+            $video_link              = $row['video_link'];
+          }
+      }
+
+    ?>
+
     <!-- Header Area Start -->
     <header class="header-area">
         <div class="classy-nav-container breakpoint-off">
@@ -73,12 +102,12 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 id="page_title" class="page-title">Universidade Eduardo Modlane</h2>
+                        <h2 id="page_title" class="page-title"><?php echo $title; ?></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                             
-                                <li id="breadcrumb_item" class="breadcrumb-item active" aria-current="page">Universidade Eduardo Modlane</li>
+                                <li id="breadcrumb_item" class="breadcrumb-item active" aria-current="page"><?php echo $title; ?></li>
                             </ol>
                         </nav>
                     </div>
@@ -106,11 +135,11 @@
                             </div>
 
                             <!-- Post Title -->
-                            <h4 class="post-title" id="about">Universidade Eduardo Modlane</h4>
+                            <h4 class="post-title" id="about"><?php echo $title; ?></h4>
 
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a id="localization_first" class="post-date" href="#"><i class="zmdi zmdi-gps"></i>Mozambique , maputo</a>
+                                <a id="localization_first" class="post-date" href="#"><i class="zmdi zmdi-gps"></i><?php echo $localization; ?></a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-email"></i>Enviar mensagem</a>
                             </div>
 
@@ -162,7 +191,7 @@
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Exames</a>
-                                    <span>Baixar exames da uem</span>
+                                    <span><?php echo "Exames ".$title; ?></span>
                                 </div>
                             </div>
 
@@ -172,8 +201,8 @@
                                     <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="institute-blog.php" class="post-title">Publicacoes e noticias</a>
-                                    <span>Veja publicacoes da uem </span>
+                                    <a href="#" class="post-title">Publicacoes e noticias</a> <!---institute-blog.php-->
+                                    <span>Ver publicacoes</span>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +285,7 @@
                                 </div>
                                 <!-- Author Content -->
                                 <div class="post-author-content">
-                                    <h5 id="institute_name">UEM</h5>
+                                    <h5 id="institute_name"><?php echo $title; ?></h5>
                                     <p id="location_and_contact">On the other hand, de-nounce with righteous</p>
                                 </div>
                                 <!-- Social Info -->
@@ -272,7 +301,17 @@
                         <div class="single-widget-area" id="college">
                             <h5 class="widget-title mb-30">Faculdades</h5>
 
-                            <!-- Single Recent Post Area -->
+                            
+
+
+                        <?php
+                        $ref = 'institution/'.$uid.'/college';
+                        $fetchdata = $database->getReference($ref)->getValue();
+                        ?>
+
+                        <?php if($fetchdata != null):?>
+                        <?php foreach( $fetchdata as $key => $row): ?>
+                                        <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
                                 <div class="post-thumb">
@@ -280,36 +319,15 @@
                                 </div>
                                 <!-- Content -->
                                 <div class="post-content">
-                                    <a href="single-blog.html" class="post-title">Faculdade de Economia</a>
+                                    <a href="single-blog.html" class="post-title"><?php echo $row['course']; ?></a>
                                     <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
                                 </div>
                             </div>
-
-                            <!-- Single Recent Post Area -->
-                            <div class="single-recent-post-area d-flex align-items-center">
-                                <!-- Thumb -->
-                                <div class="post-thumb">
-                                    <a href="single-blog.html"><img src="img/bg-img/48.jpg" alt=""></a>
-                                </div>
-                                <!-- Content -->
-                                <div class="post-content">
-                                    <a href="single-blog.html" class="post-title">Faculdade de Educação</a>
-                                   
-                                </div>
-                            </div>
-
-                            <!-- Single Recent Post Area -->
-                            <div class="single-recent-post-area d-flex align-items-center">
-                                <!-- Thumb -->
-                                <div class="post-thumb">
-                                    <a href="single-blog.html"><img src="img/bg-img/49.jpg" alt=""></a>
-                                </div>
-                                <!-- Content -->
-                                <div class="post-content">
-                                    <a href="single-blog.html" class="post-title">Faculdade de Letras e Ciências Sociais</a>
-                                   
-                                </div>
-                            </div>
+                            <?php endforeach ?>
+                        <?php endif?>
+                            
+                          
+                            
                         </div>
 
                         <!-- Single Widget Area -->
@@ -318,16 +336,18 @@
 
                             <!-- Catagories List -->
                             <ul class="categories-list">
-                                <li><a href="#">Licenciatura em Biologia Aplicada</a></li>
-                                <li><a href="#">Licenciatura em Biologia e Saúde</a></li>
-                                <li><a href="#">Licenciatura em Estatística</a></li>
-                                <hr>
-                                <li><a href="#">Tecnologia <span>(5)</span></a></li>
-                                <li><a href="#">Engenharia <span>(5)</span></a></li>  
-                                <li><a href="#">Medicina<span>(2)</span></a></li>
-                            
-                                <li><a href="#">
-                                    Ciências sociais  <span>(5)</span></a></li>
+
+                            <?php
+                        $ref = 'institution/'.$uid.'/course';
+                        $fetchdata = $database->getReference($ref)->getValue();
+                        ?>
+
+                        <?php if($fetchdata != null):?>
+                        <?php foreach( $fetchdata as $key => $row): ?>
+                            <li><a href="#"><?php echo $row["course"]; ?></a></li>
+                            <?php endforeach ?>
+                        <?php endif?>
+                               
                             </ul>
                         </div>
 
@@ -392,13 +412,13 @@
                             <!-- Footer Logo -->
                             
                             <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
-
+                            mailto:someone@example.com
                             <!-- Social Info -->
                             <div class="social-info">
-                                <a href="#"><i class="zmdi zmdi-gps"></i></a>
-                                <a href="#"><i class="zmdi zmdi-view-web"></i></a>
-                                <a href="#"><i class="zmdi zmdi-phone"></i></a>
-                                <a href="#"><i class="zmdi zmdi-email"></i></a>
+                                <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>
+                                <a href="<?php echo $website; ?>"><i class="zmdi zmdi-view-web"></i></a>
+                                <a href="<?php echo "tel:".$phone; ?>"><i class="zmdi zmdi-phone"></i></a>
+                                <a href="<?php echo "mailto:".$phone; ?>"><i class="zmdi zmdi-email"></i></a>
                             </div>
                         </div>
                     </div>
@@ -411,10 +431,10 @@
 
                             <!-- Contact Area -->
                             <div class="footer-contact-info">
-                                <p><i class="zmdi zmdi-map" id="location"></i> 184 Main Collins Street</p>
-                                <p><i class="zmdi zmdi-phone" id="phone"></i> (226) 446 9371</p>
-                                <p><i class="zmdi zmdi-email" id="email_institute"></i> confer@gmail.com</p>
-                                <p><i class="zmdi zmdi-globe" id="site"></i> www.confer.com</p>
+                                <p><i class="zmdi zmdi-map" id="location"></i> <?php echo $localization; ?></p>
+                                <p><i class="zmdi zmdi-phone" id="phone"></i><?php echo $phone; ?></p>
+                                <p><i class="zmdi zmdi-email" id="email_institute"></i> <?php echo $email; ?></p>
+                                <p><i class="zmdi zmdi-globe" id="site"></i> <?php echo $website; ?></p>
                             </div>
                         </div>
                     </div>
@@ -515,87 +535,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const uid = urlParams.get('id');
 
-        var title           = document.getElementById("title");
-        var page_title      = document.getElementById("page_title");
-        var breadcrumb_item = document.getElementById("breadcrumb_item");
-        var about_title     = document.getElementById("about");
-        var localization_first  =  document.getElementById("localization_first");
-        var institution_description = document.getElementById("institution_description");
-        var description_first       = document.getElementById("description_first");
-        var location_and_contact    = document.getElementById("location_and_contact");
-        var institute_name          = document.getElementById("institute_name");
-        var more_description        = document.getElementById("more_description");
-        var location                = document.getElementById("location");
-        var phone                   = document.getElementById("phone");
-        var email                   = document.getElementById("email_institute");
-
-        firebase.database().ref('institution').on('value', function(snapshot){
-            snapshot.forEach(function (item) {
-
-                if (item.val().uid !== null) {
-                    var uidParms = uid.toString().trim();
-                    var uidDb = item.val().uid.toString().trim();
-
-                    if (uidParms == uidDb) {
-                        page_title.innerText = item.val().institution_name;
-                        title.innerText      = item.val().institution_name;
-                        breadcrumb_item.innerText = item.val().institution_name;
-                        about_title.innerText     = item.val().institution_name;
-                        localization_first.innerText       = item.val().location;
-                        location_and_contact.innerText     = "localização e contato de "+ item.val().institution_name;
-                        institute_name.innerText           = getFirstCharInArray(item.val().institution_name);
-                        location.innerText                 = item.val().location;
-                        phone                              = item.val().contact;
-                        email                              = item.val().email;
-
-                        setDescription(item.val().institution_description);
-                        return;
-                    }
-                }
-            });
-        });
-
-
-        function setDescription(description){
-            if(description.length > 240 ){
-                var subString = description.substring(240 , description.length  );
-                var indexFirst = subString.indexOf(".")+ 1 + 240;
-
-                var p1 = description.substring(0 , indexFirst);
-                var p2 = description.substring(indexFirst , description.length);
-
-                description_first.innerText = p1;
-                more_description.innerText  = p2;
-
-            }else{
-                description_first.innerText = description;
-            }
-        }
-
-
-
-        function getFirstCharInArray(str){
-            var finalOutput = "";
-            if (str.length > 10){
-                finalOutput = str;
-            }else {
-                var splitString = str.split(" ");
-                var i;
-                for (i = 0; i < splitString.length; i++) {
-                    if (splitString[i].toLowerCase() !== "de"){
-                        finalOutput = finalOutput.concat(splitString[i].charAt(0));
-                    }
-                }
-            }
-            return finalOutput.toUpperCase();
-        }
-
-    </script>
 
 </body>
 

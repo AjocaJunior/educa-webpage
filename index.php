@@ -205,7 +205,7 @@
                 include_once('includes/dbconfig.php');
                 $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
-                var_dump( $fetchdata);
+
                 ?>
 
                 <?php
@@ -213,7 +213,7 @@
                 ?>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="institute.html?id=<?php echo $row['uid']; ?>">
+                    <a href="institute.php?id=<?php echo $row['uid']; ?>">
                         <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                             <!-- Thumb -->
                             <div class="speaker-single-thumb">
@@ -605,7 +605,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
         });
 
     } else {
-        location.href='intro.html';
+        location.href='intro.php';
     }
 
   });

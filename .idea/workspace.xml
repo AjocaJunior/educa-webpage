@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
-      <change afterPath="$PROJECT_DIR$/admin/add_college.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/add_gallery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_college.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_college.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_course.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/db/real-time-database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/real-time-database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/institute.html" beforeDir="false" afterPath="$PROJECT_DIR$/institute.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,7 @@
       <workItem from="1602151861277" duration="7500000" />
       <workItem from="1602829937180" duration="14107000" />
       <workItem from="1602848749395" duration="6760000" />
-      <workItem from="1603091075857" duration="4740000" />
+      <workItem from="1603091075857" duration="13970000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
@@ -214,10 +216,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="676" y="0" width="697" height="735" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1602159417973" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599740461412">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1603101598967">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599740461412" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603101598967" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600685771811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
