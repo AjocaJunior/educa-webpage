@@ -57,8 +57,8 @@
                                      header('Location: register.html');
                                  }
 
-                                  include_once('includes/dbconfig.php');
-                                  $ref = 'institution/'.$uid.'/course';
+                                  include_once('../includes/dbconfig.php');
+                                  $ref = 'institution/'.$id.'/course';
 
                                   $fetchdata = $database->getReference($ref)->getValue();
 
@@ -77,6 +77,11 @@
                                  <?php endif?>
 
                 </div>
+
+                <br>
+
+                <?php $href = "add_gallery.php?id=".$_GET['id']; ?>
+                <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">ADICIONAR FOTOS</button>
 
             </div>
           </div>

@@ -37,7 +37,7 @@
               <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-12 mb-6 mb-sm-0">
-                    <input type="text" id="college" class="form-control form-control-user" placeholder="Descricao(opcional)">
+                    <input type="text" id="description" class="form-control form-control-user" placeholder="Descricao(opcional)">
                   </div>
                   <br>
                   <br>
@@ -56,7 +56,7 @@
                                     </div>
                 </div>
 
-                <button  type="button" class="btn btn-secondary btn-lg btn-block">PUBLICAR FOTO</button>
+                <button  onclick="uploadImage()" type="button"  class="btn btn-secondary btn-lg btn-block">PUBLICAR FOTO</button>
                 <br>
 
 
@@ -77,15 +77,12 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
- 
-
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-  <script src="../js/db/app.js"></script>
-  <script src="../js/db/real-time-database.js"></script>
   
-  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
   <script>
+    
+ 
   var firebaseConfig = {
     apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
     authDomain: "educa-mozambique.firebaseapp.com",
@@ -113,11 +110,52 @@
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {
             console.log("1-"+url);
-          uploadImageSec();
+            setInDatabase(url);
           //document.querySelector("#image").src = url;
         })
         .catch(console.error);
     }
+
+    function setInDatabase(url){
+
+              var description    = document.getElementById("description").value;
+              var uid            = "<?php echo $_GET['id']; ?>";
+              var uidImg         = generateUUID();
+
+              var data = {
+                url: url,
+                description : description,
+                uid : uidImg
+              }
+
+              firebase.database().ref().child('institution').child(uid).child("gallery").child(uidCollege).set(data , function(error){
+                if (error) {
+                  alert("Data could not be saved." + error);
+                } else {
+                   alert("Adicionado com sucesso!");
+                   window.location.reload();
+                }
+              });
+
+    }
+
+
+    function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();//Timestamp
+    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16;//random number between 0 and 16
+        if(d > 0){//Use timestamp until depleted
+            r = (d + r)%16 | 0;
+            d = Math.floor(d/16);
+        } else {//Use microseconds since page-load if supported
+            r = (d2 + r)%16 | 0;
+            d2 = Math.floor(d2/16);
+        }
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+}
+
    
   </script>
 </body>
