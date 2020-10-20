@@ -1,3 +1,5 @@
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
     authDomain: "educa-mozambique.firebaseapp.com",
