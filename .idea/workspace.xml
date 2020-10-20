@@ -22,8 +22,9 @@
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/add_college.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_college.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/db/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_course.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/db/real-time-database.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/db/real-time-database.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +81,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -108,7 +110,8 @@
       <workItem from="1602151861277" duration="7500000" />
       <workItem from="1602829937180" duration="14107000" />
       <workItem from="1602848749395" duration="6760000" />
-      <workItem from="1603091075857" duration="16836000" />
+      <workItem from="1603091075857" duration="17887000" />
+      <workItem from="1603177602310" duration="3106000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
@@ -200,10 +203,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599732665609" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1603112928387">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1603116455598">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603112928387" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1603116455598" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602851715403">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -216,9 +219,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603101598967" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603112925350">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603116449424">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603112925350" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603116449424" />
   </component>
 </project>
