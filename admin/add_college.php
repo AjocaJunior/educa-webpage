@@ -115,7 +115,7 @@
       var uidCollege     = uuidv4();
 
       var data = {
-        college : course,
+        college : college,
         uid : uidCollege
       }
 
