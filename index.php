@@ -894,6 +894,9 @@
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
                         </div>
+                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/cepaepsimbolo.png" alt=""></a>
+                        </div>
                     </div>
                 </div>
               
