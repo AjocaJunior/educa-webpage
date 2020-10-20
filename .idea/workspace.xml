@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/add_college.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_college.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/institute.php" beforeDir="false" afterPath="$PROJECT_DIR$/institute.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,7 @@
       <workItem from="1602829937180" duration="14107000" />
       <workItem from="1602848749395" duration="6760000" />
       <workItem from="1603091075857" duration="17887000" />
-      <workItem from="1603177602310" duration="3320000" />
+      <workItem from="1603177602310" duration="3948000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>

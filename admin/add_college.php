@@ -110,12 +110,12 @@
 
 
     function addCourse(){
-      var course         = document.getElementById("college").value;
+      var college         = document.getElementById("college").value;
       var uid            = "<?php echo $_GET['id']; ?>";
       var uidCollege     = uuidv4();
 
       var data = {
-        course : course,
+        college : course,
         uid : uidCollege
       }
 
