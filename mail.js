@@ -22,6 +22,7 @@ form.addEventListener('submit', function (event) {
       email: form.elements.email.value,
       message: form.elements.message.value
   };
+  
   const errors = validate(formValues, constraints);
 
      if (errors) {
