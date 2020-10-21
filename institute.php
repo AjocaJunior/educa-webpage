@@ -319,7 +319,7 @@
                                 </div>
                                 <!-- Content -->
                                 <div class="post-content">
-                                    <a href="single-blog.html" class="post-title"><?php echo $row['course']; ?></a>
+                                    <a href="single-blog.html" class="post-title"><?php echo $row['college']; ?></a>
                                     <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
                                 </div>
                             </div>
