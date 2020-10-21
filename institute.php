@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title id="title">Educa - Conference Event HTML Template</title>
+    <title id="title">Educa - Instituição</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="./img/educa/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -62,7 +62,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -78,7 +78,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Inicio</a></li>
+                                <li class="active"><a href="index.php">Inicio</a></li>
                                 <li><a href="#about">Sobre</a></li>
                                 <li><a href="#categories-list-course">Cursos</a></li>
                                 <li><a href="#college">Faculdades</a></li>
@@ -97,7 +97,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg);">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -105,7 +105,7 @@
                         <h2 id="page_title" class="page-title"><?php echo $title; ?></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Início</a></li>
                             
                                 <li id="breadcrumb_item" class="breadcrumb-item active" aria-current="page"><?php echo $title; ?></li>
                             </ol>

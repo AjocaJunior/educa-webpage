@@ -1090,7 +1090,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
         location.href='intro.php';
     }
 
-//   });
+  });
   </script>
 
 
