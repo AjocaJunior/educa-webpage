@@ -964,7 +964,9 @@
                     <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
                         <div class="contact_form">
                             <form action="mail.php" method="post" id="main_contact_form">
+                            <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
                                 <div class="contact_input_area">
+
                                     <div id="success_fail_info"></div>
                                     <div class="row">
                                         <!-- Form Group -->
@@ -988,7 +990,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Seu numero">
+                                                <input type="tel" class="form-control mb-30" name="contact" id="contact" placeholder="Seu numero">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -1033,14 +1035,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
                         </div>
                     </div>
                     <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <!-- <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li> -->
-                                <!-- <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -1058,7 +1053,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-    <script src="js/myscript.js">
+    
+    <script src="mail.js"></script>
 
 </script>
 
@@ -1066,7 +1062,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
   <script src="js/db/app.js"></script>
   <script src="js/db/real-time-database.js"></script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
 
