@@ -123,7 +123,7 @@
         if (error) {
           alert("Data could not be saved." + error);
         } else {
-          alert("Success");
+
            window.location.reload();
         }
       });

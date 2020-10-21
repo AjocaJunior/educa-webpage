@@ -726,8 +726,7 @@
 
             <div class="row">
                 <!-- Single Speaker Area -->
-                                <?php
-
+                <?php
                 include_once('includes/dbconfig.php');
                 $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
@@ -743,7 +742,7 @@
                         <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
                             <!-- Thumb -->
                             <div class="speaker-single-thumb">
-                                <img src="<?php echo $row['img1']; ?>" alt="" style="height:350px ; width: 100%;">
+                                <img src="<?php echo $row['img1']; ?>" alt="" style="height:350px ; width: 100%; background:white;">
                             </div>
 
 
@@ -1094,7 +1093,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
         location.href='intro.php';
     }
 
-//   });
+  });
   </script>
 
 

@@ -39,17 +39,42 @@
       $email                   = "";
       $website                 = "";
       $video_link              = "";
+      $p1 = "";
+      $p2 = "";
+      $img1 = "";
+      $img2 = "";
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
+            $img1                    = $row['img1'];
+            $img2                    = $row['img2'];
             $phone                   = $row['contact'];
             $email                   = $row['email'];
             $website                 = $row['website'];
             $video_link              = $row['video_link'];
+            $index = -1;
+            if($video_link == null || $video_link == ""){
+                $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
+            }
+            $str =  $institution_description;
+                  if(preg_match("#Visão#", $str, $matches, PREG_OFFSET_CAPTURE)) {
+                     $index = $matches[0][1];
+                     $p1 = substr($str,0,$index);
+                     $p2 = substr($str , $index , strlen($str));
+
+                  }else{
+                       $p1 = $str;
+                  }
+            setDescription($institution_description);
+            break;
           }
+      }
+
+      function setDescription($str){
+
       }
 
     ?>
@@ -130,7 +155,7 @@
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X9zS9D7YcI0" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>" allowfullscreen></iframe>
                                   </div>
                             </div>
 
@@ -143,7 +168,7 @@
                                 <a class="post-author" href="#"><i class="zmdi zmdi-email"></i>Enviar mensagem</a>
                             </div>
 
-                            <p id="description_first">BW Education Leadership Summit focuses on recognizing applauding the quality of education in India by uniting Institution leaders and regulators to explore how they can leverage technologies, strategies and Management tools with each other to help create a world class Institution. Bringing together the Gamut of Early Childhood Brands, K 12 Brands, Exceptional Schools, Engineering Colleges.</p>
+                            <p id="description_first"  style="white-space: pre-line"><?php echo $p1; ?></p>
 
                             <!-- Blockquote -->
                             <!-- <blockquote class="confer-blockquote">
@@ -151,21 +176,10 @@
                             </blockquote> -->
 
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <img class="mb-30" src="img/bg-img/51.jpg" alt="" style="">
-                                </div>
-                                <div class="col-6">
-                                    <img class="mb-30" src="img/bg-img/52.jpg" alt="">
-                                </div>
-                            </div>
 
-                            <p id="more_description">Beyond demonstrating that marketing really works, the right analytics strategies can provide insights that inspire impactful marketing decisions, leading to increased ROI and revenue growth. Join us for our Marketing Analytics &amp; Insights Summit for a two-day deep dive into how top companies are using big data and analytics to dramatically improve the efficiency and efficacy of their marketing mix.</p>
+                            <p id="more_description"  style="white-space: pre-line"><?php echo $p2; ?></p>
                         </div>
 
-                      
-
-                      
 
                         <!-- Post Author Area -->
 <!--                        <div class="post-author-area d-flex align-items-center my-5" id="video-chat">-->
@@ -280,19 +294,19 @@
                             <!-- Post Author Widget -->
                             <div class="post-author-widget">
                                 <!-- Thumbnail -->
-                                <div class="post-author-avatar">
-                                    <img src="img/bg-img/50.jpg" alt="">
+                                <div class="post-author-avatar" style="background:white;">
+                                    <img src="<?php echo $img1; ?>" alt="" >
                                 </div>
                                 <!-- Author Content -->
                                 <div class="post-author-content">
                                     <h5 id="institute_name"><?php echo $title; ?></h5>
-                                    <p id="location_and_contact">On the other hand, de-nounce with righteous</p>
+                                    <p id="location_and_contact">contacto e localização</p>
                                 </div>
                                 <!-- Social Info -->
                                 <div class="author-social-info">
-                                    <a href="#"><i class="zmdi zmdi-map"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-view-web"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-phone"></i></a>
+                                    <a href="https://www.google.com/maps/search/<?php echo $title ?>"><i class="zmdi zmdi-map"></i></a>
+                                    <a href="<?php echo $website ?>"><i class="zmdi zmdi-view-web"></i></a>
+                                    <a href="tel:<?php echo $website ?>"><i class="zmdi zmdi-phone"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -371,24 +385,22 @@
                             <!-- Sidebar Gallery -->
                             <div class="sidebar-gallery">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/25.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/26.jpg" alt=""></a>
-                                    </div>
+
+                                    <?php
+                                	$ref = 'institution/'.$uid.'/gallery';
+                                    $fetchdata = $database->getReference($ref)->getValue();
+                                    ?>
+
+                                     <?php if($fetchdata != null):?>
+                                     <?php
+
+                                     foreach( $fetchdata as $key => $row): ?>
+                                           <div class="col-4">
+                                             <a href="#"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                           </div>
+                                    <?php endforeach ?>
+                                    <?php endif?>
+
                                 </div>
                             </div>
                         </div>
@@ -466,24 +478,23 @@
                             <!-- Footer Gallery -->
                             <div class="footer-gallery">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/22.jpg" class="single-gallery-item"><img src="img/bg-img/22.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/23.jpg" class="single-gallery-item"><img src="img/bg-img/23.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/24.jpg" class="single-gallery-item"><img src="img/bg-img/24.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/25.jpg" class="single-gallery-item"><img src="img/bg-img/25.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/26.jpg" class="single-gallery-item"><img src="img/bg-img/26.jpg" alt=""></a>
-                                    </div>
+
+                                 <?php
+                                                                      $ref = 'institution/'.$uid.'/gallery';
+                                                                      $fetchdata = $database->getReference($ref)->getValue();
+                                                                      ?>
+
+                                                                      <?php if($fetchdata != null):?>
+                                                                      <?php
+
+                                                                       foreach( $fetchdata as $key => $row): ?>
+
+                                                                                         <div class="col-4">
+                                                                                                  <a href="<?php echo $row['url']; ?>" class="single-gallery-item"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                                                                          </div>
+                                                                       <?php endforeach ?>
+                                                                       <?php endif?>
+
                                 </div>
                             </div>
                         </div>
