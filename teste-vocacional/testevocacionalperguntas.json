@@ -5,7 +5,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Estudar a composição e estrutura da atmosfera e os astros (plantas, satélites, etc.)    ",
@@ -13,7 +14,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": " Trabalhar como analista clínico ",
@@ -21,7 +23,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Projectar e dirigir a construção de edifícios. Preparar os planos para edíficios ou zonas completas das cidades (bairros, parques, zonas comerciais, etc) ",
@@ -30,6 +33,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Ser arquitecto",
@@ -38,6 +42,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Diagnosticar e tratar doenças do corpo humano ",
@@ -45,7 +50,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Ser médico",
@@ -53,7 +59,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Ser farmacêutico ",
@@ -61,7 +68,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Investigar as origens da espécie humana consultando restos antigos. Projectar escavações para descobrir vestígios do passado ",
@@ -69,7 +77,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Exercer a profissião de antropólogo ",
@@ -77,7 +86,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Escrever novelas, contos, ou outras obras literárias para publicação",
@@ -85,7 +95,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 4
   },
   {
     "question": "Ser escritor profissional ",
@@ -94,6 +105,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Dar aulas numa escola, num instituto, ou na Universidade",
@@ -102,6 +114,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Dar aulas a crianças cegas, surdas ou deficientes mentais utilizando métodos especiais",
@@ -110,6 +123,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Trabalhar como professor ",
@@ -118,6 +132,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Fazer parte do governo de um país. Intervir em debates, preparação de leis, decretos, etc.",
@@ -126,6 +141,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Ser advogado",
@@ -134,6 +150,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Assessorar sobre problemas contabilisticos e financeiros. Organizar e dirigir os serviços de controlo de orçamentos e contabilidade ",
@@ -142,6 +159,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Ser empresário",
@@ -150,6 +168,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Exercer a profissão de banqueiro",
@@ -158,6 +177,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Projectar e organizar actividades turisticas para propôr aos clientes ",
@@ -166,6 +186,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Trabalhar como agente de seguros",
@@ -174,6 +195,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Classificar documentos de contabilidade, preparar relações de pagamentos e cobranças. Cobrar, pagar e verificar que isso foi feito correctamente",
@@ -182,6 +204,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Ser caixa de uma empresa ou de um banco",
@@ -190,6 +213,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Observar e analisar o desempenho dos desportistas e ensinar-lhes técnicas para corrigir as suas falhas",
@@ -198,6 +222,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Cuidar de cavalos e prepará-los para corrida",
@@ -206,6 +231,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Ser árbitro de futebol",
@@ -214,6 +240,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Criar em viveiros crustáceos, peixes e moluscos. Organizar, controlar e administrar todos os aspectos desta exploração",
@@ -222,6 +249,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Organizar e explorar uma propriedade agrícola ou florestal para obter produtos da terra e vênde-los",
@@ -230,6 +258,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Realizar o trabalho de ganadeiro profissional",
@@ -238,6 +267,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Actuar em representações teatrais, rodagens de cinema ou televisão. Aprender um papel, ensaiar e interpretar uma personagem",
@@ -246,6 +276,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Tocar um ou vários instrumentos musicais actuando como solista ou fazendo parte de uma orquestra ou de um grupo musical",
@@ -254,6 +285,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser bailarino profissional ",
@@ -262,6 +294,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Criar e realizar desenhos acompanhados com frases. Fazer ilustrações para livros",
@@ -270,6 +303,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Desenhar peças de vestuário, acessórios (sapatos, malas, cintos, etc.) ou jóias",
@@ -278,6 +312,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Realizar o trabalho de decorador",
@@ -286,6 +321,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13 
   },
   {
     "question": "Proteger as pessoas que se encontram num local, evitando que ai se comentam delitos",
@@ -294,6 +330,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Prevenir ou apagar incêndios, proteger ou salvar as pessoas durante os mesmos. Estudar os riscos que os podem desencadear para os eliminar ",
@@ -302,6 +339,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Ser agente de segurança",
@@ -310,6 +348,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Tourear a pé ou a cavalo. Pôr bandarilhas",
@@ -318,6 +357,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Num circo, fazer exercício com animais amestrados (leões, etc.) ou actuar num trapézio",
@@ -326,6 +366,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser astronauta",
@@ -334,14 +375,16 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
-    "question": "Construir edifícios e obras colocando ladrilhos, portas, canalizações, isntalações elétricas, etc.",
+    "question": "Construir edifícios e obras colocando ladrilhos, portas, canalizações, instalações elétricas, etc.",
     "choice1": "Gosto",
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Manejar e controlar o equipamento e os aparelhos transmissores em emissoras de rádio e televisão",
@@ -350,6 +393,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Exercer a profissão de carpinteiro",
@@ -358,6 +402,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Fazer prognóstico sobre a direcção das massas de ar, temperatura e humidade do ambiente",
@@ -365,7 +410,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Trabalhar como astrónomo profissional",
@@ -373,7 +419,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Exercer a profissão de biólogo",
@@ -381,7 +428,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Projectar máquinas para cultivos agrários e dirigir a sua construção",
@@ -390,6 +438,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Ser capitão de um barco ",
@@ -398,6 +447,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Curar por meio de exercícios físicos ou massagens algumas doenças, por exemplo paralisias, entorses, doenças nervosas, etc.",
@@ -405,7 +455,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Ser veterinário",
@@ -413,15 +464,17 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
-    "question": "Realizar investigações sobre a destribuiçãode raças humanas e a organização política, social e económica de determinadas zonas ",
+    "question": "Realizar investigações sobre a destribuição de raças humanas e a organização política, social e económica de determinadas zonas ",
     "choice1": "Gosto ",
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Realizar investigações e estudos sobre teologia (ciência que trata de Deus)",
@@ -429,7 +482,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Exercer a profissão de arqueólogo",
@@ -437,7 +491,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Coordenar a redação de uma publicação (revista, jornal, etc.), examinando os trabalhos apresentados e selecionando os que vão ser publicados. Determinar a sua colocação na página, redigir os títulos, etc.",
@@ -470,6 +525,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Trabalhar como reeducador de toxicodependentes",
@@ -478,6 +534,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Realizar o trabalho de orientador escolar",
@@ -486,6 +543,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Intervir em contractos e testamentos. Autorizar escrituras e contractos ",
@@ -494,6 +552,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Trabalhar como assistente social",
@@ -502,6 +561,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Dirigir as actividades de um banco ou participar nels. Conceder créditos, investir dinheiro, etc.",
@@ -510,6 +570,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Ser economista ",
@@ -518,14 +579,16 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":7
   },
   {
-    "question": "Visitar médicos para mostrar produtos farmac6euticos, tendo a preparação teórica e os conhecimentos necessários para explicar as suas caracteristicas",
+    "question": "Visitar médicos para mostrar produtos farmaceuticos, tendo a preparação teórica e os conhecimentos necessários para explicar as suas caracteristicas",
     "choice1": "Gosto ",
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Receber clientes de um hotel ou restaurante. Dar-lhes a informação de que necessitem",
@@ -534,6 +597,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Trabalhar como director de vendas ",
@@ -542,14 +606,16 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":8
   },
   {
-    "question": "Organiar as tarefas dos funcionários de um departamento administrativo, distribuindo o trabalho e controlando a sua realização",
+    "question": "Organizar as tarefas dos funcionários de um departamento administrativo, distribuindo o trabalho e controlando a sua realização",
     "choice1": "Gosto ",
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Trabalhar como operador de computadores ",
@@ -558,6 +624,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Realizar exercícios físicos sob as ordens de um treinador ou preparador",
@@ -566,6 +633,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Treinar desportistas ou equipas para aperfeiçoar os seus conhecimentos e aptidões e melhora a prática do desporto",
@@ -574,6 +642,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Trabalhar como treinador desportivo ",
@@ -582,6 +651,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Dirigir os trabalhos de uma exploração florestal: determinar as árvores que se devem plantar, podar ou transplantar e o momento mais adequado para o fazer ",
@@ -590,6 +660,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Criar Gado (ovelhas, vacas, etc.) para aproveitar a sua carne, lã ou outros produtos",
@@ -598,6 +669,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Trabalhar como director de uma unidade de piscicultura",
@@ -606,6 +678,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Criar e escrever composições musicais e canções",
@@ -614,6 +687,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Dar recitais de canto ou de música, como solista ou fazendo parte de um grupo",
@@ -622,6 +696,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser actor profissional ",
@@ -630,6 +705,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Restaurar quadros, móveis e obras de arte, determinando que tipo de reparação necessitam",
@@ -638,6 +714,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Criar esculturas com madeira, barro, metal, etc. Criar pinturas figurativas ou abstractas a cores utilizando óleo, aguarelaou outros procedimentos ",
@@ -646,6 +723,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Ser desenhador profissional",
@@ -654,6 +732,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Deter os que cometem delitos, persegui-los e pô-los à disposição da autoridade judicial ",
@@ -662,6 +741,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Pertencer ao exército e prestar serviço em organismos e estabelecimentos militares",
@@ -670,6 +750,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Ser polícia",
@@ -678,6 +759,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Descer a cavernas profundas para estudar as características da terra",
@@ -686,6 +768,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Investigar particularmente casos criminais ou robos para descobrir os seus autores",
@@ -694,6 +777,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser submarinista profissional    ",
@@ -702,6 +786,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Confeccionar roupa segundo um modelo",
@@ -710,6 +795,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Arranjar máquinas e instalar equipamentos eletrónicos em edificios, fábricas, lojas, etc.",
@@ -718,6 +804,16 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
+  },
+  {
+    "question": "Exercer a profissão de fisioterapeuta",
+    "choice1": "Gosto ",
+    "choice2": "Indiferente ou dúvida ",
+    "choice3": "Não Gosto ",
+    "choice4": "Não Conheço",
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Exercer a profissão de eletricista",
@@ -726,6 +822,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Estudar a vida florestal (árvores e plantas). Fazer experiências com as culturas",
@@ -733,7 +830,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Trabalhar como geólogo profissional",
@@ -741,7 +839,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Coordenar as actividades a bordo de um barco. Dirigir as manobras de entrada e saída do porto ",
@@ -750,6 +849,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Aplicar a informática para analisar necessidades e problemas. Elaborar programas de computador",
@@ -758,6 +858,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Aplicar os conhecimetnos de medicina para o tratamento de infecções dentárias. Localizar lesões da dentadura, fazer próteses dentárias, etc.",
@@ -765,7 +866,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Exercer a profissão de técnico auxiliar de saúde",
@@ -773,7 +875,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Estudar a composição e estrutura da atmosfera e os astros (plantas, satélites, etc.)    ",
@@ -789,7 +892,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Ser sacerdote",
@@ -797,7 +901,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Trabalhar como conservador de museus profissional ",
@@ -805,7 +910,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Entrevistar pessoas para publicar as suas respostas na imprensa, na rádio ou na televisão",
@@ -822,6 +928,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Determinar que pessoas são adequadas para realizar determinados estudos ou trabalhos, estudando as suas aptidões e a sua personalidade ",
@@ -830,6 +937,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Trabalhar como professor de educação especial",
@@ -838,6 +946,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Representar o teu país ou o teu governo noutros países. Proteger os direitos dos compatriotas que vivem no estrangeiro",
@@ -846,6 +955,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Intervir perante os tribunais de justiça em nome da lei, representando um cliente ou o Estado",
@@ -854,6 +964,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Ser diplomata",
@@ -862,6 +973,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Dirigir um estabelecimento comercial próprio, organizando e planeando as operações de compra e venda de mercadoria",
@@ -870,6 +982,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Ser gerente de uma empresa",
@@ -878,6 +991,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Projectar, ciar ou desenhar anúncios publicitários",
@@ -902,6 +1016,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Nas vendas de mercadorias, receber o dinheiro que os clientes entregam e devolver o troco. Utilizar máquinas registadoras e entregar facturas dos valores recebidos ",
@@ -910,6 +1025,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Ser telefonista",
@@ -918,6 +1034,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Dirigir competições desportivas e aplicar as regras estabelecidas para cada caso",
@@ -926,6 +1043,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Ser atleta profissional",
@@ -934,6 +1052,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Exercer a profissão de preparador físico",
@@ -942,6 +1061,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Preparar redes ou apetrechos, dirigir tarefas de pesca, pescar e levar o pescado ao porto para sua venda",
@@ -950,6 +1070,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Ser engenheiro florestal",
@@ -958,6 +1079,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Trabalhar como agricultor profissional",
@@ -966,6 +1088,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Dirigir uma orquestra, banda de música ou conjunto musical. Escolher as competições que se vão interpretar",
@@ -974,6 +1097,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser cantor profissional",
@@ -982,6 +1106,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser compositor",
@@ -990,6 +1115,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Manejar câmeras de cinema ou de televisão seguindo o desenrolar das cenas",
@@ -998,6 +1124,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Ser escultor",
@@ -1006,6 +1133,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Trabalhar como fotográfo profissional",
@@ -1014,6 +1142,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Prestar serviços de protecção, segurança e vigilância em quintas, estabelecimentos, escritórios, etc.",
@@ -1030,6 +1159,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Trabalhar como vigilante",
@@ -1038,6 +1168,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Conduzir carros a grande velocidade, participando em corridas e competições",
@@ -1046,6 +1177,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser detective profissional",
@@ -1054,6 +1186,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser piloto de corridas",
@@ -1062,6 +1195,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Manejar máquinas para fabricar fios, panos ou malhas",
@@ -1070,6 +1204,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Exercer a profissão de modista ou alfaiate",
@@ -1078,6 +1213,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Trabalhar como pedreiro profissional",
@@ -1086,6 +1222,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Investigar, utilizando a ciência estatística. Realizar estudos no campo das matemáticas",
@@ -1093,7 +1230,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Exercer a profissão de matemático",
@@ -1101,7 +1239,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Conduzir aviões, coordenar as operações de descolagem, aterragem e voo. Fixar o rumo e vigiar os instrumentos do avião",
@@ -1110,6 +1249,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Ser controlador aéreo",
@@ -1118,6 +1258,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Ser piloto de avião",
@@ -1126,6 +1267,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Diagnosticar, prevenir e tratar as doenças dos animais. Administrar-lhes os medicamentos necessários ",
@@ -1133,7 +1275,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Ser dentista",
@@ -1141,7 +1284,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Realizar estudos e investigações sobre a actuação do homem no passado e no presente",
@@ -1149,7 +1293,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Ser historiador",
@@ -1157,7 +1302,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Analisar as qualidades (esteticas, de expressão, etc.), de obras literárias, artísticas, teatrais ou musicais e escrever uma crítica expressando a opinião que formaste a seu respeito ",
@@ -1166,6 +1312,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Redigir notícias e comentar informações para as publicar na imprensa ou difundi-las na rádio ou televisão",
@@ -1174,6 +1321,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Ser veterinário",
@@ -1198,6 +1346,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Estudar o comportamento das pessoas. Investigar problemas psicológicos no campo da educação, da medicina ou do trabalho",
@@ -1206,6 +1355,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Realizar o trabalho de psicólogo educacional",
@@ -1214,6 +1364,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Investigar a natureza dos problemas das pessoas, tendo em conta os factores sociais, económicos, etc., e as relações das sociedades humanas ",
@@ -1222,6 +1373,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Exercer a profissão de sociólogo",
@@ -1230,6 +1382,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Ser notário",
@@ -1238,6 +1391,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Estabelecer o programa de actuação de uma empresa, tendo em conta a sua situação, resultados e pespectivas futuras",
@@ -1246,6 +1400,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Trabalhar como auditor profissional",
@@ -1254,6 +1409,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Executar apólices de seguros. Fazer entrevistas com clientes, determinar o tipo de seguro de que necessita e formalizar as apólices",
@@ -1262,6 +1418,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Trabalhar como assistente social",
@@ -1286,6 +1443,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Ordenar, classificar e arquivar documentos e fornecê-los aos chefes quando os solicitam. Atender as chamadas telefónicas",
@@ -1294,6 +1452,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Organizar e controlar a recepção, armazenamento e expedição de mercadorias, anotando as entradas e as saídas",
@@ -1302,6 +1461,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Trabalhar como datcilografo",
@@ -1310,6 +1470,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Participar em competições desportivas de diversos tipos",
@@ -1318,6 +1479,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Trabalhar como tratador de cavalos de corridas",
@@ -1334,6 +1496,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":10
   },
   {
     "question": "Cultivar hortaliças, flores ou árvores para comercializar os seus produtos",
@@ -1342,6 +1505,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Trabalhar como director de ganadaria",
@@ -1350,6 +1514,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":11
   },
   {
     "question": "Ser engenheiro agrónomo",
@@ -1358,14 +1523,16 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":11
   },
   {
-    "question": "Idealizar passoas de dança e ensinar os bailarinos a executá-los. Dirigir os ensaios e as representações. Dançar em actuações públicas (teatros, etc.)",
+    "question": "Idealizar passos de dança e ensinar os bailarinos a executá-los. Dirigir os ensaios e as representações. Dançar em actuações públicas (teatros, etc.)",
     "choice1": "Gosto ",
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser coreográfo profissional",
@@ -1374,6 +1541,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Ser músico",
@@ -1382,6 +1550,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":12
   },
   {
     "question": "Realizar esboços para mobilizar e decorar casas, edifícios públicos ou teatros. Projectar a decoração de escaparates",
@@ -1390,6 +1559,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Ser pintor artístico",
@@ -1398,6 +1568,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Trabalhar como desenhador de moda",
@@ -1406,6 +1577,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":13
   },
   {
     "question": "Prevenir, manter e restaurar a segurança e a ordem pública. Zelar pela segurança das pessoas e dos seus bens",
@@ -1414,6 +1586,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Trabalhar como guarda de prisões",
@@ -1422,6 +1595,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Ser vigilante de praias",
@@ -1430,6 +1604,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":14
   },
   {
     "question": "Participar em viagens espaciais, tanto na sua preparação como na sua realização. Tripular foguetões.",
@@ -1438,6 +1613,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser toureiro",
@@ -1446,6 +1622,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Ser trapezista profissional",
@@ -1454,6 +1631,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":15
   },
   {
     "question": "Preparar e tratar a madeira para fazer tábuas e tabuleiros ou pasta de papel",
@@ -1462,6 +1640,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Trabalhar como tecelão profissional",
@@ -1470,6 +1649,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Exercer a profissão de instalador de tubagem para aquecimento",
@@ -1478,6 +1658,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":16
   },
   {
     "question": "Realizar experiências e análises para estudar fenómenos químicos e a composição de substâncias",
@@ -1493,7 +1674,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 1
   },
   {
     "question": "Estudar, projectar e construir pontes, barragens, túneis, isntalações telegráficas, fábricas, etc.",
@@ -1502,6 +1684,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Ser engenheiro técnico",
@@ -1510,6 +1693,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":17
   },
   {
     "question": "Realizar intervenções cirurgicas para curar doenças ou acidentes",
@@ -1517,7 +1701,8 @@
     "choice2": "Indiferente ou dúvida",
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Investigar em laboratório sobre as causas do desenvolvimento das doenças",
@@ -1525,7 +1710,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 2
   },
   {
     "question": "Acompanhar os visitantes de um museu ou monumentos de uma cidade ou de um país informando-os, no seu idioma, das caracteristícas importantes dos mesmos ",
@@ -1533,7 +1719,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Ser filósofo",
@@ -1541,7 +1728,8 @@
     "choice2": "Indiferente ou dúvida ",
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
-    "answer": 1
+    "answer": 1,
+    "grupo": 3
   },
   {
     "question": "Traduzir livros ou artigos de um idioma para outro. Rever as traduções de textos que vão ser publicados para melhorar a sua qualidade",
@@ -1550,6 +1738,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Ser jornalista",
@@ -1558,6 +1747,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Trabalhar como tradutor profissional",
@@ -1566,6 +1756,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":4
   },
   {
     "question": "Aplicar provas psicológicas para determinar a inteligência, as aptidões e a personalidade das pessoas. Estabelecer tratamentos para resolver ou melhorar problemas emocionais ou de adaptação",
@@ -1574,6 +1765,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Ser professor da universidade",
@@ -1582,6 +1774,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":5
   },
   {
     "question": "Aplicar justiça de acordo com as leis. Ouvir as alegações e ditar sentenças",
@@ -1590,6 +1783,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Ser político profissional",
@@ -1598,6 +1792,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":6
   },
   {
     "question": "Representar uma empresa nas negociações, decidir ou aprovar a nomeação do pessoal da mesma",
@@ -1606,6 +1801,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Aplicar os princípios da teoria económica para solucionar problemas nas empresas ou no país",
@@ -1614,6 +1810,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Trabalhar como director financeiro de uma empresa",
@@ -1622,6 +1819,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":7
   },
   {
     "question": "Vender quintas, solares, casas ou apartamentos, actuando como representante dos proprietários ",
@@ -1630,6 +1828,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Trabalhar como recepcionista",
@@ -1638,6 +1837,7 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":8
   },
   {
     "question": "Utilizar computadores e máquinas para controlar as contas de uma empresa, seguindo instruções ou utilizando programas",
@@ -1646,6 +1846,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço ",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Exercer a profissão de administrativo",
@@ -1654,6 +1855,7 @@
     "choice3": "Não Gosto ",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   },
   {
     "question": "Trabalhar como secretário.",
@@ -1662,5 +1864,6 @@
     "choice3": "Não Gosto",
     "choice4": "Não Conheço",
     "answer": 1
+    ,"grupo":9
   }
 ]
