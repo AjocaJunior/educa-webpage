@@ -201,7 +201,7 @@
                             <!-- Prev Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/54.jpg" alt=""></a>
+                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Exames</a>
@@ -215,8 +215,8 @@
                                     <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">Publicacoes e noticias</a> <!---institute-blog.php-->
-                                    <span>Ver publicacoes</span>
+                                    <a href="#" class="post-title">Publicações e noticias</a> <!---institute-blog.php-->
+                                    <span>Ver publicações</span>
                                 </div>
                             </div>
                         </div>
@@ -321,29 +321,82 @@
                         <?php
                         $ref = 'institution/'.$uid.'/college';
                         $fetchdata = $database->getReference($ref)->getValue();
+                        $countCollege = 0;
                         ?>
 
                         <?php if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row): ?>
+                        <?php
+                            foreach( $fetchdata as $key => $row):
+                                $countCollege++;
+                                if($countCollege == 5){
+                                    break;
+                                }
+                                ?>
                                         <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
                                 <div class="post-thumb">
-                                    <a href="single-blog.html"><img src="img/bg-img/47.jpg" alt=""></a>
+                                    <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
                                 </div>
                                 <!-- Content -->
                                 <div class="post-content">
-                                    <a href="single-blog.html" class="post-title"><?php echo $row['college']; ?></a>
+                                    <a href="#" class="post-title"><?php echo $row['college']; ?></a>
                                     <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
                                 </div>
                             </div>
                             <?php endforeach ?>
                         <?php endif?>
-                            
-                          
-                            
+
+                            <?php if($countCollege > 4): ?>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
+                                    ver todas faculdades
+                                </button>
+                            <?php endif; ?>
+
                         </div>
 
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <?php
+                                        $ref = 'institution/'.$uid.'/college';
+                                        $fetchdata = $database->getReference($ref)->getValue();
+                                        ?>
+
+                                        <?php if($fetchdata != null):?>
+                                            <?php foreach( $fetchdata as $key => $row):?>
+                                                <!-- Single Recent Post Area -->
+                                                <div class="single-recent-post-area d-flex align-items-center">
+                                                    <!-- Thumb -->
+                                                    <div class="post-thumb">
+                                                        <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="post-content">
+                                                        <a href="#" class="post-title"><?php echo $row['college']; ?></a>
+                                                        <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
+                                                    </div>
+                                                </div>
+                                            <?php endforeach ?>
+                                        <?php endif?>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Single Widget Area -->
                         <div class="single-widget-area" id="categories-list-course">
                             <h5 class="widget-title mb-30">Cursos</h5>
@@ -356,22 +409,91 @@
                         $fetchdata = $database->getReference($ref)->getValue();
                         ?>
 
-                        <?php if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row): ?>
+                        <?php
+                        $count = 0;
+                        if($fetchdata != null):?>
+                        <?php foreach( $fetchdata as $key => $row):
+                                $count++;
+                                if ($count == 13){
+                                    break;
+                                }
+                                ?>
+
                             <li><a href="#"><?php echo $row["course"]; ?></a></li>
                             <?php endforeach ?>
                         <?php endif?>
                                
                             </ul>
+
+
+                             <?php if($count > 12): ?>
+                                 <!-- Button trigger modal -->
+                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                     ver todos os cursos
+                                 </button>
+                             <?php endif; ?>
+
+
+
                         </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Todos os cursos</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+
+
+                                        <!-- Single Widget Area -->
+                                        <div class="single-widget-area" id="categories-list-course">
+                                            <h5 class="widget-title mb-30">Cursos</h5>
+
+                                            <!-- Catagories List -->
+                                            <ul class="categories-list">
+
+                                                <?php
+                                                $ref = 'institution/'.$uid.'/course';
+                                                $fetchdata = $database->getReference($ref)->getValue();
+                                                ?>
+
+                                                <?php if($fetchdata != null):?>
+                                                    <?php foreach( $fetchdata as $key => $row):?>
+                                                        <li><a href="#"><?php echo $row["course"]; ?></a></li>
+                                                    <?php endforeach ?>
+                                                <?php endif?>
+
+                                            </ul>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+<!--                                        <button type="button" class="btn btn-primary">Save changes</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
+
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area">
-                            <h5 class="widget-title mb-30">Tag de Navegacao</h5>
+                            <h5 class="widget-title mb-30">Tag de Navegação</h5>
 
                             <!-- Tag Cloud -->
                             <ul class="tag-cloud">
-                                <li><a href="#location">Localizacao</a></li>
+                                <li><a href="#location">Localização</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                                 <li><a href="#galleria">Galeria</a></li>
                                 <li><a href="#video-chat">Video chat</a></li>
@@ -456,12 +578,11 @@
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
 
-                         
-                            <h5 class="widget-title">Tag de Navegacao</h5>
+                            <h5 class="widget-title">Tag de Navegação</h5>
 
                             <!-- Footer Nav -->
                             <ul class="footer-nav">
-                                <li><a href="#location">Localizacao</a></li>
+                                <li><a href="#location">Localização</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                                 <li><a href="#galleria">Galeria</a></li>
                                 <li><a href="#video-chat">Video chat</a></li>

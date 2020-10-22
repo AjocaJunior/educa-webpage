@@ -20,19 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
-      <change afterPath="$PROJECT_DIR$/img/educa/exams.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfil/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actividades-culturais.html" beforeDir="false" afterPath="$PROJECT_DIR$/actividades-culturais.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_college.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_college.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evento.html" beforeDir="false" afterPath="$PROJECT_DIR$/evento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feira.html" beforeDir="false" afterPath="$PROJECT_DIR$/feira.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/informacoes-diversas.html" beforeDir="false" afterPath="$PROJECT_DIR$/informacoes-diversas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/institute.php" beforeDir="false" afterPath="$PROJECT_DIR$/institute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfil/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,19 +91,6 @@
       <recent name="C:\xampp\htdocs\educa\includes" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -135,6 +111,7 @@
       <workItem from="1603091075857" duration="17887000" />
       <workItem from="1603177602310" duration="8205000" />
       <workItem from="1603262779238" duration="17091000" />
+      <workItem from="1603351064063" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
