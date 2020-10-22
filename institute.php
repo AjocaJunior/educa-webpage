@@ -87,7 +87,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -111,7 +111,7 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="chat.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
+                            <a href="chat.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -414,7 +414,7 @@
                         if($fetchdata != null):?>
                         <?php foreach( $fetchdata as $key => $row):
                                 $count++;
-                                if ($count == 13){
+                                if ($count == 10){
                                     break;
                                 }
                                 ?>
@@ -426,7 +426,7 @@
                             </ul>
 
 
-                             <?php if($count > 12): ?>
+                             <?php if($count > 10): ?>
                                  <!-- Button trigger modal -->
                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                                      ver todos os cursos
@@ -545,14 +545,14 @@
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
                             
-                            <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
+                            <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
                             mailto:someone@example.com
                             <!-- Social Info -->
                             <div class="social-info">
                                 <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>
                                 <a href="<?php echo $website; ?>"><i class="zmdi zmdi-view-web"></i></a>
                                 <a href="<?php echo "tel:".$phone; ?>"><i class="zmdi zmdi-phone"></i></a>
-                                <a href="<?php echo "mailto:".$phone; ?>"><i class="zmdi zmdi-email"></i></a>
+                                <a href="<?php echo "mailto:".$email; ?>"><i class="zmdi zmdi-email"></i></a>
                             </div>
                         </div>
                     </div>
@@ -632,7 +632,7 @@
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://educa.com" target="_blank">Educa</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://educa.co.mz" target="_blank">Educa</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -640,8 +640,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
                     <div class="col-12 col-md-6">
                         <div class="footer-menu">
                             <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Termos de serviço</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Política de Privacidade</a></li>
                             </ul>
                         </div>
                     </div>

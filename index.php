@@ -81,7 +81,7 @@
                                     
                                     </ul>
                                 </li>
-                                <li><a href="feira.html">Feira</a>
+                                <li><a href="feira.php">Feira</a>
 
                             </li>
                                 <li><a href="actividades-culturais.html">Cultura</a>
@@ -730,11 +730,15 @@
                 include_once('includes/dbconfig.php');
                 $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
-
+                $count = 0;
                 ?>
 
                 <?php
                 foreach( $fetchdata as $key => $row):
+                    $count++;
+                    if ($count == 4){
+                        break;
+                    }
                 ?>
 
                 <div class="col-12 col-md-6 col-lg-4">
@@ -759,6 +763,13 @@
                 <?php
                 endforeach;
                 ?>
+
+
+                <div class="col-12">
+                    <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
+                        <a class="btn confer-btn-white" href="feira.php">ver todos expositores <i class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div>
+                </div>
 
 
 
