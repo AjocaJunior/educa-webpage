@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fae8f670-c54f-4ef1-9bf0-16c1cf82e742" name="Default Changelist" comment="query institute">
-      <change afterPath="$PROJECT_DIR$/raffle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/customm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sorteio/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sorteio/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sorteio/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raffle.php" beforeDir="false" afterPath="$PROJECT_DIR$/raffle.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,12 +85,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/css-roulette-wheel/css-roulette-wheel/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sorteio" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\educa\sorteio" />
+      <recent name="C:\xampp\htdocs\educa\css" />
       <recent name="C:\xampp\htdocs\educa" />
       <recent name="C:\xampp\htdocs\educa\admin" />
       <recent name="C:\xampp\htdocs\educa\includes" />
@@ -126,7 +132,7 @@
       <workItem from="1603177602310" duration="8205000" />
       <workItem from="1603262779238" duration="17091000" />
       <workItem from="1603351064063" duration="10078000" />
-      <workItem from="1603435384906" duration="14066000" />
+      <workItem from="1603435384906" duration="24248000" />
     </task>
     <task id="LOCAL-00001" summary="auth">
       <created>1599731028617</created>
