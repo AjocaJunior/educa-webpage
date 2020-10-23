@@ -2931,3 +2931,39 @@ text-align: center;
 .border-radius-10{
   border-radius: 10px;
 }
+
+
+#status{
+  margin:5px;
+  text-transform: uppercase;
+}
+
+#status.sucesso{
+  color:white;
+  animation: status 4s ease forwards;
+}
+
+#status.erro{
+  
+  color: red;
+  animation: status 4s ease forwards;
+}
+
+@keyframes status{
+  0%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.form-invalido{
+  outline: 1px solid red !important;
+ }
