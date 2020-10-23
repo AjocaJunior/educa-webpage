@@ -930,6 +930,7 @@
    
     <!-- Our Blog Area End -->
 
+
     <!-- Contact Area Start -->
     <section id="contact" class="contact-our-area section-padding-100-0">
         <div class="container">
@@ -968,43 +969,79 @@
                         </div>
                     </div>
                 </div>
+                <?php
 
+if(isset($_POST['email']) && $_POST['message'] != ''){
+//submit
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+
+        $nome = $_POST['name'];
+        // $apelido = $_POST['apelido'];
+        $email = $_POST['email'];
+        $contacto = $_POST['contact'];
+        $message = $_POST['message'];
+        
+        $to = "assisjunior33@gmail.com";
+        
+        $body = "";
+        
+        $body .= "From: ".$nome. "\r\n";
+        $body .= "Email: ".$email. "\r\n";
+        $body .= "Contact: ".$contacto. "\r\n";
+        $body .= "Message: ".$message. "\r\n";
+        
+        mail($to, $nome, $body);
+
+        $message_sent=true;
+    }else{
+        $invalid_class_name = "form-invalido";
+    }
+
+
+}
+
+
+
+
+?>
                 <div class="col-12 col-sm-8">
                     <!-- Contact Form -->
                     <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
                         <div class="contact_form">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="index.php#main_contact_form" method="post" id="main_contact_form">
+                            
                                 <div class="contact_input_area">
+
                                     <div id="success_fail_info"></div>
                                     <div class="row">
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Seu nome">
+                                                <input type="text" tabindex="1" class="form-control mb-30" name="name" id="name" placeholder="Seu nome">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name2" placeholder="Sobre nome">
+                                                <input type="text" tabindex="2" class="form-control mb-30" name="apelido" id="name2" placeholder="Sobre nome">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail">
+                                                <input type="email" tabindex="3" class="form-control mb-30 <?= $invalid_class_name ?? "" ?> " name="email" id="email" placeholder="E-mail">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Seu numero">
+                                                <input type="tel" tabindex="4" class="form-control mb-30" name="contact" id="contact" placeholder="Seu numero">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Sua mensagem *"></textarea>
+                                                <textarea name="message" tabindex="5" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Sua mensagem *"></textarea>
                                             </div>
                                         </div>
                                         <!-- Button -->
@@ -1012,6 +1049,18 @@
                                             <button type="submit" class="btn confer-btn">Enviar messagem <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
+                                    <?php 
+                                    // if($message_sent):
+                                    ?>
+                                    <div id="status" class="sucesso">Email Enviado com Sucesso!</div> 
+                                    <?php 
+                                    // else:
+                                        
+                                    ?>
+<div id="status" class="erro">Email Não Enviado, Entre em contacto a Administração do Educa!</div> 
+<?php 
+// endif;
+?>
                                 </div>
                             </form>
                         </div>
@@ -1043,14 +1092,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
                         </div>
                     </div>
                     <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <!-- <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li> -->
-                                <!-- <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -1068,7 +1110,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-    <script src="js/myscript.js">
+    
+    <!-- <script src="mail.js"></script> -->
 
 </script>
 
@@ -1076,7 +1119,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
   <script src="js/db/app.js"></script>
   <script src="js/db/real-time-database.js"></script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
 

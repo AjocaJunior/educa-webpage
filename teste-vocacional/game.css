@@ -5,7 +5,7 @@
   width: 100%;
   font-size: 1.8rem;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color:#151853;
+  background-color: #56a5eb;
   border-radius: 23px;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .correct {
-  background-color: #28a745;
+  background-color: #151853;
 }
 
 .incorrect {
-  background-color: #dc3545;
+  background-color:#151853 ;
 }
 
 /* HUD */
@@ -67,7 +67,7 @@ height: 5px;
 #progressBar {
   width: 20rem;
   height: 4rem;
-  border: 0.3rem solid #151853;
+  border: 0.3rem solid #56a5eb;;
   margin-top: 1.5rem;
 }
 
