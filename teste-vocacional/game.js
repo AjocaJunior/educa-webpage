@@ -74,6 +74,7 @@ var grupo17 = 0;
 var grupoMaior;
 
 var setsession;
+var groupMaxIndex;
 
 fetch('testevocacionalperguntas.json')
     .then((res) => {
@@ -105,7 +106,7 @@ getNewQuestion = () => {
         
         // localStorage.setItem('campodeactuacao', area);
         //go to the end page
-        return window.location.assign('/end.html');
+        return window.location.assign('end.html?resulText='+groupMaxIndex);
     }
     questionCounter++;
     progressText.innerText = `Questão ${questionCounter}/${MAX_QUESTIONS}`;
@@ -216,57 +217,60 @@ choices.forEach((choice) => {
       
             } else if (currentQuestion.grupo == 17) {
                 incrementScore(CORRECT_BONUS);
-
+                grupo17++;
        
             }
             var grupos = [grupo1, grupo2, grupo3, grupo4, grupo5, grupo6, grupo7, grupo8, grupo9, grupo10, grupo11, grupo12, grupo13, grupo14, grupo15, grupo16, grupo17];
             //incrementScore(CORRECT_BONUS);
             grupoMaior = Math.max(...grupos);
+            groupMaxIndex = grupos.indexOf(grupoMaior);
 
-            if (grupoMaior == grupo1) {
-                resulText(areas[0]);
+            // if (grupoMaior == grupo1) {
+            //     resulText(areas[0]);
             
             
-            } else if (grupoMaior == grupo2) {
-                resulText(areas[1]);
-                setsession  = window.sessionStorage.setItem('sessaoTeste',resulText(areas[1]));
-                console.log(setsession);
-            } else if (grupoMaior == grupo3) {
-                setsession  = window.sessionStorage.setItem('sessaoTeste',resulText(areas[2]));
-                console.log(setsession);
-                resulText(areas[2]);
-            } else if (grupoMaior == grupo4) {
-                setsession  = window.sessionStorage.setItem('sessaoTeste',resulText(areas[3]));
-                console.log(setsession);
-                resulText(areas[3]);
-            } else if (grupoMaior == grupo5) {
-                resulText(areas[4]);
-            } else if (grupoMaior == grupo6) {
-                resulText(areas[5])
-            } else if (grupoMaior == grupo7) {
-                resulText(areas[6])
-            } else if (grupoMaior == grupo8) {
-                resulText(areas[7])
-            } else if (grupoMaior == grupo9) {
-                resulText(areas[8])
-            } else if (grupoMaior == grupo10) {
-                resulText(areas[9])
-            } else if (grupoMaior == grupo11) {
-                resulText(areas[10])
-            } else if (grupoMaior == grupo12) {
-                resulText(areas[11])
-            } else if (grupoMaior == grupo13) {
-                resulText(areas[12])
-            } else if (grupoMaior == grupo14) {
-                resulText(areas[13])
-            } else if (grupoMaior == grupo15) {
-                resulText(areas[14])
-            } else if (grupoMaior == grupo16) {
-                resulText(areas[15])
-            } else if (grupoMaior == grupo17) {
-                resulText(areas[16])
-            }
-            // console.log(resulText(area));
+            // } else if (grupoMaior == grupo2) {
+            //     resulText(areas[1]);
+            //     setsession  = window.sessionStorage.setItem('sessaoTeste',resulText(areas[1]));
+            //     console.log(setsession);
+            // } else if (grupoMaior == grupo3) {
+            //     setsession  = window.sessionStorage.setItem('sessaoTeste',resulText(areas[2]));
+            //     console.log(setsession);
+            //     resulText(areas[2]);
+            // } else if (grupoMaior == grupo4) {
+               
+            //     resulText(areas[3]);
+            // } else if (grupoMaior == grupo5) {
+            //     resulText(areas[4]);
+            // } else if (grupoMaior == grupo6) {
+            //     resulText(areas[5])
+            // } else if (grupoMaior == grupo7) {
+            //     resulText(areas[6])
+            // } else if (grupoMaior == grupo8) {
+            //     resulText(areas[7])
+            // } else if (grupoMaior == grupo9) {
+            //     resulText(areas[8])
+            // } else if (grupoMaior == grupo10) {
+            //     resulText(areas[9])
+            // } else if (grupoMaior == grupo11) {
+            //     resulText(areas[10])
+            // } else if (grupoMaior == grupo12) {
+            //     resulText(areas[11])
+            // } else if (grupoMaior == grupo13) {
+            //     resulText(areas[12])
+            // } else if (grupoMaior == grupo14) {
+            //     resulText(areas[13])
+            // } else if (grupoMaior == grupo15) {
+            //     resulText(areas[14])
+            // } else if (grupoMaior == grupo16) {
+            //     resulText(areas[15])
+            // } else if (grupoMaior == grupo17) {
+            //     resulText(areas[16])
+
+            // }
+
+
+        
             
         }
 
