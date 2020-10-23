@@ -15,7 +15,9 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../style.css">
-
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -113,16 +115,16 @@
                                                 <div class="col-sm-5 form-check">
 
                                                     <label class="form-check-label" for="radioGen"> <input
-                                                            data-key="feminino" id="sexo" class="form-check-input user-input"
-                                                            type="radio" name="inlineRadio"
-                                                            value="Feminino">Feminino</label>
+                                                            data-key="feminino" id="sexo"
+                                                            class="form-check-input user-input" type="radio"
+                                                            name="inlineRadio" value="Feminino">Feminino</label>
                                                 </div>
                                                 <div class="col-sm-5 form-check">
 
                                                     <label class="form-check-label" for="radioGen"> <input
-                                                            data-key="masculino" id="sexo" class="form-check-input user-input"
-                                                            type="radio" name="inlineRadio"
-                                                            value="Masculino">Masculino</label>
+                                                            data-key="masculino" id="sexo"
+                                                            class="form-check-input user-input" type="radio"
+                                                            name="inlineRadio" value="Masculino">Masculino</label>
                                                 </div>
 
                                             </div>
@@ -163,6 +165,23 @@
 
                     </div>
                 </div>
+
+               
+                   
+
+
+                
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img img-thumbnail" src="../img/logos/cepaepsimbolo.png" alt="">
+                </div>
+                <div class="col-ms-6">
+                    <img class="img img-thumbnail" src="../img/logos/NewCADELogoSlogan.png" alt=""> 
+                </div>
+                
+                
             </div>
         </div>
     </section>
@@ -209,17 +228,18 @@
         var database = firebase.database();
 
 
-        function create(name, apelido, contacto, email,sexo) {
-            database.ref('testevoc').set({ 
+        function create(name, apelido, contacto, email, sexo) {
+            database.ref('testevoc').set({
                 name: name,
                 apelido: apelido,
                 contacto: contacto,
                 email: email,
-                sexo:sexo});
+                sexo: sexo
+            });
         }
         function teste() {
 
-            create(name, apelido, contacto, email,sexo);
+            create(name, apelido, contacto, email, sexo);
 
             //             const testeRef = dbRef.child('testevoc');
             //             let newUser = {};

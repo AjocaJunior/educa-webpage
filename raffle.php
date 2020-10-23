@@ -60,7 +60,7 @@
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Usuários sorteados</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration</p>
+                            <p></p>
                         </div>
                         <div class="contact_form">
 
