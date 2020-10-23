@@ -39,17 +39,42 @@
       $email                   = "";
       $website                 = "";
       $video_link              = "";
+      $p1 = "";
+      $p2 = "";
+      $img1 = "";
+      $img2 = "";
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
+            $img1                    = $row['img1'];
+            $img2                    = $row['img2'];
             $phone                   = $row['contact'];
             $email                   = $row['email'];
             $website                 = $row['website'];
             $video_link              = $row['video_link'];
+            $index = -1;
+            if($video_link == null || $video_link == ""){
+                $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
+            }
+            $str =  $institution_description;
+                  if(preg_match("#Visão#", $str, $matches, PREG_OFFSET_CAPTURE)) {
+                     $index = $matches[0][1];
+                     $p1 = substr($str,0,$index);
+                     $p2 = substr($str , $index , strlen($str));
+
+                  }else{
+                       $p1 = $str;
+                  }
+            setDescription($institution_description);
+            break;
           }
+      }
+
+      function setDescription($str){
+
       }
 
     ?>
@@ -86,7 +111,7 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="chat.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
+                            <a href="chat.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -130,7 +155,7 @@
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X9zS9D7YcI0" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>" allowfullscreen></iframe>
                                   </div>
                             </div>
 
@@ -143,7 +168,7 @@
                                 <a class="post-author" href="#"><i class="zmdi zmdi-email"></i>Enviar mensagem</a>
                             </div>
 
-                            <p id="description_first">BW Education Leadership Summit focuses on recognizing applauding the quality of education in India by uniting Institution leaders and regulators to explore how they can leverage technologies, strategies and Management tools with each other to help create a world class Institution. Bringing together the Gamut of Early Childhood Brands, K 12 Brands, Exceptional Schools, Engineering Colleges.</p>
+                            <p id="description_first"  style="white-space: pre-line"><?php echo $p1; ?></p>
 
                             <!-- Blockquote -->
                             <!-- <blockquote class="confer-blockquote">
@@ -151,21 +176,10 @@
                             </blockquote> -->
 
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <img class="mb-30" src="img/bg-img/51.jpg" alt="" style="">
-                                </div>
-                                <div class="col-6">
-                                    <img class="mb-30" src="img/bg-img/52.jpg" alt="">
-                                </div>
-                            </div>
 
-                            <p id="more_description">Beyond demonstrating that marketing really works, the right analytics strategies can provide insights that inspire impactful marketing decisions, leading to increased ROI and revenue growth. Join us for our Marketing Analytics &amp; Insights Summit for a two-day deep dive into how top companies are using big data and analytics to dramatically improve the efficiency and efficacy of their marketing mix.</p>
+                            <p id="more_description"  style="white-space: pre-line"><?php echo $p2; ?></p>
                         </div>
 
-                      
-
-                      
 
                         <!-- Post Author Area -->
 <!--                        <div class="post-author-area d-flex align-items-center my-5" id="video-chat">-->
@@ -187,7 +201,7 @@
                             <!-- Prev Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/54.jpg" alt=""></a>
+                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Exames</a>
@@ -201,8 +215,8 @@
                                     <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">Publicacoes e noticias</a> <!---institute-blog.php-->
-                                    <span>Ver publicacoes</span>
+                                    <a href="#" class="post-title">Publicações e noticias</a> <!---institute-blog.php-->
+                                    <span>Ver publicações</span>
                                 </div>
                             </div>
                         </div>
@@ -280,19 +294,19 @@
                             <!-- Post Author Widget -->
                             <div class="post-author-widget">
                                 <!-- Thumbnail -->
-                                <div class="post-author-avatar">
-                                    <img src="img/bg-img/50.jpg" alt="">
+                                <div class="post-author-avatar" style="background:white;">
+                                    <img src="<?php echo $img1; ?>" alt="" >
                                 </div>
                                 <!-- Author Content -->
                                 <div class="post-author-content">
                                     <h5 id="institute_name"><?php echo $title; ?></h5>
-                                    <p id="location_and_contact">On the other hand, de-nounce with righteous</p>
+                                    <p id="location_and_contact">contacto e localização</p>
                                 </div>
                                 <!-- Social Info -->
                                 <div class="author-social-info">
-                                    <a href="#"><i class="zmdi zmdi-map"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-view-web"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-phone"></i></a>
+                                    <a href="https://www.google.com/maps/search/<?php echo $title ?>"><i class="zmdi zmdi-map"></i></a>
+                                    <a href="<?php echo $website ?>"><i class="zmdi zmdi-view-web"></i></a>
+                                    <a href="tel:<?php echo $website ?>"><i class="zmdi zmdi-phone"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -307,29 +321,82 @@
                         <?php
                         $ref = 'institution/'.$uid.'/college';
                         $fetchdata = $database->getReference($ref)->getValue();
+                        $countCollege = 0;
                         ?>
 
                         <?php if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row): ?>
+                        <?php
+                            foreach( $fetchdata as $key => $row):
+                                $countCollege++;
+                                if($countCollege == 5){
+                                    break;
+                                }
+                                ?>
                                         <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
                                 <div class="post-thumb">
-                                    <a href="single-blog.html"><img src="img/bg-img/47.jpg" alt=""></a>
+                                    <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
                                 </div>
                                 <!-- Content -->
                                 <div class="post-content">
-                                    <a href="single-blog.html" class="post-title"><?php echo $row['college']; ?></a>
+                                    <a href="#" class="post-title"><?php echo $row['college']; ?></a>
                                     <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
                                 </div>
                             </div>
                             <?php endforeach ?>
                         <?php endif?>
-                            
-                          
-                            
+
+                            <?php if($countCollege > 4): ?>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
+                                    ver todas faculdades
+                                </button>
+                            <?php endif; ?>
+
                         </div>
 
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <?php
+                                        $ref = 'institution/'.$uid.'/college';
+                                        $fetchdata = $database->getReference($ref)->getValue();
+                                        ?>
+
+                                        <?php if($fetchdata != null):?>
+                                            <?php foreach( $fetchdata as $key => $row):?>
+                                                <!-- Single Recent Post Area -->
+                                                <div class="single-recent-post-area d-flex align-items-center">
+                                                    <!-- Thumb -->
+                                                    <div class="post-thumb">
+                                                        <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="post-content">
+                                                        <a href="#" class="post-title"><?php echo $row['college']; ?></a>
+                                                        <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
+                                                    </div>
+                                                </div>
+                                            <?php endforeach ?>
+                                        <?php endif?>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Single Widget Area -->
                         <div class="single-widget-area" id="categories-list-course">
                             <h5 class="widget-title mb-30">Cursos</h5>
@@ -342,22 +409,91 @@
                         $fetchdata = $database->getReference($ref)->getValue();
                         ?>
 
-                        <?php if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row): ?>
+                        <?php
+                        $count = 0;
+                        if($fetchdata != null):?>
+                        <?php foreach( $fetchdata as $key => $row):
+                                $count++;
+                                if ($count == 10){
+                                    break;
+                                }
+                                ?>
+
                             <li><a href="#"><?php echo $row["course"]; ?></a></li>
                             <?php endforeach ?>
                         <?php endif?>
                                
                             </ul>
+
+
+                             <?php if($count > 10): ?>
+                                 <!-- Button trigger modal -->
+                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                     ver todos os cursos
+                                 </button>
+                             <?php endif; ?>
+
+
+
                         </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Todos os cursos</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+
+
+                                        <!-- Single Widget Area -->
+                                        <div class="single-widget-area" id="categories-list-course">
+                                            <h5 class="widget-title mb-30">Cursos</h5>
+
+                                            <!-- Catagories List -->
+                                            <ul class="categories-list">
+
+                                                <?php
+                                                $ref = 'institution/'.$uid.'/course';
+                                                $fetchdata = $database->getReference($ref)->getValue();
+                                                ?>
+
+                                                <?php if($fetchdata != null):?>
+                                                    <?php foreach( $fetchdata as $key => $row):?>
+                                                        <li><a href="#"><?php echo $row["course"]; ?></a></li>
+                                                    <?php endforeach ?>
+                                                <?php endif?>
+
+                                            </ul>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+<!--                                        <button type="button" class="btn btn-primary">Save changes</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
+
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area">
-                            <h5 class="widget-title mb-30">Tag de Navegacao</h5>
+                            <h5 class="widget-title mb-30">Tag de Navegação</h5>
 
                             <!-- Tag Cloud -->
                             <ul class="tag-cloud">
-                                <li><a href="#location">Localizacao</a></li>
+                                <li><a href="#location">Localização</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                                 <li><a href="#galleria">Galeria</a></li>
                                 <li><a href="#video-chat">Video chat</a></li>
@@ -371,24 +507,22 @@
                             <!-- Sidebar Gallery -->
                             <div class="sidebar-gallery">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/25.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#"><img src="img/bg-img/26.jpg" alt=""></a>
-                                    </div>
+
+                                    <?php
+                                	$ref = 'institution/'.$uid.'/gallery';
+                                    $fetchdata = $database->getReference($ref)->getValue();
+                                    ?>
+
+                                     <?php if($fetchdata != null):?>
+                                     <?php
+
+                                     foreach( $fetchdata as $key => $row): ?>
+                                           <div class="col-4">
+                                             <a href="#"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                           </div>
+                                    <?php endforeach ?>
+                                    <?php endif?>
+
                                 </div>
                             </div>
                         </div>
@@ -411,14 +545,14 @@
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
                             
-                            <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
+                            <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
                             mailto:someone@example.com
                             <!-- Social Info -->
                             <div class="social-info">
                                 <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>
                                 <a href="<?php echo $website; ?>"><i class="zmdi zmdi-view-web"></i></a>
                                 <a href="<?php echo "tel:".$phone; ?>"><i class="zmdi zmdi-phone"></i></a>
-                                <a href="<?php echo "mailto:".$phone; ?>"><i class="zmdi zmdi-email"></i></a>
+                                <a href="<?php echo "mailto:".$email; ?>"><i class="zmdi zmdi-email"></i></a>
                             </div>
                         </div>
                     </div>
@@ -444,12 +578,11 @@
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
 
-                         
-                            <h5 class="widget-title">Tag de Navegacao</h5>
+                            <h5 class="widget-title">Tag de Navegação</h5>
 
                             <!-- Footer Nav -->
                             <ul class="footer-nav">
-                                <li><a href="#location">Localizacao</a></li>
+                                <li><a href="#location">Localização</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                                 <li><a href="#galleria">Galeria</a></li>
                                 <li><a href="#video-chat">Video chat</a></li>
@@ -466,24 +599,23 @@
                             <!-- Footer Gallery -->
                             <div class="footer-gallery">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/22.jpg" class="single-gallery-item"><img src="img/bg-img/22.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/23.jpg" class="single-gallery-item"><img src="img/bg-img/23.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/24.jpg" class="single-gallery-item"><img src="img/bg-img/24.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/25.jpg" class="single-gallery-item"><img src="img/bg-img/25.jpg" alt=""></a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="img/bg-img/26.jpg" class="single-gallery-item"><img src="img/bg-img/26.jpg" alt=""></a>
-                                    </div>
+
+                                 <?php
+                                                                      $ref = 'institution/'.$uid.'/gallery';
+                                                                      $fetchdata = $database->getReference($ref)->getValue();
+                                                                      ?>
+
+                                                                      <?php if($fetchdata != null):?>
+                                                                      <?php
+
+                                                                       foreach( $fetchdata as $key => $row): ?>
+
+                                                                                         <div class="col-4">
+                                                                                                  <a href="<?php echo $row['url']; ?>" class="single-gallery-item"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                                                                          </div>
+                                                                       <?php endforeach ?>
+                                                                       <?php endif?>
+
                                 </div>
                             </div>
                         </div>
@@ -500,7 +632,7 @@
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://educa.com" target="_blank">Educa</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://educa.co.mz" target="_blank">Educa</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -508,8 +640,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
                     <div class="col-12 col-md-6">
                         <div class="footer-menu">
                             <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Termos de serviço</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Política de Privacidade</a></li>
                             </ul>
                         </div>
                     </div>

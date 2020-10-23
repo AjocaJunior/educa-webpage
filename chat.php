@@ -802,10 +802,7 @@ Website: http://emilcarlsson.se/
 					<img src="img/educa/noperfil.jpg" alt="" />
 					<p>Bom dia ,como esta?</p>
         </li>
-        <li class="sent">
-					<img src="img/educa/dev.jpg" alt="" />
-					<p>Estou bem e ai?</p>
-        </li>
+
        
 			</ul>
 		</div>
