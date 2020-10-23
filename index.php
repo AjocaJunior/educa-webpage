@@ -1040,16 +1040,16 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
                                         </div>
                                     </div>
                                     <?php 
-                                    if($message_sent):
+                                    // if($message_sent):
                                     ?>
                                     <div id="status" class="sucesso">Email Enviado com Sucesso!</div> 
                                     <?php 
-                                    else:
+                                    // else:
                                         
                                     ?>
 <div id="status" class="erro">Email Não Enviado, Entre em contacto a Administração do Educa!</div> 
 <?php 
-endif;
+// endif;
 ?>
                                 </div>
                             </form>
