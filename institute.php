@@ -155,7 +155,7 @@
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>" allowfullscreen width="640" height="480"></iframe>
                                   </div>
                             </div>
 
@@ -637,14 +637,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
                         </div>
                     </div>
                     <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Termos de serviço</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Política de Privacidade</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
