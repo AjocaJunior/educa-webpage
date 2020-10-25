@@ -15,7 +15,9 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../style.css">
-
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -73,35 +75,38 @@
                             <h4>Dados</h4>
                         </div>
                         <div class="contact_form">
-                            <form>
+                            <div class="form">
                                 <div class="contact_input_area">
                                     <div class="row">
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name"
-                                                    placeholder="nome">
+                                                <input type="text" class="form-control mb-30 user-input" data-key="name"
+                                                    name="name" id="name" placeholder="nome">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="last_name"
-                                                    id="last-name" placeholder="Apelido">
+                                                <input type="text" class="form-control mb-30 user-input"
+                                                    data-key="apelido" name="last_name" id="apelido"
+                                                    placeholder="Apelido">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email"
-                                                    placeholder="E-mail" required>
+                                                <input type="email" class="form-control mb-30 user-input"
+                                                    data-key="email" name="email" id="email" placeholder="E-mail"
+                                                    required>
                                             </div>
                                         </div>
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <input type="tel" class="form-control mb-30" name="contact" id="contact"
+                                                <input type="tel" class="form-control mb-30 user-input"
+                                                    data-key="contact" name="contact" id="contacto"
                                                     placeholder="Contacto">
                                             </div>
                                         </div>
@@ -110,14 +115,16 @@
                                                 <div class="col-sm-5 form-check">
 
                                                     <label class="form-check-label" for="radioGen"> <input
-                                                            class="form-check-input" type="radio" name="inlineRadio"
-                                                            value="opcao1">Feminino</label>
+                                                            data-key="feminino" id="sexo"
+                                                            class="form-check-input user-input" type="radio"
+                                                            name="inlineRadio" value="Feminino">Feminino</label>
                                                 </div>
                                                 <div class="col-sm-5 form-check">
 
                                                     <label class="form-check-label" for="radioGen"> <input
-                                                            class="form-check-input" type="radio" name="inlineRadio"
-                                                            value="opcao2">Masculino</label>
+                                                            data-key="masculino" id="sexo"
+                                                            class="form-check-input user-input" type="radio"
+                                                            name="inlineRadio" value="Masculino">Masculino</label>
                                                 </div>
 
                                             </div>
@@ -143,7 +150,7 @@
 
                                     </div>
                                 </div>
-                            </form>
+                            </div>
 
                         </div>
 
@@ -158,6 +165,23 @@
 
                     </div>
                 </div>
+
+               
+                   
+
+
+                
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img img-thumbnail" src="../img/logos/cepaepsimbolo.png" alt="">
+                </div>
+                <div class="col-ms-6">
+                    <img class="img img-thumbnail" src="../img/logos/NewCADELogoSlogan.png" alt=""> 
+                </div>
+                
+                
             </div>
         </div>
     </section>
@@ -180,15 +204,17 @@
     <!-- Active -->
     <script src="../js/default-assets/active.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="../js/db/app.js"></script>
 
     <script>
 
-        const nome = document.getElementById('name');
-        const apelido = document.getElementById('last-name');
-        const contacto = document.getElementById('contact');
-        const email = document.getElementById('email');
-        const aceitar = document.getElementById('aceitar');
-        const avancar = document.getElementById('avancar');
+        var name = document.getElementById('name').value;
+        var apelido = document.getElementById('apelido').value;
+        var contacto = document.getElementById('contacto').value;
+        var email = document.getElementById('email').value;
+        var sexo = document.getElementById('sexo').value;
+        var aceitar = document.getElementById('aceitar');
+        var avancar = document.getElementById('avancar');
 
         aceitar.onchange = function () {
             if (this.checked) {
@@ -197,9 +223,38 @@
                 avancar.disabled = true;
             }
         }
+        // const addUserInput = document.getElementsByClassName("user-input");
+
+        var database = firebase.database();
+
+
+        function create(name, apelido, contacto, email, sexo) {
+            database.ref('testevoc').set({
+                name: name,
+                apelido: apelido,
+                contacto: contacto,
+                email: email,
+                sexo: sexo
+            });
+        }
         function teste() {
 
-window.location.href="game.html";
+            create(name, apelido, contacto, email, sexo);
+
+            //             const testeRef = dbRef.child('testevoc');
+            //             let newUser = {};
+
+            //             for (let i = 0, len = addUserInputsUI.length; i < len; i++) {
+            //                 let key = addUserInputsUI[i].getAttribute('data-key');
+            //                 let value = addUserInputsUI[i].value;
+            //                 newUser[key] = value;
+            //             }
+
+            //             testeRef.push(newUser, function(){
+            // console.log("Estudante avancou")
+            //             });
+
+            window.location.href = "game.html";
 
         }
 

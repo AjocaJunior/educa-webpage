@@ -77,12 +77,13 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-  
+
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+
   <script>
-    
- 
+
   var firebaseConfig = {
     apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
     authDomain: "educa-mozambique.firebaseapp.com",
@@ -93,7 +94,6 @@
     appId: "1:812293792882:web:2cb3eb0096285cfdec0eeb",
     measurementId: "G-29BMBQ8P6Y"
    };
-
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     console.log(firebase);
@@ -128,7 +128,7 @@
                 uid : uidImg
               }
 
-              firebase.database().ref().child('institution').child(uid).child("gallery").child(uidCollege).set(data , function(error){
+              firebase.database().ref().child('institution').child(uid).child("gallery").child(uidImg).set(data , function(error){
                 if (error) {
                   alert("Data could not be saved." + error);
                 } else {

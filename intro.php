@@ -30,7 +30,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg); height: 100px;">
+    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg); height: 100px;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -54,6 +54,11 @@
                             <iframe class="embed-responsive-item" allow="autoplay" src="https://www.youtube.com/embed/v64KOxKVLVg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" allowfullscreen></iframe>
                           </div>
                     </div>
+                    <!-- <div class="contact-us-thumb mb-100" style="margin-top:5px;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" allow="autoplay" src="https://www.youtube.com/embed/v64KOxKVLVg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" allowfullscreen></iframe>
+                          </div>
+                    </div> -->
                 </div>
 
                 <!-- Contact Form -->
