@@ -201,7 +201,7 @@
                             <!-- Prev Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
+                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Exames</a>
@@ -212,7 +212,7 @@
                             <!-- Next Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
+                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Publicações e noticias</a> <!---institute-blog.php-->
