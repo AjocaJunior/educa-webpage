@@ -548,7 +548,7 @@
                             <!-- Footer Logo -->
                             
                             <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
-                            mailto:someone@example.com
+                           
                             <!-- Social Info -->
                             <div class="social-info">
                                 <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>
