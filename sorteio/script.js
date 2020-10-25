@@ -58,7 +58,10 @@ function start(){
 
         $thisResult = '<li class="previous-result color-'+ color +'"><span class="previous-number">'+ randomNumber +'</span><span class="previous-color">'+ color +'</span></li>';
 
-        location.href="../raffle.php?rand="+randomNumber;
+        sessionStorage.setItem('played', 'true');
+
+        
+        location.href="../raffle.php?rand="+ randNum;
         $('.previous-list').prepend($thisResult);
 
 

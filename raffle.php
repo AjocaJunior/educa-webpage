@@ -50,7 +50,7 @@
                 <!-- Contact Us Thumb -->
                 <div class="col-12 col-lg-6">
                     <div class="contact-us-thumb mb-100">
-                        <img src="img/bg-img/2.png">
+                        <img src="img/educa/brindes.png">
                     </div>
                 </div>
 
@@ -63,16 +63,33 @@
                         </a>
 
 
-                        <form method="post" action="sorteio/index.php">
+                        <?php 
+                          
+                          $show = false;
+                          if(isset($_SESSION["data"])){
+                            $show = false;
+                        
+                          }else{
+                            $show = true;
+                          }
+                          
+                        ?>
+
+                        <?php if($show == true): ?>
+
+                            <!-- <form method="post" action="sorteio/index.php">
                             <div class="form-group">
 
                                 <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um numero">
 
                             </div>
 
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">sorteiar</button>
+                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">sorteiar</button> -->
 
                         </form>
+
+                        <?php endif; ?>
+                       
 
                         <br>
                         <br>
@@ -111,9 +128,7 @@
                             </div>
 
                         </div>
-                        <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <button id="btn" name="btn" onClick="randomGift()"  class="btn btn btn-outline-info btn-lg btn-block">testar sorteio</button>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -218,6 +233,27 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
 
             });
     }
+
+
+
+
+    genereteUIDIn();
+
+    function genereteUIDIn(){
+        const dbRefResenas = firebase.database().ref('institution')
+        dbRefResenas.once("value")
+            .then(function(snapshot){
+                  snapshot.forEach(function (item) {
+                    
+                    console.log(item.val().institution_name +" link = educam.herokuapp.com//"+item.val().uid );
+
+                    
+                });
+
+            });
+    }
+
+
 
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;

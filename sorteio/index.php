@@ -11,7 +11,9 @@
 
 <?php
 
+
 if (isset($_POST['num'])){
+  
     echo '<script type="text/javascript">',
     'start();',
     '</script>'
@@ -20,12 +22,12 @@ if (isset($_POST['num'])){
     header("location: ../index.php");
 }
 
+
 ?>
 
 
 <div class="main">
-  <button type="button" class="btn" id="spin"><span class="btn-label">Jogar</span></button>
-  <div class="plate" id="plate">
+ <div class="plate" id="plate">
     <ul class="inner">
       <li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
       <li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>

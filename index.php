@@ -78,6 +78,7 @@
                                         <li><a href="evento.html#conferencias">Conferências</a></li>
                                         <li><a href="evento.html#webinares">Webinares</a></li>
                                         <li><a href="evento.html#encerramento">Encerramento</a></li>
+                                        <li><a href="raffle.php">Sorteio</a></li>
                                     
                                     </ul>
                                 </li>
