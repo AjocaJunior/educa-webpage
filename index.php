@@ -1119,7 +1119,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
   <script src="js/db/app.js"></script>
   <script src="js/db/real-time-database.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> 
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
 

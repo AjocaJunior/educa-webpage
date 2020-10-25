@@ -67,7 +67,7 @@
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Seja Bem-Vindo ao educa</h4>
-                            <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
+                            <p>Ao inscrever-se no Educa Online, você pode participar de vários programas e eventos. Cada programa ou evento tem uma exigência diferente.</p>
                         </div>
                         <div class="contact_form">
                             <form>
@@ -76,7 +76,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo" >
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Nome Completo" >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -95,7 +95,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="level_of_schooling" id="level_of_schooling" placeholder="Níveil de escolaridade">
+                                                <input type="text" class="form-control mb-30" name="level_of_schooling" id="level_of_schooling" placeholder="Nível de escolaridade">
                                             </div>
                                         </div>
 
@@ -146,12 +146,12 @@
 
                            
                             <div class="col-12">
-                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Entrar<i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Cadastrar<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <p class="text-info">Ja tens uma conta?</p>
-                        
+                            <p class="text-info">Ja tem uma conta?</p>
+                
                             <button id="btn" name="btn" onClick="location.href='login.html'"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
                         </div>
                     </div>
