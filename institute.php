@@ -111,7 +111,7 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="chat.php" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
+                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -264,16 +264,18 @@
                                                 </div>
                                             </div>
                                             <!-- Button -->
-                                            <div class="col-12">
-                                                <button type="submit" class="btn confer-btn">Enviar Mensagem <i class="zmdi zmdi-long-arrow-right"></i></button>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </form>
+                                <div class="col-12">
+                                        <a href="mailto:<?php echo $email; ?>" class="btn confer-btn">Enviar Mensagem <i class="zmdi zmdi-long-arrow-right"></i></a>  
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Blog Sidebar Area -->
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -546,7 +548,7 @@
                             <!-- Footer Logo -->
                             
                             <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
-                            mailto:someone@example.com
+                           
                             <!-- Social Info -->
                             <div class="social-info">
                                 <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>

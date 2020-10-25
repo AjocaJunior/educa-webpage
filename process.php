@@ -7,4 +7,6 @@
  foreach( $fetchdata as $key => $row){
      echo $row['email'];
  }
+
+
 ?>

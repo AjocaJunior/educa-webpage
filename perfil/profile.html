@@ -55,7 +55,11 @@ Coded by www.creative-tim.com
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="javascript:;">
-                    <img src="assets/img/noperfil.jpg" class="rounded-circle">
+                    <img id="fotoperfil" src="assets/img/noperfil.jpg" onclick="" class="rounded-circle">
+                 
+                  </img>
+                  <!-- <input  type="file" name="adicionarFoto" id="fileUpload" />
+                  <input type="submit" value="Salvar" name="Submit"/> -->
                   </a>
                 </div>
               </div>
@@ -191,10 +195,12 @@ function signOut(){
                 
 
                   if(db_uid == user_uid){
+                      var fotoperfil = document.getElementById("fotoperfil");
                       var user_name = document.getElementById("user-name");
                       var email     = document.getElementById("email");
                       var category  = document.getElementById('category');
 
+                      fotoperfil.innerHTML = item.val().fotoperfil;
                       email.innerHTML    = item.val().email;
                       user_name.innerHTML= item.val().name; 
                       category.innerHTML = item.val().category;             

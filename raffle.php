@@ -50,7 +50,7 @@
                 <!-- Contact Us Thumb -->
                 <div class="col-12 col-lg-6">
                     <div class="contact-us-thumb mb-100">
-                        <img src="img/bg-img/2.png">
+                        <img src="img/educa/brindes.png">
                     </div>
                 </div>
 
@@ -58,6 +58,42 @@
                 <div class="col-12 col-lg-6">
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
+                        <a href="#" class="list-group-item list-group-item-action active">
+                            SORTEIO DE PREMIOS
+                        </a>
+
+
+                        <?php 
+                          
+                          $show = false;
+                          if(isset($_SESSION["data"])){
+                            $show = false;
+                        
+                          }else{
+                            $show = true;
+                          }
+                          
+                        ?>
+
+                        <?php if($show == true): ?>
+
+                            <!-- <form method="post" action="sorteio/index.php">
+                            <div class="form-group">
+
+                                <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um numero">
+
+                            </div>
+
+                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">sorteiar</button> -->
+
+                        </form>
+
+                        <?php endif; ?>
+                       
+
+                        <br>
+                        <br>
+
                         <div class="contact-heading">
                             <h4>Usuários sorteados</h4>
                             <p></p>
@@ -66,20 +102,22 @@
 
                             <div class="list-group">
 
+
                                 <?php
                                 include_once('includes/dbconfig.php');
                                 $ref = 'randGift';
                                 $fetchdata = $database->getReference($ref)->getValue();
-
                                 ?>
 
                                 <?php
+                                if($fetchdata != null):
                                 foreach( $fetchdata as $key => $row):
                                 ?>
                                     <a href="#" class="list-group-item list-group-item-action"> <?php echo $row['name']; ?> </a>
 
                                 <?php
                                 endforeach;
+                                endif;
                                 ?>
 <!--                                <a href="#" class="list-group-item list-group-item-action active">-->
 <!--                                    Cras justo odio-->
@@ -91,9 +129,7 @@
                             </div>
 
                         </div>
-                        <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <button id="btn" name="btn" onClick="randomGift()"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -187,10 +223,11 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
               var numberDrawn = Math.floor(Math.random() * (max - min) ) + min;
 
                 snapshot.forEach(function (item) {
+                    countSnap++;
                     console.log(item.val().name +"numberDrawn: "+numberDrawn );
                     if(countSnap == numberDrawn){
-                        console.log("Good");
-                        createRandUser(item.val().userId , item.val().name , gift , numberDrawn);
+                        var uidRand = "<?php echo  date("Ymd")?>";
+                        createRandUser(item.val().userId , item.val().name , gift , numberDrawn , uidRand);
                         return ;
                     }
                 });
@@ -198,22 +235,49 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
             });
     }
 
+
+
+
+    genereteUIDIn();
+
+    function genereteUIDIn(){
+        const dbRefResenas = firebase.database().ref('institution')
+        dbRefResenas.once("value")
+            .then(function(snapshot){
+                  snapshot.forEach(function (item) {
+                    
+                    console.log(item.val().institution_name +" link = educam.herokuapp.com//"+item.val().uid );
+
+                    
+                });
+
+            });
+    }
+
+
+
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
     }
 
-    function createRandUser(uid , name , gift , numRand){
+    function randRoulette(){
+        var data = {
+            uid:uid,
+            data:data,
+            name:name
+        };
+    }
+
+    function createRandUser(uid , name , gift , numRand , uidRand){
         var data = {
             uid:uid,
             name:name,
             gift:gift,
-            numRand:numRand
+            numRand:numRand,
+            uidRand:uidRand
         };
 
-        console.log("add to firebase");
-
-        //<?php echo  date("Ymd");?>//
-        firebase.database().ref().child('randGift').child(uid).set(data , function(error){
+        firebase.database().ref().child('randGift').child(uidRand).set(data , function(error){
             if (error) {
                 alert("Data could not be saved." + error);
                 location.href="intro.php";
@@ -221,7 +285,6 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
                 location.href="raffle.php";
             }
         });
-
 
 
     }
