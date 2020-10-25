@@ -981,7 +981,7 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
         $contacto = $_POST['contact'];
         $message = $_POST['message'];
         
-        $to = "assisjunior33@gmail.com";
+        $to = "it.onemediamoz@gmail.com";
         
         $body = "";
         
