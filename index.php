@@ -161,7 +161,7 @@
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">SOBRE NÓS</h6>
-                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Seja bem vindo a educa</h3>
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Seja bem-vindo a educa</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">
                             A educação é tida hoje em dia como um factor imprescindível para o desenvolvimento sustentável de uma nação na medida em que é ela atribuída a responsabilidade de capacitar indivíduos, aumentando assim as suas habilidades e competências e o consequente nível de rendimento a estes associados.A Comunidade Académica para o Desenvolvimento (CADE), organiza desde 2015, conferências anuais de Educação, não só para criar plataformas de debate inclusivas...
                         </p>
@@ -357,8 +357,7 @@
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                <h6>Live <i>“Impacto de pandemia
-                                                            COVID-19 no sistema
+                                                <h6>Live <i>“Impacto da COVID-19 no sistema
                                                             nacional de educação:
                                                             Lições e Perspectivas”</i>
                                                     </h6>

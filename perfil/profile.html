@@ -241,12 +241,15 @@ function signOut(){
                       var user_name = document.getElementById("user-name");
                       var email     = document.getElementById("email");
                       var category  = document.getElementById('category');
-
-                      fotoperfil.src = item.val().imageUrl;
-                      
+                  
                       email.innerHTML    = item.val().email;
                       user_name.innerHTML= item.val().name; 
-                      category.innerHTML = item.val().category;             
+                      category.innerHTML = item.val().category;  
+                      
+                      
+                      if(item.val().imageUrl != null){
+                        fotoperfil.src = item.val().imageUrl;
+                      }
                       return;
                   }
 

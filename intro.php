@@ -51,14 +51,9 @@
                 <div class="col-12 col-lg-6">
                     <div class="contact-us-thumb mb-100">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" allow="autoplay" src="https://www.youtube.com/embed/JhdodR-L0cg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" allowfullscreen></iframe>
-                          </div>
-                    </div>
-                    <!-- <div class="contact-us-thumb mb-100" style="margin-top:5px;">
-                        <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" allow="autoplay" src="https://www.youtube.com/embed/v64KOxKVLVg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" allowfullscreen></iframe>
                           </div>
-                    </div> -->
+                    </div>
                 </div>
 
                 <!-- Contact Form -->
@@ -67,7 +62,7 @@
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Seja Bem-Vindo ao educa</h4>
-                            <p>Ao inscrever-se no Educa Online, você pode participar de vários programas e eventos. Cada programa ou evento tem uma exigência diferente.</p>
+                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
                         </div>
                         <div class="contact_form">
                             <form>
@@ -76,7 +71,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Nome Completo" >
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo"  >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -95,7 +90,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="level_of_schooling" id="level_of_schooling" placeholder="Nível de escolaridade">
+                                                <input type="text" class="form-control mb-30" name="level_of_schooling" id="level_of_schooling" placeholder="Níveil de escolaridade">
                                             </div>
                                         </div>
 
@@ -127,7 +122,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail">
+                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" style="text-transform: lowercase;" >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -146,12 +141,12 @@
 
                            
                             <div class="col-12">
-                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Cadastrar<i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Entrar<i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <p class="text-info">Ja tem uma conta?</p>
-                
+                            <p class="text-info">Ja tens uma conta?</p>
+                        
                             <button id="btn" name="btn" onClick="location.href='login.html'"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
                         </div>
                     </div>
