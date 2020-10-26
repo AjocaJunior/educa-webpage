@@ -84,9 +84,9 @@
 
                             </div>
 
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">sorteiar</button> -->
+                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Sorteiar</button>
 
-                        </form>
+                        </form> -->
 
                         <?php endif; ?>
                        
@@ -96,8 +96,7 @@
 
                         <div class="contact-heading">
                             <h4>Usuários sorteados</h4>
-                            <p></p>
-                        </div>
+                         </div>
                         <div class="contact_form">
 
                             <div class="list-group">

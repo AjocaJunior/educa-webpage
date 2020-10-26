@@ -104,7 +104,7 @@
                     <div class="call-to-action-content text-center">
                         <div class="call-to-action-heading">
                             <h6>É estudante e quer saber qual é a sua vocação? </h6>
-                            <h2 style="font-size:xx-large;">Teste de Orientacão Vocacional e Profissional</h2>
+                            <h2 style="font-size:xx-large;">Teste de Orientacão Vocacional</h2>
                         </div>
 
                     </div>

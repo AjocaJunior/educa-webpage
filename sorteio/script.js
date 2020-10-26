@@ -61,7 +61,7 @@ function start(){
         sessionStorage.setItem('played', 'true');
 
         
-        location.href="../raffle.php?rand="+ randNum;
+        location.href="../raffle.php?rand="+randomNumber;
         $('.previous-list').prepend($thisResult);
 
 
