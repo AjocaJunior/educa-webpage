@@ -54,19 +54,24 @@ Coded by www.creative-tim.com
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
-                  <a href="javascript:;">
-                    <img id="fotoperfil" src="assets/img/noperfil.jpg" onclick="" class="rounded-circle">
-                 
-                  </img>
-                  <!-- <input  type="file" name="adicionarFoto" id="fileUpload" />
-                  <input type="submit" value="Salvar" name="Submit"/> -->
-                  </a>
+                  
+                   
+                    <img id="fotoperfil" src="assets/img/noperfil.jpg"  class="rounded-circle" style="width: 140px; height: 140px;"> </img>
+                    
+              
                 </div>
+
+                
+
               </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+               
+
                 <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm btn-info mr-4"></a>
-                  <a href="#" class="btn btn-sm btn-default float-right"></a>
+
+                  <input type="file" id="photo"  class="btn btn-sm btn-info mr-4"/>
+                  <button onclick="uploadImage()" class="btn btn-sm btn-default float-right">Mudar perfil</button>
+                  
                 </div>
               </div>
               <div class="col-lg-4 order-lg-1">
@@ -86,7 +91,12 @@ Coded by www.creative-tim.com
                 </div> -->
               </div>
             </div>
+            
             <div class="text-center mt-5">
+              <!-- <form action="uploadimg.php" method="post" enctype="multipart/form-data" style="position: -ms-page;" class="text-center;" ;>  
+                <input  type="file" name="adicionarFoto" id="fileUpload" />
+                <input type="submit" value="Salvar" name="Submit"/>
+              </form> -->
               <h3 id="user-name">Carregando...<span class="font-weight-light"></span></h3>
               <div id="email" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
               <div id="category" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
@@ -169,10 +179,42 @@ Coded by www.creative-tim.com
       });
   </script>
 
+
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
 <script src="../js/db/app.js"></script>
 <script src="../js/db/real-time-database.js"></script>
 <script>
+
+
+function uploadImage() {
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#photo").files[0];
+      const name = +new Date() + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = ref.child(name).put(file, metadata);
+      task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+      
+
+            firebase.auth().onAuthStateChanged(function(user) {
+             
+              var db = firebase.database();
+              db.ref("users/"+user.uid+"/imageUrl").set(url);
+              location.href='profile.html';
+            });
+
+        
+
+          //document.querySelector("#image").src = url;
+        })
+        .catch(console.error);
+    }
+
 
   
 function signOut(){
@@ -200,7 +242,8 @@ function signOut(){
                       var email     = document.getElementById("email");
                       var category  = document.getElementById('category');
 
-                      fotoperfil.innerHTML = item.val().fotoperfil;
+                      fotoperfil.src = item.val().imageUrl;
+                      
                       email.innerHTML    = item.val().email;
                       user_name.innerHTML= item.val().name; 
                       category.innerHTML = item.val().category;             
@@ -220,6 +263,10 @@ function signOut(){
 
 });
 </script>
+
+
+
 </body>
 
 </html>
+

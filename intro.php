@@ -62,7 +62,7 @@
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Seja Bem-Vindo ao educa</h4>
-                            <p>Ao se inscrever na educa, você pode participar de vários programas. Cada programa tem uma exigência diferente.</p>
+                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
                         </div>
                         <div class="contact_form">
                             <form>
