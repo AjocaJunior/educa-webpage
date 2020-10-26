@@ -71,7 +71,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo" >
+                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo"  >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -122,7 +122,7 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail">
+                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" style="text-transform: lowercase;" >
                                             </div>
                                         </div>
                                         <!-- Form Group -->
