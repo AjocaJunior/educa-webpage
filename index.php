@@ -20,9 +20,9 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <!-- /Preloader -->
 <!-- 
     check if the user is logging in for the first time -->
@@ -82,7 +82,7 @@
                                     
                                     </ul>
                                 </li>
-                                <!-- <li><a href="feira.php">Feira</a> -->
+                                <li><a href="feira.php">Feira</a>
 
                             </li>
                                 <li><a href="actividades-culturais.html">Cultura</a>
@@ -110,14 +110,13 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline.jpg);">
+            <div class="single-welcome-slide bg-img jarallax" style="background-image: url(img/bg-img/bemvindopc1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text text-right">
-                                <h2 data-animation="fadeInUp" data-delay="300ms"> Educa <br>Moçambique</h2>
-                                <h6 data-animation="fadeInUp" data-delay="500ms">Feira e Conferência Internacional de Educação</h6>
+                              
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
                                     <a href="live.html" class="btn confer-btn"> Ver live <i class="zmdi zmdi-play-circle"></i></a>
                                 </div>
@@ -128,7 +127,7 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/bemvindopc1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -161,7 +160,7 @@
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">SOBRE NÓS</h6>
-                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Seja bem-vindo a educa</h3>
+                        <h3 class="wow fadeInUp" data-wow-delay="300ms">Seja bem vindo a educa</h3>
                         <p class="wow fadeInUp" data-wow-delay="300ms">
                             A educação é tida hoje em dia como um factor imprescindível para o desenvolvimento sustentável de uma nação na medida em que é ela atribuída a responsabilidade de capacitar indivíduos, aumentando assim as suas habilidades e competências e o consequente nível de rendimento a estes associados.A Comunidade Académica para o Desenvolvimento (CADE), organiza desde 2015, conferências anuais de Educação, não só para criar plataformas de debate inclusivas...
                         </p>
@@ -291,11 +290,13 @@
                                                             Moçambique: desafios
                                                             e perspectivas”</i>
                                                     </h6>
-                                                    <p>Oradores <span>Kauxique Maganlal - MINEDH</span></p>
-                                                    <p><span>Jeffy Mukora  - MCTESTP</span></p>
-                                                    <p><span>Elisabeth Sequeira - MEPT</span></p>
-                                                 
-                                                    <p>Moderador <span>Dionísio Tumbo - UP</span></p>
+                                                    <p>Oradores <span>MINEDH</span></p>
+                                                    <p><span>MCTESTP</span></p>
+                                                    <p><span>MEPT</span></p>
+                                                    <p><span>Universidade do
+                                                            Porto
+                                                        </span></p>
+                                                    <p>Moderador <span>UP</span></p>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -303,18 +304,18 @@
                                             <p><i class="zmdi zmdi-time"></i>10:00h - 12:00h </p>
                                             </div>
                                             <!-- Schedule Btn -->
-                                            <a href="live.html" class="btn confer-btn">Participar <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <a href="#" class="btn confer-btn">Participar <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                         
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                            
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                                
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                 <h6>Palestra
                                                         <i>"Orientação vocacional
@@ -325,14 +326,14 @@
                                                         </span></p>
                                                 </div>
                                             </div>
-                                            
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
                                               
                                             </div>
-                                          
+                                            <!-- Schedule Btn -->
                                             <a href="#" class="btn confer-btn">Assistir <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
 
                                         <!-- Single Schedule Area -->
                                        
@@ -357,16 +358,17 @@
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                <h6>Live <i>“Impacto da COVID-19 no sistema
+                                                <h6>Live <i>“Impacto de pandemia
+                                                            COVID-19 no sistema
                                                             nacional de educação:
                                                             Lições e Perspectivas”</i>
                                                     </h6>
-                                                    <p>Oradores <span>Feliciano Mahalambe - MINEDH</span></p>
-                                                    <p><span>Representante do INSS</span></p>
-                                                    <p><span>Edgar Cambaza – ISCED</span></p>
+                                                    <p>Oradores <span>MINEDH</span></p>
+                                                    <p><span>CMCM</span></p>
+                                                    <p><span>INSS</span></p>
                                                     <p><span>CISM
                                                         </span></p>
-                                                    <p>Moderador <span>Gerito Augusto - ISCISA</span></p>
+                                                    <p>Moderador <span>ISCISA</span></p>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -375,7 +377,7 @@
                                                
                                             </div>
                                             <!-- Schedule Btn -->
-                                            <a href="live.html" class="btn confer-btn">Participar <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <a href="#" class="btn confer-btn">Participar <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
                                         <!-- Single Schedule Area -->
 
@@ -400,7 +402,7 @@
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                <h6>Palestra <i>“Pedagogia e
+                                                <h6>Live <i>“Pedagogia e
                                                             Tecnologia: Da
                                                             evolução a
                                                             projecção de uma
@@ -408,16 +410,15 @@
                                                             em Moçambique
                                                             ”</i>
                                                     </h6>
-                                                    <p>Oradores <span>Franco Simbine – ISCED</span></p>
-                                                    <p><span>effy Mukora - MCTESTP</span></p>
-                                                    <p><span>Aurélio Armando Pires Ribeiro -
-UPM</span></p>
-                                                    <p><span>Elton Sixpense – ISUTC</span></p>
-                                                    <p><span>Flavia Costa - Universidade de
+                                                    <p>Oradores <span>MCTESTP</span></p>
+                                                    <p><span>ISCED</span></p>
+                                                    <p><span>UP</span></p>
+                                                    <p><span>ISUTC</span></p>
+                                                    <p><span>Universidade de
                                                             Caixas do sul,
                                                             Brasil
                                                             </span></p>
-                                                    <p>Moderador <span>Cornélio Mwitu</span></p>
+                                                    <p>Moderador <span>Eder Mario</span></p>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -430,14 +431,14 @@ UPM</span></p>
                                         </div>
 
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                           
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                               
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                                
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                 <h6>Webinar
                                                         <i>"Gestão escolar:
@@ -454,14 +455,14 @@ UPM</span></p>
                                                         
                                                 </div>
                                             </div>
-                                            
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
                                                
                                             </div>
-                                            
+                                            <!-- Schedule Btn -->
                                             <a href="#" class="btn confer-btn">Assistir <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
                                     </div>
 
                            
@@ -491,14 +492,13 @@ UPM</span></p>
                                                             Estágios e
                                                             expectativas”</i>
                                                     </h6>
-                                                    <p>Oradores <span>Luis Gujamo - ISCED</span></p>
-                                                    <p><span>Valdinacio Florêncio Paulo - UPM</span></p>
-                                                    <p><span>Cristiano Macuamule - Universidade Politécnica</span></p>
-                                                    <p><span>Natercia Nhaca - ISM</span></p>
-                                                    <p><span>Neuza Pedro - Universidade de Lisboa
+                                                    <p>Oradores <span>ISCED</span></p>
+                                                    <p><span>UP</span></p>
+                                                    <p><span>Universidade Politécnica</span></p>
+                                                    <p><span>ISM</span></p>
+                                                    <p><span>Universidade de Lisboa
                                                             </span></p>
-                                                    <p>Moderador <span>Luis Neves Cabral
-Domingos  - UEM</span></p>
+                                                    <p>Moderador <span>UEM</span></p>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -534,17 +534,17 @@ Domingos  - UEM</span></p>
                                                 </div>
                                                 <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
-                                                <h6>Palestra <i>“Conexão Global do
+                                                <h6>Live <i>“Conexão Global do
                                                             Sistema nacional de
                                                             educação.
                                                             ”</i>
                                                     </h6>
-                                                    <p>Oradores <span>Cassamo Nuvunga  - CADE</span></p>
-                                                    <p><span>Representante do MINEDH</span></p>
-                                                    <p><span>Jeffy Mukora - MCTESTP</span></p>
-                                                    <p><span>Xavier Muianga - UEM</span></p>
-                                                    <p><span>Simone Cartaxo – BRASIL</span> </p>                                                            </span></p>
-                                                    <p>Moderador <span>Sergio Raimundo - CADE</span></p>
+                                                    <p>Oradores <span>CADE</span></p>
+                                                    <p><span>MINEDH</span></p>
+                                                    <p><span>MCTESTP</span></p>
+                                                    <p><span>UEM</span></p>
+                                                    <p><span>CESC                                                            </span></p>
+                                                    <p>Moderador <span>CADE</span></p>
                                                 </div>
                                             </div>
                                             <!-- Single Schedule Info -->
@@ -557,14 +557,14 @@ Domingos  - UEM</span></p>
                                         </div>
 
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                               
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                 <h6>Palestra
                                                         <i>"Liderança e
@@ -575,13 +575,14 @@ Domingos  - UEM</span></p>
                                                         </span></p>
                                                 </div>
                                             </div>
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
                                           
                                             </div>
-                                       
+                                            <!-- Schedule Btn -->
                                             <a href="evento.html#webinares" class="btn confer-btn">Assistir <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
                                     </div>
 
                                 </div>
@@ -594,14 +595,14 @@ Domingos  - UEM</span></p>
                                 <div class="row">
                                     <div class="col-12">
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                        
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                        
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                        
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                 <h6>Webinar
                                                         <i>"Alfabetização digital e
@@ -623,14 +624,14 @@ Domingos  - UEM</span></p>
                                                     </p>
                                                 </div>
                                             </div>
-                                        
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
                                             
                                             </div>
-                                            
+                                            <!-- Schedule Btn -->
                                             <a href="evento.html#webinares" class="btn confer-btn">Assistir <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
 
                                         <!-- Single Schedule Area -->
                                      
@@ -647,14 +648,14 @@ Domingos  - UEM</span></p>
                                 <div class="row">
                                     <div class="col-12">
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                                
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                 <h6>Discurso de Encerramento</h6>
                                                     <p>por <span>Presidente da CADE</span></p>
@@ -665,36 +666,37 @@ Domingos  - UEM</span></p>
                                                         </span></p>
                                                 </div>
                                             </div>
-                                        
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 12:00 - 14:00h</p>
                                                
                                             </div>
+                                            <!-- Schedule Btn -->
                                             <a href="evento.html#encerramento" class="btn confer-btn">Ver Mais <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
 
                                         <!-- Single Schedule Area -->
-                                        <!-- <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            
+                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
+                                            <!-- Single Schedule Thumb and Info -->
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                             
+                                                <!-- Single Schedule Thumb -->
                                                 <div class="single-schedule-tumb">
                                                     <img src="img/educa/logo.png" alt="">
                                                 </div>
-                                                
+                                                <!-- Single Schedule Info -->
                                                 <div class="single-schedule-info">
                                                     <h6>Momento Cultural <i>Espetáculos</i></h6>
                                                     
                                                 </div>
                                             </div>
-                                            
+                                            <!-- Single Schedule Info -->
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
                                                 
                                             </div>
-                                            
+                                            <!-- Schedule Btn -->
                                             <a href="actividades-culturais.html#espetaculos" class="btn confer-btn">Assistir <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div> -->
+                                        </div>
                                     </div>
 
                               
@@ -725,27 +727,29 @@ Domingos  - UEM</span></p>
             <div class="row">
                 <!-- Single Speaker Area -->
                 <?php
-                // include_once('includes/dbconfig.php');
-                // $ref = 'institution/';
-                // $fetchdata = $database->getReference($ref)->getValue();
-                // $count = 0;
+                include_once('includes/dbconfig.php');
+                $ref = 'institution/';
+                $fetchdata = $database->getReference($ref)->getValue();
+                $count = 0;
                 ?>
 
                 <?php
-                // foreach( $fetchdata as $key => $row):
-                //     $count++;
-                //     if ($count == 4){
-                //         break;
-                //     }
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                    if ($count == 4){
+                        break;
+                    }
                 ?>
 
-                <!-- <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <a href="institute.php?id=<?php echo $row['uid']; ?>">
                         <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                          
+                            <!-- Thumb -->
                             <div class="speaker-single-thumb">
                                 <img src="<?php echo $row['img1']; ?>" alt="" style="height:350px ; width: 100%; background:white;">
-                    </div>
+                            </div>
+
+
                             <div class="speaker-info">
                                 <h5><?php echo $row['institution_name']; ?></h5>
 
@@ -753,19 +757,19 @@ Domingos  - UEM</span></p>
 
                         </div>
                     </a>
-                </div> -->
+                </div>
 
 
                 <?php
-                // endforeach;
+                endforeach;
                 ?>
 
-<!-- 
+
                 <div class="col-12">
                     <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
                         <a class="btn confer-btn-white" href="feira.php">ver todos expositores <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
-                </div> -->
+                </div>
 
 
 
@@ -780,7 +784,53 @@ Domingos  - UEM</span></p>
 
     <!-- Our Ticket Pricing Table Area Start -->
                                      
-    
+    <section id="tickets" class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+        <div class="container">
+            <div class="row">
+                <!-- Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p>Videos</p>
+                        <h4>FEIRA INTERNACIONAL DE EDUCAÇÃO 2020</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Video</h6>
+                        <!-- Ticket Icon -->
+                     
+                        <!-- Ticket Pricing Table Details -->
+                      
+                            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      
+                    </div>
+                </div>
+
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Video</h6>
+                        <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+
+                <!-- Single Ticket Pricing Table -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <h6 class="ticket-plan">Video</h6>
+                        <!-- Ticket Icon -->
+                        <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Our Ticket Pricing Table Area End -->
 
     <!-- Our Sponsor And Client Area Start -->
@@ -931,7 +981,7 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
         $contacto = $_POST['contact'];
         $message = $_POST['message'];
         
-        $to = "it.onemediamoz@gmail.com";
+        $to = "assisjunior33@gmail.com";
         
         $body = "";
         
@@ -1002,12 +1052,12 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
                                     <?php 
                                     // if($message_sent):
                                     ?>
-                                    <!-- <div id="status" class="sucesso">Email Enviado com Sucesso!</div>  -->
+                                    <div id="status" class="sucesso">Email Enviado com Sucesso!</div> 
                                     <?php 
                                     // else:
                                         
                                     ?>
-<!-- <div id="status" class="erro">Email Não Enviado, Entre em contacto a Administração do Educa!</div>  -->
+<div id="status" class="erro">Email Não Enviado, Entre em contacto a Administração do Educa!</div> 
 <?php 
 // endif;
 ?>
@@ -1069,7 +1119,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i c
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
   <script src="js/db/app.js"></script>
   <script src="js/db/real-time-database.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
 

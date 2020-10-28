@@ -296,3 +296,37 @@ incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
+
+
+
+
+
+function teste() {
+
+    var pergunta = '';
+    var resposta = '';
+    var resultado = '';
+    
+    create( pergunta, resposta, resultado);
+
+}
+
+
+function create( pergunta, resposta, resultado) {
+    var data = {
+        pergunta: pergunta,
+        resposta: resposta,
+        resultado:resultado
+        
+    };
+
+    firebase.database().ref().child('resultstestvoc').push(data, function (error) {
+        if (error) {
+            alert("Data could not be saved." + error);
+            location.href = "index.html";
+        } else {
+            location.href = "game.html";
+        }
+    });
+
+}

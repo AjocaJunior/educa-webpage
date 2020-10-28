@@ -101,17 +101,15 @@
                     
 
                    
-                    <div class="call-to-action-content text-center">
+                    <div class="call-to-action-content text-center" style="margin-down:0px;">
                         <div class="call-to-action-heading">
-                            <h6>É estudante e quer saber qual é a sua vocação? </h6>
-                            <h2 style="font-size:xx-large;">Teste de Orientacão Vocacional</h2>
+                            <h6 style="font-size:10;">É estudante e quer saber qual é a sua vocação? Faça o Teste de Orientacão Vocacional </h6>
+                        
                         </div>
-
-                    </div>
-                    <div class="ticket-btn text-center">
                         <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white-2 mt-40" onclick="">Iniciar o Teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
+                    
              
                 </div>
             </div>
