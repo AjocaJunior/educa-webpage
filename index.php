@@ -782,55 +782,7 @@
 
 
 
-    <!-- Our Ticket Pricing Table Area Start -->
-                                     
-    <section id="tickets" class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
-        <div class="container">
-            <div class="row">
-                <!-- Heading -->
-                <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <p>Videos</p>
-                        <h4>FEIRA INTERNACIONAL DE EDUCAÇÃO 2020</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Single Ticket Pricing Table -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Video</h6>
-                        <!-- Ticket Icon -->
-                     
-                        <!-- Ticket Pricing Table Details -->
-                      
-                            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      
-                    </div>
-                </div>
-
-                <!-- Single Ticket Pricing Table -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Video</h6>
-                        <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    </div>
-                </div>
-
-                <!-- Single Ticket Pricing Table -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <h6 class="ticket-plan">Video</h6>
-                        <!-- Ticket Icon -->
-                        <iframe width="100%" height="200px" src="https://www.youtube.com/embed/X9zS9D7YcI0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                   
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!-- Our Ticket Pricing Table Area End -->
 
     <!-- Our Sponsor And Client Area Start -->
@@ -969,46 +921,12 @@
                         </div>
                     </div>
                 </div>
-                <?php
-
-if(isset($_POST['email']) && $_POST['message'] != ''){
-//submit
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-
-        $nome = $_POST['name'];
-        // $apelido = $_POST['apelido'];
-        $email = $_POST['email'];
-        $contacto = $_POST['contact'];
-        $message = $_POST['message'];
-        
-        $to = "assisjunior33@gmail.com";
-        
-        $body = "";
-        
-        $body .= "From: ".$nome. "\r\n";
-        $body .= "Email: ".$email. "\r\n";
-        $body .= "Contact: ".$contacto. "\r\n";
-        $body .= "Message: ".$message. "\r\n";
-        
-        mail($to, $nome, $body);
-
-        $message_sent=true;
-    }else{
-        $invalid_class_name = "form-invalido";
-    }
-
-
-}
-
-
-
-
-?>
+  
                 <div class="col-12 col-sm-8">
                     <!-- Contact Form -->
                     <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
                         <div class="contact_form">
-                            <form action="index.php#main_contact_form" method="post" id="main_contact_form">
+                            <form action="mail.php" method="post" id="main_contact_form">
                             
                                 <div class="contact_input_area">
 
@@ -1049,18 +967,8 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
                                             <button type="submit" class="btn confer-btn">Enviar messagem <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
-                                    <?php 
-                                    // if($message_sent):
-                                    ?>
-                                    <div id="status" class="sucesso">Email Enviado com Sucesso!</div> 
-                                    <?php 
-                                    // else:
-                                        
-                                    ?>
-<div id="status" class="erro">Email Não Enviado, Entre em contacto a Administração do Educa!</div> 
-<?php 
-// endif;
-?>
+                                   
+
                                 </div>
                             </form>
                         </div>

@@ -301,9 +301,9 @@ incrementScore = (num) => {
 
 
 
-function teste() {
+function salvar() {
 
-    var pergunta = '';
+    var pergunta = selectedAnswer;
     var resposta = '';
     var resultado = '';
     
