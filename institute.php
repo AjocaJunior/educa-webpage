@@ -32,6 +32,7 @@
       $ref = 'institution/';
       $fetchdata = $database->getReference($ref)->getValue();
       $uid  = $_GET['id'];
+      $chat = "";
       $title           = "";
       $localization    = "";
       $institution_description = "";
@@ -46,6 +47,7 @@
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
+              $chat = $row['chat'];
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
@@ -109,9 +111,9 @@
                                 <li><a href="#college">Faculdades</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                             </ul>
-
+                            <!-- ?php echo $uid; ?->
                             <!-- Get Tickets Button -->
-                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>"
+                            <a href="<?php echo $chat; ?>" target="_blank"
                                 class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i
                                     class="zmdi zmdi-email"></i></a>
                         </div>
