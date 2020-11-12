@@ -114,6 +114,7 @@
                             <!-- ?php echo $uid; ?->
                             <!-- Get Tickets Button -->
                             <a href="<?php echo $chat; ?>" target="_blank"
+                            
                                 class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i
                                     class="zmdi zmdi-email"></i></a>
                         </div>
