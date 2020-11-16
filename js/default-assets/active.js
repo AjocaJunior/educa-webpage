@@ -188,14 +188,18 @@
         });
         $('.single-gallery-item').magnificPopup({
             type: 'image',
-            gallery: {
+            gallery: {      
                 enabled: true,
                 preload: [0, 2],
                 navigateByImgClick: true,
                 tPrev: 'Previous',
                 tNext: 'Next'
-            }
+            },
+               
+
         });
+        
+
     }
 
     // **************************
@@ -224,11 +228,15 @@
     // ****************************
     // :: 13.0 Countdown Active Code
     // ****************************
+     //EDITAR A DATA PARA ACTIVAR A CONTAGEM
     if ($.fn.countdown) {
-        $("#clock").countdown("2019/08/29", function (event) {
+        
+        $("#clock").countdown("2020/10/26 10:00", function (event) {
             $(this).html(event.strftime("<div>%m <span>Months</span></div> <div>%d <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>"));
         });
     }
+
+   
 
     // ****************************
     // :: 13.0 Scrollup Active Code

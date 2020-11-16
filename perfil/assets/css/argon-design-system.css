@@ -18909,7 +18909,7 @@ textarea[resize="horizontal"] {
   font-size: 1.25rem;
 }
 
-.icon-sm+.icon-text {
+.icon-sm.icon-text {
   width: calc(100% - $icon-size-sm - 1);
 }
 
@@ -24319,4 +24319,7 @@ pre>code.highlight {
   bottom: 0;
 }
 
+/* #content-esquerdo{
+  justify-content:justify-content;
+} */
 /*# sourceMappingURL=kit-free.css.map */

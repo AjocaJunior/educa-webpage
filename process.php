@@ -1,57 +1,12 @@
-<?php 
-//include file with database settings
-require_once 'Firestore.php';
-    
-//name of the document reference in the firestore 
-$fs = new Firestore("users");
+<?php
+ include_once('includes/dbconfig.php');
+ $ref = 'institution/'; 
+ var_dump( $database);
+ $fetchdata = $database->getReference($ref)->getValue();
 
-//When button register clicked 
-if(isset($_POST['register'])){
-    $role = "user";
-    $name =  trim($_POST['name']);
-    $last_name = trim($_POST['last_name']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+ foreach( $fetchdata as $key => $row){
+     echo $row['email'];
+ }
 
-        $data = [
-            'id' =>"id",
-            'name' => $name,
-            'email' => $email,
-            'password' => $password,
-            'last_name' => $last_name,
-            'role' => $role
-
-        ];
-        echo "<hr>";
-        var_dump($fs);
-        $fs->newDocument( "a" , $data);
-        var_dump($fs);
-       
-   
-
-}
-
-if(isset($_POST['createAcount'])){
-   header('location: ../register.html');
-}
-
-if(isset($_POST['login'])){
-     $email = trim($_POST['email']);
-     $password =  trim($_POST['password']);
-
-     echo $email.$password;
-     
-}
-
-if(isset($_POST['complete_data'])){
-    $province = trim($_POST['province']);
-    $neighborhood = trim($_POST['neighborhood']);
-    $contact = trim($_POST['contact']);
-    $genre  = trim($_POST['genre']);
-    $school = trim($_POST['school']);
-    $college = trim($_POST['college']);
-
-    echo  $genre;
-}
 
 ?>

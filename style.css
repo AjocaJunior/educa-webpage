@@ -78,8 +78,7 @@ a:hover {
   outline: none;
   font-weight: 500; }
 
-li {
-  list-style: none; }
+
 
 p {
   line-height: 1.8;
@@ -119,6 +118,7 @@ ul {
     content: "";
     height: 100%;
     width: 100%;
+    margin: 10px;
     top: 0;
     left: 0;
     z-index: -1;
@@ -126,6 +126,30 @@ ul {
     background-image: -moz-linear-gradient(120deg, #f2871c 0%, #505add 100%);
     background-image: -webkit-linear-gradient(120deg, #f2871c 0%, #505add 100%);
     background-image: -ms-linear-gradient(120deg, #f2871c 0%, #505add 100%);
+    opacity: 0.9; }
+
+.bg-gradient-overlay-3 {
+  position: relative;
+  box-shadow: 0px 8px 27px 0px rgba(90, 111, 120, 0.15);
+  -webkit-box-shadow: 0px 8px 27px 0px rgba(90, 111, 120, 0.15);
+  padding: 10px 15px;
+  /* margin: 5px; */
+  z-index: 1; }
+  .bg-gradient-overlay-3::after {
+    border-radius: 10px;
+    position: absolute;
+    
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* background: #f2871c; */
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(233, 217, 0, 0.897)), color-stop(30%, rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0)));
+    /* background-image: -moz-linear-gradient(120deg, #f2871c 0%, #505add 100%); */
+    /* background-image: -webkit-linear-gradient(120deg, #f2871c 0%, #505add 100%); */
+    /* background-image: -ms-linear-gradient(120deg, #f2871c 0%, #505add 100%); */
     opacity: 0.9; }
 
 .bg-gradient-overlay-2 {
@@ -409,7 +433,7 @@ input:required {
   z-index: 1;
   margin-bottom: 60px; }
   .section-heading p {
-    color: #ffffff;
+    color: #f2871c;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -417,7 +441,7 @@ input:required {
     font-weight: 400; }
   .section-heading h4 {
     font-size: 38px;
-    color: #ffffff;
+    color: #111343;
     margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -705,7 +729,7 @@ input:required {
         margin-right: 15px; } }
     .classy-nav-container .classy-navbar .classynav ul li a {
       font-size: 16px;
-      text-transform: uppercase;
+      text-transform: uppercase ;
       color: #ffffff;
       font-weight: 500;
       padding: 0 20px; }
@@ -1203,19 +1227,19 @@ input:required {
     position: relative;
     z-index: 1;
     margin: auto;
-    height: 115px;
-    width: 115px;
+    height: 100%;
+    width: 100%;
     background: #c63fa4;
     background-image: -moz-linear-gradient(120deg, #f2871c 0%, #505add 100%);
     background-image: -webkit-linear-gradient(120deg, #f2871c 0%, #505add 100%);
     background-image: -ms-linear-gradient(120deg, #f2871c 0%, #505add 100%);
-    border-radius: 50%;
+    /* border-radius: 50%; */
     line-height: 115px; }
     .single-we-offer-content .offer-icon::after {
       -webkit-transition-duration: 1000ms;
       -o-transition-duration: 1000ms;
       transition-duration: 1000ms;
-      border-radius: 50%;
+      /* border-radius: 50%; */
       content: '';
       position: absolute;
       width: 0%;
@@ -1387,7 +1411,8 @@ input:required {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  margin-bottom: 40px;
+ margin-top: 10px;
+  margin-bottom: 20px;
   border-radius: 10px; }
   .single-speaker-area .speaker-single-thumb {
     position: relative;
@@ -1437,6 +1462,19 @@ input:required {
   .single-speaker-area:hover .social-info, .single-speaker-area:focus .social-info {
     top: 0; }
 
+
+    /* ADICIONADO */
+.speaker-info-out h6 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 10px; }
+
+    /* FIM DA ADIÇÃO */
+
 /* :: 13.0 Breadcrumb CSS */
 .breadcrumb-area {
   position: relative;
@@ -1466,6 +1504,10 @@ input:required {
       color: #ffffff;
       font-weight: 400;
       font-size: 18px; }
+      .breadcrumb-content .breadcrumb .breadcrumb-item-blue {
+        color: #111343;
+        font-weight: 400;
+        font-size: 18px; }
       .breadcrumb-content .breadcrumb .breadcrumb-item a {
         font-size: 16px;
         color: #ffffff;
@@ -1552,8 +1594,11 @@ input:required {
 .single-blog-area {
   position: relative;
   z-index: 1;
+
+  
   margin-bottom: 70px; }
   .single-blog-area .single-blog-thumb {
+    
     border-radius: 10px 10px 0 0;
     overflow: hidden; }
     .single-blog-area .single-blog-thumb img {
@@ -1566,7 +1611,7 @@ input:required {
     padding: 30px 30px 50px 30px;
     border-radius: 0 0 10px 10px; }
     .single-blog-area .single-blog-text .blog-title {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 600;
       color: #111343;
       margin-bottom: 5px;
@@ -2266,6 +2311,8 @@ input:required {
         border-bottom: none;
         border-top: none;
         border-left: none;
+        /* Adicionado */
+      
         border-right: 1px solid #4c4f8d; }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
           .our-schedule-area .schedule-tab .nav-tabs .nav-item .nav-link {
@@ -2301,6 +2348,62 @@ input:required {
         border-right: none;
         border-radius: 0 10px 10px 0; }
 
+/* ADICIONADO PARA CALENDARIO */
+.our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+  color: #9293bc;
+  background-color: #1f2371;
+  text-align: center;
+  border-radius: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid #4c4f8d; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 14px; } }
+  @media only screen and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 10px;
+      padding: 10px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 12px;
+      padding: 15px 20px; } }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link {
+      font-size: 14px; } }
+  .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: capitalize; }
+    @media only screen and (max-width: 767px) {
+      .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+        font-size: 9px; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link span {
+        font-size: 10px; } }
+  .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario .nav-link.active {
+    background-color: #5d5e8d;
+    color: #ffffff; }
+.our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario:nth-child(1) .nav-link {
+  border-radius: 10px 0 0 10px; }
+        .our-schedule-area .schedule-tab .nav-tabs .nav-item-calendario:last-child .nav-link {
+      
+          border-radius: 10px; }
+
+.descricao-calendario{
+  padding: 10px;
+  text-align: center;
+}
+
+/*FIM DO CONTEÚDO ADICIONADO*/
+
 .single-schedule-area {
   border: 1px solid #444675;
   border-radius: 10px;
@@ -2313,18 +2416,18 @@ input:required {
     border-color: #f2871c; }
   .single-schedule-area .single-schedule-tumb-info {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 42%;
-    flex: 0 0 42%;
-    max-width: 42%;
-    width: 42%;
+    -ms-flex: 0 0 62%;
+    flex: 0 0 62%;
+    max-width: 62%;
+    width: 62%;
     padding-right: 15px; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-schedule-area .single-schedule-tumb-info {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 35%;
-        flex: 0 0 35%;
-        max-width: 35%;
-        width: 35%; } }
+        -ms-flex: 0 0 55%;
+        flex: 0 0 55%;
+        max-width: 55%;
+        width: 55%; } }
     @media only screen and (max-width: 767px) {
       .single-schedule-area .single-schedule-tumb-info {
         -webkit-box-flex: 0;
@@ -2370,18 +2473,18 @@ input:required {
           color: #ffffff; }
   .single-schedule-area .schedule-time-place {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 42%;
-    flex: 0 0 42%;
-    max-width: 42%;
-    width: 42%;
+    -ms-flex: 0 0 22%;
+    flex: 0 0 22%;
+    max-width: 22%;
+    width: 22%;
     padding: 0 15px; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .single-schedule-area .schedule-time-place {
         -webkit-box-flex: 0;
-        -ms-flex: 0 0 35%;
-        flex: 0 0 35%;
-        max-width: 35%;
-        width: 35%; } }
+        -ms-flex: 0 0 15%;
+        flex: 0 0 15%;
+        max-width: 15%;
+        width: 15%; } }
     @media only screen and (max-width: 767px) {
       .single-schedule-area .schedule-time-place {
         -webkit-box-flex: 0;
@@ -2541,11 +2644,28 @@ input:required {
     background-color: #ffffff;
     box-shadow: 0px 8px 27px 0px rgba(90, 111, 120, 0.15); }
 
+/*ADICIONADO*/
+
+.ticket-plan-jogo {
+ 
+  padding: 10px 25px;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f2871c;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 25px;
+  line-height: 1; }
+
+  /* FIM DO CONTEÚDO ADICIONADO*/
+
 /* :: 19.0 Sponsor Area CSS */
 .our-sponsor-client-area {
   position: relative;
   z-index: 1;
-  background-color: #151853; }
+  background-color: white; 
+text-align: center;
+}
 
 .our-sponsor-area {
   position: relative;
@@ -2596,6 +2716,61 @@ input:required {
           max-height: 30px; } }
     .our-sponsor-area .single-sponsor:hover a img, .our-sponsor-area .single-sponsor:focus a img {
       opacity: 1; }
+
+
+/* CODIGO ADICIONADO*/
+
+.our-sponsor-area .single-sponso{
+
+
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 1000%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .our-sponsor-area .single-sponso {
+    height: 200px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .our-sponsor-area .single-sponso {
+    height: 150px; } }
+@media only screen and (max-width: 767px) {
+  .our-sponsor-area .single-sponso {
+    height: 80px; } }
+.our-sponsor-area .single-sponso a img {
+  
+  -webkit-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+  max-height: 110px;
+  
+  opacity: 0.5; }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .our-sponsor-area .single-sponso a img {
+      max-height: 90px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .our-sponsor-area .single-sponso a img {
+      max-height: 50px; } }
+  @media only screen and (max-width: 767px) {
+    .our-sponsor-area .single-sponso a img {
+      max-height: 30px; } }
+.our-sponsor-area .single-sponso:hover a img, .our-sponsor-area .single-sponsor:focus a img {
+  opacity: 1; }
+.sponsor-h4 h4{
+  color:  #111343;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+
+/* FIM DO CÓDIGO ADICIONADO*/
 
 /* :: 20.0 Contact Area CSS */
 .contact-our-area {
@@ -2745,4 +2920,50 @@ input:required {
       .call-to-action-content .event-time p i {
         margin-right: 3px; }
 
+
+
 /*# sourceMappingURL=style.css.map */
+
+
+
+/* CÓDIGO ADICIONADO */
+
+.border-radius-10{
+  border-radius: 10px;
+}
+
+
+#status{
+  margin:5px;
+  text-transform: uppercase;
+}
+
+#status.sucesso{
+  color:white;
+  animation: status 4s ease forwards;
+}
+
+#status.erro{
+  
+  color: red;
+  animation: status 4s ease forwards;
+}
+
+@keyframes status{
+  0%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.form-invalido{
+  outline: 1px solid red !important;
+ }
