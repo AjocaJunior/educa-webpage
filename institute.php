@@ -353,10 +353,7 @@
                                 ?>
                             <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
-                                <!-- Thumb -->
-                                <div class="post-thumb">
-                                    <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
-                                </div>
+                              
                                 <!-- Content -->
                                 <div class="post-content">
                                     <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -369,7 +366,7 @@
                             <?php if($countCollege > 4): ?>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModalLong2">
-                                ver todas faculdades
+                                Ver todas faculdades
                             </button>
                             <?php endif; ?>
 
@@ -381,7 +378,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Faculdades</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -398,9 +395,7 @@
                                         <!-- Single Recent Post Area -->
                                         <div class="single-recent-post-area d-flex align-items-center">
                                             <!-- Thumb -->
-                                            <div class="post-thumb">
-                                                <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
-                                            </div>
+                                           
                                             <!-- Content -->
                                             <div class="post-content">
                                                 <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -452,7 +447,7 @@
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModalLong">
-                                ver todos os cursos
+                                Ver todos os cursos
                             </button>
                             <?php endif; ?>
 
