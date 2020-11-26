@@ -82,7 +82,6 @@ foreach($fetchdata as $key => $row){
   if($fetchdata != null){
     foreach($fetchdata as $key => $row){
       $countCollege++;
-      echo $countCollege;
   }
   }
  
@@ -99,7 +98,6 @@ foreach($fetchdata as $key => $row){
   if($fetchdata != null){
     foreach($fetchdata as $key => $row){
       $countCourse++;
-      echo $countCourse;
   }
   }
  
