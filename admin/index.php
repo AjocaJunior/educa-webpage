@@ -49,11 +49,14 @@ $website                 = "";
 $video_link              = "";
 $img1 = "";
 $img2 = "";
+$contact = "0";
+$visits  = "0";
+$countCourse = "0";
 
 foreach($fetchdata as $key => $row){
     if($row['uid'] == $uid ){
-      $title           = $row['institution_name'];
-      $localization    = $row['location'];
+      $title                   = $row['institution_name'];
+      $localization            = $row['location'];
       $institution_description = $row['institution_description'];
       $img1                    = $row['img1'];
       $img2                    = $row['img2'];
@@ -61,6 +64,8 @@ foreach($fetchdata as $key => $row){
       $email                   = $row['email'];
       $website                 = $row['website'];
       $video_link              = $row['video_link'];
+      $contact                 = $row['contact'];
+      $visits                  = $row['visits'];
       break;
     }
 }
@@ -69,7 +74,44 @@ foreach($fetchdata as $key => $row){
 
 
 
+<?php
+  $ref = 'institution/'.$uid.'/college';
+  $fetchdata = $database->getReference($ref)->getValue();
+  $countCollege = 0;
 
+  if($fetchdata != null){
+    foreach($fetchdata as $key => $row){
+      $countCollege++;
+      echo $countCollege;
+  }
+  }
+ 
+?>
+
+
+
+
+<?php
+  $ref = 'institution/'.$uid.'/course';
+  $fetchdata = $database->getReference($ref)->getValue();
+  $countCourse= 0;
+
+  if($fetchdata != null){
+    foreach($fetchdata as $key => $row){
+      $countCourse++;
+      echo $countCourse;
+  }
+  }
+ 
+?>
+
+
+
+
+
+
+  
+  
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -222,7 +264,7 @@ foreach($fetchdata as $key => $row){
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Cursos</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $countCourse; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-book-open fa-2x text-gray-300"></i>
@@ -239,7 +281,7 @@ foreach($fetchdata as $key => $row){
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Faculdades</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $countCollege; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-university fa-2x text-gray-300"></i>
@@ -258,7 +300,7 @@ foreach($fetchdata as $key => $row){
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Visitas</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $visits; ?></div>
                         </div>
                       </div>
                     </div>
@@ -277,7 +319,7 @@ foreach($fetchdata as $key => $row){
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Contactos</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contact; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -374,19 +416,19 @@ foreach($fetchdata as $key => $row){
 
                     <div class="form-group row">
                       <div class="col-sm-12">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="email" class="form-control" id="inputEmail" value="<?php echo $email; ?>" placeholder="Email">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <div class="col-sm-12">
-                        <input type="contact" class="form-control" id="inputContact" placeholder="Contacto">
+                        <input type="contact" class="form-control" id="inputContact" value="<?php echo $phone; ?>" placeholder="Contacto">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <div class="col-sm-12">
-                        <input type="text" class="form-control" id="inputLocalization" placeholder="Localização">
+                        <input type="text" class="form-control" id="inputLocalization" value="<?php echo $localization; ?>" placeholder="Localização">
                       </div>
                     </div>
 
