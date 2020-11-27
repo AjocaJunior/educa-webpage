@@ -152,7 +152,8 @@ foreach($fetchdata as $key => $row){
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Faculdades:</h6>
-            <a class="collapse-item" href="buttons.html">Adicionar</a>
+            <a class="collapse-item" href="add_college.php?id=<?php echo $uid; ?>">Adicionar</a>
+            <a class="collapse-item" href="college.php?id=<?php echo $uid; ?>">Todos os cursos</a>
           </div>
         </div>
       </li>
@@ -166,8 +167,8 @@ foreach($fetchdata as $key => $row){
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Cursos:</h6>
-            <a class="collapse-item" href="utilities-color.html">Publicar cursos</a>
-            <a class="collapse-item" href="utilities-border.html">Todos cursos</a>
+            <a class="collapse-item" href="add_course.php?id=<?php echo $uid; ?>">Publicar cursos</a>
+            <a class="collapse-item" href="courses.php?id=<?php echo $uid; ?>">Todos cursos</a>
           </div>
         </div>
       </li>
@@ -179,9 +180,9 @@ foreach($fetchdata as $key => $row){
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link" href="add_gallery.php?id=<?php echo $uid; ?>">
+          <i class="fas fa-fw fa-camera"></i>
+          <span>Adicionar Fotos</span></a>
       </li>
 
       <!-- Divider -->
@@ -219,20 +220,16 @@ foreach($fetchdata as $key => $row){
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo substr($title , 0 , 15).".."; ?>  </span>
+                <img class="img-profile rounded-circle" src="<?php echo $img1; ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-            
+                
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Sair
                 </a>
               </div>
             </li>
@@ -374,11 +371,16 @@ foreach($fetchdata as $key => $row){
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-header">Atualizar video</div>
+                      
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Link" value="<?php echo $video_link; ?>" aria-label="Link" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button"><i class="fas fa-check fa-sm fa-fw text-gray-400"></i></button>
+                        </div>
+                      </div>
+
+                      
                     </div>
                   </div>
                 </div>
@@ -505,15 +507,15 @@ foreach($fetchdata as $key => $row){
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Sair</a>
         </div>
       </div>
     </div>

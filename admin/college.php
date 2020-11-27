@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Faculdades</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,7 +24,7 @@
 </head>
 
 <body id="page-top">
-
+<?php $uid  = $_GET['id']; ?>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -59,16 +59,16 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="courses.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Faculdades</span>
+          <span>Cursos</span>
         </a>
        
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="index.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Home</span>
         </a>
@@ -164,7 +164,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de cursos</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Lista de faculdades</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -174,7 +174,7 @@
         <thead>
             <tr class="d-flex">
                 <th class="col-1">Posição</th>
-                <th class="col-10">Curso</th>
+                <th class="col-10">Faculdades</th>
                 <th class="col-1">Delete</th>
             </tr>
         </thead>
@@ -184,7 +184,6 @@
 
                         <?php
 
-$uid  = $_GET['id'];
 
 if($uid == null){
   if(isset($_SESSION['uidInstitute'])){
@@ -196,7 +195,7 @@ if($uid == null){
 }
                
         include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/course';
+        $ref = 'institution/'.$uid.'/college';
         $fetchdata = $database->getReference($ref)->getValue();
         
                         $count = 0;
@@ -208,7 +207,7 @@ if($uid == null){
 
             <tr class="d-flex">
                 <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["course"]; ?></td>
+                <td class="col-10"><?php echo $row["college"]; ?></td>
                 <td class="col-1"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
   
@@ -234,7 +233,7 @@ if($uid == null){
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; Educa 2020</span>
           </div>
         </div>
       </footer>
