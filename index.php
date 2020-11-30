@@ -203,7 +203,7 @@
     </section>
     <!-- About Us And Countdown Area End -->
 <!-- Our Schedule Area Start -->
-<section class="our-schedule-area bg-white section-padding-100">
+<section class="our-schedule-area section-padding-100" style="background: #e9eef4;">
         <div class="container">
             <div class="row">
 
@@ -233,15 +233,15 @@
                         <!-- Nav Tabs -->
                         <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Segunda-feira <br> <span>Agosto 14, 2019</span></a>
+                                <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#step-six" role="tab" aria-controls="step-six" aria-expanded="true">Sábado <br> <span>Agosto 14, 2019</span></a>
                             </li>
                             <!-- Nav Item -->
                             <li class="nav-item">
-                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Terça-feira <br> <span>Agosto 15, 2020</span></a>
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">__________<br> <span>________</span></a>
                             </li>
                             <!-- Nav Item -->
                             <li class="nav-item">
-                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Quinta-feira <br> <span>Agosto 16, 2019</span></a>
+                                <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-seven" role="tab" aria-controls="step-seven" aria-expanded="true">Domingo <br> <span>Agosto 16, 2019</span></a>
                             </li>
                         </ul>
                     </div>
@@ -725,6 +725,11 @@
         </div>
     </section>
     <!-- Our Schedule Area End -->
+    <hr class="my-4">
+
+
+    
+
 
     <!-- Our Speakings Area Start -->
     <section class="our-speaker-area bg-img section-padding-100-60" style="background:  #e9eef4;" id="speakers">
@@ -947,14 +952,15 @@
 
 
     <!-- Contact Area Start -->
-    <section id="contact" class="contact-our-area section-padding-100-0">
-        <div class="container">
+    <section id="contact" class="contact-our-area section-padding-100-0" style="background:#e9eef4;">
+    <hr class="my-4">
+    <div class="container">
             <div class="row">
                 <!-- Heading -->
                 <div class="col-12">
                     <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Have Question?</p> -->
-                        <h4>CONTACTOS</h4>
+                        <h4 style="color: #414c52;" >CONTACTOS</h4>
                     </div>
                 </div>
            </div>
@@ -965,22 +971,22 @@
                         <!-- Single Contact Info -->
                         <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
                             <p>LOCALIZAÇÃO:</p>
-                            <h6>Av. Albert Lithuli, nr 300, R/c Cidade de Maputo</h6>
+                            <h6 style="color: #414c52;" >Av. Albert Lithuli, nr 300, R/c Cidade de Maputo</h6>
                         </div>
                         <!-- Single Contact Info -->
                         <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
                             <p>Contacto:</p>
-                            <h6>+258 21 320 959</h6>
+                            <h6 style="color: #414c52;" >+258 21 320 959</h6>
                         </div>
                         <!-- Single Contact Info -->
                         <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
                             <p>Email:</p>
-                            <h6>comercial@educa.co.mz</h6>
+                            <h6 style="color: #414c52;" >comercial@educa.co.mz</h6>
                         </div>
                         <!-- Single Contact Info -->
                         <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
                             <p>Website:</p>
-                            <h6>www.educa.co.mz</h6>
+                            <h6 style="color: #414c52;" >www.educa.co.mz</h6>
                         </div>
                     </div>
                 </div>
