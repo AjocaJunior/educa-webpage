@@ -110,7 +110,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline.jpg);">
+            <div class="single-welcome-slide bg-img  jarallax" style="background-image: url(img/bg-img/backgroundeducaonline.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -128,7 +128,7 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+            <div class="single-welcome-slide bg-img jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -206,38 +206,52 @@
 <section class="our-schedule-area bg-white section-padding-100">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+
+
+
+            <div class="col-12">
                     <div class="schedule-tab">
                         <!-- Nav Tabs -->
                         <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Segunda <br> <span>26 de Outubro, 2020</span></a>
+                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Segunda-feira <br> <span>Agosto 14, 2019</span></a>
                             </li>
                             <!-- Nav Item -->
                             <li class="nav-item">
-                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Terça <br> <span>27 de Outubro, 2020</span></a>
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Terça-feira <br> <span>Agosto 15, 2020</span></a>
                             </li>
                             <!-- Nav Item -->
                             <li class="nav-item">
-                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Quarta <br> <span>28 de Outubro, 2020</span></a>
-                            </li>
-                            <!-- Nav Item -->
-                            <li class="nav-item">
-                                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#step-four" role="tab" aria-controls="step-four" aria-expanded="true">Quinta <br> <span>29 de Outubro, 2020</span></a>
-                            </li>
-                             <!-- Nav Item -->
-                             <li class="nav-item">
-                                <a class="nav-link" id="friday-tab" data-toggle="tab" href="#step-five" role="tab" aria-controls="step-five" aria-expanded="true">Sexta <br> <span>30 de Outubro, 2020</span></a>
-                            </li>
-                             <!-- Nav Item -->
-                             <li class="nav-item">
-                                <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#step-six" role="tab" aria-controls="step-six" aria-expanded="true">Sábado <br> <span>31 de Outubro, 2020</span></a>
-                            </li>
-                            <!-- Nav Item -->
-                            <li class="nav-item">
-                                <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-seven" role="tab" aria-controls="step-seven" aria-expanded="true">Domingo <br> <span>01 de Novembro, 2020</span></a>
+                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Quinta-feira <br> <span>Agosto 16, 2019</span></a>
                             </li>
                         </ul>
+                    </div>
+
+
+                    <div class="col-12">
+                    <div class="schedule-tab">
+                        <!-- Nav Tabs -->
+                        <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Segunda-feira <br> <span>Agosto 14, 2019</span></a>
+                            </li>
+                            <!-- Nav Item -->
+                            <li class="nav-item">
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Terça-feira <br> <span>Agosto 15, 2020</span></a>
+                            </li>
+                            <!-- Nav Item -->
+                            <li class="nav-item">
+                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Quinta-feira <br> <span>Agosto 16, 2019</span></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+            
+                <div class="col-12">
+                    <div class="schedule-tab">
+                     
                     </div>
 
                     <!-- Tab Content SEGUNDA-->
@@ -713,7 +727,7 @@
     <!-- Our Schedule Area End -->
 
     <!-- Our Speakings Area Start -->
-    <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);" id="speakers">
+    <section class="our-speaker-area bg-img section-padding-100-60" style="background:  #e9eef4;" id="speakers">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -785,7 +799,7 @@
 
     <!-- Our Ticket Pricing Table Area Start -->
                                      
-    <section id="tickets" class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+    <section id="tickets" class="our-ticket-pricing-table-area bg-img  section-padding-100-0 jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
