@@ -48,7 +48,7 @@
     ?>
 
     <!-- Header Area Start -->
-    <header class="header-area">
+    <header class="header-area"  style="background-color: #414c52;">
         <div class="classy-nav-container breakpoint-off">
             <div class="container">
                 <!-- Classy Menu -->
@@ -1093,7 +1093,7 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
     <!-- Contact Area End -->
 
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <footer class="footer-area bg-img section-padding-100-0"  style="background-color: #414c52;">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -1107,7 +1107,7 @@ if(isset($_POST['email']) && $_POST['message'] != ''){
                     <!-- Copywrite Text -->
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p style="color: white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
