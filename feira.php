@@ -33,7 +33,7 @@
     <header class="header-area">
             <!--Div where the WhatsApp will be rendered-->
 <div id="WAButton"></div>
-        <div class="classy-nav-container breakpoint-off">
+        <div class="classy-nav-container breakpoint-off" style="background:#414c52">
             <div class="container">
                 <!-- Classy Menu -->
                 <nav class="classy-navbar justify-content-between" id="conferNav">
@@ -92,13 +92,13 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax"
-        style="background-image: url(img/educa/backgroundeducaonline.jpg);">
+    <!-- <section class="breadcrumb-area bg-img jarallax"
+        style="background-color:#f8871f;">
     
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
+                <div class="col-12"> -->
+                    <!-- <div class="breadcrumb-content">
                         <h2 class="page-title">Feira</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -106,11 +106,11 @@
                                 <li class="breadcrumb-item active" aria-current="page">Feira</li>
                             </ol>
                         </nav>
-                    </div>
+                    </div> -->
 
 
 
-                    <div class="call-to-action-content text-center" style="margin-down:0px;">
+                    <!-- <div class="call-to-action-content text-center" style="margin-down:0px;">
                         <div class="call-to-action-heading">
                             <h6 style="font-size:10;">É estudante e quer saber qual é a sua vocação? Faça o Teste de
                                 Orientacão Vocacional </h6>
@@ -118,75 +118,94 @@
                         </div>
                         <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white-2 mt-40"
                             onclick="">Iniciar o Teste <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
+                    </div> -->
 
 
-                </div>
+                <!-- </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Breadcrumb Area End -->
 
 
-    <!-- Our Blog Area Start -->
-    <section id="blog" class="our-blog-area bg-img section-padding-100-60">
+  
+
+    <section id="blog" class="our-blog-area section-padding-100-60" style="background-color:#e9eef4 ;">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Heading -->
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <p>EXPOSIÇÕES DA FEIRA</p>
-                        <h4>EXPOSITORES</h4>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-
-
+            <div class="row" style="text-align:center">
                 <?php
                 include_once('includes/dbconfig.php');
                 $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
-
+                
                 ?>
 
+
+                <div class="col-12">
+                    <!-- Heading -->
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top:20px"  data-wow-delay="300ms">
+                        <p>EXPOSIÇÕES</p>
+                        <h4>Expositores da Feira</h4>
+                    </div>
+                </div>
                 <?php
                 foreach( $fetchdata as $key => $row):
-                    ?>
+                    
+                    
+                ?>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Single blog Thumb -->
+                        <div class="single-blog-thumb">
+                            <a href="institute.php?id=<?php echo $row['uid']; ?>">
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="institute.php?id=<?php echo $row['uid']; ?>">
-                        <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Thumb -->
-                            <div class="speaker-single-thumb">
-                                <img src="<?php echo $row['img1']; ?>" alt=""
-                                    style="height:350px ; width: 100%; background:white;">
-                            </div>
+                                <img src="<?php echo $row['img1']; ?>"
+                                    style="height:200px;width:100%; background:white; text-align:center;" alt="">
+                            </a>
+                        </div>
+                        <div class="single-blog-text text-center">
 
+                            <?php
+                              $title = "";
 
-                            <div class="speaker-info">
-                                <h5><?php echo $row['institution_name']; ?></h5>
+                              if(strlen($row['institution_name']) > 20){
+                                  $title = substr($row['institution_name'],0, 30)."...";
+                              }else{
+                                  $title = $row['institution_name'];
+                              }
+                             
+                             ?>
+                            <a class=""  href="institute.php?id=<?php echo $row['uid']; ?>"><?php echo $title; ?></a>
+                            <!-- Post Meta -->
 
-                            </div>
 
                         </div>
-                    </a>
-                </div>
+                        <div class="blog-btn" >
+                            <a href="institute.php?id=<?php echo $row['uid']; ?>"><i
+                                    class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                    </div>
 
+
+                </div>
                 <?php
                 endforeach;
                 ?>
+                
+
 
             </div>
+            
+      
+                
+
         </div>
     </section>
-    <!-- Our Blog Area End -->
-
-
 
     <!-- Call to Action Area Start -->
-    <section class="call-to-action-area bg-img bg-gradient-overlay jarallax section-padding-100"
-        style="background-image: url(img/bg-img/14.jpg);">
+    <section class="call-to-action-area bg-img jarallax section-padding-100"
+        style="background-color:#f8871f;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -214,7 +233,7 @@
     </section>
     <!-- Call to Action Area End -->
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
 
 
@@ -256,7 +275,7 @@
     <script src="js/default-assets/active.js"></script>
     <!--Floating WhatsApp javascript-->
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.min.js"></script>
-
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <!--JQuery-->
     <script type="text/javascript" src="floating-whatsapp/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.js"></script>
