@@ -181,8 +181,8 @@
     var date_of_birth = document.getElementById('date_of_birth').value;
     var category = document.getElementById('category').value;
     var residence = document.getElementById('residence').value;
-    var userId = "aaa";
-    var imageUrl = "ddd";
+    var userId = "";
+    var imageUrl = "";
 
     firebase.auth().createUserWithEmailAndPassword(email, password )
     .then(function(data){

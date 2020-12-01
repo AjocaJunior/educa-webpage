@@ -241,7 +241,7 @@
                             </li>
                             <!-- Nav Item -->
                             <li class="nav-item">
-                                <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-seven" role="tab" aria-controls="step-seven" aria-expanded="true">Domingo <br> <span>Agosto 16, 2019</span></a>
+                                <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-seven" role="tab" aria-controls="step-three" aria-expanded="true">Domingo <br> <span>Agosto 16, 2019</span></a>
                             </li>
                         </ul>
                     </div>
