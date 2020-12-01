@@ -46,7 +46,7 @@
 
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" id="contact" class="form-control form-control-user" id="exampleFirstName" placeholder="Contacto">
+                    <input type="tel" id="contact" class="form-control form-control-user" id="exampleFirstName" placeholder="Contacto">
                   </div>
                   <div class="col-sm-6">
                     <input type="text" id="website" class="form-control form-control-user"  placeholder="Website">
@@ -56,6 +56,14 @@
                 <div class="form-group">
                   <input type="text" id="video_link" class="form-control form-control-user"  placeholder="Link do video de apresentação">
                 </div>
+
+                <div class="form-group">
+                  <select class="browser-default custom-select" id="category">
+                      <option selected>Seleciona categoria</option>
+                      <option value="Empresa">Empresa</option>
+                      <option value="Instituição de ensino">Instituição de ensino</option>
+                  </select>
+              </div>
 
                 <div class="form-group row">
                
@@ -150,10 +158,37 @@
       var email      = document.getElementById('email').value;
       var password   = document.getElementById('password').value;
       var uid        = uuidv4();
-      addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid);
-    }
 
-    function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid){
+
+      //upload img perfil
+
+      const ref = firebase.storage().ref();
+      const file = document.querySelector("#photo").files[0];
+
+      if(file != null){
+      
+      const name = +new Date() + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = ref.child(name).put(file, metadata);
+      task
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {  
+         addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , url);
+        })
+        .catch(console.error);
+
+      }else{
+       addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , "");
+      }
+
+     
+
+  }
+
+    function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , img1){
+
 
       var data = {
         institution_name : institution_name ,
@@ -161,10 +196,12 @@
         contact  : contact,
         website  : website,
         video_link : video_link,
+        visits: '0',
+        contact: '0',
         institution_description : institution_description ,
         email:email,
         password: password,
-        img1 : "",
+        img1 : img1,
         img2 : "",
         uid:uid
       }
@@ -173,7 +210,16 @@
         if (error) {
           alert("Data could not be saved." + error);
         } else {
-          window.location.replace("add_course.php?id="+uid);
+
+          var e = document.getElementById("category");
+          var positionSelected = e.selectedIndex;
+          
+          if(positionSelected != 1){
+             window.location.replace("add_course.php?id="+uid);
+          }else {
+             window.location.replace("admin.html?id="+uid);
+          }
+      
         }
       });
     }

@@ -235,8 +235,6 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
     }
 
 
-
-
     genereteUIDIn();
 
     function genereteUIDIn(){
@@ -248,6 +246,22 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
                     console.log(item.val().institution_name +" link = educam.herokuapp.com//"+item.val().uid );
 
                     
+
+        firebase.database().ref().child('institution').child(item.val().uid).child('contact').set('0' , function(error){
+            if (error) {
+                console.log("error");
+            } else {
+                console.log("good");
+            }
+               
+        });
+
+
+
+
+
+
+
                 });
 
             });

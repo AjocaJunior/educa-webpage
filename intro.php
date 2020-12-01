@@ -193,47 +193,47 @@
 
     <script>
     function addButton() {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        var contact = document.getElementById('contact').value;
-        var genre = document.getElementById('genre').value;
-        var date_of_birth = document.getElementById('date_of_birth').value;
-        var category = document.getElementById('category').value;
-        var residence = document.getElementById('residence').value;
-        var userId = "aaa";
-        var imageUrl = "ddd";
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var contact = document.getElementById('contact').value;
+    var genre = document.getElementById('genre').value;
+    var date_of_birth = document.getElementById('date_of_birth').value;
+    var category = document.getElementById('category').value;
+    var residence = document.getElementById('residence').value;
+    var userId = "";
+    var imageUrl = "";
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(function(data) {
-                userId = data.user.uid;
+    firebase.auth().createUserWithEmailAndPassword(email, password )
+    .then(function(data){
+        userId = data.user.uid;
+    
+        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence);
+        
+    //Here if you want you can sign in the user
+    }).catch(function(error) {
+        alert(""+error);
+    //Handle error
+});
 
-                create(userId, name, email, password, imageUrl, contact, genre, date_of_birth, category, residence);
-
-                //Here if you want you can sign in the user
-            }).catch(function(error) {
-                alert("" + error);
-                //Handle error
-            });
-
-    }
+}
 
 
-    function create(userId, name, email, password, imageUrl, contact, genre, date_of_birth, category, residence) {
-        var data = {
-            userId: userId,
-            name: name,
-            email: email,
-            password: password,
-            imageUrl: imageUrl,
-            contact: contact,
-            genre: genre,
-            date_of_birth: date_of_birth,
-            category: category,
-            residence: residence
-        };
+function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
+    var data = {
+               userId:userId,
+               name:name, 
+               email:email, 
+               password:password,
+               imageUrl:imageUrl, 
+               contact:contact,
+               genre:genre, 
+               date_of_birth:date_of_birth, 
+               category:category,
+               residence:residence
+    };
 
-        firebase.database().ref().child('users').child(userId).set(data, function(error) {
+    firebase.database().ref().child('users').child(userId).set(data , function(error){
             if (error) {
                 alert("Data could not be saved." + error);
                 location.href = "intro.php";
