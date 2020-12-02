@@ -247,7 +247,7 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
 
                     
 
-        firebase.database().ref().child('institution').child(item.val().uid).child('contact').set('0' , function(error){
+        firebase.database().ref().child('institution').child(item.val().uid).child('category').set('0' , function(error){
             if (error) {
                 console.log("error");
             } else {

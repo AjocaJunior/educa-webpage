@@ -159,6 +159,10 @@
       var password   = document.getElementById('password').value;
       var uid        = uuidv4();
 
+      var e = document.getElementById("category");
+      
+      var category  = e.selectedIndex;
+
 
       //upload img perfil
 
@@ -175,22 +179,23 @@
       task
         .then(snapshot => snapshot.ref.getDownloadURL())
         .then(url => {  
-         addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , url);
+         addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , url , category);
         })
         .catch(console.error);
 
       }else{
-       addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , "");
+       addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , "" , category);
       }
 
      
 
   }
 
-    function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , img1){
+    function addInstitution(institution_name ,location , contact , website , video_link , institution_description , email , password , uid , img1 , category){
 
 
       var data = {
+        category : category,
         institution_name : institution_name ,
         location : location ,
         contact  : contact,
