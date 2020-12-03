@@ -14,10 +14,6 @@
 
 if (isset($_POST['num'])){
   
-    echo '<script type="text/javascript">',
-    'start();',
-    '</script>'
-    ;
 }else{
     header("location: ../index.php");
 }

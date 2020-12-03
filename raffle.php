@@ -77,14 +77,14 @@
 
                         <?php if($show == true): ?>
 
-                            <!-- <form method="post" action="sorteio/index.php">
+                            <form method="post" action="sorteio/index.php">
                             <div class="form-group">
 
-                                <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um numero">
+                                <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um número">
 
                             </div>
 
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">sorteiar</button> -->
+                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Sorteiar</button>
 
                         </form>
 

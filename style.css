@@ -578,6 +578,52 @@ input:required {
     .confer-btn:focus::before, .confer-btn:hover::before {
       left: 110%; }
 
+
+
+      .confer-btn-live {
+        position: relative;
+        z-index: 1;
+        height: 46px;
+        line-height: 46px;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        display: inline-block;
+        padding: 0 25px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+        
+        overflow: hidden; }
+        .confer-btn-live i {
+          margin-left: 5px; }
+        .confer-btn-live::before {
+          -webkit-transition-duration: 800ms;
+          -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+          position: absolute;
+          width: 120%;
+          height: 120%;
+          top: -10%;
+          left: -10%;
+          content: '';
+          background: #f2871c;
+          background-image: -webkit-linear-gradient(120deg, #505add 0%, #f2871c 100%);
+          background-image: -ms-linear-gradient(120deg, #505add 0%, #f2871c 100%);
+          z-index: -2; }
+        .confer-btn-live:focus, .confer-btn-live:hover {
+          font-weight: 500;
+          background-color: #ffffff;
+          color: #111343 !important;
+          -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+          box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15); }
+          .confer-btn-live:focus i, .confer-btn-live:hover i {
+            -webkit-animation: buttonIcon 1s ease-in infinite;
+            animation: buttonIcon 1s ease-in infinite; }
+          .confer-btn-live:focus::before, .confer-btn-live:hover::before {
+            left: 110%; }      
+
 @-webkit-keyframes buttonIcon {
   0% {
     opacity: 1; }
@@ -621,9 +667,9 @@ input:required {
   z-index: 1;
   height: 46px;
   padding: 0 25px;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   color: #ffffff;
-  border-radius: 23px;
+  background-color: #f2871c;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -635,8 +681,8 @@ input:required {
   .confer-btn-white i {
     margin-left: 5px; }
   .confer-btn-white:hover, .confer-btn-white:focus {
-    background-color: #f2871c;
-    border-color: #f2871c;
+    background-color: #414c52;
+    border-color: #fff;
     color: #ffffff; }
 
 .confer-btn-white-2 {
@@ -645,8 +691,9 @@ input:required {
   height: 46px;
   padding: 0 25px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border-radius: 23px;
+  color: #fff;
+  background-color: #414c52;
+  border-radius: 10px;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1608,7 +1655,7 @@ input:required {
       transition-duration: 800ms; }
   .single-blog-area .single-blog-text {
     background-color: #ffffff;
-    padding: 30px 30px 50px 30px;
+    padding: 50px 5px 50px 5px;
     border-radius: 0 0 10px 10px; }
     .single-blog-area .single-blog-text .blog-title {
       font-size: 16px;
@@ -1666,11 +1713,12 @@ input:required {
   .blog-btn a {
     height: 51px;
     width: 51px;
-    background-image: -webkit-linear-gradient(120deg, #505add 0%, #f2871c 100%);
-    background-image: -ms-linear-gradient(120deg, #505add 0%, #f2871c 100%);
+    background-color: #f8871f;
+    /* background-image: -webkit-linear-gradient(120deg, #505add 0%, #f2871c 100%);
+    background-image: -ms-linear-gradient(120deg, #505add 0%, #f2871c 100%); */
     text-align: center;
     border: 2px solid #ffffff;
-    border-radius: 50%;
+    border-radius: 25%;
     line-height: 47px;
     color: #ffffff;
     font-size: 25px;
@@ -2966,4 +3014,53 @@ text-align: center;
 
 .form-invalido{
   outline: 1px solid red !important;
+ }
+
+.about-thumb{
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+ .about-thumb img{
+  border-radius: 20%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+ }
+
+ @keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(90, 100%, 50%); }
+  50% { border-color: hsl(180, 100%, 50%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+ .about-thumb::after,
+ .about-thumb::before{
+  animation: pulse 2s linear infinite;
+  border: #f8871f solid 2px;
+  border-radius: 20%;
+  box-sizing: border-box;
+  content: ' ';
+  height: 140%;
+  left: -20%;
+  opacity: .6;
+  position: absolute;
+  top: -20%;
+  transform: scale(0.714);
+  width: 140%;
+  z-index: 1;
+ }
+
+ .about-thumb::after{
+  animation-delay: 1s;
  }

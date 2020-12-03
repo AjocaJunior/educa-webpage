@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <!--Floating WhatsApp css-->
+    <link rel="stylesheet" href="floating-whatsapp/floating-wpp.min.css">
+
     <!-- Title -->
     <title>Educa - Feira</title>
 
@@ -24,10 +28,12 @@
         <div class="loader"></div>
     </div>
     <!-- /Preloader -->
-
+    
     <!-- Header Area Start -->
     <header class="header-area">
-        <div class="classy-nav-container breakpoint-off">
+            <!--Div where the WhatsApp will be rendered-->
+<div id="WAButton"></div>
+        <div class="classy-nav-container breakpoint-off" style="background:#414c52">
             <div class="container">
                 <!-- Classy Menu -->
                 <nav class="classy-navbar justify-content-between" id="conferNav">
@@ -57,27 +63,28 @@
                                             <li><a href="evento.html#conferencias">Conferências</a></li>
                                             <li><a href="evento.html#webinares">Webinares</a></li>
                                             <li><a href="evento.html#encerramento">Encerramento</a></li>
-                                        
+
                                         </ul>
                                     </li>
-                                    <li><a href="feira.html">Feira</a>
-    
-                                </li>
+                                    <li><a href="feira.php">Feira</a>
+
+                                    </li>
                                     <li><a href="actividades-culturais.html">Cultura</a>
-                                    <ul class="dropdown">
+                                        <ul class="dropdown">
                                             <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                             <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
-                                   </ul>
-                                </li>
+                                        </ul>
+                                    </li>
                                     <li><a href="informacoes-diversas.html">Informações</a></li>
                                     <li><a href="#contact">Contactos</a></li>
                                 </ul>
-    
+
                                 <!-- Get Tickets Button -->
-                                <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Perfil<i class="zmdi zmdi-sign-in"></i></a>
+                                <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Perfil<i
+                                        class="zmdi zmdi-sign-in"></i></a>
                             </div>
-                        <!-- Nav End -->
-                    </div>
+                            <!-- Nav End -->
+                        </div>
                 </nav>
             </div>
         </div>
@@ -85,11 +92,13 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/educa/backgroundeducaonline.jpg);">
+    <!-- <section class="breadcrumb-area bg-img jarallax"
+        style="background-color:#f8871f;">
+    
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content">
+                <div class="col-12"> -->
+                    <!-- <div class="breadcrumb-content">
                         <h2 class="page-title">Feira</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -97,87 +106,106 @@
                                 <li class="breadcrumb-item active" aria-current="page">Feira</li>
                             </ol>
                         </nav>
-                    </div>
-                    
+                    </div> -->
 
-                   
-                    <div class="call-to-action-content text-center">
+
+
+                    <!-- <div class="call-to-action-content text-center" style="margin-down:0px;">
                         <div class="call-to-action-heading">
-                            <h6>É estudante e quer saber qual é a sua vocação? </h6>
-                            <h2 style="font-size:xx-large;">Teste de Orientacão Vocacional e Profissional</h2>
-                        </div>
+                            <h6 style="font-size:10;">É estudante e quer saber qual é a sua vocação? Faça o Teste de
+                                Orientacão Vocacional </h6>
 
-                    </div>
-                    <div class="ticket-btn text-center">
-                        <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white-2 mt-40" onclick="">Iniciar o Teste <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-             
-                </div>
+                        </div>
+                        <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white-2 mt-40"
+                            onclick="">Iniciar o Teste <i class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div> -->
+
+
+                <!-- </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Breadcrumb Area End -->
 
 
-    <!-- Our Blog Area Start -->
-    <section id="blog" class="our-blog-area bg-img section-padding-100-60">
+  
+
+    <section id="blog" class="our-blog-area section-padding-100-60" style="background-color:#e9eef4 ;">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Heading -->
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <p>EXPOSIÇÕES DA FEIRA</p>
-                        <h4>EXPOSITORES</h4>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-
-
+            <div class="row" style="text-align:center">
                 <?php
                 include_once('includes/dbconfig.php');
                 $ref = 'institution/';
                 $fetchdata = $database->getReference($ref)->getValue();
-
+                
                 ?>
 
+
+                <div class="col-12">
+                    <!-- Heading -->
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top:20px"  data-wow-delay="300ms">
+                        <p>EXPOSIÇÕES</p>
+                        <h4>Expositores da Feira</h4>
+                    </div>
+                </div>
                 <?php
                 foreach( $fetchdata as $key => $row):
-                    ?>
+                    
+                    
+                ?>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Single blog Thumb -->
+                        <div class="single-blog-thumb">
+                            <a href="institute.php?id=<?php echo $row['uid']; ?>">
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <a href="institute.php?id=<?php echo $row['uid']; ?>">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="<?php echo $row['img1']; ?>" alt="" style="height:350px ; width: 100%; background:white;">
-                                </div>
+                                <img src="<?php echo $row['img1']; ?>"
+                                    style="height:200px;width:100%; background:white; text-align:center;" alt="">
+                            </a>
+                        </div>
+                        <div class="single-blog-text text-center">
+
+                            <?php
+                              $title = "";
+
+                              if(strlen($row['institution_name']) > 20){
+                                  $title = substr($row['institution_name'],0, 30)."...";
+                              }else{
+                                  $title = $row['institution_name'];
+                              }
+                             
+                             ?>
+                            <a class=""  href="institute.php?id=<?php echo $row['uid']; ?>"><?php echo $title; ?></a>
+                            <!-- Post Meta -->
 
 
-                                <div class="speaker-info">
-                                    <h5><?php echo $row['institution_name']; ?></h5>
-
-                                </div>
-
-                            </div>
-                        </a>
+                        </div>
+                        <div class="blog-btn" >
+                            <a href="institute.php?id=<?php echo $row['uid']; ?>"><i
+                                    class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
                     </div>
 
+
+                </div>
                 <?php
                 endforeach;
                 ?>
+                
+
 
             </div>
+            
+      
+                
+
         </div>
     </section>
-    <!-- Our Blog Area End -->
-
-
 
     <!-- Call to Action Area Start -->
-    <section class="call-to-action-area bg-img bg-gradient-overlay jarallax section-padding-100"
-        style="background-image: url(img/bg-img/14.jpg);">
+    <section class="call-to-action-area bg-img jarallax section-padding-100"
+        style="background-color:#f8871f;">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -194,18 +222,20 @@
                     </div>
 
                     <div class="ticket-btn text-center">
-                        <a href="http://localhost:49466/#/" class="btn confer-btn-white-2 mt-40">Iniciar o contacto <i
+                        <a href="https://wa.me/258833642642/?text=Oi Psique" target="_blank" class="btn confer-btn-white-2 mt-40">Iniciar o contacto <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </section>
     <!-- Call to Action Area End -->
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
-       
+
 
         <!-- Copywrite Area -->
         <div class="container">
@@ -216,23 +246,16 @@
                         <div class="copywrite-text">
                             <p>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                                template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                                </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                por <a href="https://educa.co.mz" target="_blank">Educa</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
                     </div>
                     <!-- Footer Menu -->
-                    <div class="col-12 col-md-6">
-                        <div class="footer-menu">
-                            <ul class="nav">
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -250,7 +273,28 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+    <!--Floating WhatsApp javascript-->
+    <script type="text/javascript" src="floating-whatsapp/floating-wpp.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <!--JQuery-->
+    <script type="text/javascript" src="floating-whatsapp/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="floating-whatsapp/floating-wpp.js"></script>
 
+    <script type="text/javascript">
+    $(function() {
+        $('#WAButton').floatingWhatsApp({
+            phone: '+258833642642', //WhatsApp Business phone number
+            headerTitle: 'SOS Psique Online Chat', //Popup Title
+            popupMessage: 'Olá, como podemos lhe ajudar?', //Popup Message
+            showPopup: true, //Enables popup display
+            buttonImage: '<img src="floating-whatsapp/whatsapp.svg" />', //Button Image
+            //headerColor: 'crimson', //Custom header color
+            //backgroundColor: 'crimson', //Custom background button color
+            position: "left" //Position: left | right
+
+        });
+    });
+    </script>
 </body>
 
 </html>

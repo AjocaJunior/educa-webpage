@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   
+
     <!-- Title -->
     <title>Seja Bem-Vinda ao educa</title>
 
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
     <!-- Preloader -->
@@ -26,11 +27,12 @@
     <!-- /Preloader -->
 
     <!-- Header Area Start -->
-    
+
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg); height: 100px;">
+    <section class="breadcrumb-area bg-img jarallax"
+        style="background-image: url(img/bg-img/backgroundeducaonline1.jpg); height: 100px;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -51,8 +53,10 @@
                 <div class="col-12 col-lg-6">
                     <div class="contact-us-thumb mb-100">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" allow="autoplay" src="https://www.youtube.com/embed/v64KOxKVLVg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" allowfullscreen></iframe>
-                          </div>
+                            <iframe class="embed-responsive-item" allow="autoplay"
+                                src="https://www.youtube.com/embed/v64KOxKVLVg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -62,7 +66,9 @@
                         <!-- Contact Heading -->
                         <div class="contact-heading">
                             <h4>Seja Bem-Vindo ao educa</h4>
-                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
+                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e
+                                eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do
+                                Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
                         </div>
                         <div class="contact_form">
                             <form>
@@ -71,26 +77,31 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="name" id="name" placeholder="nome completo"  >
+                                                <input type="text" class="form-control mb-30" name="name" id="name"
+                                                    placeholder="nome completo">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="genre" id="genre" placeholder="Género">
+                                                <input type="text" class="form-control mb-30" name="genre" id="genre"
+                                                    placeholder="Género">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30 textbox-n"  onfocus="(this.type='date')" name="date_of_birth" id="date_of_birth" placeholder="Data de nascimento">
+                                                <input type="text" class="form-control mb-30 textbox-n"
+                                                    onfocus="(this.type='date')" name="date_of_birth" id="date_of_birth"
+                                                    placeholder="Data de nascimento">
                                             </div>
                                         </div>
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="level_of_schooling" id="level_of_schooling" placeholder="Níveil de escolaridade">
+                                                <input type="text" class="form-control mb-30" name="level_of_schooling"
+                                                    id="level_of_schooling" placeholder="Nível de escolaridade">
                                             </div>
                                         </div>
 
@@ -99,7 +110,8 @@
                                                 <select class="browser-default custom-select" id="category">
                                                     <option selected>Seleciona categoria</option>
                                                     <option value="Estudante">Estudante</option>
-                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados de Educação</option>
+                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados
+                                                        de Educação</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -108,13 +120,15 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="residence" id="residence" placeholder="Residencia">
+                                                <input type="text" class="form-control mb-30" name="residence"
+                                                    id="residence" placeholder="Residência">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="contact" id="contact" placeholder="Contacto">
+                                                <input type="text" class="form-control mb-30" name="contact"
+                                                    id="contact" placeholder="Contacto">
                                             </div>
                                         </div>
 
@@ -122,32 +136,38 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" style="text-transform: lowercase;" >
+                                                <input type="email" class="form-control mb-30" name="email" id="email"
+                                                    placeholder="E-mail">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="password" class="form-control mb-30" name="password" id="password" placeholder="Password">
+                                                <input type="password" class="form-control mb-30" name="password"
+                                                    id="password" placeholder="Password">
                                             </div>
                                         </div>
                                         <!-- Form Group -->
-                                        
+
                                         <!-- Button -->
-                                       
+
                                     </div>
                                 </div>
                             </form>
 
-                           
+
                             <div class="col-12">
-                                            <button type="submit" onclick="addButton()" class="btn btn-primary btn-lg btn-block">Entrar<i class="zmdi zmdi-long-arrow-right"></i></button>
-                                        </div>
+
+                            </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <p class="text-info">Ja tens uma conta?</p>
-                        
-                            <button id="btn" name="btn" onClick="location.href='login.html'"  class="btn btn btn-outline-info btn-lg btn-block">Login</button>
+                            <button type="submit" onclick="addButton()" class="btn btn-warning btn-lg btn-block"
+                                style="background:#f8871f;color:white">Entrar<i
+                                    class="zmdi zmdi-long-arrow-right"></i></button>
+                            <p class="text-info">Já tens uma conta?</p>
+
+                            <button id="btn" name="btn" onClick="location.href='login.html'"
+                                class="btn btn-lg btn-block" style="background:#414c52;color:white">Login</button>
                         </div>
                     </div>
                 </div>
@@ -170,7 +190,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
-    
+
     <script>
     function addButton() {
     var name = document.getElementById('name').value;
@@ -216,14 +236,13 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
     firebase.database().ref().child('users').child(userId).set(data , function(error){
             if (error) {
                 alert("Data could not be saved." + error);
-                location.href="intro.php";
+                location.href = "intro.php";
             } else {
-                location.href="index.php";
-         }
-    });
-      
-}
+                location.href = "index.php";
+            }
+        });
 
+    }
     </script>
 
 
