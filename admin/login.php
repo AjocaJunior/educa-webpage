@@ -39,12 +39,12 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bem vindo de volta!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Insira o endereço de e-mail...">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="Insira o endereço de e-mail...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -52,10 +52,9 @@
                                                 <label class="custom-control-label" for="customCheck">Lembrar mim</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
 
+                                        <button name="login" class="btn btn-primary btn-user btn-block">Login</button>
+                                        
                                     </form>
                                     <hr>
                                     <div class="text-center">
@@ -76,6 +75,48 @@
 
     </div>
 
+
+
+    <?php 
+        include_once('../includes/dbconfig.php');
+        $ref = 'institution/';
+        $fetchdata = $database->getReference($ref)->getValue();
+
+
+        if(isset($_POST['login'])){
+            $email      = trim($_POST['email']);
+            $password   = trim($_POST['password']);
+            $emailFound = false;
+
+            foreach($fetchdata as $key => $row){
+            
+                if($row['email'] == $email){
+                    $emailFound = true;
+                    echo "email encotrado";
+                    if($row['password']  == $password){
+                        
+                        // $_SESSION['uidInstitute'] = $row['uid'];
+                        // header("location : index.php"+$row['uid']);
+                        $url = "index.php?id=".$row['uid'];
+                        header('Location: '. $url);
+                    }else {
+                        echo "password wrong";
+                    }
+                break;
+                }
+    
+            }
+
+            if($emailFound == false){
+               echo "email nao encotrado";
+            }
+    
+
+        }
+
+       
+
+    ?>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
