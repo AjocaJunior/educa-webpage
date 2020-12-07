@@ -83,13 +83,13 @@
 
     <!-- Header Area Start -->
     <header class="header-area">
-        <div class="classy-nav-container breakpoint-off">
+        <div class="classy-nav-container breakpoint-off" style="background:#414c52">
             <div class="container">
                 <!-- Classy Menu -->
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -114,8 +114,7 @@
                             <!-- ?php echo $uid; ?->
                             <!-- Get Tickets Button -->
                             <a href="<?php echo $chat; ?>" target="_blank"
-                            
-                                class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i
+                                class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i
                                     class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -127,8 +126,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax"
-        style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f8871f">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -284,8 +282,8 @@
                                     </div>
                                 </form>
                                 <div class="col-12">
-                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn">Enviar Mensagem <i
-                                            class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white">Enviar Mensagem
+                                        <i class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +310,7 @@
                             <!-- Post Author Widget -->
                             <div class="post-author-widget">
                                 <!-- Thumbnail -->
-                                <div class="post-author-avatar" style="background:white;">
+                                <div class="post-author-avatar">
                                     <img src="<?php echo $img1; ?>" alt="">
                                 </div>
                                 <!-- Author Content -->
@@ -353,7 +351,7 @@
                                 ?>
                             <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
-                              
+
                                 <!-- Content -->
                                 <div class="post-content">
                                     <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -395,7 +393,7 @@
                                         <!-- Single Recent Post Area -->
                                         <div class="single-recent-post-area d-flex align-items-center">
                                             <!-- Thumb -->
-                                           
+
                                             <!-- Content -->
                                             <div class="post-content">
                                                 <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -530,9 +528,9 @@
     </section>
     <!-- Blog Area End -->
     <div class="container footer-gallery">
-    <h2 id="galleria">Galeria</h2>
+        <h2 id="galleria">Galeria</h2>
         <div class="row" style="text-align:center;">
-           
+
             <?php
                 $ref = 'institution/'.$uid.'/gallery';
                 $fetchdata = $database->getReference($ref)->getValue();
@@ -554,7 +552,7 @@
         </div>
     </div>
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">

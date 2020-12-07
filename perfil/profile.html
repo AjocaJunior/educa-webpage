@@ -32,6 +32,7 @@ Coded by www.creative-tim.com
   <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="assets/css/argon-design-system.css?v=1.2.0" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet"/>
 </head>
 
 <body class="profile-page">
@@ -49,11 +50,11 @@ Coded by www.creative-tim.com
     </section>
     <section class="section bg-secondary">
       <div class="container">
-        <div class="card card-profile shadow mt--300">
+        <div class="card card-profile shadow mt--400">
           <div class="px-4">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
+                <div class="card-profile-image mb-md">
                   
                    
 
@@ -107,13 +108,18 @@ Coded by www.creative-tim.com
               <h3 id="user-name">Carregando...<span class="font-weight-light"></span></h3>
               <div id="email" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
               <div id="category" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-              <!-- <div><i class="ni education_hat mr-2"></i>University of Computer Science</div> -->
+              <div id="contact" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
+              <div id="data_de_nascimento" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
+              <div id="residence" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
+           
             </div>
             <div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
+                  <a href="https://www.educa.co.mz" class="btn confer-btn-white outline"><i class="zmdi zmdi-home"></i> Início</a>
                 <!--  <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p> -->
-                  <button  onclick="signOut()" class="btn btn-primary outline">Sair</button>
+                  <button  onclick="signOut()" class="btn confer-btn-white outline"><i class="zmdi zmdi-arrow-back"></i> Sair</button>
+                  
                 </div>
               </div>
             </div>
@@ -123,32 +129,28 @@ Coded by www.creative-tim.com
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="row row-grid align-items-center mb-5">
-          <div class="col-lg-6">
-            <!--<h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-            <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4> -->
-          </div>
-          <div class="col-lg-6 text-lg-center btn-wrapper">
-            <button target="_blank" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
-              <span class="btn-inner--icon"><i class="fa fa-sign-out"></i></span>
-            </button>
-          </div>
+        <div class="row row-grid align-items-center">
+         
+          
         </div>
         <hr>
         <div class="row align-items-center justify-content-md-between">
           <div class="col-md-6">
             <div class="copyright">
-              &copy; 2020 <a href="" target="_blank">Educa</a>.
+             <p>  Copyright &copy;<script>
+              document.write(new Date().getFullYear());
+              </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
+              por <a href="https://www.educa.co.mz" target="_blank">Educa</a></p>
             </div>
           </div>
           <div class="col-md-6">
             <ul class="nav nav-footer justify-content-end">
               <li class="nav-item">
-                <a href="" class="nav-link" target="_blank">Home</a>
+                <p> <a href="https://www.educa.co.mz" target="_blank">Início</a></p>
               </li>
-              <li class="nav-item">
-                <a href="" class="nav-link" target="_blank">Sobre</a>
-              </li>
+              
+              
+           
               <!-- <li class="nav-item">
                 <a href="" class="nav-link" target="_blank">Blog</a>
               </li>
@@ -248,10 +250,17 @@ function signOut(){
                       var user_name = document.getElementById("user-name");
                       var email     = document.getElementById("email");
                       var category  = document.getElementById('category');
+                      var contact = document.getElementById("contact");
+                      var residence = document.getElementById("residence");
+                      var data_de_nascimento = document.getElementById("date_of_birth");
                   
+
                       email.innerHTML    = item.val().email;
                       user_name.innerHTML= item.val().name; 
-                      category.innerHTML = item.val().category;  
+                      category.innerHTML = item.val().category; 
+                      contact.innerHTML = item.val().contact;
+                      residence.innerHTML = item.val().residence;
+                      data_de_nascimento.innerHTML = item.val().data_de_nascimento; 
                       
                       
                       if(item.val().imageUrl != null && item.val().imageUrl != "ddd" ){

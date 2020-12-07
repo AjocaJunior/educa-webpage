@@ -39,7 +39,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.html"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -71,16 +71,22 @@
                                     </li>
                                     <li><a href="actividades-culturais.html">Cultura</a>
                                         <ul class="dropdown">
+                                        <li><a href="actividades-culturais.html#testes">Testes</a></li>
                                             <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                             <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="informacoes-diversas.html">Informações</a></li>
+                                    <li><a href="informacoes-diversas.html">Informações</a>
+                                    <ul class="dropdown">
+                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                    </ul>
+                                </li>
                                     <li><a href="#contact">Contactos</a></li>
                                 </ul>
 
                                 <!-- Get Tickets Button -->
-                                <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Perfil<i
+                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5" id="user-name">Perfil<i
                                         class="zmdi zmdi-sign-in"></i></a>
                             </div>
                             <!-- Nav End -->
@@ -249,7 +255,7 @@
                                 Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                                 </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                por <a href="https://educa.co.mz" target="_blank">Educa</a>
+                                por <a href="https://www.educa.co.mz" target="_blank">Educa</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
@@ -273,6 +279,42 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
+
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
+                            return;
+                        }
+
+                    }
+
+                });
+            });
+
+        } else {
+            location.href = 'intro.php';
+        }
+
+    });
+    </script>
+
     <!--Floating WhatsApp javascript-->
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.min.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
