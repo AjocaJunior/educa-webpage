@@ -235,7 +235,7 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
     }
 
 
-    genereteUIDIn();
+  //  genereteUIDIn();
 
     function genereteUIDIn(){
         const dbRefResenas = firebase.database().ref('institution')
@@ -247,7 +247,7 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
 
                     
 
-        firebase.database().ref().child('institution').child(item.val().uid).child('category').set('0' , function(error){
+        firebase.database().ref().child('institution').child(item.val().uid).child('phone').set('' , function(error){
             if (error) {
                 console.log("error");
             } else {

@@ -47,16 +47,21 @@
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
-              $chat = $row['chat'];
+            $chat = $row['chat'];
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
             $img1                    = $row['img1'];
             $img2                    = $row['img2'];
-            $phone                   = $row['contact'];
+            $phone                   = $row['phone'];
             $email                   = $row['email'];
             $website                 = $row['website'];
             $video_link              = $row['video_link'];
+            $visits                  = $row['visits'];
+            $contact                 = $row['contact'];
+
+            $visits = $visits + 1;
+
             $index = -1;
             if($video_link == null || $video_link == ""){
                 $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
@@ -82,7 +87,7 @@
     ?>
 
     <!-- Header Area Start -->
-    <header class="header-area">
+    <header class="header-area"  style="background-color: #414c52;">
         <div class="classy-nav-container breakpoint-off">
             <div class="container">
                 <!-- Classy Menu -->
@@ -111,11 +116,11 @@
                                 <li><a href="#college">Faculdades</a></li>
                                 <li><a href="#contact">Contacto</a></li>
                             </ul>
-                            <!-- ?php echo $uid; ?->
+                            <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
-                            <a href="<?php echo $chat; ?>" target="_blank"
+                            <a href="<?php echo $chat; ?>" onClick="countContact()" target="_blank"
                             
-                                class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i
+                            class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"  style="background:#f8871f; color:white"> Chat <i
                                     class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -127,8 +132,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax"
-        style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;" >
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -169,6 +173,7 @@
 
                             <!-- Post Title -->
                             <h4 class="post-title" id="about"><?php echo $title; ?></h4>
+
 
                             <!-- Post Meta -->
                             <div class="post-meta">
@@ -283,8 +288,9 @@
                                         </div>
                                     </div>
                                 </form>
+
                                 <div class="col-12">
-                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn">Enviar Mensagem <i
+                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -657,7 +663,33 @@
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
+    <script>
+        countVisits();
+        function countVisits() {
+            var visit = "<?php echo $visits ?>";
+            var id    = "<?php echo $uid ?>"
 
+            firebase.database().ref().child('institution').child(id).child('visits').set(visit , function(error){      
+                console.log(id+"-"+visit);
+            });
+            
+        }
+
+        
+        function countContact(){
+            var contact = "<?php echo $contact ?>";
+            var id    = "<?php echo $uid ?>";
+
+            contact =  Number(contact) + 1 ;
+
+            firebase.database().ref().child('institution').child(id).child('contact').set(contact , function(error){      
+                console.log(contact + " -- "+ id);
+            });
+
+        }
+        
+            
+    </script>
 
 </body>
 

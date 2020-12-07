@@ -11,6 +11,8 @@
 
   <title>Seja Bem-Vinda ao educa - Dashboard</title>
 
+    <!-- Favicon -->
+  <link rel="icon" href="../img/educa/logo.png">
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -60,7 +62,7 @@ foreach($fetchdata as $key => $row){
       $institution_description = $row['institution_description'];
       $img1                    = $row['img1'];
       $img2                    = $row['img2'];
-      $phone                   = $row['contact'];
+      $phone                   = $row['phone'];
       $email                   = $row['email'];
       $website                 = $row['website'];
       $video_link              = $row['video_link'];
@@ -115,7 +117,7 @@ foreach($fetchdata as $key => $row){
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #414c52">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -352,9 +354,10 @@ foreach($fetchdata as $key => $row){
                 <div class="card-body">
                   <div>
                     <h3> <?php echo $title ?></h3>
-                    <p style="white-space: pre-line">
+                    <p style="white-space: pre-line" contentEditable="true" id="about"  >
                     <?php echo $institution_description ?>
                     </p>
+                    <button type="button" onClick="updateDescription()" class="btn btn-primary">Actualizar</button>
                   </div>
                 </div>
               </div>
@@ -374,9 +377,9 @@ foreach($fetchdata as $key => $row){
                       <div class="dropdown-header">Atualizar video</div>
                       
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Link" value="<?php echo $video_link; ?>" aria-label="Link" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" id="link" placeholder="Link" value="<?php echo $video_link; ?>" aria-label="Link" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button"><i class="fas fa-check fa-sm fa-fw text-gray-400"></i></button>
+                          <button class="btn btn-outline-secondary" onClick="updateLink()" type="button"><i class="fas fa-check fa-sm fa-fw text-gray-400"></i></button>
                         </div>
                       </div>
 
@@ -432,7 +435,7 @@ foreach($fetchdata as $key => $row){
                       </div>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Actualizar</button>
+                    <button type="button" onClick="updateContact()" class="btn btn-secondary btn-lg btn-block">Actualizar</button>
 
                   </form>
 
@@ -520,6 +523,65 @@ foreach($fetchdata as $key => $row){
       </div>
     </div>
   </div>
+
+  
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+  <script src="../js/db/app.js"></script>
+  <script src="../js/db/real-time-database.js"></script>
+
+  <!-- my script -->
+
+  <script>
+
+
+    function updateLink(){
+      var linkUrl = document.getElementById('link').value;
+      if(linkUrl != null){
+        firebase.database().ref().child('institution').child(id).child('video_link').set(linkUrl , function(error){      
+          window.location.reload(true);
+        });
+      }
+
+    }
+
+
+    function updateContact(){
+     var email = document.getElementById('inputEmail').value;
+     var phone = document.getElementById("inputContact").value;
+     var localization = document.getElementById("inputLocalization").value;
+
+     var id = "<?php echo $uid ?>";
+     
+     firebase.database().ref().child('institution').child(id).child('email').set(email , function(error){      
+     });
+
+     firebase.database().ref().child('institution').child(id).child('phone').set(phone , function(error){      
+     });
+
+     firebase.database().ref().child('institution').child(id).child('location').set(localization , function(error){      
+      window.location.reload(true);
+     });
+
+    }
+
+    function updateDescription(){
+      var description = document.getElementById("about").textContent;
+      var id = "<?php echo $uid ?>";
+
+      firebase.database().ref().child('institution').child(id).child("institution_description").set(description , function(error){
+            if (error) {
+                alert("Data could not be saved." + error);
+                window.location.reload(true);
+            } else {
+                window.location.reload(true);
+               // location.href="index.php";
+         }
+    });
+
+    }
+  </script>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

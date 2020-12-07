@@ -788,7 +788,7 @@
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <a href="institute.php?id=<?php echo $row['uid']; ?>">
+                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
                                     style="height:200px;width:100%; background:white; text-align:center;" alt="">
@@ -806,13 +806,13 @@
                               }
                              
                              ?>
-                            <a class="" href="institute.php?id=<?php echo $row['uid']; ?>"><?php echo $title; ?></a>
+                            <a class="" href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
                             <!-- Post Meta -->
 
 
                         </div>
                         <div class="blog-btn">
-                            <a href="institute.php?id=<?php echo $row['uid']; ?>"><i
+                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
                                     class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>

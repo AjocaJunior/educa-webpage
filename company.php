@@ -111,7 +111,7 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5"> Chat <i class="zmdi zmdi-email"></i></a>
+                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>" class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"  style="background:#f8871f; color:white" > Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -270,7 +270,8 @@
                                     </div>
                                 </form>
                                 <div class="col-12">
-                                        <a href="mailto:<?php echo $email; ?>" class="btn confer-btn">Enviar Mensagem <i class="zmdi zmdi-long-arrow-right"></i></a>  
+                                <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
+                                            class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
