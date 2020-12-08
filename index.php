@@ -97,7 +97,7 @@
 
                             <!-- Get Tickets Button -->
                             <a href="perfil/profile.html" class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"
-                                style="background:#f8871f; color:white" id="user-name">Assis</a>
+                                style="background:#f8871f; color:white" id="user-name">Perfil</a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -296,40 +296,6 @@
                                             </div>
                                             <!-- Schedule Btn -->
                                             <a href="#" class="btn confer-btn-white">Ver Mais <i
-                                                    class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area -->
-                                        <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                            data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
-                                                <div class="single-schedule-tumb">
-                                                    <img src="img/educa/logo.png" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info -->
-                                                <div class="single-schedule-info">
-                                                    <h6>Live <i>“Educação
-                                                            digitalizada em
-                                                            Moçambique: desafios
-                                                            e perspectivas”</i>
-                                                    </h6>
-                                                    <p>Oradores <span>MINEDH</span></p>
-                                                    <p><span>MCTESTP</span></p>
-                                                    <p><span>MEPT</span></p>
-                                                    <p><span>Universidade do
-                                                            Porto
-                                                        </span></p>
-                                                    <p>Moderador <span>UP</span></p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info -->
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i>10:00h - 12:00h </p>
-                                            </div>
-                                            <!-- Schedule Btn -->
-                                            <a href="#" class="btn confer-btn-white">Participar <i
                                                     class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
@@ -1062,12 +1028,11 @@
                                 <!-- Copywrite Text -->
                                 <div class="col-12 col-md-6">
                                     <div class="copywrite-text">
-                                        <p>
+                                        <p style="color:white;">
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                             Copyright &copy;<script>
                                             document.write(new Date().getFullYear());
-                                            </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA
-                                            MOÇAMBIQUE</a>
+                                            </script> EDUCA MOÇAMBIQUE</a>
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         </p>
                                     </div>
@@ -1115,7 +1080,14 @@
 
                         if (db_uid == user_uid) {
                             var user_name = document.getElementById("user-name");
-                            user_name.innerHTML = item.val().name;
+                            var name = item.val().name;
+
+                            if( item.val().name.length > 20){
+                                name = item.val().name.substr(0 , 20)+"..";
+                            }else{
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
                             return;
                         }
 

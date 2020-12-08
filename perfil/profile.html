@@ -107,7 +107,7 @@ Coded by www.creative-tim.com
 
                             <br>
                             <h3 id="user-name" contentEditable="true" onkeyup="showButton()">Carregando...<span class="font-weight-light"> </span></h3>
-                            <button id="btnUpdate" class="btn btn-primary outline" onclick="" style="visibility: hidden;">Actualizar</button>
+                            <button id="btnUpdate" onclick="hideButton()" class="btn btn-primary outline" onclick="" style="visibility: hidden;">Actualizar</button>
                             <div id="email" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                             <div id="category" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
                             <!-- <div><i class="ni education_hat mr-2"></i>University of Computer Science</div> -->
@@ -199,13 +199,13 @@ Coded by www.creative-tim.com
         function hideButton() {
             var btn = document.getElementById("btnUpdate");
             btn.style.visibility = "hidden";
+            updatePerfil();
         }
 
         function showButton() {
             var btn = document.getElementById("btnUpdate");
-            bt.style.visibility = "visible";
+            btn.style.visibility = "visible";
         }
-
 
 
         function updatePerfil() {
@@ -214,6 +214,7 @@ Coded by www.creative-tim.com
                 firebase.database().ref().child('users').child(user.uid).child('name').set(user_name, function(error) {});
             });
         }
+
 
         function uploadImage() {
             const ref = firebase.storage().ref();
