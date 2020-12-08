@@ -33,7 +33,7 @@ if($uid == null){
   if(isset($_SESSION['uidInstitute'])){
     $uid = $_SESSION['uidInstitute'];
   }else{
-    header("Location: login.html");
+    header("Location: login.php");
   }
   
 }
