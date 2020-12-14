@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>Publicações - educa mocambique</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -24,6 +24,18 @@
         <div class="loader"></div>
     </div>
     <!-- /Preloader -->
+
+
+
+    <?php
+
+        include_once('includes/dbconfig.php');
+        $ref = 'institution/';
+        $fetchdata = $database->getReference($ref)->getValue();
+        $uid  = $_GET['id'];
+
+
+    ?>
 
     <!-- Header Area Start -->
     <header class="header-area">
@@ -90,7 +102,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Blog Gird</h2>
+                        <h2 class="page-title">PUBLICAÇÕES</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -108,21 +120,38 @@
     <div class="our-blog-area section-padding-100">
         <div class="container">
             <div class="row">
+                <?php 
+                    $ref = 'institution/'.$uid.'/publication';
+                    $fetchdata = $database->getReference($ref)->getValue(); 
+                    ?>
+
+                <?php if($fetchdata != null):?>
+                <?php foreach( $fetchdata as $key => $row):   ?>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <img src="img/educa/exams.jpg" alt="">
+                            <img src="<?php echo $row['img'] ?>" alt=""  style="height: 180px; width:350px"  >
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Street Food Convention</a>
+                            <a class="blog-title" href="#"><?php echo $row['title'] ?></a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i><?php echo $row['date'] ?></a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i><?php echo $row['author'] ?></a>
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
+
+                            <?php
+                                $pharagraph = "";
+
+                                if(strlen($row['text']) > 14) {
+                                    $pharagraph = substr($row['text'], 0, 90)."..";
+                                } else {
+                                    $pharagraph = $row['text'];
+                                }
+                            ?>
+                            <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
                             <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
@@ -130,50 +159,9 @@
                     </div>
                 </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/educa/exams.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Tedx Moscow Conference</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="img/educa/exams.jpg" alt="">
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
+                <?php endforeach ?>
+            <?php endif?>
               
               
             </div>

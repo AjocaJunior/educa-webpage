@@ -229,7 +229,7 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">Publicações e noticias</a>
+                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e noticias</a>
                                     <!---institute-blog.php-->
                                     <span>Ver publicações</span>
                                 </div>

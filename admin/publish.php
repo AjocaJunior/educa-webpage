@@ -48,6 +48,23 @@
                                     <input type="text" id="title" class="form-control" placeholder="Título">
                                 </div>
 
+                                
+                                <div class="form-group">
+                                    <input type="text" id="author" class="form-control" placeholder="Autor" maxlength="50">
+                                </div>
+
+                                <div class="form-group ">
+                                    <select class="browser-default custom-select " id="category ">
+                                    <option selected>Seleciona categoria</option>
+                                    <option value="technology ">Tecnologia</option>
+                                    <option value="news ">Noticias</option>
+                                    <option value="event ">Evento</option>
+                                    <option value="workshops ">Workshops</option>
+                                    <option value="other ">Outro</option>
+                                    </select>
+                                </div>
+
+
 
                                 <div class="form-group row">
 
@@ -63,17 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <select class="browser-default custom-select " id="category ">
-                                    <option selected>Seleciona categoria</option>
-                                    <option value="technology ">Tecnologia</option>
-                                    <option value="news ">Noticias</option>
-                                    <option value="event ">Evento</option>
-                                    <option value="workshops ">Workshops</option>
-                                    <option value="other ">Outro</option>
-                                    </select>
-                                </div>
-
+                               
 
                                 <div class="form-group ">
                                     <label for="publication " class="text-uppercase ">Publicação</label>
@@ -124,14 +131,12 @@
             var category = e.options[e.selectedIndex].text;
             var text = document.getElementById("publication ").value;
             var date = new Date().toLocaleDateString();
-            var author = " ";
+            var author = document.getElementById('author').value;
             var uid = "<?php echo $_GET['id'] ; ?>";
             
 
-          
 
             //upload img perfil
-
             const ref = firebase.storage().ref();
             const file = document.querySelector("#photo ").files[0];
 
@@ -165,7 +170,8 @@
                 date: date,
                 author: author,
                 img: img,
-                uid:uidPublication
+                uid:uidPublication,
+                author: author
             }
 
 
