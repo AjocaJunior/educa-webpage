@@ -25,6 +25,63 @@
     </div>
     <!-- /Preloader -->
 
+    <?php  
+    
+
+    include_once('includes/dbconfig.php');
+    $ref = 'institution/';
+    $fetchdata = $database->getReference($ref)->getValue();
+    $uid  = $_GET['id'];
+    $chat = "";
+    $title           = "";
+    $localization    = "";
+    $institution_description = "";
+    $phone                   = "";
+    $email                   = "";
+    $website                 = "";
+    $video_link              = "";
+    $p1 = "";
+    $p2 = "";
+    $img1 = "";
+    $img2 = "";
+
+    foreach($fetchdata as $key => $row){
+        if($row['uid'] == $uid ){
+          $chat = $row['chat'];
+          $title           = $row['institution_name'];
+          $localization    = $row['location'];
+          $institution_description = $row['institution_description'];
+          $img1                    = $row['img1'];
+          $img2                    = $row['img2'];
+          $phone                   = $row['phone'];
+          $email                   = $row['email'];
+          $website                 = $row['website'];
+          $video_link              = $row['video_link'];
+          $visits                  = $row['visits'];
+          $contact                 = $row['contact'];
+
+          break;
+        }
+    }
+
+    $public = $_GET['public'];
+    $ref = 'institution/'.$uid.'/publication';
+    $fetchdata = $database->getReference($ref)->getValue(); 
+
+    foreach($fetchdata as $key => $row){
+        if($row['uid'] == $public ){
+            $category = $row['category'];
+            $date  = $row['date'];
+            $img = $row['img'];
+            $text = $row['text'];
+            $titlePublic = $row['title'] ;
+            $author = $row['author'];
+        }
+
+    }
+
+    ?>
+
     <!-- Header Area Start -->
     <header class="header-area" style="background-color: #414c52;">
         <div class="classy-nav-container breakpoint-off">
@@ -67,12 +124,12 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Universidade Eduardo Modlane</h2>
+                        <h2 class="page-title"><?php echo $title ?></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="blog.html">Blog Grid</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Universidade Eduardo Modlane</li>
+                                <li class="breadcrumb-item"><a href="blog.html"><?php echo $title ?></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><?php echo $titlePublic ?></li>
                             </ol>
                         </nav>
                     </div>
@@ -94,9 +151,7 @@
 
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X9zS9D7YcI0" allowfullscreen></iframe>
-                                </div>
+                            <img src="<?php  echo $img;?>">
                             </div>
 
                             <!-- Post Title -->
@@ -104,36 +159,17 @@
 
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> <?php echo $date; ?> </a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>  <?php echo $author; ?> </a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-favorite-outline"></i> 8 Likes</a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-comment-outline"></i> 12 Comments</a>
                             </div>
 
-                            <p>BW Education Leadership Summit focuses on recognizing applauding the quality of education in India by uniting Institution leaders and regulators to explore how they can leverage technologies, strategies and Management tools
-                                with each other to help create a world class Institution. Bringing together the Gamut of Early Childhood Brands, K 12 Brands, Exceptional Schools, Engineering Colleges.</p>
-
-
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-                                debitis aut rerum necessitatibus saepe</p>
-
-                            <h5>Marketing Analytics &amp; Insights Summit</h5>
-                            <p>Beyond demonstrating that marketing really works, the right analytics strategies can provide insights that inspire impactful marketing decisions, leading to increased ROI and revenue growth. Join us for our Marketing Analytics
-                                &amp; Insights Summit for a two-day deep dive into how top companies are using big data and analytics to dramatically improve the efficiency and efficacy of their marketing mix.</p>
-                        </div>
-
-                        <!-- Post Tags & Social Info -->
-                        <div class="post-tags-social-area mt-30 pb-5 d-flex flex-wrap align-items-center">
-                            <!-- Popular Tags -->
-                            <div class="popular-tags d-flex align-items-center">
-                                <p><i class="zmdi zmdi-label"></i></p>
-                                <ul class="nav">
-                                    <li><a href="#">Conference</a></li>
-                                    <li><a href="#">Workshops</a></li>
-                                </ul>
-                            </div>
+                            <p style="white-space: pre-line"><?php echo $text; ?></p>
 
                         </div>
+
+                    
 
                     </div>
                 </div>
@@ -144,45 +180,44 @@
                 <!-- Single Widget Area -->
                 <div class="single-widget-area">
                     <h5 class="widget-title mb-30">Mais noticias</h5>
+                    
 
-                    <!-- Single Recent Post Area -->
-                    <div class="single-recent-post-area d-flex align-items-center">
+
+                    <?php 
+                    $ref = 'institution/'.$uid.'/publication';
+                    $fetchdata = $database->getReference($ref)->getValue(); 
+                    ?>
+
+                <?php if($fetchdata != null):?>
+                <?php foreach( $fetchdata as $key => $row):   ?>
+
+                     <!-- Single Recent Post Area -->
+                     <div class="single-recent-post-area d-flex align-items-center">
                         <!-- Thumb -->
                         <div class="post-thumb">
-                            <a href="single-blog.html"><img src="img/bg-img/47.jpg" alt=""></a>
+                            <a href="single-blog.html"><img src="<?php echo $row['img']; ?>" alt=""></a>
                         </div>
                         <!-- Content -->
                         <div class="post-content">
-                            <a href="single-blog.html" class="post-title">Los Angeles Institute</a>
-                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a>
+                            <?php  
+                                $currentTitle = "";
+                            
+                                if(strlen($row['title']) > 20) {
+                                    $currentTitle = substr($row['title']  , 0 , 14)+"..";
+                                } else {
+                                    $currentTitle = $row['title'];
+                                }
+                            ?>
+                            <a href="single-blog.html" class="post-title"> <?php echo $currentTitle; ?> </a>
+                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>  <?php echo $row['date']; ?> </a>
                         </div>
                     </div>
+                 
+                <?php endforeach ?>
+            <?php endif?>
 
-                    <!-- Single Recent Post Area -->
-                    <div class="single-recent-post-area d-flex align-items-center">
-                        <!-- Thumb -->
-                        <div class="post-thumb">
-                            <a href="single-blog.html"><img src="img/bg-img/LIVE.jpg" alt=""></a>
-                        </div>
-                        <!-- Content -->
-                        <div class="post-content">
-                            <a href="single-blog.html" class="post-title">Basel Peace Forum</a>
-                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Recent Post Area -->
-                    <div class="single-recent-post-area d-flex align-items-center">
-                        <!-- Thumb -->
-                        <div class="post-thumb">
-                            <a href="single-blog.html"><img src="img/bg-img/49.jpg" alt=""></a>
-                        </div>
-                        <!-- Content -->
-                        <div class="post-content">
-                            <a href="single-blog.html" class="post-title">Global Goals Mun</a>
-                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a>
-                        </div>
-                    </div>
+                   
+                    
                 </div>
 
 

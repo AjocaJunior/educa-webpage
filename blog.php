@@ -154,7 +154,7 @@
                             <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="institute-blog-info.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
