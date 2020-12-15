@@ -105,7 +105,7 @@
                         <h2 class="page-title">PUBLICAÇÕES</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Blog</li>
                             </ol>
                         </nav>
@@ -154,7 +154,7 @@
                             <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="institute-blog-info.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -166,13 +166,13 @@
               
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12">
                     <div class="more-blog-btn text-center">
                         <a class="btn confer-btn" href="#">Load more <i class="zmdi zmdi-refresh"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Our Blog Area End -->

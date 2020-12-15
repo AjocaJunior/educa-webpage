@@ -201,12 +201,12 @@
                         <div class="post-content">
                             <?php  
                                 $currentTitle = "";
+                                 if(strlen($row['title']) > 20) {
+                                     $currentTitle = substr( $row['title'] , 0 , 20)."..";
+                                 } else {
+                                     $currentTitle = $row['title'];
+                                 }
                             
-                                if(strlen($row['title']) > 20) {
-                                    $currentTitle = substr($row['title']  , 0 , 14)+"..";
-                                } else {
-                                    $currentTitle = $row['title'];
-                                }
                             ?>
                             <a href="single-blog.html" class="post-title"> <?php echo $currentTitle; ?> </a>
                             <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>  <?php echo $row['date']; ?> </a>

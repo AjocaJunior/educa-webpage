@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Confer - Conference Event HTML Template</title>
+    <title>Noticias - </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/favicon.png">
+    <link rel="icon" href="./img/educa/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -24,6 +24,70 @@
         <div class="loader"></div>
     </div>
     <!-- /Preloader -->
+
+
+
+
+    <?php  
+    
+
+    include_once('includes/dbconfig.php');
+    $ref = 'institution/';
+    $fetchdata = $database->getReference($ref)->getValue();
+    $uid  = $_GET['id'];
+    $chat = "";
+    $title           = "";
+    $localization    = "";
+    $institution_description = "";
+    $phone                   = "";
+    $email                   = "";
+    $website                 = "";
+    $video_link              = "";
+    $p1 = "";
+    $p2 = "";
+    $img1 = "";
+    $img2 = "";
+    $currentCategory = "";
+
+    foreach($fetchdata as $key => $row){
+        if($row['uid'] == $uid ){
+          $chat = $row['chat'];
+          $title           = $row['institution_name'];
+          $localization    = $row['location'];
+          $institution_description = $row['institution_description'];
+          $img1                    = $row['img1'];
+          $img2                    = $row['img2'];
+          $phone                   = $row['phone'];
+          $email                   = $row['email'];
+          $website                 = $row['website'];
+          $video_link              = $row['video_link'];
+          $visits                  = $row['visits'];
+          $contact                 = $row['contact'];
+          $currentCategory         = $row['category'];
+
+          break;
+        }
+    }
+
+    $public = $_GET['public'];
+    $ref = 'institution/'.$uid.'/publication';
+    $fetchdata = $database->getReference($ref)->getValue(); 
+
+    foreach($fetchdata as $key => $row){
+        if($row['uid'] == $public ){
+            $category = $row['category'];
+            $date  = $row['date'];
+            $img = $row['img'];
+            $text = $row['text'];
+            $titlePublic = $row['title'] ;
+            $author = $row['author'];
+        }
+
+    }
+
+    ?>
+
+
 
     <!-- Header Area Start -->
     <header class="header-area" style="background-color: #414c52;">
@@ -66,18 +130,19 @@
     </header>
     <!-- Header Area End -->
 
+  
     <!-- Breadcrumb Area Start -->
     <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content">
-                        <h2 class="page-title">Blog Details</h2>
+                        <h2 class="page-title"><?php echo $title ?></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="blog.html">Blog Grid</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="blog.php?id=<?php echo $uid ?>"><?php echo $title ?></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><?php echo $titlePublic ?></li>
                             </ol>
                         </nav>
                     </div>
@@ -86,6 +151,7 @@
         </div>
     </section>
     <!-- Breadcrumb Area End -->
+
 
     <!-- Blog Area Start -->
     <section class="confer-blog-details-area section-padding-100-0">
@@ -99,32 +165,24 @@
 
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
-                                <img src="img/logos/stronglive.png " alt=" " style="width: 600px; height:380px; ">
+                                <img src="<?php  echo $img;?> " alt=" " style="width: 600px; height:380px; ">
                             </div>
 
                             <!-- Post Title -->
-                            <h4 class="post-title ">BW Education Leadership Summit</h4>
+                            <h4 class="post-title "><?php echo $title; ?></h4>
 
-                            <!-- Post Meta -->
-                            <div class="post-meta ">
-                                <a class="post-date " href="# "><i class="zmdi zmdi-alarm-check "></i> January 14, 2019</a>
-                                <a class="post-author " href="# "><i class="zmdi zmdi-account "></i> Laura Green</a>
-                                <a class="post-author " href="# "><i class="zmdi zmdi-favorite-outline "></i> 8 Likes</a>
-                                <a class="post-author " href="# "><i class="zmdi zmdi-comment-outline "></i> 12 Comments</a>
+                              <!-- Post Meta -->
+                              <div class="post-meta">
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> <?php echo $date; ?> </a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>  <?php echo $author; ?> </a>
+                                <!-- <a class="post-author" href="#"><i class="zmdi zmdi-favorite-outline"></i> 8 Likes</a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-comment-outline"></i> 12 Comments</a> -->
                             </div>
 
-                            <p>BW Education Leadership Summit focuses on recognizing applauding the quality of education in India by uniting Institution leaders and regulators to explore how they can leverage technologies, strategies and Management tools
-                                with each other to help create a world class Institution. Bringing together the Gamut of Early Childhood Brands, K 12 Brands, Exceptional Schools, Engineering Colleges.</p>
 
-
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-                                debitis aut rerum necessitatibus saepe</p>
-
-
-                            <h5>Marketing Analytics &amp; Insights Summit</h5>
-                            <p>Beyond demonstrating that marketing really works, the right analytics strategies can provide insights that inspire impactful marketing decisions, leading to increased ROI and revenue growth. Join us for our Marketing Analytics
-                                &amp; Insights Summit for a two-day deep dive into how top companies are using big data and analytics to dramatically improve the efficiency and efficacy of their marketing mix.</p>
-                        </div>
+                            <p style="white-space: pre-line"><?php echo $text; ?></p>
+                     
+                            </div>
 
 
                     </div>
@@ -134,15 +192,7 @@
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
                     <div class="confer-sidebar-area mb-100 ">
 
-                        <!-- Single Widget Area -->
-                        <div class="single-widget-area ">
-                            <div class="search-widget ">
-                                <form action="# " method="post ">
-                                    <input type="search " name="search-form " id="searchForm " placeholder="Search ">
-                                    <button type="submit "><i class="zmdi zmdi-search "></i></button>
-                                </form>
-                            </div>
-                        </div>
+                       
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area ">
@@ -150,20 +200,28 @@
                             <div class="post-author-widget ">
                                 <!-- Thumbnail -->
                                 <div class="post-author-avatar ">
-                                    <img src="img/bg-img/LIVE.jpg" alt=" " style="width: 107px; height: 107px;">
+                                    <img src="<?php echo $img; ?>" alt=" " style="width: 107px; height: 107px;">
                                 </div>
                                 <!-- Author Content -->
                                 <div class="post-author-content ">
-                                    <h5>Crystal Perkins</h5>
-                                    <span>Photographer</span>
-                                    <p>On the other hand, de-nounce with righteous</p>
+                                    <h5><?php echo $title; ?></h5>
+                                    <?php
+                                        
+                                        if($currentCategory == 1){
+                                            $currentCategory = "Empresa";
+                                        }else{
+                                            $currentCategory = " Instituição de ensino";
+                                        }
+                                    
+                                    ?>
+                                    <span><?php echo $currentCategory ?></span>
+                                    <p> <?php  echo substr($institution_description , 0 , 43).".."; ?></p>
                                 </div>
                                 <!-- Social Info -->
                                 <div class="author-social-info ">
-                                    <a href="# "><i class="zmdi zmdi-facebook "></i></a>
-                                    <a href="# "><i class="zmdi zmdi-instagram "></i></a>
-                                    <a href="# "><i class="zmdi zmdi-twitter "></i></a>
-                                    <a href="# "><i class="zmdi zmdi-linkedin "></i></a>
+                                    <a href="institute.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-home "></i></a>
+                                    <a href="blog.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-collection-text "></i></a>
+                                    <a href="institute.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-eye"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -172,44 +230,49 @@
                         <div class="single-widget-area ">
                             <h5 class="widget-title mb-30 ">Publicações recentes</h5>
 
-                            <!-- Single Recent Post Area -->
-                            <div class="single-recent-post-area d-flex align-items-center ">
-                                <!-- Thumb -->
-                                <div class="post-thumb ">
-                                    <a href="single-blog.html "><img src="img/bg-img/LIVE.jpg" alt=" "></a>
-                                </div>
-                                <!-- Content -->
-                                <div class="post-content ">
-                                    <a href="single-blog.html " class="post-title ">Los Angeles Institute</a>
-                                    <a href="# " class="post-date "><i class="zmdi zmdi-time "></i> January 14, 2019</a>
-                                </div>
-                            </div>
 
-                            <!-- Single Recent Post Area -->
-                            <div class="single-recent-post-area d-flex align-items-center ">
-                                <!-- Thumb -->
-                                <div class="post-thumb ">
-                                    <a href="single-blog.html "><img src="img/bg-img/LIVE.jpg " alt=" "></a>
-                                </div>
-                                <!-- Content -->
-                                <div class="post-content ">
-                                    <a href="single-blog.html " class="post-title ">Basel Peace Forum</a>
-                                    <a href="# " class="post-date "><i class="zmdi zmdi-time "></i> January 14, 2019</a>
-                                </div>
-                            </div>
+  
 
-                            <!-- Single Recent Post Area -->
-                            <div class="single-recent-post-area d-flex align-items-center ">
-                                <!-- Thumb -->
-                                <div class="post-thumb ">
-                                    <a href="single-blog.html "><img src="img/bg-img/LIVE.jpg " alt=" "></a>
-                                </div>
-                                <!-- Content -->
-                                <div class="post-content ">
-                                    <a href="single-blog.html " class="post-title ">Global Goals Mun</a>
-                                    <a href="# " class="post-date "><i class="zmdi zmdi-time "></i> January 14, 2019</a>
-                                </div>
-                            </div>
+
+                    <?php 
+                        $ref = 'institution/'.$uid.'/publication';
+                        $fetchdata = $database->getReference($ref)->getValue(); 
+                    ?>
+
+                    <?php if($fetchdata != null):?>
+                    <?php foreach( $fetchdata as $key => $row):   ?>
+
+                     <!-- Single Recent Post Area -->
+                     <div class="single-recent-post-area d-flex align-items-center">
+                        <!-- Thumb -->
+                        <div class="post-thumb">
+                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><img src="<?php echo $row['img']; ?>" alt=""></a>
+                        </div> 
+                        <!-- Content -->
+                        <div class="post-content">
+                            <?php  
+                                $currentTitle = "";
+                                 if(strlen($row['title']) > 17) {
+                                     $currentTitle = substr( $row['title'] , 0 , 17)."..";
+                                 } else {
+                                     $currentTitle = $row['title'];
+                                 }
+                            
+                            ?>
+                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>" class="post-title"> <?php echo $currentTitle; ?> </a>
+                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>  <?php echo $row['date']; ?> </a>
+                        </div>
+                    </div>
+                 
+                <?php endforeach ?>
+            <?php endif?>
+
+
+                            
+                            
+
+
+
                         </div>
 
 
