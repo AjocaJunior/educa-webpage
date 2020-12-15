@@ -32,7 +32,6 @@
       $ref = 'institution/';
       $fetchdata = $database->getReference($ref)->getValue();
       $uid  = $_GET['id'];
-      $chat = "";
       $title           = "";
       $localization    = "";
       $institution_description = "";
@@ -47,21 +46,15 @@
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
-            $chat = $row['chat'];
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
             $img1                    = $row['img1'];
             $img2                    = $row['img2'];
-            $phone                   = $row['phone'];
+            $phone                   = $row['contact'];
             $email                   = $row['email'];
             $website                 = $row['website'];
             $video_link              = $row['video_link'];
-            $visits                  = $row['visits'];
-            $contact                 = $row['contact'];
-
-            $visits = $visits + 1;
-
             $index = -1;
             if($video_link == null || $video_link == ""){
                 $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
@@ -87,14 +80,14 @@
     ?>
 
     <!-- Header Area Start -->
-    <header class="header-area"  style="background-color: #414c52;">
+    <header class="header-area" style="background: #414c52">
         <div class="classy-nav-container breakpoint-off">
             <div class="container">
                 <!-- Classy Menu -->
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -112,16 +105,13 @@
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
                                 <li><a href="#about">Sobre</a></li>
-                                <li><a href="#categories-list-course">Cursos</a></li>
-                                <li><a href="#college">Faculdades</a></li>
+                                <!-- <li><a href="#categories-list-course">Cursos</a></li>
+                                <li><a href="#college">Faculdades</a></li> -->
                                 <li><a href="#contact">Contacto</a></li>
                             </ul>
-                            <!-- ?php echo $uid; ?-->
+
                             <!-- Get Tickets Button -->
-                            <a href="<?php echo $chat; ?>" onClick="countContact()" target="_blank"
-                            
-                            class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"  style="background:#f8871f; color:white"> Chat <i
-                                    class="zmdi zmdi-email"></i></a>
+                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>" class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"  style="background:#f8871f; color:white" > Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -132,7 +122,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;" >
+    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -141,9 +131,8 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Início</a></li>
-
-                                <li id="breadcrumb_item" class="breadcrumb-item active" aria-current="page">
-                                    <?php echo $title; ?></li>
+                            
+                                <li id="breadcrumb_item" class="breadcrumb-item active" aria-current="page"><?php echo $title; ?></li>
                             </ol>
                         </nav>
                     </div>
@@ -166,23 +155,20 @@
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>"
-                                        allowfullscreen width="640" height="480"></iframe>
-                                </div>
+                                    <iframe class="embed-responsive-item" src="<?php echo $video_link; ?>" allowfullscreen></iframe>
+                                  </div>
                             </div>
 
                             <!-- Post Title -->
                             <h4 class="post-title" id="about"><?php echo $title; ?></h4>
 
-
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a id="localization_first" class="post-date" href="#"><i
-                                        class="zmdi zmdi-gps"></i><?php echo $localization; ?></a>
+                                <a id="localization_first" class="post-date" href="#"><i class="zmdi zmdi-gps"></i><?php echo $localization; ?></a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-email"></i>Enviar mensagem</a>
                             </div>
 
-                            <p id="description_first" style="white-space: pre-line"><?php echo $p1; ?></p>
+                            <p id="description_first"  style="white-space: pre-line"><?php echo $p1; ?></p>
 
                             <!-- Blockquote -->
                             <!-- <blockquote class="confer-blockquote">
@@ -191,31 +177,31 @@
 
 
 
-                            <p id="more_description" style="white-space: pre-line"><?php echo $p2; ?></p>
+                            <p id="more_description"  style="white-space: pre-line"><?php echo $p2; ?></p>
                         </div>
 
 
                         <!-- Post Author Area -->
-                        <!--                        <div class="post-author-area d-flex align-items-center my-5" id="video-chat">-->
-                        <!--                            &lt;!&ndash; Avatar &ndash;&gt;-->
-                        <!--                            <div class="author-avatar">-->
-                        <!--                                <img src="img/bg-img/53.jpg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            &lt;!&ndash; Author Content &ndash;&gt;-->
-                        <!--                            <div class="author-content">-->
-                        <!--                                <h5>Converse em video com UEM</h5>-->
-                        <!--                                <span>Agendar video chat </span>-->
-                        <!--                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing</p>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
+<!--                        <div class="post-author-area d-flex align-items-center my-5" id="video-chat">-->
+<!--                            &lt;!&ndash; Avatar &ndash;&gt;-->
+<!--                            <div class="author-avatar">-->
+<!--                                <img src="img/bg-img/53.jpg" alt="">-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; Author Content &ndash;&gt;-->
+<!--                            <div class="author-content">-->
+<!--                                <h5>Converse em video com UEM</h5>-->
+<!--                                <span>Agendar video chat </span>-->
+<!--                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-
+                      
                         <!-- Pager Area -->
                         <div class="pager-area d-flex align-items-center flex-wrap mb-80">
-                            <!-- Prev Post -->
+                            <!-- Prev Post --
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
+                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
                                     <a href="#" class="post-title">Exames</a>
@@ -223,26 +209,26 @@
                                 </div>
                             </div>
 
-                            <!-- Next Post -->
+                            -- Next Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
+                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e noticias</a>
-                                    <!---institute-blog.php-->
+                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e noticias</a> 
                                     <span>Ver publicações</span>
                                 </div>
                             </div>
+   
                         </div>
 
 
                         <!-- Comment Area -->
-
+                      
                         <!-- Leave A Reply -->
                         <div class="confer-leave-a-reply-form clearfix" id="contact">
                             <h4 class="mb-30">Enviar email</h4>
-
+                            
                             <!-- Leave A Reply -->
                             <div class="contact_form">
                                 <form action="#" method="post">
@@ -251,46 +237,40 @@
                                             <!-- Form Group -->
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control mb-30" name="name" id="name"
-                                                        placeholder="Seu Nome" required>
+                                                    <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Seu Nome" required>
                                                 </div>
                                             </div>
                                             <!-- Form Group -->
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control mb-30" name="name"
-                                                        id="name-2" placeholder="Apelido" required>
+                                                    <input type="text" class="form-control mb-30" name="name" id="name-2" placeholder="Apelido" required>
                                                 </div>
                                             </div>
                                             <!-- Form Group -->
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control mb-30" name="email"
-                                                        id="email" placeholder="E-mail" required>
+                                                    <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail" required>
                                                 </div>
                                             </div>
                                             <!-- Form Group -->
                                             <div class="col-12 col-lg-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control mb-30" name="subject"
-                                                        id="subject" placeholder="Seu Numero">
+                                                    <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Seu Numero">
                                                 </div>
                                             </div>
                                             <!-- Form Group -->
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <textarea name="message" class="form-control mb-30" id="Mensagem"
-                                                        cols="30" rows="6" placeholder="Mensagem" required></textarea>
+                                                    <textarea name="message" class="form-control mb-30" id="Mensagem" cols="30" rows="6" placeholder="Mensagem" required></textarea>
                                                 </div>
                                             </div>
                                             <!-- Button -->
-
+                                           
                                         </div>
                                     </div>
                                 </form>
-
                                 <div class="col-12">
-                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
+                                <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -318,8 +298,8 @@
                             <!-- Post Author Widget -->
                             <div class="post-author-widget">
                                 <!-- Thumbnail -->
-                                <div class="post-author-avatar">
-                                    <img src="<?php echo $img1; ?>" alt="">
+                                <div class="post-author-avatar" style="background:white;">
+                                    <img src="<?php echo $img1; ?>" alt="" >
                                 </div>
                                 <!-- Author Content -->
                                 <div class="post-author-content">
@@ -328,8 +308,7 @@
                                 </div>
                                 <!-- Social Info -->
                                 <div class="author-social-info">
-                                    <a href="https://www.google.com/maps/search/<?php echo $title ?>"><i
-                                            class="zmdi zmdi-map"></i></a>
+                                    <a href="https://www.google.com/maps/search/<?php echo $title ?>"><i class="zmdi zmdi-map"></i></a>
                                     <a href="<?php echo $website ?>"><i class="zmdi zmdi-view-web"></i></a>
                                     <a href="tel:<?php echo $website ?>"><i class="zmdi zmdi-phone"></i></a>
                                 </div>
@@ -338,28 +317,31 @@
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area" id="college">
-                            <h5 class="widget-title mb-30">Faculdades</h5>
+                            <!-- <h5 class="widget-title mb-30">Faculdades</h5> -->
+
+                            
 
 
-
-
-                            <?php
+                        <?php
                         $ref = 'institution/'.$uid.'/college';
                         $fetchdata = $database->getReference($ref)->getValue();
                         $countCollege = 0;
                         ?>
 
-                            <?php if($fetchdata != null):?>
-                            <?php
+                        <?php if($fetchdata != null):?>
+                        <?php
                             foreach( $fetchdata as $key => $row):
                                 $countCollege++;
                                 if($countCollege == 5){
                                     break;
                                 }
                                 ?>
-                            <!-- Single Recent Post Area -->
+                                        <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
-
+                                <!-- Thumb -->
+                                <div class="post-thumb">
+                                    <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
+                                </div>
                                 <!-- Content -->
                                 <div class="post-content">
                                     <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -367,24 +349,22 @@
                                 </div>
                             </div>
                             <?php endforeach ?>
-                            <?php endif?>
+                        <?php endif?>
 
                             <?php if($countCollege > 4): ?>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModalLong2">
-                                Ver todas faculdades
-                            </button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
+                                    ver todas faculdades
+                                </button>
                             <?php endif; ?>
 
                         </div>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Faculdades</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -397,121 +377,44 @@
                                         ?>
 
                                         <?php if($fetchdata != null):?>
-                                        <?php foreach( $fetchdata as $key => $row):?>
-                                        <!-- Single Recent Post Area -->
-                                        <div class="single-recent-post-area d-flex align-items-center">
-                                            <!-- Thumb -->
-
-                                            <!-- Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-title"><?php echo $row['college']; ?></a>
-                                                <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
-                                            </div>
-                                        </div>
-                                        <?php endforeach ?>
+                                            <?php foreach( $fetchdata as $key => $row):?>
+                                                <!-- Single Recent Post Area -->
+                                                <div class="single-recent-post-area d-flex align-items-center">
+                                                    <!-- Thumb -->
+                                                    <div class="post-thumb">
+                                                        <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="post-content">
+                                                        <a href="#" class="post-title"><?php echo $row['college']; ?></a>
+                                                        <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
+                                                    </div>
+                                                </div>
+                                            <?php endforeach ?>
                                         <?php endif?>
 
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Single Widget Area -->
                         <div class="single-widget-area" id="categories-list-course">
-                            <h5 class="widget-title mb-30">Cursos</h5>
+                            <!-- <h5 class="widget-title mb-30">Cursos</h5> -->
 
                             <!-- Catagories List -->
-                            <ul class="categories-list">
+                            <ul class="categories-list"> </ul>
 
-                                <?php
-                        $ref = 'institution/'.$uid.'/course';
-                        $fetchdata = $database->getReference($ref)->getValue();
-                        ?>
-
-                                <?php
-                        $count = 0;
-                        if($fetchdata != null):?>
-                                <?php foreach( $fetchdata as $key => $row):
-                                $count++;
-                                if ($count == 10){
-                                    break;
-                                }
-                                ?>
-
-                                <li><a href="#"><?php echo $row["course"]; ?></a></li>
-                                <?php endforeach ?>
-                                <?php endif?>
-
-                            </ul>
-
-
-                            <?php if($count > 10): ?>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModalLong">
-                                Ver todos os cursos
-                            </button>
-                            <?php endif; ?>
 
 
 
                         </div>
 
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Todos os cursos</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-
-
-
-
-                                        <!-- Single Widget Area -->
-                                        <div class="single-widget-area" id="categories-list-course">
-                                            <h5 class="widget-title mb-30">Cursos</h5>
-
-                                            <!-- Catagories List -->
-                                            <ul class="categories-list">
-
-                                                <?php
-                                                $ref = 'institution/'.$uid.'/course';
-                                                $fetchdata = $database->getReference($ref)->getValue();
-                                                ?>
-
-                                                <?php if($fetchdata != null):?>
-                                                <?php foreach( $fetchdata as $key => $row):?>
-                                                <li><a href="#"><?php echo $row["course"]; ?></a></li>
-                                                <?php endforeach ?>
-                                                <?php endif?>
-
-                                            </ul>
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Fechar</button>
-                                        <!--                                        <button type="button" class="btn btn-primary">Save changes</button>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal -->
-
+                    
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area">
@@ -527,7 +430,31 @@
                         </div>
 
                         <!-- Single Widget Area -->
+                        <div class="single-widget-area">
+                            <h5 class="widget-title mb-30">Galeria</h5>
 
+                            <!-- Sidebar Gallery -->
+                            <div class="sidebar-gallery">
+                                <div class="row">
+
+                                    <?php
+                                	$ref = 'institution/'.$uid.'/gallery';
+                                    $fetchdata = $database->getReference($ref)->getValue();
+                                    ?>
+
+                                     <?php if($fetchdata != null):?>
+                                     <?php
+
+                                     foreach( $fetchdata as $key => $row): ?>
+                                           <div class="col-4">
+                                             <a href="#"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                           </div>
+                                    <?php endforeach ?>
+                                    <?php endif?>
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -535,47 +462,23 @@
         </div>
     </section>
     <!-- Blog Area End -->
-    <div class="container footer-gallery">
-        <h2 id="galleria">Galeria</h2>
-        <div class="row" style="text-align:center;">
 
-            <?php
-                $ref = 'institution/'.$uid.'/gallery';
-                $fetchdata = $database->getReference($ref)->getValue();
-           ?>
-            <?php if($fetchdata != null):?>
-            <?php
-            foreach( $fetchdata as $key => $row): ?>
-            <div class="col-4">
-                <a href="<?php echo $row['url']; ?>" class="single-gallery-item">
-                    <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
-                        <div class="border border-white border-radius-10">
-                            <img src="<?php echo $row['url']; ?>" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <?php endforeach ?>
-            <?php endif?>
-        </div>
-    </div>
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
+    <footer class="footer-area bg-img section-padding-100-0" style="background-color:#414c52; color: white" >
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
-
+                            
                             <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
-
+                           
                             <!-- Social Info -->
                             <div class="social-info">
-                                <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i
-                                        class="zmdi zmdi-gps"></i></a>
+                                <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i class="zmdi zmdi-gps"></i></a>
                                 <a href="<?php echo $website; ?>"><i class="zmdi zmdi-view-web"></i></a>
                                 <a href="<?php echo "tel:".$phone; ?>"><i class="zmdi zmdi-phone"></i></a>
                                 <a href="<?php echo "mailto:".$email; ?>"><i class="zmdi zmdi-email"></i></a>
@@ -584,7 +487,7 @@
                     </div>
 
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
                             <h5 class="widget-title">Contacto</h5>
@@ -600,7 +503,7 @@
                     </div>
 
                     <!-- Single Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-60">
                             <!-- Widget Title -->
 
@@ -617,7 +520,35 @@
                     </div>
 
                     <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-60">
+                            <!-- Widget Title -->
+                            <h5 class="widget-title" id="galleria">Galeria</h5>
 
+                            <!-- Footer Gallery -->
+                            <div class="footer-gallery">
+                                <div class="row">
+
+                                 <?php
+                                                                      $ref = 'institution/'.$uid.'/gallery';
+                                                                      $fetchdata = $database->getReference($ref)->getValue();
+                                                                      ?>
+
+                                                                      <?php if($fetchdata != null):?>
+                                                                      <?php
+
+                                                                       foreach( $fetchdata as $key => $row): ?>
+
+                                                                                         <div class="col-4">
+                                                                                                  <a href="<?php echo $row['url']; ?>" class="single-gallery-item"><img src="<?php echo $row['url']; ?>" alt=""></a>
+                                                                                          </div>
+                                                                       <?php endforeach ?>
+                                                                       <?php endif?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -629,18 +560,20 @@
                     <!-- Copywrite Text -->
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
-                            <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                                </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                por <a href="https://educa.co.mz" target="_blank">Educa</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://educa.co.mz" target="_blank">Educa</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
                     <!-- Footer Menu -->
-
+                    <div class="col-12 col-md-6" >
+                        <div class="footer-menu">
+                            <ul class="nav">
+                            
+                                <li style="color: white"><a href="#"><i class="zmdi zmdi-circle"></i> Política de Privacidade</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -663,33 +596,7 @@
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
-    <script>
-        countVisits();
-        function countVisits() {
-            var visit = "<?php echo $visits ?>";
-            var id    = "<?php echo $uid ?>"
 
-            firebase.database().ref().child('institution').child(id).child('visits').set(visit , function(error){      
-                console.log(id+"-"+visit);
-            });
-            
-        }
-
-        
-        function countContact(){
-            var contact = "<?php echo $contact ?>";
-            var id    = "<?php echo $uid ?>";
-
-            contact =  Number(contact) + 1 ;
-
-            firebase.database().ref().child('institution').child(id).child('contact').set(contact , function(error){      
-                console.log(contact + " -- "+ id);
-            });
-
-        }
-        
-            
-    </script>
 
 </body>
 

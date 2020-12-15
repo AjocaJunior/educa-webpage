@@ -23,13 +23,27 @@
 
 </head>
 
+<?php
+$uid  = $_GET['id'];
+
+if($uid == null){
+  if(isset($_SESSION['uidInstitute'])){
+    $uid = $_SESSION['uidInstitute'];
+  }else{
+    header("Location: login.html");
+  }
+  
+}
+    
+?>
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #414c52">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -59,7 +73,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="college.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Faculdades</span>
         </a>
@@ -182,19 +196,9 @@
 
 
 
-                        <?php
+      <?php
 
-$uid  = $_GET['id'];
-
-if($uid == null){
-  if(isset($_SESSION['uidInstitute'])){
-    $uid = $_SESSION['uidInstitute'];
-  }else{
-    header("Location: login.html");
-  }
-  
-}
-               
+           
         include_once('../includes/dbconfig.php');         
         $ref = 'institution/'.$uid.'/course';
         $fetchdata = $database->getReference($ref)->getValue();

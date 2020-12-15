@@ -1072,7 +1072,7 @@ input:required {
 .footer-area {
   position: relative;
   z-index: 1;
-  background-color: #111343; }
+  background-color: #414c52; }
   .footer-area .row {
     margin-left: -30px;
     margin-right: -30px; }
@@ -1096,7 +1096,7 @@ input:required {
     color: #ffffff;
     margin-bottom: 20px; }
   .main-footer-area .single-footer-widget p {
-    color: #9293bc;
+    color: #ffffff;
     font-size: 14px; }
     .main-footer-area .single-footer-widget p i {
       margin-right: 5px; }
@@ -1131,7 +1131,7 @@ input:required {
     position: relative;
     z-index: 1; }
     .main-footer-area .single-footer-widget .footer-nav li a {
-      color: #9293bc;
+      color: #ffffff;
       font-size: 14px;
       margin-bottom: 15px;
       display: inline-block;
@@ -1230,7 +1230,7 @@ input:required {
             top: -2px;
             font-size: 6px;
             margin-right: 2px;
-            color: #505add; }
+            color: #ffffff; }
           .copywrite-content .footer-menu .nav li a:hover, .copywrite-content .footer-menu .nav li a:focus {
             color: #ffffff; }
 

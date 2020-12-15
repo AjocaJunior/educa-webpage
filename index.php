@@ -817,7 +817,7 @@
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <a href="institute.php?id=<?php echo $row['uid']; ?>">
+                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
                                     style="height:200px;width:100%; background:white; text-align:center;" alt="">
@@ -835,13 +835,13 @@
                               }
                              
                              ?>
-                            <a class="" href="institute.php?id=<?php echo $row['uid']; ?>"><?php echo $title; ?></a>
+                            <a class="" href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
                             <!-- Post Meta -->
 
 
                         </div>
                         <div class="blog-btn">
-                            <a href="institute.php?id=<?php echo $row['uid']; ?>"><i
+                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
                                     class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1091,12 +1091,11 @@
                                 <!-- Copywrite Text -->
                                 <div class="col-12 col-md-6">
                                     <div class="copywrite-text">
-                                        <p>
+                                        <p style="color:white;">
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                             Copyright &copy;<script>
                                             document.write(new Date().getFullYear());
-                                            </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA
-                                            MOÇAMBIQUE</a>
+                                            </script> EDUCA MOÇAMBIQUE</a>
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         </p>
                                     </div>
@@ -1144,7 +1143,14 @@
 
                         if (db_uid == user_uid) {
                             var user_name = document.getElementById("user-name");
-                            user_name.innerHTML = item.val().name;
+                            var name = item.val().name;
+
+                            if( item.val().name.length > 20){
+                                name = item.val().name.substr(0 , 20)+"..";
+                            }else{
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
                             return;
                         }
 
