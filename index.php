@@ -118,7 +118,7 @@
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
             <div class="single-welcome-slide bg-img  jarallax"
-                style="background-image: url(img/bg-img/backgroundeducaonline.jpg);">
+                style="background-image: url(img/bg-img/bgeduca2021.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -140,7 +140,7 @@
 
             <!-- Single Slide -->
             <div class="single-welcome-slide bg-img jarallax"
-                style="background-image: url(img/bg-img/backgroundeducaonline1.jpg);">
+                style="background-image: url(img/bg-img/bgeduca2021.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
