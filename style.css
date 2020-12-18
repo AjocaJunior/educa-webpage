@@ -338,6 +338,11 @@ input:required {
     padding-top: 50px;
     padding-bottom: 0; }
 
+
+    .section-padding-50-20 {
+      padding-top: 50px;
+      padding-bottom: 20px; }
+
 .section-padding-80 {
   padding-top: 80px;
   padding-bottom: 80px; }
@@ -1662,10 +1667,10 @@ input:required {
       transition-duration: 800ms; }
   .single-blog-area .single-blog-text {
     background-color: #ffffff;
-    padding: 50px 5px 50px 5px;
+    padding: 30px 5px 30px 5px;
     border-radius: 0 0 10px 10px; }
     .single-blog-area .single-blog-text .blog-title {
-      font-size: 16px;
+      font-size: 10px;
       font-weight: 600;
       color: #111343;
       margin-bottom: 5px;
@@ -2729,13 +2734,13 @@ text-align: center;
   z-index: 1;
   width: 100%; }
   .our-sponsor-area .single-sponsor {
-    border: 1px solid #444675;
+    
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
     width: 25%;
-    height: 240px;
+    height: 210px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2828,6 +2833,61 @@ text-align: center;
 }
 
 /* FIM DO CÓDIGO ADICIONADO*/
+
+
+/*ADICIONADO 2*/
+
+.our-sponsor-area .single-spons{
+
+
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 1000%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .our-sponsor-area .single-spons {
+    height: 200px; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .our-sponsor-area .single-spons {
+    height: 150px; } }
+@media only screen and (max-width: 767px) {
+  .our-sponsor-area .single-spons {
+    height: 80px; } }
+.our-sponsor-area .single-spons a img {
+  
+  -webkit-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+  max-height: 110px;
+  
+  opacity: 0.5; }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .our-sponsor-area .single-spons a img {
+      max-height: 90px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .our-sponsor-area .single-spons a img {
+      max-height: 50px; } }
+  @media only screen and (max-width: 767px) {
+    .our-sponsor-area .single-spons a img {
+      max-height: 30px; } }
+.our-sponsor-area .single-spons:hover a img, .our-sponsor-area .single-sponsor:focus a img {
+  opacity: 1; }
+.sponsor-h4 h4{
+  color:  #111343;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+
+/* FIM DO CODIGO ADICIONADO 2 */
 
 /* :: 20.0 Contact Area CSS */
 .contact-our-area {

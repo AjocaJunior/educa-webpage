@@ -15,7 +15,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="css/carousel.css">
 </head>
 
 <body>
@@ -93,11 +93,11 @@
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.html">Informações</a>
-                                <ul class="dropdown">
+                                    <ul class="dropdown">
                                         <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
                                         <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
                                     </ul>
-                            </li>
+                                </li>
                                 <li><a href="#contact">Contactos</a></li>
                             </ul>
 
@@ -180,16 +180,17 @@
                             Participe das mesas de debate onde poderás aprender e discutir sobre assuntos relacionados a
                             educação
                         </p>
-                        <a href="live.html" class="btn confer-btn-white  mt-50 wow fadeInUp" target="_blank" data-wow-delay="300ms">Ver
+                        <a href="live.html" class="btn confer-btn-white  mt-50 wow fadeInUp" target="_blank"
+                            data-wow-delay="300ms">Ver
                             Live<i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- About Thumb -->
                 <div class="col-12 col-md-6">
-                    <a href="live.html" target="_blank" >
+                    <a href="live.html" target="_blank">
                         <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-                            <img src="img/live/live.png"  alt="">
+                            <img src="img/live/live.png" alt="">
                         </div>
                     </a>
                 </div>
@@ -786,8 +787,212 @@
                 </div>
     </section>
 
+
+    <!---CAROUSEL SPEAKERS-->
+    <section class="our-speaker-area section-padding-80-50">
+        <div class="row">
+            <div class="col-12">
+                <!-- Heading -->
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                    <p>Oradores</p>
+                    <h4>Nossos Oradores</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="container-fluid">
+                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/1.jpg" class="img-fluid mx-auto d-block" alt="img1">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Cassamo Nuvunga</h5>
+                                    <p>Presidente da CADE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/3.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/4.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/5.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/6.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/9.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/10.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb">
+                                    <img src="img/educa/13.jpg" class="img-fluid mx-auto d-block" alt="img2">
+                                </div>
+                                <!-- Social Info -->
+                                <div class="social-info">
+                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+
+                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                </div>
+                                <!-- Info -->
+                                <div class="speaker-info">
+                                    <h5>Henry Mahindra</h5>
+                                    <p>Fundador da NIKE</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="col-md-12 text-center">
+                <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
+                    style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Oradores<i
+                        class="zmdi zmdi-long-arrow-right"></i></a>
+            </div>
+            </div>
+        </div>
+    </section>
     <!-- Our Blog Area Start -->
-    <section id="blog" class="our-blog-area section-padding-100-60" style="background-color:#e9eef4 ;">
+    <section id="blog" class="our-blog-area section-padding-50-20" style="background-color:#e9eef4 ;">
         <div class="container">
             <div class="row" style="text-align:center">
                 <?php
@@ -817,7 +1022,8 @@
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
-                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
                                     style="height:200px;width:100%; background:white; text-align:center;" alt="">
@@ -835,13 +1041,15 @@
                               }
                              
                              ?>
-                            <a class="" href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
+                            <a class=""
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
                             <!-- Post Meta -->
 
 
                         </div>
                         <div class="blog-btn">
-                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
                                     class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -857,7 +1065,7 @@
             </div>
             <div class="col-md-12 text-center">
                 <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
-                    style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Todos Expositores<i
+                    style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Expositores<i
                         class="zmdi zmdi-long-arrow-right"></i></a>
             </div>
 
@@ -927,20 +1135,20 @@
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/logonew01.png" alt=""></a>
                         </div>
-                        <!-- Single Sponsor -->
+
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/UP.png" alt=""></a>
                         </div>
-                        <!-- Single Sponsor -->
+
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/UEMLOGO.png" alt=""></a>
                         </div>
-                        <!-- Single Sponsor -->
+
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/GPDNET.png" alt=""></a>
                         </div>
 
-                        <!-- Single Sponsor -->
+
                         <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
                         </div>
@@ -1124,7 +1332,7 @@
 
     </script>
 
-
+    <script src="js/carousel.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
@@ -1145,9 +1353,9 @@
                             var user_name = document.getElementById("user-name");
                             var name = item.val().name;
 
-                            if( item.val().name.length > 20){
-                                name = item.val().name.substr(0 , 20)+"..";
-                            }else{
+                            if (item.val().name.length > 20) {
+                                name = item.val().name.substr(0, 20) + "..";
+                            } else {
                                 name = item.val().name;
                             }
                             user_name.innerHTML = name;
