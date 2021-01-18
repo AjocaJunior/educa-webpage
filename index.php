@@ -78,16 +78,18 @@
                                         <li><a href="evento.html#conferencias">Conferências</a></li>
                                         <li><a href="evento.html#webinares">Webinares</a></li>
                                         <li><a href="evento.html#encerramento">Encerramento</a></li>
-                                        <li><a href="raffle.php">Sorteio</a></li>
+                                        <!-- <li><a href="raffle.php">Sorteio</a></li> -->
 
                                     </ul>
                                 </li>
                                 <li><a href="feira.php">Feira</a>
-
+                                <ul class="dropdown">
+                                        <li><a href="feira.php#testes">Testes</a></li>
+                                    </ul>
                                 </li>
                                 <li><a href="actividades-culturais.html">Cultura</a>
                                     <ul class="dropdown">
-                                        <li><a href="actividades-culturais.html#testes">Testes</a></li>
+                                      
                                         <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                         <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                     </ul>
@@ -984,7 +986,7 @@
                     </a>
                 </div>
                 <div class="col-md-12 text-center">
-                <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
+                <a href="evento.html" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
                     style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Oradores<i
                         class="zmdi zmdi-long-arrow-right"></i></a>
             </div>

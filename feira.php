@@ -67,11 +67,13 @@
                                         </ul>
                                     </li>
                                     <li><a href="feira.php">Feira</a>
-
+                                    <ul class="dropdown">
+                                        <li><a href="feira.php#testes">Testes</a></li>
+                                    </ul>
                                     </li>
                                     <li><a href="actividades-culturais.html">Cultura</a>
                                         <ul class="dropdown">
-                                        <li><a href="actividades-culturais.html#testes">Testes</a></li>
+                                        
                                             <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                             <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                         </ul>
@@ -95,6 +97,49 @@
             </div>
         </div>
     </header>
+
+    <section class="our-speaker-area bg-img section-padding-80-50 jarallax">
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top: 40px;" data-wow-delay="300ms">
+                        <p id="testes">KNOW YOURSELF</p>
+                        <h4 style="color: #414c52;">SAIBA MAIS SOBRE TI</h4>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80" style="text-align: center;">
+                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
+                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
+                        
+                        <div class="ticket-icon">
+                            <img src="img/core-img/p3.png" alt="">
+                        </div>
+                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                                class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80" style="text-align: center;">
+                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
+                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">Testes de personalidades hoje na sociedade são amplamente difundidos, principalmente em seleções de pessoas para determinada atividade ou para algo bem mais sério como uma entrevistas de emprego. Obtenha uma descrição concreta e precisa de quem você é e de como é seu jeito e porque.</p>
+                        <div class="ticket-icon">
+                            <img src="img/core-img/p3.png" alt="">
+                        </div>
+                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                                class="zmdi zmdi-long-arrow-right"></i></a>
+                        
+                    </div>
+                </div>
+              
+               
+            </div>
+        </div>
+    </section>
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
