@@ -21,9 +21,9 @@
 <body>
 
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <!-- /Preloader -->
 
     <!-- Header Area Start -->
@@ -84,10 +84,26 @@
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="genre" id="genre"
-                                                    placeholder="Género">
+                                                <select class="browser-default custom-select" name="genre" id="genre">
+                                                    <option selected>Género</option>
+                                                    <option value="Estudante">M</option>
+                                                    <option value="Pai ou encarregados de Educação">F</option>
+                                                </select>
                                             </div>
                                         </div>
+
+                                        <div class="col-12 col-lg-12">
+                                            <div class="form-group">
+                                                <select class="browser-default custom-select" onchange="changeUiByCategory(this.selectedIndex)" id="category">
+                                                    <option selected>Seleciona categoria</option>
+                                                    <option value="Estudante">Estudante</option>
+                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados de Educação</option>
+                                                    <option value="Outro">Outro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
@@ -98,24 +114,32 @@
                                         </div>
 
                                         <!-- Form Group -->
-                                        <div class="col-12 col-lg-6">
+                                        <div class="col-12 col-lg-6" id="level_of_schoolingDiv">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="level_of_schooling"
-                                                    id="level_of_schooling" placeholder="Nível de escolaridade">
+                                                    id="level_of_schooling" placeholder="Nível académico">
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-lg-12">
+                                        
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6" id="schoolDiv">
                                             <div class="form-group">
-                                                <select class="browser-default custom-select" id="category">
-                                                    <option selected>Seleciona categoria</option>
-                                                    <option value="Estudante">Estudante</option>
-                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados
-                                                        de Educação</option>
-                                                </select>
+                                                <input type="text" class="form-control mb-30" name="school"
+                                                    id="school" placeholder="Instituição de ensino">
                                             </div>
                                         </div>
 
+
+                                          <!-- Form Group -->
+                                        <div class="col-12 col-lg-6" id="professionDiv">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-30" name="profession"
+                                                    id="profession" placeholder="Profissão">
+                                            </div>
+                                        </div>
+
+                  
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
@@ -180,18 +204,57 @@
     <!-- jQuery 2.2.4 -->
     <script src="js/jquery.min.js"></script>
     <!-- Popper -->
-    <script src="js/popper.min.js"></script>
+    <!-- <script src="js/popper.min.js"></script> -->
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <!-- All Plugins -->
-    <script src="js/confer.bundle.js"></script>
+    <!-- <script src="js/confer.bundle.js"></script> -->
     <!-- Active -->
-    <script src="js/default-assets/active.js"></script>
+    <!-- <script src="js/default-assets/active.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
     <script>
+
+    function changeUiByCategory(category) {
+        switch(category) {
+            case 0:
+
+            break;
+            case 1:
+                studentForm();
+            break;
+            case 2:
+                dadForm();
+            break;
+            case 3:
+            break;
+        }
+
+    }
+    //get form divs
+    var professionDiv = document.getElementById('professionDiv');
+    var schoolDiv = document.getElementById('schoolDiv');
+    var level_of_schoolingDiv = document.getElementById('level_of_schoolingDiv');
+    studentForm()
+
+    function studentForm() {
+        professionDiv.style.display = "none";
+        schoolDiv.style.display = "block";
+        level_of_schoolingDiv.style.display = "block";
+    }
+
+    function dadForm() {
+        professionDiv.style.display = "block";
+        schoolDiv.style.display = "none";
+        level_of_schoolingDiv.style.display = "none";
+    }
+
+    function othersForm() {
+        dadForm();
+    }
+
     function addButton() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
@@ -201,6 +264,8 @@
     var date_of_birth = document.getElementById('date_of_birth').value;
     var category = document.getElementById('category').value;
     var residence = document.getElementById('residence').value;
+    var school =   document.getElementById('school').value;
+    var profession = document.getElementById('profession').value;
     var userId = "";
     var imageUrl = "";
 
@@ -208,7 +273,7 @@
     .then(function(data){
         userId = data.user.uid;
     
-        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence);
+        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence , school);
         
     //Here if you want you can sign in the user
     }).catch(function(error) {
@@ -219,7 +284,7 @@
 }
 
 
-function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence) {
+function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence , school) {
     var data = {
                userId:userId,
                name:name, 
@@ -230,7 +295,8 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
                genre:genre, 
                date_of_birth:date_of_birth, 
                category:category,
-               residence:residence
+               residence:residence,
+               school:school
     };
 
     firebase.database().ref().child('users').child(userId).set(data , function(error){
