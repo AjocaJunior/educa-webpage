@@ -117,7 +117,9 @@
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text text-right">
-
+                            <h5 data-animation="fadeInUp" data-delay="100ms"></h5>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Feira Internacional de Educação</h2>
+                            
                                 <!-- <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
                                     <a href="live.html" class="btn confer-btn-white"> Ver live <i class="zmdi zmdi-play-circle"></i></a>
                                 </div> -->

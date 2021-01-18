@@ -114,9 +114,9 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="#about">Sobre</a></li>
+                                <li><a href="<?php echo "institute.php?id=".$uid."#about" ?>">Sobre</a></li>
 
-                                <li><a href="#contact">Contacto</a></li>
+                                <li><a href="<?php echo "institute.php?id=".$uid."#contact" ?>">Contacto</a></li>
                             </ul>
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
