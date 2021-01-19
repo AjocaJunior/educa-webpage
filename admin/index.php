@@ -191,6 +191,23 @@ foreach($fetchdata as $key => $row){
         </div>
       </li>
 
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseImg" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-rss-square"></i>
+          <span>Galeria </span>
+        </a>
+        <div id="collapseImg" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Fotos:</h6>
+            <a class="collapse-item" href="add_gallery.php?id=<?php echo $uid; ?>">Publicar fotos</a>
+            <a class="collapse-item" href="../gallery.php?id=<?php echo $uid; ?>">Galeria </a>
+          </div>
+        </div>
+      </li>
+
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -200,7 +217,7 @@ foreach($fetchdata as $key => $row){
       <li class="nav-item">
         <a class="nav-link" href="add_gallery.php?id=<?php echo $uid; ?>">
           <i class="fas fa-fw fa-camera"></i>
-          <span>Adicionar Fotos</span></a>
+          <span>   </span></a>
       </li>
 
       <!-- Divider -->

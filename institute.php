@@ -20,9 +20,9 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <!-- /Preloader -->
 
 
@@ -218,8 +218,8 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">Exames</a>
-                                    <span><?php echo "Exames ".$title; ?></span>
+                                    <a href="#" class="post-title"> <!-- exames-->  </a>
+                                    <span><?php echo " ".$title; ?></span>
                                 </div>
                             </div>
 
