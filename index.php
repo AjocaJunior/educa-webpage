@@ -192,7 +192,7 @@
                 <div class="col-12 col-md-6">
                     <a href="live.html" target="_blank">
                         <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-                            <img src="img/live/live.png" alt="">
+                            <img src="img/live/live3.jpg" alt="">
                         </div>
                     </a>
                 </div>

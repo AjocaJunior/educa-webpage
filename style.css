@@ -3092,7 +3092,7 @@ text-align: center;
 }
 
  .about-thumb img{
-  border-radius: 20%;
+  
   height: 100%;
   position: relative;
   width: 100%;
@@ -3117,7 +3117,7 @@ text-align: center;
  .about-thumb::before{
   animation: pulse 2s linear infinite;
   border: #f8871f solid 2px;
-  border-radius: 20%;
+ 
   box-sizing: border-box;
   content: ' ';
   height: 140%;

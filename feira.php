@@ -118,7 +118,7 @@
                         <div class="ticket-icon">
                             <img src="img/core-img/p3.png" alt="">
                         </div>
-                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                        <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <div class="ticket-icon">
                             <img src="img/core-img/p3.png" alt="">
                         </div>
-                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                        <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                         
                     </div>

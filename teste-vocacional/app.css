@@ -95,15 +95,15 @@ h3 {
 
 /* BUTTONS */
 .btn {
-  border-radius: 23px;
+
   font-size: 1.8rem;
   padding: 1rem 0;
   width: 20rem;
   text-align: center;
-  border: 0.1rem solid #151853;
+  border: 0.1rem solid #414c52;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #151853;
+  background-color: #414c52;
   
 }
 
@@ -174,5 +174,5 @@ ul{
 
 #areaSes{
   text-align: center;
-  color: blue;
+  color:#414c52;
 }

@@ -154,7 +154,7 @@
 
                         <div class="row d-flex justify-content-center" style="margin: 2px;">
                             <button onclick="teste()" type="button" name="Avançar" id="avancar" disabled="disabled"
-                                class="btn btn-primary btn-lg btn-block">Avançar <i
+                                class="btn confer-btn-white btn-block">Avançar <i
                                     class="zmdi zmdi-long-arrow-right"></i></button>
                         </div>
 
@@ -198,6 +198,7 @@
     <script src="../js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="../js/default-assets/active.js"></script>
+    <script src="../js/db/real-time-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="../js/db/app.js"></script>
 
@@ -258,21 +259,22 @@
             var email = document.getElementById('email').value;
             var contact = document.getElementById('contact').value;
             var genre = document.getElementById('genre').value;
+            var uid = uuidv4();
 
-
-            create( name, apelido, email, contact, genre);
+            create( name, apelido, email, contact, genre, uid);
 
 
         }
 
 
-        function create( name, apelido, email, contact, genre) {
+        function create( name, apelido, email, contact, genre, uid) {
             var data = {
                 name: name,
                 apelido: apelido,
                 email: email,
                 contact: contact,
-                genre: genre
+                genre: genre,
+                uid: uid
             };
 
             firebase.database().ref().child('testevoc').push(data, function (error) {
@@ -280,12 +282,23 @@
                     alert("Data could not be saved." + error);
                     location.href = "index.html";
                 } else {
-                    location.href = "game.html";
+                    location.href = "game.html?id=" +uid;
+                    const idSessao = sessionStorage.setItem('uidSessao',uid);
                 }
             });
 
+
+
+
         }
 
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0,
+                    v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
     </script>
 
 </body>

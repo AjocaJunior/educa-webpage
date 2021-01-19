@@ -53,14 +53,7 @@
     "choice2": "Não",
     "choice3": "Talvez"
   },
-  {
-    "question": "Ouve, por vezes, ruídos estranhos sem saber de onde vêm?",
-    "choice1": "Gosto",
-    "choice2": "Indiferente ou dúvida",
-    "choice3": "Não Gosto",
-    "choice4": "Não Conheço",
-    "answer": 1
-  },
+  
   {
     "question": "É capaz de mentir com o fim de obter um sucesso?",
     "choice1": "Sim",

@@ -5,8 +5,8 @@
   width: 100%;
   font-size: 1.8rem;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color: #56a5eb;
-  border-radius: 23px;
+  background-color: #414c52;
+ 
 }
 
 #question{
@@ -22,7 +22,7 @@
 
 .choice-prefix {
   padding: 1.5rem 2.5rem;
-  background-color: #56a5eb;
+  background-color: #414c52;
   color: white;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .correct {
-  background-color: #151853;
+  background-color: #f8871f;
 }
 
 .incorrect {
-  background-color:#151853 ;
+  background-color:#f8871f ;
 }
 
 /* HUD */
@@ -67,13 +67,13 @@ height: 5px;
 #progressBar {
   width: 20rem;
   height: 4rem;
-  border: 0.3rem solid #56a5eb;;
+  border: 0.3rem solid #f8871f;
   margin-top: 1.5rem;
 }
 
 #progressBarFull {
   height: 3.4rem;
-  background-color: #151853;
+  background-color: #414c52;
   width: 0%;
 }
 
@@ -81,7 +81,7 @@ height: 5px;
 #loader {
   border: 1.6rem solid white;
   border-radius: 50%;
-  border-top: 1.6rem solid #151853;
+  border-top: 1.6rem solid #e9eef4;
   width: 12rem;
   height: 12rem;
   animation: spin 2s linear infinite;
