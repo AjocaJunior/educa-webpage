@@ -23,6 +23,7 @@
       <h6 id="areaSes" style="font-weight: 400;"></h6>
       <div class="mt-30">
         <h6><strong>NOTA: </strong> Este teste é uma base para poder entender um pouco sobre sua orientação, para saber mais a fundo sobre qual curso e carreira seguir, entre em contacto connosco clicando no botão seguinte.</h6>
+        
         <a class="btn confer-btn-white" href="../index.php">Fase 2 do Teste<i class="zmdi zmdi-mood"></i></a>
         <br>
         <a class="btn confer-btn-white mt-30" href="../index.php">Menu Principal<i class="zmdi zmdi-home"></i></a>

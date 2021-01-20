@@ -61,33 +61,33 @@ areaSes.innerText = resultArea;
 
 const uidSessao = sessionStorage.getItem('uidSessao');
 
-import '../js/db/app.js';
 
 
-window.onload = function salvar(){
-
+window.onload= function salvar(){
+    console.log(uidSessao, resultArea);
     var resultado = resultArea;
     var uid = uidSessao;
-    addResult(resultado,uid);
+   addResult(resultado,uid);
 }
 
-function addResult(resultado, uid) {
+function addResult(resultArea,uidSessao) {
 
     var data = {
-       resultado = resultArea,
-       uid = uidSessao
+       resultado: resultArea,
+       uid: uidSessao
     };
 
-    firebase.database().ref().child('testevoc').child(uid).set(data, function (error) {
+    firebase.database().ref().child('testevoc').child(uidSessao).child('Resultado').set(data, function (error) {
         if (error) {
-            alert("Data could not be saved." + error);
+            console.log("Data could not be saved." + error);
            
         } else {
-            alert("Dados gravados com sucesso.");
+            console.log("Dados gravados com sucesso. ");
         }
     });
 
 }
+
 
 
 
