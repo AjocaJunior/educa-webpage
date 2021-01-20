@@ -90,10 +90,10 @@
 
             foreach($fetchdata as $key => $row){
             
-                if($row['email'] == $email){
+                if(trim($row['email']) == $email){
                     $emailFound = true;
                     echo "email encotrado";
-                    if($row['password']  == $password){
+                    if(trim($row['password'])  == $password){
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
                         // header("location : index.php"+$row['uid']);
