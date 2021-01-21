@@ -41,7 +41,7 @@ var grupoMaior;
 var setsession;
 var groupMaxIndex;
 
-fetch('testevocacionalperguntas.json')
+fetch('testevocacionalper10.json')
     .then((res) => {
         return res.json();
     })
@@ -55,8 +55,8 @@ fetch('testevocacionalperguntas.json')
 
 //CONSTANTS
 const CORRECT_BONUS = 1;
-const MAX_QUESTIONS = 204;
-//REDUZIDO PARA 10 NUMERO MAXIMO DE PERGUNTAS
+const MAX_QUESTIONS = 10;
+//REDUZIDO DE 204 PARA 10 NUMERO MAXIMO DE PERGUNTAS
 startGame = () => {
     questionCounter = 0;
     score = 0;

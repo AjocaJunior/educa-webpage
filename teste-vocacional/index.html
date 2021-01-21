@@ -66,12 +66,12 @@
                         </ul>
                         <div class="our-sponsor-area d-flex justify-content-center  ">
 
-                            <div class="single-sponsor wow">
+                            <div class=" wow" style="width: 30%; height: 30%;">
                                 <a href="#">
     
                                     <img src="../img/logos/cepaepsimbolo.png" class="" alt=""></a>
                             </div>
-                            <div class="single-sponsor wow">
+                            <div class=" wow" style="width: 70%; height: 70%;">
                                 <a href="#"> <img src="../img/logos/NewCADELogoSlogan.png" class="" alt=""></a>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="row d-flex justify-content-center" style="margin: 2px;">
-                            <button onclick="teste()" type="button" name="Avançar" id="avancar" disabled="disabled"
+                            <button onclick="teste();" type="button" name="Avançar" id="avancar" disabled="disabled"
                                 class="btn confer-btn-white btn-block">Avançar <i
                                     class="zmdi zmdi-long-arrow-right"></i></button>
                         </div>
@@ -224,24 +224,7 @@
         // var database = firebase.database();
 
 
-        // function create(name, apelido, contacto, email, sexo) {
-        //     database.ref('testevoc').set({
-        //         name: name,
-        //         apelido: apelido,
-        //         contacto: contacto,
-        //         email: email,
-        //         sexo: sexo
-        //     });
-        // }
-        // function teste() {
-
-        //     create(name, apelido, contacto, email, sexo);
-
-
-
-        //     window.location.href = "game.html";
-
-        // }
+      
 
 
         aceitar.onchange = function () {
@@ -285,7 +268,7 @@
                 uid: uid
             };
 
-            firebase.database().ref().child('testevoc').push(data, function (error) {
+            firebase.database().ref().child('testeper').child(uid).set(data, function (error) {
                 if (error) {
                     alert("Data could not be saved." + error);
                     location.href = "index.html";

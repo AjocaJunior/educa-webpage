@@ -115,9 +115,9 @@
                         <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
                         <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
                         
-                        <div class="ticket-icon">
+                        <!-- <div class="ticket-icon">
                             <img src="img/core-img/p3.png" alt="">
-                        </div>
+                        </div> -->
                         <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
@@ -127,9 +127,9 @@
                     <div class="about-content-text mb-80" style="text-align: center;">
                         <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
                         <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">Testes de personalidades hoje na sociedade são amplamente difundidos, principalmente em seleções de pessoas para determinada atividade ou para algo bem mais sério como uma entrevistas de emprego. Obtenha uma descrição concreta e precisa de quem você é e de como é seu jeito e porque.</p>
-                        <div class="ticket-icon">
+                        <!-- <div class="ticket-icon">
                             <img src="img/core-img/p3.png" alt="">
-                        </div>
+                        </div> -->
                         <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                         

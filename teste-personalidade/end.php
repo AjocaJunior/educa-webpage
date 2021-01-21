@@ -20,10 +20,17 @@
     <div id="end" class="text-center">
       <!-- <h3 id="">O resultado está a ser calculado!</h3> -->
 
-      <h6 id="areaSes" style="font-weight: 400;"></h6>
-     
+      <h6 id="sinceSes" style="font-weight: 400;"></h6>
+      <h6 id="timidezSes" style="font-weight: 400;"></h6>
+      <h6 id="activSes" style="font-weight: 400;"></h6>
+      <h6 id="introSes" style="font-weight: 400;"></h6>
+      <h6 id="neuroSes" style="font-weight: 400;"></h6>
+      <h6 id="esquiSes" style="font-weight: 400;"></h6>
+      <h6 id="depreSes" style="font-weight: 400;"></h6>
+      <h6 id="epileSes" style="font-weight: 400;"></h6>
+      <h6 id="psicoSes" style="font-weight: 400;"></h6>
       <div class="mt-30">
-        <h6><strong>NOTA: </strong> Este teste é uma base para poder entender um pouco sobre sua orientação, para saber mais a fundo sobre qual curso e carreira seguir, entre em contacto connosco clicando no botão seguinte.</h6>
+        <h6><strong>NOTA: </strong> Este teste é uma base para poder entender um pouco sobre sua personalidade, para saber mais sobre si, entre em contacto connosco clicando no botão seguinte.</h6>
         
         <a class="btn confer-btn-white" href="../index.php">Fase 2 do Teste<i class="zmdi zmdi-mood"></i></a>
         <br>
@@ -37,7 +44,7 @@
           <div class=" wow" style="width: 10%; height: 10%;">
            <a href="#">
 
-           <img src="../img/logos/cepaepsimbolo.png" class="" alt=""></a>
+           <img src="../img/logos/UEMLOGO.png" class="" alt=""></a>
           </div>
           <div class="wow" style="width: 30%; height: 30%;">
             <a href="#"> <img src="../img/logos/NewCADELogoSlogan.png" class="" alt=""></a>
