@@ -39,7 +39,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.html"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -67,20 +67,28 @@
                                         </ul>
                                     </li>
                                     <li><a href="feira.php">Feira</a>
-
+                                    <ul class="dropdown">
+                                        <li><a href="feira.php#testes">Testes</a></li>
+                                    </ul>
                                     </li>
                                     <li><a href="actividades-culturais.html">Cultura</a>
                                         <ul class="dropdown">
+                                        
                                             <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                             <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="informacoes-diversas.html">Informações</a></li>
+                                    <li><a href="informacoes-diversas.html">Informações</a>
+                                    <ul class="dropdown">
+                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                    </ul>
+                                </li>
                                     <li><a href="#contact">Contactos</a></li>
                                 </ul>
 
                                 <!-- Get Tickets Button -->
-                                <a href="perfil/profile.html" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Perfil<i
+                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5" id="user-name">Perfil<i
                                         class="zmdi zmdi-sign-in"></i></a>
                             </div>
                             <!-- Nav End -->
@@ -89,6 +97,49 @@
             </div>
         </div>
     </header>
+
+    <section class="our-speaker-area bg-img section-padding-80-50 jarallax">
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top: 40px;" data-wow-delay="300ms">
+                        <p id="testes">KNOW YOURSELF</p>
+                        <h4 style="color: #414c52;">SAIBA MAIS SOBRE TI</h4>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80" style="text-align: center;">
+                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
+                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
+                        
+                        <!-- <div class="ticket-icon">
+                            <img src="img/core-img/p3.png" alt="">
+                        </div> -->
+                        <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                                class="zmdi zmdi-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            
+                <div class="col-12 col-md-6">
+                    <div class="about-content-text mb-80" style="text-align: center;">
+                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
+                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">Testes de personalidades hoje na sociedade são amplamente difundidos, principalmente em seleções de pessoas para determinada atividade ou para algo bem mais sério como uma entrevistas de emprego. Obtenha uma descrição concreta e precisa de quem você é e de como é seu jeito e porque.</p>
+                        <!-- <div class="ticket-icon">
+                            <img src="img/core-img/p3.png" alt="">
+                        </div> -->
+                        <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                                class="zmdi zmdi-long-arrow-right"></i></a>
+                        
+                    </div>
+                </div>
+              
+               
+            </div>
+        </div>
+    </section>
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
@@ -250,7 +301,7 @@
                                 Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                                 </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                por <a href="https://educa.co.mz" target="_blank">Educa</a>
+                                por <a href="https://www.educa.co.mz" target="_blank">Educa</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
@@ -274,6 +325,42 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
+
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
+                            return;
+                        }
+
+                    }
+
+                });
+            });
+
+        } else {
+            location.href = 'intro.php';
+        }
+
+    });
+    </script>
+
     <!--Floating WhatsApp javascript-->
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.min.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>

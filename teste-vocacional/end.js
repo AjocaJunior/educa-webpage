@@ -1,3 +1,5 @@
+
+
 const username = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
@@ -15,7 +17,7 @@ var area1 = "Você se enquadra melhor no campo Cientifico -  Sanitario que tem c
 var area2 = "Você se enquadra melhor no campo Teorico - Humanista que tem como principais actividades: \n\n - Realizar estudos e investigacoes sobre as origens, a evolucao, a historia e o comportamento do homem como individuo e como membro da sociedade. \n\n - Divulgar doutrinas e realizar cerimonias de culto" +
     "\n\n Possibilidade de trabalhar nas áreas de Antropologia, Arqueologia, Historia, Filosofia, Sacerdote, Conservacao de Museus";
 var area3 = "Você se enquadra melhor no campo Literario, que tem como principais actividades: \n\n - Escrever obras de diferentes  generos literarios para representacao ou publicacao. \n\n - Escrever criticas de obras literarias, artisticas ou musicais, escrever, preparar e selecionar informacoes para publicacao em jornais e revistas ou para difusao via radio, televisao, etc. \n\n" +
-    "\n\n Possibilidade de trabalhar nas como Escritor, Locutor, Apresentador, Jornalismo.";
+    "\n Possibilidade de trabalhar como Escritor, Locutor, Apresentador e Jornalista.";
 var area4 = "Você se enquadra melhor no campo Psicopedagógico, que tem como principais actividades: \n\n - Dar aulas a alunos diversos niveis de ensino. \n - Ensinar pessoas fisicas ou mentalmente diminuidas. \n\n - Investigar e aconselhar sobre metodos pedagogicos. \n - Organizar e dirigir actividades educativas em centros escolares. \n - Estudar o comportamento do ser humano e os problemas psicologicos no campo da educação." +
     "\n\n Possibilidade de trabalhar nas áreas de Pedagogia, educacao de infancia, psicologia escolar, reabilitacao de deliquentes ou toxicodependentes, direccao de escolas e professor.";
 var area5 = "Você se enquadra melhor no campo Politico - social, que tem como principais actividades: \n\n - Dirigir a politica nacional ou participar nela (intervir na elaboracao de leis, descretos, etc. \n - Na sua transmissao e aprovacao).\n - Interpretar as leis para sua integracao na politica nacional. \n - Dirigir empresas publicas.\n - Ajudar membros da comunidade, tendo em conta factores economicos e sociais. \n - Administrar a justica, intervir face aos tribunais representando o Estado ou entidades privadas. \n - Autorizar e registar documentos juridicos" +
@@ -56,6 +58,36 @@ var setSessao = sessionStorage.setItem('resultArea',areaHtml);
 const resultArea = sessionStorage.getItem('resultArea');
 areaSes.innerText = resultArea;
 // finalScore.innerText = mostRecentScore;
+
+const uidSessao = sessionStorage.getItem('uidSessao');
+
+
+
+window.onload= function salvar(){
+    console.log(uidSessao, resultArea);
+    var resultado = resultArea;
+    var uid = uidSessao;
+   addResult(resultado,uid);
+}
+
+function addResult(resultArea,uidSessao) {
+
+    var data = {
+       resultado: resultArea,
+       uid: uidSessao
+    };
+
+    firebase.database().ref().child('testevoc').child(uidSessao).child('Resultado').set(data, function (error) {
+        if (error) {
+            console.log("Data could not be saved." + error);
+           
+        } else {
+            console.log("Dados gravados com sucesso. ");
+        }
+    });
+
+}
+
 
 
 

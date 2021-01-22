@@ -94,7 +94,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -318,7 +318,7 @@
                             <!-- Post Author Widget -->
                             <div class="post-author-widget">
                                 <!-- Thumbnail -->
-                                <div class="post-author-avatar" style="background:white;">
+                                <div class="post-author-avatar">
                                     <img src="<?php echo $img1; ?>" alt="">
                                 </div>
                                 <!-- Author Content -->
@@ -359,7 +359,7 @@
                                 ?>
                             <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
-                              
+
                                 <!-- Content -->
                                 <div class="post-content">
                                     <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -401,7 +401,7 @@
                                         <!-- Single Recent Post Area -->
                                         <div class="single-recent-post-area d-flex align-items-center">
                                             <!-- Thumb -->
-                                           
+
                                             <!-- Content -->
                                             <div class="post-content">
                                                 <a href="#" class="post-title"><?php echo $row['college']; ?></a>
@@ -536,9 +536,9 @@
     </section>
     <!-- Blog Area End -->
     <div class="container footer-gallery">
-    <h2 id="galleria">Galeria</h2>
+        <h2 id="galleria">Galeria</h2>
         <div class="row" style="text-align:center;">
-           
+
             <?php
                 $ref = 'institution/'.$uid.'/gallery';
                 $fetchdata = $database->getReference($ref)->getValue();
@@ -560,7 +560,7 @@
         </div>
     </div>
     <!-- Footer Area Start -->
-    <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
