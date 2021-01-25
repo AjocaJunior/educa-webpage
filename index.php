@@ -83,13 +83,13 @@
                                     </ul>
                                 </li>
                                 <li><a href="feira.php">Feira</a>
-                                <ul class="dropdown">
+                                    <ul class="dropdown">
                                         <li><a href="feira.php#testes">Testes</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="actividades-culturais.html">Cultura</a>
                                     <ul class="dropdown">
-                                      
+
                                         <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                         <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                     </ul>
@@ -826,11 +826,11 @@
                                     <p>Presidente da CADE</p>
                                 </div>
                             </div>
-                            
+
 
                         </div>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
                                     <img src="img/educa/3.jpg" class="img-fluid mx-auto d-block" alt="img2">
@@ -851,7 +851,7 @@
 
                         </div>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
                                     <img src="img/educa/4.jpg" class="img-fluid mx-auto d-block" alt="img2">
@@ -872,7 +872,7 @@
 
                         </div>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
                                     <img src="img/educa/5.jpg" class="img-fluid mx-auto d-block" alt="img2">
@@ -893,7 +893,7 @@
 
                         </div>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
                                     <img src="img/educa/6.jpg" class="img-fluid mx-auto d-block" alt="img2">
@@ -914,7 +914,7 @@
 
                         </div>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" >
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
                                     <img src="img/educa/9.jpg" class="img-fluid mx-auto d-block" alt="img2">
@@ -987,10 +987,10 @@
                     </a>
                 </div>
                 <div class="col-md-12 text-center">
-                <a href="evento.html" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
-                    style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Oradores<i
-                        class="zmdi zmdi-long-arrow-right"></i></a>
-            </div>
+                    <a href="evento.html" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
+                        style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Oradores<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -1085,37 +1085,30 @@
     <!-- Our Ticket Pricing Table Area End -->
 
     <!-- Our Sponsor And Client Area Start -->
-    <section class="our-sponsor-client-area section-padding-80">
+    <section class="our-sponsor-client-area section-padding-80-0">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
-                <div class="col-12">
-                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-6">
+                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h4>ORGANIZAÇÃO</h4>
+                        <h6>ORGANIZAÇÃO</h6>
                     </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex flex-wrap">
                         <!-- Single Sponsor -->
                         <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/NewCADELogoSlogan.png" alt=""></a>
                         </div>
-
                     </div>
+
                 </div>
 
-                <div class="col-12">
-                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-6">
+                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h4>PRODUÇÃO</h4>
+                        <h6>PRODUÇÃO</h6>
                     </div>
-                </div>
-                <div class="col-12">
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex  flex-wrap" style="text-align:center;">
                         <!-- Single Sponsor -->
@@ -1125,10 +1118,14 @@
 
                     </div>
                 </div>
+            </div>
+
+            <div class="row">
+
                 <div class="col-12">
-                    <div class="section-heading-2 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h4>PARCEIROS</h4>
+                        <h6>PARCEIROS</h6>
                     </div>
                 </div>
                 <div class="col-12">
@@ -1165,15 +1162,7 @@
 
             </div>
         </div>
-        </div>
-        </div>
-        </div>
-        <div class="row">
-            <!-- Heading -->
-
-        </div>
-
-        </div>
+        
     </section>
     <!-- Our Sponsor And Client Area End -->
 
