@@ -1332,7 +1332,122 @@
 
     <!-- <script src="mail.js"></script> -->
 
+    
+
+    <!-- custom lib popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!-- end custom lib popup  -->
+
+    
+    <script>
+
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        console.log(scrolled);
+        if(scrolled > 2666 && scrolled < 3000 ) {
+          
+            if(!isShowed()) {
+                showGameDialog();
+                console.log("show")
+            }else {
+                showNotification();
+                console.log("Showed")
+            }
+           
+        }
+       
+    });
+        
+    function showGameDialog() {
+
+        Swal.fire({
+            position: 'top-end',
+            title: '#Estou na feira',
+            text: "Compartilha com os amigos #ESTOU NA FEIRA!",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Compartilhar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                showed();
+                location.href="https://www.facebook.com/sharer/sharer.php?u=educa.co.mz"
+            }else {
+                showed();
+            }
+            }) 
+
+    }
+
+    function isShowed() {
+        if(typeof(Storage) !== "undefined") {
+            if(localStorage.getItem('isShowed') !== null) {
+                return localStorage.getItem("isShowed");
+            }else {
+                return false;
+            }
+          
+        }else {
+            return false;
+        }
+    } 
+
+    function showed() {
+    
+        if(typeof(Storage) !== "undefined") {
+            localStorage.setItem('isShowed', true)
+        }else {
+            //todo
+        }
+    }
+
+
+function showNotification() {
+
+    const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Quer ganhar bolsa de estudo?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    swalWithBootstrapButtons.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelled',
+      'Your imaginary file is safe :)',
+      'error'
+    )
+  }
+})
+}
+
+   
     </script>
+
+
+
 
     <script src="js/carousel.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
@@ -1340,6 +1455,8 @@
     <script src="js/db/real-time-database.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script>
+
+
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -1347,7 +1464,7 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
