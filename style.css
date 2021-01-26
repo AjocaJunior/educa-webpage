@@ -382,6 +382,10 @@ input:required {
 .section-padding-150 {
   padding-top: 150px;
   padding-bottom: 0; }
+    
+.section-padding-150-20 {
+  padding-top: 150px;
+  padding-bottom: 20px; }
 
 .section-padding-100-0 {
   padding-top: 100px;
@@ -719,6 +723,38 @@ input:required {
     background-color: #414c52;
     border-color: #fff;
     color: #ffffff; }
+
+
+    .confer-btn-white-cultura {
+      position: relative;
+      z-index: 1;
+      width: 51px;
+      height: 51px;
+      text-align: center;
+      border: 2px solid #fff;
+      color: #ffffff;
+      background-color: #f2871c;
+      
+      text-transform: uppercase;
+    
+      font-weight: 500;
+      -webkit-transition-duration: 500ms;
+      -o-transition-duration: 500ms;
+      transition-duration: 500ms; }
+      .confer-btn-white-cultura a {
+        text-align: center;
+      
+       
+        color: #ffffff;
+        font-size: 25px;
+        height: 51px;
+        width: 51px;
+        color: #fff;
+      font-size: 25px; }
+      .confer-btn-white-cultura:hover, .confer-btn-white-cultura:focus {
+        background-color: #414c52;
+        border-color: #fff;
+        color: #ffffff; }
 
 .confer-btn-white-2 {
   position: relative;
@@ -1489,17 +1525,30 @@ input:required {
           padding-left: 15px;
           padding-right: 15px; } }
 
+
+
+.borda-branca{
+  background-color: #fff;
+  padding: 8px 8px 10px 8px;
+  border-radius: 2px;
+}
+
 .single-speaker-area {
   position: relative;
   z-index: 1;
   overflow: hidden;
  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 10px; }
+  margin-bottom: 15px;
+  border-radius: 5px 5px 0 0; 
+
+  
+}
   .single-speaker-area .speaker-single-thumb {
     position: relative;
     z-index: 1;
-    border-radius: 10px; }
+    border-radius: 10px;
+  
+  }
     .single-speaker-area .speaker-single-thumb img {
       -webkit-transition-duration: 1500ms;
       -o-transition-duration: 1500ms;
@@ -1529,7 +1578,9 @@ input:required {
     position: absolute;
     bottom: 25px;
     left: 25px;
-    z-index: 22; }
+    z-index: 22;
+  
+  }
     .single-speaker-area .speaker-info h5 {
       font-size: 20px;
       font-weight: 500;
@@ -1746,8 +1797,7 @@ input:required {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
   .blog-btn a {
-    height: 51px;
-    width: 51px;
+ 
     background-color: #f8871f;
     /* background-image: -webkit-linear-gradient(120deg, #505add 0%, #f2871c 100%);
     background-image: -ms-linear-gradient(120deg, #505add 0%, #f2871c 100%); */
@@ -1756,6 +1806,8 @@ input:required {
     line-height: 47px;
     color: #ffffff;
     font-size: 25px;
+    height: 51px;
+    width: 51px;
     display: inline-block; }
 
     .blog-btn a:hover{
