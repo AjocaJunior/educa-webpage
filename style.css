@@ -358,6 +358,10 @@ input:required {
 .section-padding-80-50 {
   padding-top: 80px;
   padding-bottom: 50px; }
+  
+.section-padding-80-20 {
+  padding-top: 80px;
+  padding-bottom: 20px; }
 
 .section-padding-100 {
   padding-top: 100px;
@@ -1576,17 +1580,31 @@ input:required {
         margin-bottom: 0; }
   .single-speaker-area .speaker-info {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
+   
     z-index: 22;
-  
+    /* background-color: black; */
+    top:85%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(25deg, #000, rgb(68, 19, 19));
+   
   }
+
+  /* .single-speaker-area .speaker-info-2{
+    border-bottom: black groove 5px;
+  } */
+
     .single-speaker-area .speaker-info h5 {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 500;
       color: #ffffff;
       letter-spacing: 1px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px; 
+    text-align: center;
+   
+    
+    
+    }
     .single-speaker-area .speaker-info p {
       color: #f2871c;
       margin-bottom: 0;
@@ -3219,3 +3237,19 @@ text-align: center;
     position: relative;
     height: 80%;
     width: 80%; } }
+
+
+
+    /*CÓDIGO ADICIONADO*/
+
+    .bg-design{
+      background-color: #fff;
+      background-image: url("img/bg-img/bgdesign.png");
+     background-size: contain;
+     /* width: max-content;
+     height: max-content; */
+     
+     display: flex;
+     position: relative;
+     border-top: white solid 2px;
+    }
