@@ -12,11 +12,11 @@
 <?php
 
 
-if (isset($_POST['num'])){
+// if (isset($_POST['num'])){
   
-}else{
-    header("location: ../index.php");
-}
+// }else{
+//     header("location: ../index.php");
+// }
 
 
 ?>
@@ -83,9 +83,18 @@ if (isset($_POST['num'])){
 
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
-<script  src="./script.js"></script>
+ <!-- custom lib popup -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+ <!-- firebase  -->
+
+ <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+ <script src="../js/db/app.js"></script>
+ <script src="../js/db/real-time-database.js"></script>
+
+ <script  src="script.js"></script>
 
 </body>
 </html>

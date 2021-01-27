@@ -1416,27 +1416,28 @@ function showNotification() {
 })
 
 swalWithBootstrapButtons.fire({
-  title: 'Quer ganhar bolsa de estudo?',
-  text: "You won't be able to revert this!",
+  title: 'Quer ganhar bolsa de estudo ou laptop?',
+  text: "Roleta da sorte",
   icon: 'warning',
   showCancelButton: true,
-  confirmButtonText: 'Yes, delete it!',
-  cancelButtonText: 'No, cancel!',
+  confirmButtonText: 'Sim, quero!',
+  cancelButtonText: 'Nao!',
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    swalWithBootstrapButtons.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
+      location.href="raffle.php"
+    // swalWithBootstrapButtons.fire(
+    //   'Deleted!',
+    //   'Your file has been deleted.',
+    //   'success'
+    // )
   } else if (
     /* Read more about handling dismissals below */
     result.dismiss === Swal.DismissReason.cancel
   ) {
     swalWithBootstrapButtons.fire(
-      'Cancelled',
-      'Your imaginary file is safe :)',
+      'Opppsss',
+      'Voce perdeu a chance de ganhar :{',
       'error'
     )
   }
@@ -1445,9 +1446,6 @@ swalWithBootstrapButtons.fire({
 
    
     </script>
-
-
-
 
     <script src="js/carousel.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
