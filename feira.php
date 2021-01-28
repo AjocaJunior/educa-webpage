@@ -340,7 +340,7 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined ) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
@@ -368,6 +368,11 @@
     <!--JQuery-->
     <script type="text/javascript" src="floating-whatsapp/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.js"></script>
+    <!-- custom lib popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!-- end custom lib popup  -->
+
 
     <script type="text/javascript">
     $(function() {
@@ -383,6 +388,117 @@
 
         });
     });
+    </script>
+
+    
+
+    <script>
+
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        var  maxY = 1000;
+       
+        if('scrollMaxX' in window) {
+            maxY =  window.scrollMaxX;
+        }else{
+            maxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        }
+   
+        if(scrolled > (maxY / 2)  ) {
+           if(popupGameObject() !== null){
+               if(popupGameObject().date == getDate() ) {
+                   if(popupGameObject().isSwowed == false) {
+                       //show popup
+                       showNotification()
+                       console.log("Show")
+                   }else {
+                       // dont show
+                       console.log("dont Show")
+                   }
+               } else {
+                //show popup
+                showNotification()
+                console.log("Show")
+               }
+           } else {
+            //show popup
+            showNotification()
+            console.log("Show")
+           }
+        }
+       
+    });
+
+
+    function popupGameObject() {
+        if(typeof(Storage) !=="undefined") {
+            if(localStorage.getItem('itemPlay') !== null){
+                return  JSON.parse(localStorage.getItem('itemPlay'));
+            } else {
+                return null;
+            }
+        }
+    }
+
+    function getDate() {
+        now = new Date
+        date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        return date;
+    }
+
+        
+    function showNotification() {
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Quer ganhar bolsa de estudo ou laptop?',
+            text: "Roleta da sorte",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim, quero!',
+            cancelButtonText: 'Nao!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href="raffle.php"
+                // swalWithBootstrapButtons.fire(
+                //   'Deleted!',
+                //   'Your file has been deleted.',
+                //   'success'
+                // )
+            } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+        ) {
+        cancelPopup()
+        swalWithBootstrapButtons.fire(
+            'Opppsss',
+            'Voce perdeu a chance de ganhar :{',
+            'error'
+            )
+        }
+        })
+    }
+
+    function cancelPopup() {
+        status = "canceled";
+        var playGame = {
+            status: status,
+            isShowed: true,
+            date: getDate()
+        }
+
+        localStorage.setItem('itemPlay', JSON.stringify(playGame));
+    }
+        
     </script>
 </body>
 

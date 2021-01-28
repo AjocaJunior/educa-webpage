@@ -1350,7 +1350,9 @@
           
             if(!isShowed()) {
                 showGameDialog();
-                console.log("show")
+                localStorage.getItem('itemPlay');
+
+               
             }else {
                 showNotification();
                 console.log("Showed")
@@ -1382,6 +1384,7 @@
 
     }
 
+    // this function check if popup isShowed //
     function isShowed() {
         if(typeof(Storage) !== "undefined") {
             if(localStorage.getItem('isShowed') !== null) {
@@ -1404,47 +1407,6 @@
         }
     }
 
-
-function showNotification() {
-
-    const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false
-})
-
-swalWithBootstrapButtons.fire({
-  title: 'Quer ganhar bolsa de estudo ou laptop?',
-  text: "Roleta da sorte",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Sim, quero!',
-  cancelButtonText: 'Nao!',
-  reverseButtons: true
-}).then((result) => {
-  if (result.isConfirmed) {
-      location.href="raffle.php"
-    // swalWithBootstrapButtons.fire(
-    //   'Deleted!',
-    //   'Your file has been deleted.',
-    //   'success'
-    // )
-  } else if (
-    /* Read more about handling dismissals below */
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'Opppsss',
-      'Voce perdeu a chance de ganhar :{',
-      'error'
-    )
-  }
-})
-}
-
-   
     </script>
 
     <script src="js/carousel.js"></script>

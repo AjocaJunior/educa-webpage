@@ -106,55 +106,60 @@ mc.on("swipe", function(ev) {
 
 
 // function end game
-
-win();
-
 function win() {
     var gift = ["Bolsa de estudo", "Bicicleta", "Camisetas", "Laptop"];
-
     var giftWin = Math.floor(Math.random() * gift.length);
 
-
     Swal.fire({
-        title: 'Custom width, padding, background.',
-        width: 600,
-        padding: '3em',
-        background: '#fff url(/images/trees.png)',
-        backdrop: `
-          rgba(0,0,123,0.4)
-          url("/images/nyan-cat.gif")
-          left top
-          no-repeat
-        `
-    })
+        title: 'Boooom (:',
+        text: 'Parabéns você ganhou ' + gift[giftWin],
+        imageUrl: 'img/you_win.jpg',
+        confirmButtonText: 'OK',
+        allowOutsideClick: false,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Parabéns',
+                'Volte mais tarde.',
+                'success'
+            )
 
-    firebase.auth().onAuthStateChanged(function(user) {
 
-        if (user) {
+            firebase.auth().onAuthStateChanged(function(user) {
 
-            firebase.database().ref('users').on('value', function(snapshot) {
-                snapshot.forEach(function(item) {
+                if (user) {
 
-                    if (item.val().userId !== null && item.val().userId !== undefined) {
-                        var db_uid = item.val().userId.toString().trim();
-                        var user_uid = user.uid.toString().trim();
+                    firebase.database().ref('users').on('value', function(snapshot) {
+                        snapshot.forEach(function(item) {
 
-                        if (db_uid == user_uid) {
-                            var name = item.val().name;
-                            createRandUser(user_uid, name, gift[giftWin], 2, uuidv4());
-                            return;
-                        }
+                            if (item.val().userId !== null && item.val().userId !== undefined) {
+                                var db_uid = item.val().userId.toString().trim();
+                                var user_uid = user.uid.toString().trim();
 
-                    }
+                                if (db_uid == user_uid) {
+                                    var name = item.val().name;
+                                    createRandUser(user_uid, name, gift[giftWin], 2, uuidv4());
+                                    return;
+                                }
 
-                });
+                            }
+
+                        });
+                    });
+
+                } else {
+                    location.href = 'intro.php';
+                }
+
             });
 
-        } else {
-            location.href = 'intro.php';
-        }
 
-    });
+
+        }
+    })
 
 
 }
@@ -207,12 +212,12 @@ function createRandUser(uid, name, gift, numRand, uidRand) {
 function endGame(status) {
     var playGame = {
         status: status,
+        isShowed: true,
         date: getDate(),
     }
 
     localStorage.setItem('itemPlay', JSON.stringify(playGame));
 
-    // console.log(localStorage.getItem('itemPlay'));
     location.href = "../index.php";
 }
 
