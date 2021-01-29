@@ -98,7 +98,7 @@
         </div>
     </header>
 
-    <section class="our-speaker-area bg-img section-padding-80-50 jarallax">
+    <section class="our-speaker-area bg-img section-padding-80-20 jarallax bg-design" >
         <div class="container">
             <div class="row">
               
@@ -112,27 +112,29 @@
 
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
-                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
+                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
                         
                         <!-- <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
                          -->
-                        <div class="ticket-icon">
-                            <img src="img/live/live.png" alt="">
-                        </div>
-                        <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                        <div class="ticket-icon fill">
+                            <img src="img/educa/testevoc.jpg" alt="">
+                            <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;width:90%">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                      
                     </div>
                 </div>
             
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
-                        <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
+                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
                        
-                        <div class="ticket-icon">
-                            <img src="img/live/live.png" alt="">
-                        </div>
-                        <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
+                        <div class="ticket-icon fill">
+                            <img src="img/educa/testeperson.jpg" alt="">
+                            <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px; width:90%">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                       
                         
                     </div>
                 </div>
@@ -182,7 +184,7 @@
 
   
 
-    <section id="blog" class="our-blog-area section-padding-100-60" style="background-color:#e9eef4 ;">
+    <section id="blog" class="our-blog-area section-padding-80-0" style="background-color:#e9eef4 ;">
         <div class="container">
             <div class="row" style="text-align:center">
                 <?php
@@ -209,7 +211,7 @@
                 <div class="col-12 col-md-6 col-lg-3" style="height:450px;" >
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
+                        <div class="single-blog-thumb"  >
                             <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
@@ -257,16 +259,15 @@
     </section>
 
     <!-- Call to Action Area Start -->
-    <section class="call-to-action-area bg-img jarallax section-padding-100"
-        style="background-color:#f8871f;">
+    <section class="call-to-action-area bg-img jarallax section-padding-100 bg-design">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="call-to-action-content text-center">
                         <div class="call-to-action-heading">
-                            <h6>Contacto com o Psicológico</h6>
-                            <h2>SOS Psique on-line
-                            </h2>
+                            <h5>Contacto com o Psicológico</h5>
+                            <h3>SOS Psique on-line
+                            </h3>
                         </div>
                         <!-- <div class="event-time">
                             <p><i class="zmdi zmdi-alarm-check"></i> 2-14 Jan 2019</p>
@@ -275,7 +276,7 @@
                     </div>
 
                     <div class="ticket-btn text-center">
-                        <a href="https://wa.me/258833642642/?text=Oi Psique" target="_blank" class="btn confer-btn-white-2 mt-40">Iniciar o contacto <i
+                        <a href="https://wa.me/258833642642/?text=Oi Psique" target="_blank" class="btn confer-btn-white mt-40">Iniciar o contacto <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
@@ -500,6 +501,20 @@
     }
         
     </script>
+
+    <style>
+
+.fill img {
+        flex-shrink: 0;
+        min-width: 50%;
+        min-height: 100%;
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+    
+
+    </style>
 </body>
 
 </html>

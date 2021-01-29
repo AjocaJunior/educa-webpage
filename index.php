@@ -791,7 +791,7 @@
 
 
     <!---CAROUSEL SPEAKERS-->
-    <section class="our-speaker-area section-padding-80-50">
+    <section class="our-speaker-area section-padding-80-50" style="background-image:url(img/bg-img/bgtransp2.png)">
         <div class="row">
             <div class="col-12">
                 <!-- Heading -->
@@ -1063,14 +1063,14 @@
                 endforeach;
                 ?>
 
-
-
-            </div>
-            <div class="col-md-12 text-center">
+<div class="col-md-12 text-center">
                 <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
                     style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Expositores<i
                         class="zmdi zmdi-long-arrow-right"></i></a>
             </div>
+
+            </div>
+           
 
 
         </div>
@@ -1084,87 +1084,7 @@
 
     <!-- Our Ticket Pricing Table Area End -->
 
-    <!-- Our Sponsor And Client Area Start -->
-    <section class="our-sponsor-client-area section-padding-80-0">
-        <div class="container">
-            <div class="row">
-                <!-- Heading -->
-                <div class="col-6">
-                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6>ORGANIZAÇÃO</h6>
-                    </div>
-                    <!-- Our Sponsor area -->
-                    <div class="our-sponsor-area d-flex flex-wrap">
-                        <!-- Single Sponsor -->
-                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/NewCADELogoSlogan.png" alt=""></a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-6">
-                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6>PRODUÇÃO</h6>
-                    </div>
-                    <!-- Our Sponsor area -->
-                    <div class="our-sponsor-area d-flex  flex-wrap" style="text-align:center;">
-                        <!-- Single Sponsor -->
-                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/ONEMEDIA.png" alt=""></a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col-12">
-                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6>PARCEIROS</h6>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <!-- Our Sponsor area -->
-                    <div class="our-sponsor-area d-flex flex-wrap">
-                        <!-- Single Sponsor -->
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/logonew01.png" alt=""></a>
-                        </div>
-
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/UP.png" alt=""></a>
-                        </div>
-
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/UEMLOGO.png" alt=""></a>
-                        </div>
-
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/GPDNET.png" alt=""></a>
-                        </div>
-
-
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
-                        </div>
-                        <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#"><img src="img/logos/cepaepsimbolo.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single client Icon -->
-
-            </div>
-        </div>
-        
-    </section>
-    <!-- Our Sponsor And Client Area End -->
+   
 
     <!-- Our Blog Area Start -->
 
@@ -1172,8 +1092,8 @@
 
 
     <!-- Contact Area Start -->
-    <section id="contact" class="contact-our-area section-padding-100-0" style="background:#e9eef4;">
-        <hr class="my-4">
+    <section id="contact" class="contact-our-area section-padding-80-0 bg-design">
+        
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -1275,7 +1195,85 @@
         </div>
     </section>
     <!-- Contact Area End -->
+ <!-- Our Sponsor And Client Area Start -->
+ <section class="our-sponsor-client-area section-padding-50">
+        <div class="container-fluid">
 
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <p>Partners &amp; Sponsors</p> -->
+                        <h6>ORGANIZAÇÃO</h6>
+                    </div>
+                    <!-- Our Sponsor area -->
+                    <div class="our-sponsor-area d-flex flex-wrap">
+                        <!-- Single Sponsor -->
+                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/NewCADELogoSlogan.png" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-2">
+                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <!-- <p>Partners &amp; Sponsors</p> -->
+                        <h6>PRODUÇÃO</h6>
+                    </div>
+                    <!-- Our Sponsor area -->
+                    <div class="our-sponsor-area d-flex  flex-wrap">
+                        <!-- Single Sponsor -->
+                        <div class="single-sponso wow fadeInUp" style="margin-top: 20px;" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/ONEMEDIA.png" alt=""></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
+                      
+                        <h6>PARCEIROS</h6>
+                    </div>
+                
+                    <div class="our-sponsor-area d-flex flex-wrap">
+                    <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/Radio.png" alt=""></a>
+                        </div>
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/logonew01.png" alt=""></a>
+                        </div>
+
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/UP.png" alt=""></a>
+                        </div>
+
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/UEMLOGO.png" alt=""></a>
+                        </div>
+
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/GPDNET.png" alt=""></a>
+                        </div>
+
+
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
+                        </div>
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#"><img src="img/logos/cepaepsimbolo.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single client Icon -->
+
+            </div>
+        </div>
+
+    </section>
+    <!-- Our Sponsor And Client Area End -->
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
@@ -1322,36 +1320,34 @@
 
     <!-- <script src="mail.js"></script> -->
 
-    
+
 
     <!-- custom lib popup -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <!-- end custom lib popup  -->
 
-    
+
     <script>
-
-
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         console.log(scrolled);
-        if(scrolled > 2666 && scrolled < 3000 ) {
-          
-            if(!isShowed()) {
+        if (scrolled > 2666 && scrolled < 3000) {
+
+            if (!isShowed()) {
                 showGameDialog();
                 localStorage.getItem('itemPlay');
 
-               
-            }else {
+
+            } else {
                 showNotification();
                 console.log("Showed")
             }
-           
+
         }
-       
+
     });
-        
+
     function showGameDialog() {
 
         Swal.fire({
@@ -1363,40 +1359,39 @@
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Compartilhar'
-            }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 showed();
-                location.href="https://www.facebook.com/sharer/sharer.php?u=educa.co.mz"
-            }else {
+                location.href = "https://www.facebook.com/sharer/sharer.php?u=educa.co.mz"
+            } else {
                 showed();
             }
-            }) 
+        })
 
     }
 
     // this function check if popup isShowed //
     function isShowed() {
-        if(typeof(Storage) !== "undefined") {
-            if(localStorage.getItem('isShowed') !== null) {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('isShowed') !== null) {
                 return localStorage.getItem("isShowed");
-            }else {
+            } else {
                 return false;
             }
-          
-        }else {
-            return false;
-        }
-    } 
 
-    function showed() {
-    
-        if(typeof(Storage) !== "undefined") {
-            localStorage.setItem('isShowed', true)
-        }else {
-            //todo
+        } else {
+            return false;
         }
     }
 
+    function showed() {
+
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem('isShowed', true)
+        } else {
+            //todo
+        }
+    }
     </script>
 
     <script src="js/carousel.js"></script>
@@ -1405,8 +1400,6 @@
     <script src="js/db/real-time-database.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script>
-
-
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {

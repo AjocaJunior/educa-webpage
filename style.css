@@ -1533,8 +1533,8 @@ input:required {
 
 .borda-branca{
   background-color: #fff;
-  padding: 8px 8px 10px 8px;
-  border-radius: 2px;
+  padding: 8px 8px 8px 8px;
+  border-radius: 5px;
 }
 
 .single-speaker-area {
@@ -1543,21 +1543,21 @@ input:required {
   overflow: hidden;
  margin-top: 10px;
   margin-bottom: 15px;
-  border-radius: 5px 5px 10px 10px; 
+  border-radius: 5px 5px 5px 5px; 
 
   
 }
   .single-speaker-area .speaker-single-thumb {
     position: relative;
     z-index: 1;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 5px 5px;
   
   }
     .single-speaker-area .speaker-single-thumb img {
       -webkit-transition-duration: 1500ms;
       -o-transition-duration: 1500ms;
       transition-duration: 1500ms;
-      border-radius: 0 0 10px 10px ;
+      border-radius: 0 0 5px 5px ;
       width: 100%; }
   .single-speaker-area .social-info {
     position: absolute;
@@ -1566,7 +1566,7 @@ input:required {
     z-index: 22;
     background-color: #f2871c;
     padding: 15px;
-    border-radius: 0 10px 0 10px;
+    border-radius: 0 5px 0 5px;
     text-align: center;
     -webkit-transition-duration: 800ms;
     -o-transition-duration: 800ms;
@@ -1590,7 +1590,7 @@ input:required {
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(39, 26, 26,0.3));
    text-align: center;
    text-transform: uppercase;
-   border-radius: 0 0 10px 10px;
+   border-radius: 0 0 5px 5px;
    
   }
 
@@ -2887,6 +2887,7 @@ text-align: center;
   flex: 0 0 100%;
   max-width: 100%;
   width: 100%;
+  
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2936,18 +2937,23 @@ text-align: center;
 
 .our-sponsor-area .single-spons{
 
-
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 1000%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  width: 100%;
+  -ms-flex: 0 0 14.28%;
+  flex: 0 0 14.28%;
+  max-width: 14.28%;
+  width: 14.28%;
+  
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-left: 0;
+  
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .our-sponsor-area .single-spons {
@@ -3248,7 +3254,7 @@ text-align: center;
 
     .bg-design{
       background-color: #fff;
-      background-image: url("img/bg-img/bgdesign.png");
+      background-image: url("img/bg-img/bgtransp2.png");
      background-size: contain;
      /* width: max-content;
      height: max-content; */
