@@ -30,7 +30,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-gradient-overlay jarallax" style="background-image: url(img/bg-img/37.jpg); height: 100px;">
+    <section class="breadcrumb-area bg-img jarallax" style="background-image: url(img/bg-img/backgroundeducaonline1.jpg); height: 100px;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -77,14 +77,14 @@
 
                         <?php if($show == true): ?>
 
-                            <form method="post" action="sorteio/index.php">
+                            <form method="get" action="sorteio/index.php">
                             <div class="form-group">
 
                                 <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um número">
 
                             </div>
 
-                            <button id="btn" name="btn" class="btn btn btn-outline-info btn-lg btn-block">Sorteiar</button>
+                            <button  class="btn btn btn-outline-info btn-lg btn-block">Sorteiar</button>
 
                         </form>
 

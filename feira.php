@@ -113,11 +113,12 @@
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
                         <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
-                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
                         
-                        <!-- <div class="ticket-icon">
-                            <img src="img/core-img/p3.png" alt="">
-                        </div> -->
+                        <!-- <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
+                         -->
+                        <div class="ticket-icon">
+                            <img src="img/live/live.png" alt="">
+                        </div>
                         <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
@@ -126,10 +127,10 @@
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
                         <h4 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
-                        <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">Testes de personalidades hoje na sociedade são amplamente difundidos, principalmente em seleções de pessoas para determinada atividade ou para algo bem mais sério como uma entrevistas de emprego. Obtenha uma descrição concreta e precisa de quem você é e de como é seu jeito e porque.</p>
-                        <!-- <div class="ticket-icon">
-                            <img src="img/core-img/p3.png" alt="">
-                        </div> -->
+                       
+                        <div class="ticket-icon">
+                            <img src="img/live/live.png" alt="">
+                        </div>
                         <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Iniciar o teste <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                         
@@ -205,7 +206,7 @@
                     
                 ?>
                 <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3" style="height:450px;" >
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
@@ -221,14 +222,14 @@
                               $title = "";
 
                               if(strlen($row['institution_name']) > 20){
-                                  $title = substr($row['institution_name'],0, 30)."...";
+                                  $title = substr($row['institution_name'],0, 20)."..";
                               }else{
-                                  $title = $row['institution_name'];
+                                  $title = $row['institution_name']."";
                               }
                              
                              ?>
               
-                            <a class=""  href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
+                            <a class="" style="white-space: pre-line" href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
                             <!-- Post Meta -->
 
 
@@ -339,7 +340,7 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined ) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
@@ -367,6 +368,11 @@
     <!--JQuery-->
     <script type="text/javascript" src="floating-whatsapp/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="floating-whatsapp/floating-wpp.js"></script>
+    <!-- custom lib popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <!-- end custom lib popup  -->
+
 
     <script type="text/javascript">
     $(function() {
@@ -382,6 +388,117 @@
 
         });
     });
+    </script>
+
+    
+
+    <script>
+
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        var  maxY = 1000;
+       
+        if('scrollMaxX' in window) {
+            maxY =  window.scrollMaxX;
+        }else{
+            maxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        }
+   
+        if(scrolled > (maxY / 2)  ) {
+           if(popupGameObject() !== null){
+               if(popupGameObject().date == getDate() ) {
+                   if(popupGameObject().isSwowed == false) {
+                       //show popup
+                       showNotification()
+                       console.log("Show")
+                   }else {
+                       // dont show
+                       console.log("dont Show")
+                   }
+               } else {
+                //show popup
+                showNotification()
+                console.log("Show")
+               }
+           } else {
+            //show popup
+            showNotification()
+            console.log("Show")
+           }
+        }
+       
+    });
+
+
+    function popupGameObject() {
+        if(typeof(Storage) !=="undefined") {
+            if(localStorage.getItem('itemPlay') !== null){
+                return  JSON.parse(localStorage.getItem('itemPlay'));
+            } else {
+                return null;
+            }
+        }
+    }
+
+    function getDate() {
+        now = new Date
+        date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        return date;
+    }
+
+        
+    function showNotification() {
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Quer ganhar bolsa de estudo ou laptop?',
+            text: "Roleta da sorte",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim, quero!',
+            cancelButtonText: 'Nao!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href="raffle.php"
+                // swalWithBootstrapButtons.fire(
+                //   'Deleted!',
+                //   'Your file has been deleted.',
+                //   'success'
+                // )
+            } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+        ) {
+        cancelPopup()
+        swalWithBootstrapButtons.fire(
+            'Opppsss',
+            'Voce perdeu a chance de ganhar :{',
+            'error'
+            )
+        }
+        })
+    }
+
+    function cancelPopup() {
+        status = "canceled";
+        var playGame = {
+            status: status,
+            isShowed: true,
+            date: getDate()
+        }
+
+        localStorage.setItem('itemPlay', JSON.stringify(playGame));
+    }
+        
     </script>
 </body>
 
