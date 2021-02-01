@@ -28,11 +28,11 @@
         <div class="loader"></div>
     </div> -->
     <!-- /Preloader -->
-    
+
     <!-- Header Area Start -->
     <header class="header-area">
-            <!--Div where the WhatsApp will be rendered-->
-<div id="WAButton"></div>
+        <!--Div where the WhatsApp will be rendered-->
+        <div id="WAButton"></div>
         <div class="classy-nav-container breakpoint-off" style="background:#414c52">
             <div class="container">
                 <!-- Classy Menu -->
@@ -67,29 +67,29 @@
                                         </ul>
                                     </li>
                                     <li><a href="feira.php">Feira</a>
-                                    <ul class="dropdown">
-                                        <li><a href="feira.php#testes">Testes</a></li>
-                                    </ul>
+                                        <ul class="dropdown">
+                                            <li><a href="feira.php#testes">Testes</a></li>
+                                        </ul>
                                     </li>
                                     <li><a href="actividades-culturais.html">Cultura</a>
                                         <ul class="dropdown">
-                                        
+
                                             <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
                                             <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="informacoes-diversas.html">Informações</a>
-                                    <ul class="dropdown">
-                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
-                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
-                                    </ul>
-                                </li>
+                                        <ul class="dropdown">
+                                            <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
+                                            <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#contact">Contactos</a></li>
                                 </ul>
 
                                 <!-- Get Tickets Button -->
-                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5" id="user-name">Perfil<i
-                                        class="zmdi zmdi-sign-in"></i></a>
+                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                    id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -98,12 +98,13 @@
         </div>
     </header>
 
-    <section class="our-speaker-area bg-img section-padding-80-20 jarallax bg-design" >
+    <section class="our-speaker-area bg-img section-padding-80-20 jarallax bg-design">
         <div class="container">
             <div class="row">
-              
+
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" style="margin-top: 40px;" data-wow-delay="300ms">
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top: 40px;"
+                        data-wow-delay="300ms">
                         <p id="testes">KNOW YOURSELF</p>
                         <h4 style="color: #414c52;">SAIBA MAIS SOBRE TI</h4>
                     </div>
@@ -112,34 +113,38 @@
 
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
-                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO VOCACIONAL</h6>
-                        
+                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE ORIENTAÇÃO
+                            VOCACIONAL</h6>
+
                         <!-- <p class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">O Teste vocacional online pode ser útil para jovens que estão, tanto iniciando sua tomada de decisão sobre a profissão que quer seguir, como também pessoas que de alguma maneira querem mudar de profissão após terem iniciado carreira em outra área que no fim não se tornou algo realizador em sua vida.</p>
                          -->
                         <div class="ticket-icon fill">
                             <img src="img/educa/testevoc.jpg" alt="">
-                            <a href="teste-vocacional/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;width:90%">Iniciar o teste <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="teste-vocacional/index.html" target="_blank"
+                                class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;width:90%">Iniciar o
+                                teste <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
-                      
+
                     </div>
                 </div>
-            
+
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80" style="text-align: center;">
-                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE</h6>
-                       
+                        <h6 class="wow fadeInUp" data-wow-delay="300ms" style="color: #414c52;">TESTE DE PERSONALIDADE
+                        </h6>
+
                         <div class="ticket-icon fill">
                             <img src="img/educa/testeperson.jpg" alt="">
-                            <a href="teste-personalidade/index.html" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px; width:90%">Iniciar o teste <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="teste-personalidade/index.html" target="_blank"
+                                class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px; width:90%">Iniciar o
+                                teste <i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
-                       
-                        
+
+
                     </div>
                 </div>
-              
-               
+
+
             </div>
         </div>
     </section>
@@ -152,7 +157,7 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12"> -->
-                    <!-- <div class="breadcrumb-content">
+    <!-- <div class="breadcrumb-content">
                         <h2 class="page-title">Feira</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -164,7 +169,7 @@
 
 
 
-                    <!-- <div class="call-to-action-content text-center" style="margin-down:0px;">
+    <!-- <div class="call-to-action-content text-center" style="margin-down:0px;">
                         <div class="call-to-action-heading">
                             <h6 style="font-size:10;">É estudante e quer saber qual é a sua vocação? Faça o Teste de
                                 Orientacão Vocacional </h6>
@@ -175,14 +180,14 @@
                     </div> -->
 
 
-                <!-- </div>
+    <!-- </div>
             </div>
         </div>
     </section> -->
     <!-- Breadcrumb Area End -->
 
 
-  
+
 
     <section id="blog" class="our-blog-area section-padding-80-0" style="background-color:#e9eef4 ;">
         <div class="container">
@@ -197,7 +202,8 @@
 
                 <div class="col-12">
                     <!-- Heading -->
-                    <div class="section-heading text-center wow fadeInUp" style="margin-top:20px"  data-wow-delay="300ms">
+                    <div class="section-heading text-center wow fadeInUp" style="margin-top:20px"
+                        data-wow-delay="300ms">
                         <p>EXPOSIÇÕES</p>
                         <h4>Expositores da Feira</h4>
                     </div>
@@ -208,11 +214,12 @@
                     
                 ?>
                 <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-3" style="height:450px;" >
+                <div class="col-12 col-md-6 col-lg-3" style="height:450px;">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb"  >
-                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
+                        <div class="single-blog-thumb">
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
                                     style="height:200px;width:100%; background:white; text-align:center;" alt="">
@@ -230,14 +237,16 @@
                               }
                              
                              ?>
-              
-                            <a class="" style="white-space: pre-line" href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
+
+                            <a class="" style="white-space: pre-line"
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
                             <!-- Post Meta -->
 
 
                         </div>
-                        <div class="blog-btn" >
-                            <a href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
+                        <div class="blog-btn">
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
                                     class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -247,22 +256,22 @@
                 <?php
                 endforeach;
                 ?>
-                
+
 
 
             </div>
-            
-      
-                
+
+
+
 
         </div>
     </section>
 
     <!-- Call to Action Area Start -->
-    <section class="call-to-action-area bg-img jarallax section-padding-100 bg-design">
+    <section class="call-to-action-area bg-img jarallax section-padding-50-20 bg-design">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-md-6" style="margin-top:70px;">
                     <div class="call-to-action-content text-center">
                         <div class="call-to-action-heading">
                             <h5>Contacto com o Psicológico</h5>
@@ -276,9 +285,16 @@
                     </div>
 
                     <div class="ticket-btn text-center">
-                        <a href="https://wa.me/258833642642/?text=Oi Psique" target="_blank" class="btn confer-btn-white mt-40">Iniciar o contacto <i
+                        <a href="https://wa.me/258833642642/?text=Oi Psique" target="_blank"
+                            class="btn confer-btn-white mt-40">Iniciar o contacto <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="text-center">
+                        <img src="img/educa/sosdoctor.jpg" width="100%" />
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -341,7 +357,7 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && item.val().userId !== undefined ) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
@@ -391,51 +407,49 @@
     });
     </script>
 
-    
+
 
     <script>
-
-
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
-        var  maxY = 1000;
-       
-        if('scrollMaxX' in window) {
-            maxY =  window.scrollMaxX;
-        }else{
+        var maxY = 1000;
+
+        if ('scrollMaxX' in window) {
+            maxY = window.scrollMaxX;
+        } else {
             maxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         }
-   
-        if(scrolled > (maxY / 2)  ) {
-           if(popupGameObject() !== null){
-               if(popupGameObject().date == getDate() ) {
-                   if(popupGameObject().isSwowed == false) {
-                       //show popup
-                       showNotification()
-                       console.log("Show")
-                   }else {
-                       // dont show
-                       console.log("dont Show")
-                   }
-               } else {
+
+        if (scrolled > (maxY / 2)) {
+            if (popupGameObject() !== null) {
+                if (popupGameObject().date == getDate()) {
+                    if (popupGameObject().isSwowed == false) {
+                        //show popup
+                        showNotification()
+                        console.log("Show")
+                    } else {
+                        // dont show
+                        console.log("dont Show")
+                    }
+                } else {
+                    //show popup
+                    showNotification()
+                    console.log("Show")
+                }
+            } else {
                 //show popup
                 showNotification()
                 console.log("Show")
-               }
-           } else {
-            //show popup
-            showNotification()
-            console.log("Show")
-           }
+            }
         }
-       
+
     });
 
 
     function popupGameObject() {
-        if(typeof(Storage) !=="undefined") {
-            if(localStorage.getItem('itemPlay') !== null){
-                return  JSON.parse(localStorage.getItem('itemPlay'));
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('itemPlay') !== null) {
+                return JSON.parse(localStorage.getItem('itemPlay'));
             } else {
                 return null;
             }
@@ -448,13 +462,13 @@
         return date;
     }
 
-        
+
     function showNotification() {
 
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
             },
             buttonsStyling: false
         })
@@ -469,23 +483,23 @@
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                location.href="raffle.php"
+                location.href = "raffle.php"
                 // swalWithBootstrapButtons.fire(
                 //   'Deleted!',
                 //   'Your file has been deleted.',
                 //   'success'
                 // )
             } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-        ) {
-        cancelPopup()
-        swalWithBootstrapButtons.fire(
-            'Opppsss',
-            'Voce perdeu a chance de ganhar :{',
-            'error'
-            )
-        }
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                cancelPopup()
+                swalWithBootstrapButtons.fire(
+                    'Opppsss',
+                    'Voce perdeu a chance de ganhar :{',
+                    'error'
+                )
+            }
         })
     }
 
@@ -499,12 +513,10 @@
 
         localStorage.setItem('itemPlay', JSON.stringify(playGame));
     }
-        
     </script>
 
     <style>
-
-.fill img {
+    .fill img {
         flex-shrink: 0;
         min-width: 50%;
         min-height: 100%;
@@ -512,7 +524,6 @@
         height: 270px;
         object-fit: cover;
     }
-    
 
     </style>
 </body>

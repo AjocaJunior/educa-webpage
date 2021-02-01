@@ -1038,7 +1038,7 @@
                               $title = "";
 
                               if(strlen($row['institution_name']) > 20){
-                                  $title = substr($row['institution_name'],0, 30)."...";
+                                  $title = substr($row['institution_name'],0, 20)."...";
                               }else{
                                   $title = $row['institution_name'];
                               }
