@@ -120,12 +120,12 @@
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
             <div class="single-welcome-slide bg-img  jarallax"
-                style="background-image: url(img/bg-img/bgeduca2021.jpg);">
+                style="background-image: url(img/bg-img/bg2021.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12">
-                            <div class="welcome-text text-right">
+                            <div class="welcome-text text-left">
                                 <h2 data-animation="fadeInUp" data-delay="300ms"> Educa <br>Moçambique</h2>
                                 <h6 data-animation="fadeInUp" data-delay="500ms">Feira e Conferência Internacional de
                                     Educação</h6>
@@ -142,7 +142,7 @@
 
             <!-- Single Slide -->
             <div class="single-welcome-slide bg-img jarallax"
-                style="background-image: url(img/bg-img/bgeduca2021.jpg);">
+                style="background-image: url(img/bg-img/bg2021.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -1202,7 +1202,7 @@
 
             <div class="row">
                 <div class="col-2">
-                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                    <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
                         <h6>ORGANIZAÇÃO</h6>
                     </div>
@@ -1217,7 +1217,7 @@
                 </div>
 
                 <div class="col-2">
-                    <div class="section-heading-4 sponsor-h4 text-center wow fadeInUp" data-wow-delay="300ms">
+                    <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
                         <h6>PRODUÇÃO</h6>
                     </div>

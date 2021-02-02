@@ -979,7 +979,7 @@ input:required {
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
-    border-radius: 50%;
+    border-radius: 25%;
     position: absolute;
     width: 46px;
     height: 46px;
@@ -989,8 +989,8 @@ input:required {
     z-index: 10;
     text-align: center;
     line-height: 44px;
-    border: 2px solid #9293bc;
-    color: #9293bc;
+    border: 2px solid #fff;
+    color: #fff;
     font-size: 34px; }
     .welcome-slides .owl-prev:hover, .welcome-slides .owl-prev:focus,
     .welcome-slides .owl-next:hover,
@@ -1063,8 +1063,7 @@ input:required {
         top: 67px;
         right: 5px;
         z-index: -1;
-        background-image: -webkit-linear-gradient(120deg, #505add 0%, #f2871c 100%);
-        background-image: -ms-linear-gradient(120deg, #505add 0%, #f2871c 100%); }
+         }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
           .single-welcome-slide .welcome-text h2::after {
             top: 40px;
