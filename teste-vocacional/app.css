@@ -41,6 +41,11 @@ h3 {
   font-weight: 500;
   color: #151853;
 }
+h4 {
+  font-size: 1.0rem;
+  font-weight: 400;
+  color: #414c52;
+}
 
 /* UTILITIES */
 

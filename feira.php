@@ -217,12 +217,12 @@
                 <div class="col-12 col-md-6 col-lg-3" style="height:450px;">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
+                        <div class="single-blog-thumb filla">
                             <a
                                 href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img src="<?php echo $row['img1']; ?>"
-                                    style="height:200px;width:100%; background:white; text-align:center;" alt="">
+                                    style=" background:white; text-align:center;" alt="">
                             </a>
                         </div>
                         <div class="single-blog-text text-center">
@@ -516,6 +516,30 @@
     </script>
 
     <style>
+           .filla {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden
+    }
+
+    .filla a img {
+        /* flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
+        object-fit: cover; */
+    }
+
+    .filla img {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
+    }
     .fill img {
         flex-shrink: 0;
         min-width: 50%;

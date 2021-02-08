@@ -1024,12 +1024,12 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
+                        <div class="single-blog-thumb ">
                             <a
                                 href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
-                                <img src="<?php echo $row['img1']; ?>"
-                                    style="height:200px;width:100%; background:white; text-align:center;" alt="">
+                                <img class="" src="<?php echo $row['img1']; ?>"
+                                    style="object-fit:cover; height:200px;width:100%; background:white; text-align:center;" alt="">
                             </a>
                         </div>
                         <div class="single-blog-text text-center">
@@ -1204,12 +1204,12 @@
                 <div class="col-2">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6>ORGANIZAÇÃO</h6>
+                        <h6 >ORGANIZAÇÃO</h6>
                     </div>
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex flex-wrap">
                         <!-- Single Sponsor -->
-                        <div class="single-sponso wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-sponso wow fadeInUp " style="margin-top: 20px;" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/NewCADELogoSlogan.png" alt=""></a>
                         </div>
                     </div>
@@ -1219,7 +1219,7 @@
                 <div class="col-2">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6>PRODUÇÃO</h6>
+                        <h6 style="margin-left: 10px;">PRODUÇÃO</h6>
                     </div>
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex  flex-wrap">
@@ -1234,7 +1234,7 @@
                 <div class="col-8">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                       
-                        <h6>PARCEIROS</h6>
+                        <h6 style="margin-left: 10px;">PARCEIROS</h6>
                     </div>
                 
                     <div class="our-sponsor-area d-flex flex-wrap">
@@ -1256,7 +1256,6 @@
                         <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/GPDNET.png" alt=""></a>
                         </div>
-
 
                         <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/sosLogo.png" alt=""></a>
@@ -1436,7 +1435,17 @@
     });
     </script>
 
-
+<style>
+    
+    .filla img {
+        /* flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px; */
+        object-fit: cover;
+    }
+</style>
 </body>
 
 </html>

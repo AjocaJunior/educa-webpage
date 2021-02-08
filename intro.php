@@ -94,10 +94,12 @@
 
                                         <div class="col-12 col-lg-12">
                                             <div class="form-group">
-                                                <select class="browser-default custom-select" onchange="changeUiByCategory(this.selectedIndex)" id="category">
+                                                <select class="browser-default custom-select"
+                                                    onchange="changeUiByCategory(this.selectedIndex)" id="category">
                                                     <option selected>Seleciona categoria</option>
                                                     <option value="Estudante">Estudante</option>
-                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados de Educação</option>
+                                                    <option value="Pai ou encarregados de Educação">Pai ou encarregados
+                                                        de Educação</option>
                                                     <option value="Outro">Outro</option>
                                                 </select>
                                             </div>
@@ -121,17 +123,17 @@
                                             </div>
                                         </div>
 
-                                        
+
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6" id="schoolDiv">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="school"
-                                                    id="school" placeholder="Instituição de ensino">
+                                                <input type="text" class="form-control mb-30" name="school" id="school"
+                                                    placeholder="Instituição de ensino">
                                             </div>
                                         </div>
 
 
-                                          <!-- Form Group -->
+                                        <!-- Form Group -->
                                         <div class="col-12 col-lg-6" id="professionDiv">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="profession"
@@ -139,7 +141,7 @@
                                             </div>
                                         </div>
 
-                  
+
 
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
@@ -188,6 +190,15 @@
                             <button type="submit" onclick="addButton()" class="btn btn-warning btn-lg btn-block"
                                 style="background:#f8871f;color:white">Entrar<i
                                     class="zmdi zmdi-long-arrow-right"></i></button>
+
+                            <button onclick="facebookSignin()" type="login" name="loginfb" class="btn confer-btn-white">
+                                <i class="zmdi zmdi-facebook"></i></button> 
+                                <button onclick="googleSignin()" type="login" name="logingoogle" class="btn confer-btn-white">
+                                <i class="zmdi zmdi-google"></i></button> 
+                        </div>
+
+                        
+                        <div class="row d-flex justify-content-center " style="margin: 2px;">
                             <p class="text-info">Já tens uma conta?</p>
 
                             <button id="btn" name="btn" onClick="location.href='login.html'"
@@ -216,20 +227,19 @@
     <script src="js/db/real-time-database.js"></script>
 
     <script>
-
     function changeUiByCategory(category) {
-        switch(category) {
+        switch (category) {
             case 0:
 
-            break;
+                break;
             case 1:
                 studentForm();
-            break;
+                break;
             case 2:
                 dadForm();
-            break;
+                break;
             case 3:
-            break;
+                break;
         }
 
     }
@@ -256,50 +266,52 @@
     }
 
     function addButton() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var contact = document.getElementById('contact').value;
-    var genre = document.getElementById('genre').value;
-    var date_of_birth = document.getElementById('date_of_birth').value;
-    var category = document.getElementById('category').value;
-    var residence = document.getElementById('residence').value;
-    var school =   document.getElementById('school').value;
-    var profession = document.getElementById('profession').value;
-    var userId = "";
-    var imageUrl = "";
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var contact = document.getElementById('contact').value;
+        var genre = document.getElementById('genre').value;
+        var date_of_birth = document.getElementById('date_of_birth').value;
+        var category = document.getElementById('category').value;
+        var residence = document.getElementById('residence').value;
+        var school = document.getElementById('school').value;
+        var profession = document.getElementById('profession').value;
+        var userId = "";
+        var imageUrl = "";
 
-    firebase.auth().createUserWithEmailAndPassword(email, password )
-    .then(function(data){
-        userId = data.user.uid;
-    
-        create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence , school);
-        
-    //Here if you want you can sign in the user
-    }).catch(function(error) {
-        alert(""+error);
-    //Handle error
-});
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(function(data) {
+                userId = data.user.uid;
 
-}
+                create(userId, name, email, password, imageUrl, contact, genre, date_of_birth, category, residence,
+                    school);
+
+                //Here if you want you can sign in the user
+            }).catch(function(error) {
+                alert("" + error);
+                //Handle error
+            });
+
+    }
 
 
-function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre , date_of_birth , category , residence , school) {
-    var data = {
-               userId:userId,
-               name:name, 
-               email:email, 
-               password:password,
-               imageUrl:imageUrl, 
-               contact:contact,
-               genre:genre, 
-               date_of_birth:date_of_birth, 
-               category:category,
-               residence:residence,
-               school:school
-    };
+    function create(userId, name, email, password, imageUrl, contact, genre, date_of_birth, category, residence,
+    school) {
+        var data = {
+            userId: userId,
+            name: name,
+            email: email,
+            password: password,
+            imageUrl: imageUrl,
+            contact: contact,
+            genre: genre,
+            date_of_birth: date_of_birth,
+            category: category,
+            residence: residence,
+            school: school
+        };
 
-    firebase.database().ref().child('users').child(userId).set(data , function(error){
+        firebase.database().ref().child('users').child(userId).set(data, function(error) {
             if (error) {
                 alert("Data could not be saved." + error);
                 location.href = "intro.php";
