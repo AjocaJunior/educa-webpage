@@ -120,16 +120,17 @@
         <div class="welcome-slides owl-carousel">
             <!-- Single Slide -->
             <div class="single-welcome-slide bg-img  jarallax"
-                style="background-image: url(img/bg-img/bg2021.jpg);">
+                >
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
                         <div class="col-12">
                             <div class="welcome-text text-left">
-                                <h2 data-animation="fadeInUp" data-delay="300ms"> Educa <br>Moçambique</h2>
+                                <h1 data-animation="fadeInUp" data-delay="300ms"> Educa</h1>
+                                <h2 data-animation="fadeInUp" data-delay="300ms"> Moçambique</h2>
                                 <h6 data-animation="fadeInUp" data-delay="500ms">Feira e Conferência Internacional de
                                     Educação</h6>
-                                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
+                                <div class="hero-btn-group margin-btn" data-animation="fadeInUp" data-delay="700ms">
                                     <a href="live.html" target="_blank" class="btn confer-btn-white"> Ver live <i
                                             class="zmdi zmdi-play-circle"></i></a>
                                 </div>
@@ -141,8 +142,7 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img jarallax"
-                style="background-image: url(img/bg-img/bg2021.jpg);">
+            <div class="single-welcome-slide bg-img jarallax">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
