@@ -46,7 +46,7 @@
     <!-- Breadcrumb Area End -->
 
     <!-- Contact Us Area Start -->
-    <section class="contact--us-area section-padding-100-0">
+    <section class="contact--us-area section-padding-50">
         <div class="container">
             <div class="row">
                 <!-- Contact Us Thumb -->

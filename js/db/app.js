@@ -53,15 +53,25 @@ window.fbAsyncInit = function() {
 var provider = new firebase.auth.FacebookAuthProvider();
 
 function facebookSignin() {
- firebase.auth().signInWithPopup(provider)
- 
+
+   provider.addScope('email');
+   firebase.auth().useDeviceLanguage();
+   firebase.auth().signInWithPopup(provider)
  .then(function(result) {
     var token = result.credential.accessToken;
     var user = result.user;
-  
+
+
+   //  var userimage = document.querySelector('#user-image');
+   //  var userpic = document.createElement('#img');
+   //  userpic.src = user.photoURL;
+   //  userimage.append(userpic);
+
     console.log(token)
     console.log(user)
-    location.href = "index.php";
+    console.log(user.email)
+    
+   //  location.href = "index.php";
  }).catch(function(error) {
     console.log(error.code);
     console.log(error.message);

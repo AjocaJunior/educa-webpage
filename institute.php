@@ -527,17 +527,13 @@
                         </div>
 
                         <!-- Single Widget Area -->
+<div class="single-widget-area">
+    <h5 class="widget-title mb-30">Galeria</h5>
 
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Blog Area End -->
-    <div class="container footer-gallery">
-        <h2 id="galleria">Galeria</h2>
-        <div class="row" style="text-align:center;">
+    <div class=" footer-gallery">
+       
+        <div class="row">
 
             <?php
                 $ref = 'institution/'.$uid.'/gallery';
@@ -548,17 +544,23 @@
             foreach( $fetchdata as $key => $row): ?>
             <div class="col-4">
                 <a href="<?php echo $row['url']; ?>" class="single-gallery-item">
-                    <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
-                        <div class="border border-white border-radius-10">
-                            <img src="<?php echo $row['url']; ?>" alt="">
-                        </div>
-                    </div>
+                                           
+                            <img class=" wow fadeInUp" data-wow-delay="300ms" src="<?php echo $row['url']; ?>" alt="">
+                        
                 </a>
             </div>
             <?php endforeach ?>
             <?php endif?>
         </div>
     </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->

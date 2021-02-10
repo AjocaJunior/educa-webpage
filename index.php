@@ -1219,7 +1219,7 @@
                 <div class="col-2">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6 style="margin-left: 10px;">PRODUÇÃO</h6>
+                        <h6 >PRODUÇÃO</h6>
                     </div>
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex  flex-wrap">
@@ -1234,7 +1234,7 @@
                 <div class="col-8">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                       
-                        <h6 style="margin-left: 10px;">PARCEIROS</h6>
+                        <h6 >PARCEIROS</h6>
                     </div>
                 
                     <div class="our-sponsor-area d-flex flex-wrap">
