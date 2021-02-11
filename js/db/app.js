@@ -50,14 +50,15 @@ window.fbAsyncInit = function() {
 } (document, 'script', 'facebook-jssdk'));
 
 
-var provider = new firebase.auth.FacebookAuthProvider();
+
 
 function facebookSignin() {
 
-   provider.addScope('email');
+   var provider = new firebase.auth.FacebookAuthProvider();
+
+   provider.addScope('user_birthday,email');
    firebase.auth().useDeviceLanguage();
-   firebase.auth().signInWithPopup(provider)
- .then(function(result) {
+   firebase.auth().signInWithPopup(provider).then(function(result) {
     var token = result.credential.accessToken;
     var user = result.user;
 
@@ -70,8 +71,8 @@ function facebookSignin() {
     console.log(token)
     console.log(user)
     console.log(user.email)
-    
-   //  location.href = "index.php";
+    console.log(user.user_birthday)
+    location.href = "index.php";
  }).catch(function(error) {
     console.log(error.code);
     console.log(error.message);
@@ -91,17 +92,21 @@ function facebookSignout() {
 
 //GOOGLE AUTH
 
-var provider = new firebase.auth.GoogleAuthProvider();
+
 
 function googleSignin() {
-   firebase.auth()
-   
-   .signInWithPopup(provider).then(function(result) {
+   var provider = new firebase.auth.GoogleAuthProvider();
+   provider.addScope('user_birthday,email')
+
+   firebase.auth().useDeviceLanguage();
+   firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
 		
       console.log(token)
       console.log(user)
+      console.log(user.user_birthday)
+      console.log(user.email)
       location.href = "index.php";
    }).catch(function(error) {
       var errorCode = error.code;
