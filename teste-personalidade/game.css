@@ -14,6 +14,7 @@ justify-content: center;
 
 #question{
   font-size: 3.0rem;
+  text-align: left;
 }
 
 .choice-container:hover {
