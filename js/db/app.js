@@ -96,18 +96,27 @@ function facebookSignout() {
 
 function googleSignin() {
    var provider = new firebase.auth.GoogleAuthProvider();
-   provider.addScope('user_birthday,email')
+   
 
    firebase.auth().useDeviceLanguage();
    firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
 		
+// function onSignin(googleUser){
+//    var profile  = googleUser.getBasicProfile();
+//    console.log("Nome"+profile.getName());
+//    console.log("IMAGE:"+profile.getImageUrl());
+//    console.log("EMAIL:" +profile.getEmail());
+
+// }
+// onSignin();
+
       console.log(token)
       console.log(user)
-      console.log(user.user_birthday)
-      console.log(user.email)
-      location.href = "index.php";
+      
+      
+      // location.href = "index.php";
    }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;

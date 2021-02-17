@@ -90,8 +90,12 @@
                                 <li><a href="actividades-culturais.html">Cultura</a>
                                     <ul class="dropdown">
 
-                                        <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
-                                        <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
+                                    <li><a href="cultura/pintura.html">Pintura</a></li>
+                                        <li><a href="cultura/musica.html">Música</a></li>
+                                        <li><a href="cultura/cinema.html">Cinema</a></li>
+                                        <li><a href="cultura/teatro.html">Teatro</a></li>
+                                        <li><a href="cultura/literatura.html">Literatura</a></li>
+                                        <li><a href="cultura/danca.html">Dança</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.html">Informações</a>
@@ -1063,7 +1067,7 @@
                 endforeach;
                 ?>
 
-<div class="col-md-12 text-center">
+            <div class="col-md-12 text-center">
                 <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
                     style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Expositores<i
                         class="zmdi zmdi-long-arrow-right"></i></a>
@@ -1362,7 +1366,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 showed();
-                location.href = "https://www.facebook.com/sharer/sharer.php?u=educa.co.mz"
+                location.href = "https://www.facebook.com/sharer/sharer.php?u=www.educa.co.mz"
             } else {
                 showed();
             }

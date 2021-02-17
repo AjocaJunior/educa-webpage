@@ -51,7 +51,13 @@
             <div class="row">
                 <!-- Contact Us Thumb -->
                 <div class="col-12 col-lg-6">
-                    <div class="contact-us-thumb mb-100">
+                    <div class="contact-us-thumb contact_from_area mb-100">
+                    <div class="contact-heading">
+                            
+                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e
+                                eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do
+                                Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
+                        </div>
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" allow="autoplay"
                                 src="https://www.youtube.com/embed/8opTzkIBwm4?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1"
@@ -65,10 +71,8 @@
                     <div class="contact_from_area mb-100 clearfix">
                         <!-- Contact Heading -->
                         <div class="contact-heading">
-                            <h4>Seja Bem-Vindo ao educa</h4>
-                            <p>Ao inscrever-se no Educa Moçambique, manter-se-á mais perto das nossas actividades e
-                                eventos, assim como poderá ter diversas oportunidades de formação dentro e fora do
-                                Moçambique. Ligar-se a nós ficou mais fácil através dessa janela.</p>
+                            <h4>Registrar</h4>
+                           
                         </div>
                         <div class="contact_form">
                             <form>
