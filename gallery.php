@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Educa - galeria</title>
+    <title>Educa - Galeria</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -24,7 +24,16 @@
         <div class="loader"></div>
     </div> -->
     <!-- /Preloader -->
+    <?php 
+        include_once('includes/dbconfig.php');
+        $ref = 'institution/';
+        $fetchdata = $database->getReference($ref)->getValue();
+        $uid  = $_GET['id'];
 
+        if($uid == null || $uid == "") {
+            header('Location: index.php');
+        }
+    ?>
     <!-- Header Area Start -->
     <header class="header-area">
         <div class="classy-nav-container breakpoint-off">
@@ -33,7 +42,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.html"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="#"><img src="./img/educa/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -49,12 +58,12 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="admin/index.php?id=<?php echo $uid ?>">Dashboard</a></li>
                                 <!-- <li><a href="speakers.html">Speakears</a></li> -->
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="admin/index.php?id=<?php echo $uid ?>" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -70,16 +79,7 @@
 
     <!-- Our Speakings Area Start -->
 
-    <?php 
-        include_once('includes/dbconfig.php');
-        $ref = 'institution/';
-        $fetchdata = $database->getReference($ref)->getValue();
-        $uid  = $_GET['id'];
-
-        if($uid == null || $uid == "") {
-            header('Location: index.php');
-        }
-    ?>
+ 
     <section class="our-speaker-area section-padding-100 ">
         <div class="container ">
             <div class="row ">

@@ -20,7 +20,7 @@
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+  <link rel="icon" href="../img/educa/logo.png">
 </head>
 
 <?php
@@ -58,7 +58,7 @@ if($uid == null){
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php?id=<?php echo $uid; ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>

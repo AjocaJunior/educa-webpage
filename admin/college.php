@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php?id=<?php echo $uid; ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>

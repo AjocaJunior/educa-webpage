@@ -138,9 +138,8 @@
     <script src="../js/db/real-time-database.js"></script>
     <script>
         //add event
-        function registrar_evento() {
-            
-            var evento_titulo = document.getElementById('evento_tituto').value;
+        function registrar_evento() { 
+            var evento_titulo = document.getElementById('evento_titulo').value;
             var video_link = document.getElementById('video_link').value;
             var evento_descricao = document.getElementById('evento_descricao').value;
             var start_time = document.getElementById('start_time').value;
@@ -197,7 +196,7 @@
                     alert("Data could not be saved." + error);
                 } else {
 
-                    window.location.replace("add_orador.php?id=" + uid);
+                    window.location.replace("add_oradores.php?id=" + uid);
 
 
                 }
