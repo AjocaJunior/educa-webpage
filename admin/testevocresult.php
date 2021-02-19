@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Teste Vocacional - Resultado Individual</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,17 +25,10 @@
 
 <?php
 $uid  = $_GET['id'];
-
-if($uid == null){
-  if(isset($_SESSION['uidInstitute'])){
-    $uid = $_SESSION['uidInstitute'];
-  }else{
-    header("Location: login.html");
-  }
   
-}
-    
+
 ?>
+    
 
 <body id="page-top">
 
@@ -58,7 +51,7 @@ if($uid == null){
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.php?id=<?php echo $uid; ?>">
+        <a class="nav-link" href="testevocresult.php?">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>
@@ -68,21 +61,14 @@ if($uid == null){
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Dashboard
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="college.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Faculdades</span>
-        </a>
-       
-      </li>
+     
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="./testevoc_results.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Home</span>
         </a>
@@ -153,7 +139,6 @@ if($uid == null){
               </div>
             </li>
 
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -162,7 +147,7 @@ if($uid == null){
               
                 <img class="img-profile rounded-circle" src="../img/educa/logo.png">
               </a>
-            
+           
             </li>
 
           </ul>
@@ -178,52 +163,40 @@ if($uid == null){
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de cursos</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Resultado</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
 
               <div class="container-fluid">
-    <table id="productSizes" class="table">
-        <thead>
-            <tr class="d-flex">
-                <th class="col-1">Posição</th>
-                <th class="col-10">Curso</th>
-                <th class="col-1">Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-
-
 
       <?php
 
            
         include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/course';
+        $ref = 'testevoc/'.$uid;
         $fetchdata = $database->getReference($ref)->getValue();
         
-                        $count = 0;
+                       
                         if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row):
-                                $count++;
-                              
-                                ?>
+                        <?php foreach( $fetchdata as $chave => $row):
+                        if($chave=='Resultado'){
+                          $resultado= ''; 
+                          $resultado= $row['resultado'];
 
-            <tr class="d-flex">
-                <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["course"]; ?></td>
-                <td class="col-1"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
-            </tr>
+                          ?>
+                          
+
+                          <h6><?php echo $resultado ?></h6>
+                          <?php }?>
+                        
+                        
+                                
+
   
                             <?php endforeach ?>
                         <?php endif?>
                             
-                            
-
-           
-        </tbody>
-    </table>
               </div>
             </div>
           </div>

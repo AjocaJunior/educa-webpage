@@ -435,7 +435,6 @@ foreach($fetchdata as $key => $row){
                                                     <button class="btn btn-outline-secondary" onClick="updateLink()"
                                                         type="button"><i
                                                             class="fas fa-check fa-sm fa-fw text-gray-400"></i></button>
-
                                                 </div>
                                             </div>
 
