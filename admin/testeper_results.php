@@ -32,7 +32,7 @@
 
 
 include_once('../includes/dbconfig.php');
-$ref = 'testevoc/';
+$ref = 'testeper/';
 $fetchdata = $database->getReference($ref)->getValue();
 
 $name           = "";
@@ -58,7 +58,7 @@ foreach($fetchdata as $key => $row){
 
 
     <?php
-  $ref = 'testevoc/';
+  $ref = 'testeper/';
   $fetchdata = $database->getReference($ref)->getValue();
   $countResultado = 0;
 
@@ -225,7 +225,7 @@ foreach($fetchdata as $key => $row){
                                                     <td class="col-1"><?php echo  $count; ?></td>
                                                     <td class="col-4"><?php echo $row["name"]; ?></td>
                                                     <td class="col-4"><?php echo $row["apelido"]?> </td>
-                                                    <td class="col-3"><a href="testevocresult.php?id=<?php echo $row['uid']?>" class="btn btn-primary" target="_blank"> Resultado </a></td>
+                                                    <td class="col-3"><a href="testeperresult.php?id=<?php echo $row['uid']?>" class="btn btn-primary" target="_blank"> Resultado </a></td>
                                                     <?php endforeach ?>  
                                                        <?php endif?>    
               

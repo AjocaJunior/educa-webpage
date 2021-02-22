@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Teste Vocacional - Resultado Individual</title>
+  <title>Teste de Personalidade - Resultado Individual</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -174,13 +174,13 @@ $uid  = $_GET['id'];
 
            
         include_once('../includes/dbconfig.php');         
-        $ref = 'testevoc/'.$uid;
-        $reff = 'testevoc/';
+        $ref = 'testeper/'.$uid;
+        $reff = 'testeper/';
         $name = '';
         $fetchdataa = $database->getReference($reff)->getValue();
         $fetchdata = $database->getReference($ref)->getValue();
                        
-                        if($fetchdata && $fetchdata != null):?>
+                        if($fetchdata && $fetchdata != null){ ?>
 
 <?php 
                           foreach ($fetchdataa as $chave => $row):
@@ -196,19 +196,34 @@ $uid  = $_GET['id'];
                         <?php foreach( $fetchdata as $chave => $row):
                        
                         if($chave=='Resultado'){
-                         
-                          $resultado= $row['resultado'];
-
+                          $sinceridade = $row['sinceridade'];
+                          $actividade= $row['actividade'];
+                          $depressao= $row['depressao'];
+                          $epileptoidia= $row['epileptoidia'];
+                          $esquizoidia= $row['esquizoidia'];
+                          $introversao= $row['introversao'];
+                          $neuroticidade= $row['neuroticidade'];
+                          $psicose= $row['psicose'];
+                          $timidez= $row['timidez'];
                           ?>
                           
 
-                          <h6>Resultado: <?php echo $resultado ?></h6>
-                          <?php }?>
-                                                   
+                          <h6>Sinceridade: <?php echo $sinceridade ?></h6>
+                          <h6>Actividade: <?php echo $actividade ?></h6>
+                          <h6>Epileptoidia: <?php echo $epileptoidia ?></h6>
+                          <h6>Neuroticidade: <?php echo $neuroticidade ?></h6>
+                          <h6>Introversão: <?php echo $introversao ?></h6>
+                          <h6>Depressão: <?php echo $depressao ?></h6>
+                          <h6>Esquizoidia: <?php echo $esquizoidia ?></h6>
+                          <h6>Timidez: <?php echo $timidez ?></h6>
+                          <h6>Psicose: <?php echo $psicose ?></h6>
+                          <?php } else if($fetchdata==null) {?>
+                          <h6>Não acabou de preencher o teste</h6>
+                                      <?php } ?>           
                              <?php endforeach ?>
 
 
-                        <?php endif?>
+                        <?php }  ?>
                             
               </div>
             </div>
