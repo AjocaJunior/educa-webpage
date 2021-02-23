@@ -79,7 +79,7 @@
 
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'institution/';
+        $ref = 'evento/';
         $fetchdata = $database->getReference($ref)->getValue();
 
 
@@ -92,12 +92,12 @@
             
                 if(trim($row['email']) == $email){
                     $emailFound = true;
-                    echo "email encotrado";
+                    echo "email encontrado";
                     if(trim($row['password'])  == $password){
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
                         // header("location : index.php"+$row['uid']);
-                        $url = "index.php?id=".$row['uid'];
+                        $url = "evento_register.html";
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";
@@ -108,7 +108,7 @@
             }
 
             if($emailFound == false){
-               echo "email nao encotrado";
+               echo "email nao encontrado";
             }
     
 
