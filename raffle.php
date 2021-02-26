@@ -80,7 +80,7 @@
                             <form method="get" action="sorteio/index.php">
                             <div class="form-group">
 
-                                <input type="number" name="num" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um número">
+                                <input type="number" name="num" max="36" min="-1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira um número de 0 à 36">
 
                             </div>
 
