@@ -96,8 +96,8 @@
                     if(trim($row['password'])  == $password){
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
-                        // header("location : index.php"+$row['uid']);
-                        $url = "evento_register.html";
+                        // header("location : evento_admin.php"+$row['uid']);
+                        $url = "evento_admin.php?id=".$row['uid'];
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";

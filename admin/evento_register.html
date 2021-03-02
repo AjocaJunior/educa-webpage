@@ -145,7 +145,7 @@
             var start_time = document.getElementById('start_time').value;
             var end_time = document.getElementById('end_time').value;
             var moderador_nome = document.getElementById('moderador_nome').value;
-
+            var profissao = document.getElementById('profissao').value;
             var uid = uuidv4();
             //upload img perfil
 
@@ -162,19 +162,19 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, uid, url);
+                        addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, uid, url);
                     })
                     .catch(console.error);
 
             } else {
-                addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, uid, "");
+                addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, uid, "");
             }
 
 
 
         }
 
-        function addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, uid, img_moderador) {
+        function addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, uid, img_moderador) {
 
 
             var data = {
@@ -186,7 +186,7 @@
                 end_time: end_time,
                 moderador_nome: moderador_nome,
                 img_moderador: img_moderador,
-
+profissao : profissao,
                 chat: "",
                 uid: uid
             }

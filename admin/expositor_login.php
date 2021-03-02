@@ -97,7 +97,7 @@
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
                         // header("location : index.php"+$row['uid']);
-                        $url = "index.php?id=".$row['uid'];
+                        $url = "expositor_admin.php?id=".$row['uid'];
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";
