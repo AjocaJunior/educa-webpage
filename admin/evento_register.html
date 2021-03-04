@@ -61,6 +61,10 @@
                                             placeholder="Horário de Fim">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <input type="date" id="data" class="form-control form-control-user"
+                                        placeholder="Data do Evento">
+                                </div>
 
 
                                 <div class="form-group row">
@@ -86,6 +90,30 @@
                                                 <input type="file" name="photo" class="custom-file-input" id="photo"
                                                     aria-describedby="inputGroupFileAddon01">
                                                 <label class="custom-file-label" for="photo">Foto do Moderador</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <img src="img/logo.png" height="38" class="input-group-text" />
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" name="photo2" class="custom-file-input" id="photo2"
+                                                    aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label" for="photo2">Flyer do Evento</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <img src="img/logo.png" height="38" class="input-group-text" />
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" name="photo3" class="custom-file-input" id="photo3"
+                                                    aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label" for="photo3">Icon do Tipo de Evento</label>
                                             </div>
                                         </div>
                                     </div>
@@ -146,12 +174,14 @@
             var end_time = document.getElementById('end_time').value;
             var moderador_nome = document.getElementById('moderador_nome').value;
             var profissao = document.getElementById('profissao').value;
+            var data = document.getElementById('data').value;
             var uid = uuidv4();
             //upload img perfil
 
             const ref = firebase.storage().ref();
             const file = document.querySelector("#photo").files[0];
-
+            const file1 = document.querySelector("#photo2").files[0];
+            const file2 = document.querySelector("#photo3").files[0];
             if (file != null) {
 
                 const name = +new Date() + "-" + file.name;
@@ -162,19 +192,19 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, uid, url);
+                        addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, url);
                     })
                     .catch(console.error);
 
             } else {
-                addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, uid, "");
+                addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, data, uid, "");
             }
 
 
 
         }
 
-        function addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, uid, img_moderador) {
+        function addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, img_moderador, flyer, icon) {
 
 
             var data = {
@@ -186,6 +216,9 @@
                 end_time: end_time,
                 moderador_nome: moderador_nome,
                 img_moderador: img_moderador,
+                flyer: flyer,
+                icon:icon,
+                data:data,
 profissao : profissao,
                 chat: "",
                 uid: uid

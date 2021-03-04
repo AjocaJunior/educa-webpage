@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cadastrar Orador - Educa</title>
+    <title>Cadastrar Speaker - Educa</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../img/educa/logo.png">
@@ -36,52 +36,22 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">ORADOR</h1>
+                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">SPEAKER</h1>
                             </div>
                             <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="orador_nome" class="form-control form-control-user"
-                                            placeholder="Nome do Moderador">
+                                        <input type="text" id="name_orador" class="form-control form-control-user"
+                                            placeholder="Nome do Orador">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="profissao" class="form-control form-control-user"
+                                        <input type="text" id="profession" class="form-control form-control-user"
                                             placeholder="Profissão">
                                     </div>
 
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" id="chat" class="form-control form-control-user"
-                                        placeholder="Link do chat">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="facebook" class="form-control form-control-user"
-                                            placeholder="Facebook">
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="linkedin" class="form-control form-control-user"
-                                            placeholder="LinkedIn">
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="twitter" class="form-control form-control-user"
-                                            placeholder="Twitter">
-                                    </div>
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="instagram" class="form-control form-control-user"
-                                            placeholder="Instagram">
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12 mb-6 mb-sm-0">
-                                        <input type="text" id="description" class="form-control form-control-user"
-                                            placeholder="Descricao(opcional)">
-
-                                    </div>
-                                    <br>
-                                    <br>
-                                </div>
+                                
+                     
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <div class="input-group">
@@ -97,8 +67,8 @@
                                     </div>
                                 </div>
 
-                                <button onclick="uploadImage()" type="button"
-                                    class="btn btn-secondary btn-lg btn-block">ADICIONAR</button>
+                                <button onclick="registar_speaker()" type="button"
+                                    class="btn btn-secondary btn-lg btn-block">Registrar</button>
                                 <br>
 
                             </form>
@@ -139,9 +109,18 @@
         firebase.initializeApp(firebaseConfig);
         console.log(firebase);
 
-        function uploadImage() {
-            const ref = firebase.storage().ref();
-            const file = document.querySelector("#photo").files[0];
+        
+        function registar_speaker() {
+        var name_orador= document.getElementById("name_orador").value;
+        var profession = document.getElementById("profession").value;
+        
+        var uid = generateUUID();
+
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#photo").files[0];
+
+        if (file != null) {
+
             const name = +new Date() + "-" + file.name;
             const metadata = {
                 contentType: file.type
@@ -150,36 +129,32 @@
             task
                 .then(snapshot => snapshot.ref.getDownloadURL())
                 .then(url => {
-                    console.log("1-" + url);
-                    setInDatabase(url);
-                    //document.querySelector("#image").src = url;
+                    addSpeaker(name_orador, profession, uid, url);
                 })
                 .catch(console.error);
+
+        } else {
+            addSpeaker(name_orador, profession, uid, "");
+        }
+    }
+
+    function addSpeaker(name_orador, profession, uid,  img) {
+        var data = {
+            name: name_orador,
+            profession: profession,
+            img: img,
+            uid: uid
         }
 
-        function setInDatabase(url) {
-
-            var description = document.getElementById("description").value;
-            var uid = "<?php echo $_GET['id']; ?>";
-            var uidImg = generateUUID();
-
-            var data = {
-                url: url,
-                description: description,
-                uid: uidImg
+        firebase.database().ref().child('speaker').child(uid).set(data, function(
+            error) {
+            if (error) {
+                alert("Data could not be saved." + error);
+            } else {
+                window.location.reload();
             }
-
-            firebase.database().ref().child('evento').child(uid).child("oradores").child(uidImg).set(data, function(
-                error) {
-                if (error) {
-                    alert("Data could not be saved." + error);
-                } else {
-                    alert("Adicionado com sucesso!");
-                    window.location.reload();
-                }
-            });
-
-        }
+        });
+    }
 
 
         function generateUUID() { // Public Domain/MIT

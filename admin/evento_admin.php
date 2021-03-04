@@ -52,6 +52,7 @@ $nome_moderador = "";
 $profissao = "";
 $horainicio = "0";
 $horafim = "0";
+$data = "";
 $countOrador = "0";
 
 foreach($fetchdata as $key => $row){
@@ -64,6 +65,7 @@ foreach($fetchdata as $key => $row){
       $profissao = $row['profissao'];
       $horainicio = $row['start_time'];
       $horafim = $row['end_time'];
+      $data = $row['data'];
       break;
     }
 }
@@ -73,7 +75,7 @@ foreach($fetchdata as $key => $row){
 
 
     <?php
-  $ref = 'evento/'.$uid.'orador';
+  $ref = 'evento/'.$uid.'/orador';
   $fetchdata = $database->getReference($ref)->getValue();
   $countOrador = 0;
 
@@ -93,7 +95,7 @@ foreach($fetchdata as $key => $row){
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #414c52">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <img src="img/logo.png" alt="" width="30" height="30">
                 </div>
@@ -105,7 +107,7 @@ foreach($fetchdata as $key => $row){
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Educa Dashboard</span></a>
             </li>
@@ -129,11 +131,24 @@ foreach($fetchdata as $key => $row){
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Oradores:</h6>
                         <a class="collapse-item" href="add_oradores.php?id=<?php echo $uid; ?>">Adicionar Orador</a>
-                        <a class="collapse-item" href="add_oradores.php?id=<?php echo $uid; ?>">Todos Oradores</a>
+                        <a class="collapse-item" href="#">Detalhes do Orador</a>
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-tv"></i>
+                    <span>Eventos</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        
+                        <a class="collapse-item" href="evento_register.html">Adicionar Evento</a>
+                        <a class="collapse-item" href="#">Todos Eventos</a>
+                    </div>
+                </div>
+            </li>
                <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -171,7 +186,7 @@ foreach($fetchdata as $key => $row){
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php echo substr($title , 0 , 15).".."; ?> </span>
-                                <img class="img-profile rounded-circle" src="<?php echo $img1; ?>">
+                                <img class="img-profile rounded-circle" src="<?php echo $img_moderador; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -292,6 +307,10 @@ foreach($fetchdata as $key => $row){
                     </div>
                 </div>
                 <div class="form-group row">
+                <div class="col-sm-4">
+                        <input type="date" class="form-control" id="inputData"
+                            value="<?php echo $data; ?>" placeholder="Data">
+                    </div>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" id="inputHoraInicio"
                             value="<?php echo $horainicio; ?>" placeholder="Hora de Inicio">
@@ -301,10 +320,6 @@ foreach($fetchdata as $key => $row){
                             value="<?php echo $horafim; ?>" placeholder="Hora de Fim">
                     </div>
                 </div>
-
-               
-
-
                 <button type="button" onClick="updateDetalhes()"
                     class="btn btn-secondary btn-lg btn-block">Actualizar</button>
 
@@ -444,6 +459,7 @@ foreach($fetchdata as $key => $row){
     function updateDetalhes() {
         var nome_moderador = document.getElementById('inputModeradorNome').value;
         var profissao = document.getElementById("inputProfissao").value;
+        var data = document.getElementById("inputData").value;
         var horainicio = document.getElementById("inputHoraInicio").value;
         var horafim = document.getElementById("inputHoraFim").value;
         var id = "<?php echo $uid ?>";
@@ -451,7 +467,9 @@ foreach($fetchdata as $key => $row){
         firebase.database().ref().child('evento').child(id).child('moderador_nome').set(nome_moderador, function(error) {});
 
         firebase.database().ref().child('evento').child(id).child('profissao').set(profissao, function(error) {});
-
+        firebase.database().ref().child('evento').child(id).child('data').set(data, function(error) {
+            window.location.reload(true);
+        });
         firebase.database().ref().child('evento').child(id).child('start_time').set(horainicio, function(error) {
             window.location.reload(true);
         });

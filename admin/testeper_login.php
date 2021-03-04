@@ -38,7 +38,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bem vindo de volta!</h1>
-                                        <h3 class="h5 text-gray-900 mb-4">Teste de Orientação Vocacional</h3>
+                                        <h3 class="h5 text-gray-900 mb-4">Teste de Personalidade</h3>
                                     </div>
                                     <form class="user" action="" method="post">
                                         <div class="form-group">
@@ -80,24 +80,25 @@
 
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'testevoc/';
+        $ref = 'testeper/';
         $fetchdata = $database->getReference($ref)->getValue();
 
+
         if(isset($_POST['login'])){
-            $email   = trim($_POST['email']);
+            $email      = trim($_POST['email']);
             $password   = trim($_POST['password']);
             $emailFound = false;
 
             foreach($fetchdata as $key => $row){
             
-                if(trim($row['emaill'])  == $email){
+                if(trim($row['emaill']) == $email){
                     $emailFound = true;
                     echo "email Encontrado";
                     if(trim($row['password'])  == $password){
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
                         // header("location : index.php"+$row['uid']);
-                        $url = "testevoc_results.php";
+                        $url = "testeper_results.php";
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";
@@ -108,7 +109,7 @@
             }
 
             if($emailFound == false){
-               echo "email não encontrado";
+               echo "email nao encontrado";
             }
     
 
