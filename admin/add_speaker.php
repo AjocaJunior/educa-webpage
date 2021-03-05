@@ -50,8 +50,8 @@
                                     </div>
 
                                 </div>
-                                
-                     
+
+
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <div class="input-group">
@@ -70,7 +70,7 @@
                                 <button onclick="registar_speaker()" type="button"
                                     class="btn btn-secondary btn-lg btn-block">Registrar</button>
                                 <br>
-
+                                
                             </form>
 
                         </div>
@@ -109,52 +109,73 @@
         firebase.initializeApp(firebaseConfig);
         console.log(firebase);
 
-        
-        function registar_speaker() {
-        var name_orador= document.getElementById("name_orador").value;
-        var profession = document.getElementById("profession").value;
-        
-        var uid = generateUUID();
-
-        const ref = firebase.storage().ref();
-        const file = document.querySelector("#photo").files[0];
-
-        if (file != null) {
-
-            const name = +new Date() + "-" + file.name;
-            const metadata = {
-                contentType: file.type
-            };
-            const task = ref.child(name).put(file, metadata);
-            task
-                .then(snapshot => snapshot.ref.getDownloadURL())
-                .then(url => {
-                    addSpeaker(name_orador, profession, uid, url);
-                })
-                .catch(console.error);
-
-        } else {
-            addSpeaker(name_orador, profession, uid, "");
-        }
-    }
-
-    function addSpeaker(name_orador, profession, uid,  img) {
-        var data = {
-            name: name_orador,
-            profession: profession,
-            img: img,
-            uid: uid
+        function liveon() {
+            var livelink = "";
+            var uid = generateUUID();
+            add_live(livelink, uid);
         }
 
-        firebase.database().ref().child('speaker').child(uid).set(data, function(
-            error) {
-            if (error) {
-                alert("Data could not be saved." + error);
-            } else {
-                window.location.reload();
+        function add_live(livelink, uid) {
+            var data = {
+                livelink: livelink;
+                uid: uid;
             }
-        });
-    }
+
+            firebase.database().ref().child('live').child(uid).set(data, function(
+                error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+                    window.location.reload();
+                }
+            });
+        }
+
+        function registar_speaker() {
+            var name_orador = document.getElementById("name_orador").value;
+            var profession = document.getElementById("profession").value;
+
+            var uid = generateUUID();
+
+            const ref = firebase.storage().ref();
+            const file = document.querySelector("#photo").files[0];
+
+            if (file != null) {
+
+                const name = +new Date() + "-" + file.name;
+                const metadata = {
+                    contentType: file.type
+                };
+                const task = ref.child(name).put(file, metadata);
+                task
+                    .then(snapshot => snapshot.ref.getDownloadURL())
+                    .then(url => {
+                        addSpeaker(name_orador, profession, uid, url);
+                    })
+                    .catch(console.error);
+
+            } else {
+                addSpeaker(name_orador, profession, uid, "");
+            }
+        }
+
+        function addSpeaker(name_orador, profession, uid, img) {
+            var data = {
+                name: name_orador,
+                profession: profession,
+                img: img,
+                uid: uid
+            }
+
+            firebase.database().ref().child('speaker').child(uid).set(data, function(
+                error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+                    window.location.reload();
+                }
+            });
+        }
 
 
         function generateUUID() { // Public Domain/MIT

@@ -1704,6 +1704,116 @@
 
         });
     </script>
+
+
+
+<script>
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        var maxY = 1000;
+
+        if ('scrollMaxX' in window) {
+            maxY = window.scrollMaxX;
+        } else {
+            maxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        }
+
+        if (scrolled > (maxY / 2)) {
+            if (popupGameObject() !== null) {
+                if (popupGameObject().date == getDate()) {
+                    if (popupGameObject().isSwowed == false) {
+                        //show popup
+                        showNotification()
+                        console.log("Show")
+                    } else {
+                        // dont show
+                        console.log("dont Show")
+                    }
+                } else {
+                    //show popup
+                    showNotification()
+                    console.log("Show")
+                }
+            } else {
+                //show popup
+                showNotification()
+                console.log("Show")
+            }
+        }
+
+    });
+
+
+    function popupGameObject() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('itemPlay') !== null) {
+                return JSON.parse(localStorage.getItem('itemPlay'));
+            } else {
+                return null;
+            }
+        }
+    }
+
+    function getDate() {
+        now = new Date
+        date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        return date;
+    }
+
+
+    function showNotification() {
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Quer ganhar bolsa de estudo ou laptop?',
+            text: "Roleta da sorte",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim, quero!',
+            cancelButtonText: 'Nao!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = "raffle.php"
+                // swalWithBootstrapButtons.fire(
+                //   'Deleted!',
+                //   'Your file has been deleted.',
+                //   'success'
+                // )
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                cancelPopup()
+                swalWithBootstrapButtons.fire(
+                    'Opppsss',
+                    'Voce perdeu a chance de ganhar :{',
+                    'error'
+                )
+            }
+        })
+    }
+
+    function cancelPopup() {
+        status = "canceled";
+        var playGame = {
+            status: status,
+            isShowed: true,
+            date: getDate()
+        }
+
+        localStorage.setItem('itemPlay', JSON.stringify(playGame));
+    }
+    </script>
+
+
 </body>
 
 </html>

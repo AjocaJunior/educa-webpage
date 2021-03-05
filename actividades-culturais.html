@@ -1109,6 +1109,73 @@
 
         });
     </script>
+
+
+<script>
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        console.log(scrolled);
+        if (scrolled > 2666 && scrolled < 3000) {
+
+            if (!isShowed()) {
+                showGameDialog();
+                localStorage.getItem('itemPlay');
+
+
+            } else {
+                showNotification();
+                console.log("Showed")
+            }
+
+        }
+
+    });
+
+    function showGameDialog() {
+
+        Swal.fire({
+            position: 'top-end',
+            title: '#Estou na feira',
+            text: "Compartilha com os amigos #ESTOU NA FEIRA!",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Compartilhar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showed();
+                location.href = "https://www.facebook.com/sharer/sharer.php?u=www.educa.co.mz"
+            } else {
+                showed();
+            }
+        })
+
+    }
+
+    // this function check if popup isShowed //
+    function isShowed() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('isShowed') !== null) {
+                return localStorage.getItem("isShowed");
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+    }
+
+    function showed() {
+
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem('isShowed', true)
+        } else {
+            //todo
+        }
+    }
+    </script>
 </body>
 
 <style>
