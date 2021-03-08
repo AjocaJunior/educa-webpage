@@ -810,12 +810,26 @@
         <div class="top-content">
             <div class="container-fluid">
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                <?php
+                include_once('includes/dbconfig.php');
+                $ref = 'speaker/';
+                $fetchdata = $database->getReference($ref)->getValue();
+                $count = 0;
+                ?>
                     <div class="carousel-inner row w-100 mx-auto" role="listbox">
+
+                    <?php
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                    if ($count == 9){
+                        break;
+                    }
+                ?>
                         <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp filla">
                                 <!-- Thumb -->
                                 <div class="speaker-single-thumb">
-                                    <img src="img/educa/1.jpg" class="img-fluid mx-auto d-block" alt="img1">
+                                    <img src="<?php echo $row['img']?>" class="img-fluid mx-auto d-block " alt="img1">
                                 </div>
                                 <!-- Social Info -->
                                 <div class="social-info">
@@ -826,161 +840,21 @@
                                 </div>
                                 <!-- Info -->
                                 <div class="speaker-info">
-                                    <h5>Cassamo Nuvunga</h5>
-                                    <p>Presidente da CADE</p>
+                                    <h5><?php echo $row['name']?></h5>
+                                    <p><?php echo $row['profession'] ?></p>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/3.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                     
+                        <?php
+                endforeach;
+                ?>
+                      
+                        
+                    </div> <!--ROW END -->
 
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/4.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/5.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/6.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/9.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/10.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb">
-                                    <img src="img/educa/13.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                                </div>
-                                <!-- Social Info -->
-                                <div class="social-info">
-                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-
-                                    <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                                </div>
-                                <!-- Info -->
-                                <div class="speaker-info">
-                                    <h5>Henry Mahindra</h5>
-                                    <p>Fundador da NIKE</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                     <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -1355,7 +1229,7 @@
     function showGameDialog() {
 
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             title: '#Estou na feira',
             text: "Compartilha com os amigos #ESTOU NA FEIRA!",
             icon: 'info',

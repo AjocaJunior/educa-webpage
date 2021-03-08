@@ -55,7 +55,7 @@
                                         </div>
 
                                         <button name="login" class="btn btn-primary btn-user btn-block">Login</button>
-                                        
+                                        <a href="index.php" class="btn btn-warning btn-user btn-block">Voltar ao admin</a>
                                     </form>
                                     <hr>
                                     <div class="text-center">

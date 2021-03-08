@@ -130,15 +130,31 @@
                         <h4 style="color: #414c52;">DISCURSOS DE ABERTURA</h4>
                     </div>
                 </div>
-
+                <?php
+                include_once('includes/dbconfig.php');
+                $ref = 'evento/';
+                $fetchdata = $database->getReference($ref)->getValue();
+                $count = 0;
+                $tipodiscurso='discurso';
+                ?>
             
                 <!-- Single Blog Area -->
+
+                <?php
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                   $row['tipo'];
+                    if($count==2 ){
+                    break;
+                    }
+                    
+                ?>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
                             <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/YAWt-gktZqM" frameborder="0"
+                                src="<?php echo $row['video_link'] ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
@@ -146,10 +162,8 @@
                             <a class="blog-title" href="#">Discurso de Abertura</a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i>Ministra da
-                                    Educação</a></br>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Carmelina
-                                    Nhamashulua</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i><?php echo $row['evento_titulo'] ?></a></br>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i><?php echo $row['moderador_nome']?></a>
                             </div>
 
                         </div>
@@ -160,33 +174,13 @@
                     </div>
                 </div>
 
+                <?php
 
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/YAWt-gktZqM" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Discurso de Abertura</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i>Presidente da CADE</a> </br>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Cassamo Nuvunga</a>
-                            </div>
+                endforeach;
+                ?>
 
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModaldisc3"><i
-                                    class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
+          
 
             </div>
         </div>

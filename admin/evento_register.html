@@ -38,6 +38,10 @@
                             </div>
                             <form class="user">
                                 <div class="form-group">
+                                    <input type="text" id="tipo" class="form-control form-control-user"
+                                        placeholder="conferencia, palestra, discurso ou webinar">
+                                </div>
+                                <div class="form-group">
                                     <input type="text" id="evento_titulo" class="form-control form-control-user"
                                         placeholder="Título do Evento">
                                 </div>
@@ -121,11 +125,6 @@
 
 
 
-
-
-
-
-
                                 </button>
                                 <hr>
 
@@ -167,6 +166,7 @@
     <script>
         //add event
         function registrar_evento() { 
+            var tipo = document.getElementById('tipo').value;
             var evento_titulo = document.getElementById('evento_titulo').value;
             var video_link = document.getElementById('video_link').value;
             var evento_descricao = document.getElementById('evento_descricao').value;
@@ -192,23 +192,19 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, url);
+                        addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, url);
                     })
                     .catch(console.error);
 
             } else {
-                addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, data, uid, "");
+                addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, data, uid, "");
             }
-
-
-
         }
 
-        function addEvento(evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, img_moderador, flyer, icon) {
-
+        function addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, img_moderador, flyer, icon) {
 
             var data = {
-
+                tipo:tipo,
                 evento_titulo: evento_titulo,
                 video_link: video_link,
                 evento_descricao: evento_descricao,
