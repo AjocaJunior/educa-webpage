@@ -173,7 +173,49 @@ $data = "";
 
                         </div>
 
+                        <div class="confer-leave-a-reply-form clearfix" id="contact">
+                            <h4 class="mb-30">Deixa seu Comentário</h4>
 
+                            <!-- Leave A Reply -->
+                            <div class="contact_form">
+                                <form action="#" method="post">
+                                    <div class="contact_input_area">
+                                        <div class="row">
+                                            <!-- Form Group -->
+                                            <div class="col-12 col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control mb-30" name="name" id="name"
+                                                        placeholder="Seu Nome" required>
+                                                </div>
+                                            </div>
+                                          
+                                            <!-- Form Group -->
+                                            <div class="col-12 col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control mb-30" name="email"
+                                                        id="email" placeholder="E-mail" required>
+                                                </div>
+                                            </div>
+                                           
+                                            <!-- Form Group -->
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control mb-30" id="Mensagem"
+                                                        cols="30" rows="6" placeholder="Comentário" required></textarea>
+                                                </div>
+                                            </div>
+                                            <!-- Button -->
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="col-12">
+                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
+                                            class="zmdi zmdi-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
