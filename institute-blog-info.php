@@ -105,8 +105,6 @@
                         </div>
                         <!-- Nav Start -->
                         <div class="classynav">
-
-
                             <!-- Get Tickets Button -->
                             <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Inicio</i></a>
                         </div>

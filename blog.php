@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Publicações - educa mocambique</title>
+    <title>Blog - Feira</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -30,9 +30,9 @@
     <?php
 
         include_once('includes/dbconfig.php');
-        $ref = 'institution/';
+        $ref = 'publication/';
         $fetchdata = $database->getReference($ref)->getValue();
-        $uid  = $_GET['id'];
+        // $uid  = $_GET['id'];
 
 
     ?>
@@ -45,7 +45,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -58,34 +58,49 @@
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                         </div>
-                        <!-- Nav Start -->
                         <div class="classynav">
-                            <ul id="nav">
-                                <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="evento.html">Evento</a>
-                                    <ul class="dropdown">
-                                        <li><a href="evento.html#abertura">Abertura</a></li>
-                                        <li><a href="evento.html#conferencias">Conferências</a></li>
-                                        <li><a href="evento.html#webinares">Webinares</a></li>
-                                        <li><a href="evento.html#encerramento">Encerramento</a></li>
-                                        <li><a href="raffle.php">Sorteio</a></li>
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="index.php">Inicio</a></li>
+                                    <li><a href="evento.php">Evento</a>
+                                        <ul class="dropdown">
+                                            <li><a href="evento.php#abertura">Abertura</a></li>
+                                            <li><a href="evento.php#conferencias">Conferências</a></li>
+                                            <li><a href="evento.php#webinares">Webinares</a></li>
+                                            <li><a href="evento.php#encerramento">Encerramento</a></li>
 
-                                    </ul>
-                                </li>
-                                <li><a href="feira.php">Feira</a>
+                                        </ul>
+                                    </li>
+                                    <li><a href="feira.php">Feira</a>
+                                        <ul class="dropdown">
+                                            <li><a href="feira.php#testes">Testes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="actividades-culturais.html">Cultura</a>
+                                        <ul class="dropdown">
 
-                                </li>
-                                <li><a href="actividades-culturais.html">Cultura</a>
-                                    <ul class="dropdown">
-                                        <li><a href="actividades-culturais.html#galeria">Galeria</a></li>
-                                        <li><a href="actividades-culturais.html#jogos">Jogos</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="informacoes-diversas.html">Informações</a></li>
-                                <li><a href="#contact">Contactos</a></li>
-                            </ul>
+                                        <li><a href="cultura/pintura.html">Pintura</a></li>
+                                        <li><a href="cultura/musica.html">Música</a></li>
+                                        <li><a href="cultura/cinema.html">Cinema</a></li>
+                                        <li><a href="cultura/teatro.html">Teatro</a></li>
+                                        <li><a href="cultura/literatura.html">Literatura</a></li>
+                                        <li><a href="cultura/danca.html">Dança</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="informacoes-diversas.html">Informações</a>
+                                        <ul class="dropdown">
+                                            <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
+                                            <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.php">Blog</a></li>
+                                </ul>
 
-                           
+                                <!-- Get Tickets Button -->
+                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                    id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
+                            </div>
+                            <!-- Nav End -->
                         </div>
                     
                         <!-- Nav End -->
@@ -96,46 +111,45 @@
     </header>
     <!-- Header Area End -->
 
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img jarallax"  style="background-color: #f2871c;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
+    <!-- Breadcrumb Area End -->
+    <section class="our-speaker-area section-padding-150 jarallax ">
+        <div class="container">
+            <div class="row">
                 <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title">PUBLICAÇÕES</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
-                            </ol>
-                        </nav>
+                    <div class="section-heading text-center wow fadeInUp" 
+                        data-wow-delay="300ms">
+                        
+                        <h4 style="color: #414c52;">BLOG DE EXPOSITORES</h4>
+                        <p>Informe-te sobre a Feira</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Area End -->
-
     <!-- Our Blog Area Start -->
-    <div class="our-blog-area section-padding-100">
+    <div class="our-blog-area section-padding-150-20 h-100">
         <div class="container">
             <div class="row">
                 <?php 
-                    $ref = 'institution/'.$uid.'/publication';
+                    $ref = '/publication';
                     $fetchdata = $database->getReference($ref)->getValue(); 
                     ?>
 
                 <?php if($fetchdata != null):?>
                 <?php foreach( $fetchdata as $key => $row):   ?>
                 <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-xl-4">
+                <div class="col-12 col-md-6 col-xl-3">
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <img src="<?php echo $row['img'] ?>" alt=""  style="height: 180px; width:350px"  >
+                        <div class="single-blog-thumb filla">
+                            <img src="<?php echo $row['img'] ?>" alt=""   >
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#"><?php echo $row['title'] ?></a>
+                            <h6>
+                            <a class="" href="#"><?php echo $row['title'] ?></a>
+                            <h6>
+                            
                             <!-- Post Meta -->
                             <div class="post-meta">
                                 <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i><?php echo $row['date'] ?></a>
@@ -154,7 +168,7 @@
                             <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +235,32 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+    <style>
+           .filla {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden
+    }
 
+    .filla a img {
+        /* flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
+        object-fit: cover; */
+    }
+
+    .filla img {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
+    }
+    </style>
 </body>
 
 </html>

@@ -72,12 +72,12 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="evento.html">Evento</a>
+                                <li><a href="evento.php">Evento</a>
                                     <ul class="dropdown">
-                                        <li><a href="evento.html#abertura">Abertura</a></li>
-                                        <li><a href="evento.html#conferencias">Conferências</a></li>
-                                        <li><a href="evento.html#webinares">Webinares</a></li>
-                                        <li><a href="evento.html#encerramento">Encerramento</a></li>
+                                        <li><a href="evento.php#abertura">Abertura</a></li>
+                                        <li><a href="evento.php#conferencias">Conferências</a></li>
+                                        <li><a href="evento.php#webinares">Webinares</a></li>
+                                        <li><a href="evento.php#encerramento">Encerramento</a></li>
                                         <!-- <li><a href="raffle.php">Sorteio</a></li> -->
 
                                     </ul>
@@ -574,7 +574,7 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="evento.html#conferencias"
+                                                    <a href="evento.php#conferencias"
                                                         class="btn confer-btn-white">Assistir <i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -623,7 +623,7 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="evento.html#conferencias"
+                                                    <a href="evento.php#conferencias"
                                                         class="btn confer-btn-white">Assistirr <i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -654,7 +654,7 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="evento.html#webinares"
+                                                    <a href="evento.php#webinares"
                                                         class="btn confer-btn-white">Assistir <i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -706,7 +706,7 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="evento.html#webinares"
+                                                    <a href="evento.php#webinares"
                                                         class="btn confer-btn-white">Assistir <i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -751,7 +751,7 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="evento.html#encerramento" class="btn confer-btn-white">Ver
+                                                    <a href="evento.php#encerramento" class="btn confer-btn-white">Ver
                                                         Mais <i class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
 
@@ -816,7 +816,7 @@
                 $fetchdata = $database->getReference($ref)->getValue();
                 $count = 0;
                 ?>
-                    <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                    <div class=" row w-100 mx-auto" >
 
                     <?php
                 foreach( $fetchdata as $key => $row):
@@ -825,10 +825,10 @@
                         break;
                     }
                 ?>
-                        <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp filla">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp">
                                 <!-- Thumb -->
-                                <div class="speaker-single-thumb">
+                                <div class="speaker-single-thumb fill">
                                     <img src="<?php echo $row['img']?>" class="img-fluid mx-auto d-block " alt="img1">
                                 </div>
                                 <!-- Social Info -->
@@ -839,7 +839,7 @@
                                     <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
                                 </div>
                                 <!-- Info -->
-                                <div class="speaker-info">
+                                <div class="speaker-info-orador">
                                     <h5><?php echo $row['name']?></h5>
                                     <p><?php echo $row['profession'] ?></p>
                                 </div>
@@ -847,6 +847,7 @@
 
 
                         </div>
+                        
                      
                         <?php
                 endforeach;
@@ -855,17 +856,10 @@
                         
                     </div> <!--ROW END -->
 
-                    <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                 
                 </div>
                 <div class="col-md-12 text-center">
-                    <a href="evento.html" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
+                    <a href="evento.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
                         style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Oradores<i
                             class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
@@ -1322,6 +1316,22 @@
         min-height: 100%;
         width: 90%;
         height: 200px; */
+        object-fit: cover;
+    }
+
+    .fill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .fill img {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
         object-fit: cover;
     }
 </style>

@@ -57,12 +57,12 @@
                             <div class="classynav">
                                 <ul id="nav">
                                     <li class="active"><a href="index.php">Inicio</a></li>
-                                    <li><a href="evento.html">Evento</a>
+                                    <li><a href="evento.php">Evento</a>
                                         <ul class="dropdown">
-                                            <li><a href="evento.html#abertura">Abertura</a></li>
-                                            <li><a href="evento.html#conferencias">Conferências</a></li>
-                                            <li><a href="evento.html#webinares">Webinares</a></li>
-                                            <li><a href="evento.html#encerramento">Encerramento</a></li>
+                                            <li><a href="evento.php#abertura">Abertura</a></li>
+                                            <li><a href="evento.php#conferencias">Conferências</a></li>
+                                            <li><a href="evento.php#webinares">Webinares</a></li>
+                                            <li><a href="evento.php#encerramento">Encerramento</a></li>
 
                                         </ul>
                                     </li>
@@ -84,11 +84,12 @@
                                     </li>
                                     <li><a href="informacoes-diversas.html">Informações</a>
                                         <ul class="dropdown">
+                                        <li><a href="informacoes-diversas.html#blog">Blog</a></li>
                                             <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
                                             <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#contact">Contactos</a></li>
+                                    <li><a href="index.php#contact">Contactos</a></li>
                                 </ul>
 
                                 <!-- Get Tickets Button -->

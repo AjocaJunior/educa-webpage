@@ -36,6 +36,15 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     </div>
     <!-- /Preloader -->
 
+    <?php
+
+        include_once('includes/dbconfig.php');
+        $ref = 'publication/';
+        $fetchdata = $database->getReference($ref)->getValue();
+        // $uid  = $_GET['id'];
+
+
+    ?>
     <!-- Header Area Start -->
     <header class="header-area" style="background-color: #414c52;">
         <div class="classy-nav-container breakpoint-off">
@@ -61,12 +70,12 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="evento.html">Evento</a>
+                                <li><a href="evento.php">Evento</a>
                                     <ul class="dropdown">
-                                        <li><a href="evento.html#abertura">Abertura</a></li>
-                                        <li><a href="evento.html#conferencias">Conferências</a></li>
-                                        <li><a href="evento.html#webinares">Webinares</a></li>
-                                        <li><a href="evento.html#encerramento">Encerramento</a></li>
+                                        <li><a href="evento.php#abertura">Abertura</a></li>
+                                        <li><a href="evento.php#conferencias">Conferências</a></li>
+                                        <li><a href="evento.php#webinares">Webinares</a></li>
+                                        <li><a href="evento.php#encerramento">Encerramento</a></li>
 
                                     </ul>
                                 </li>
@@ -87,11 +96,12 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 </li>
                                 <li><a href="informacoes-diversas.html">Informações</a>
                                     <ul class="dropdown">
-                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
-                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                    <li><a href="#blog">Blog</a></li>
+                                        <li><a href="#calendario">Calendário</a></li>
+                                        <li><a href="#bolsas">Bolsas</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="index.php#contact">Contactos</a></li>
+                                <li><a href="index.php#contact">Contacto</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
@@ -126,7 +136,86 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     <!-- Breadcrumb Area End -->
 
     <!-- Our Schedule Area Start -->
-    <section class="our-schedule-area bg-white section-padding-150 mb-30 bg-design">
+
+      <!-- Breadcrumb Area End -->
+      <section class="our-speaker-area section-padding-150-20 jarallax ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" 
+                        data-wow-delay="300ms">
+                        <p>Informe-te sobre a Feira</p>
+                        <h4 style="color: #414c52;" id="blog">BLOG DE EXPOSITORES</h4>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Our Blog Area Start -->
+    <div class="our-blog-area h-100" >
+        <div class="container">
+            <div class="row">
+                <?php 
+                    $ref = '/publication';
+                    $fetchdata = $database->getReference($ref)->getValue(); 
+                    ?>
+
+                <?php if($fetchdata != null):?>
+                <?php foreach( $fetchdata as $key => $row):   ?>
+                <!-- Single Blog Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Single blog Thumb -->
+                        <div class="single-blog-thumb filla">
+                            <img src="<?php echo $row['img'] ?>" alt=""   >
+                        </div>
+                        <div class="single-blog-text text-center">
+                            <h6>
+                            <a class="" href="#"><?php echo $row['title'] ?></a>
+                            <h6>
+                            
+                            <!-- Post Meta -->
+                            <div class="post-meta">
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i><?php echo $row['date'] ?></a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i><?php echo $row['author'] ?></a>
+                            </div>
+
+                            <?php
+                                $pharagraph = "";
+
+                                if(strlen($row['text']) > 14) {
+                                    $pharagraph = substr($row['text'], 0, 90)."..";
+                                } else {
+                                    $pharagraph = $row['text'];
+                                }
+                            ?>
+                            <p><?php echo  $pharagraph ;?></p>
+                        </div>
+                        <div class="blog-btn">
+                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <?php endforeach ?>
+            <?php endif?>
+              
+              
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-12">
+                    <div class="more-blog-btn text-center">
+                        <a class="btn confer-btn" href="#">Load more <i class="zmdi zmdi-refresh"></i></a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <section class="our-schedule-area bg-white section-padding-50 mb-30 bg-design">
         <div class="container">
             <div class="row">
 
@@ -772,6 +861,26 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
         });
     </script>
+
+<style>
+    .filla {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden
+}
+
+
+
+.filla img {
+ flex-shrink: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: 90%;
+ height: 200px;
+ object-fit: cover;
+}
+</style>
 </body>
 
 </html>

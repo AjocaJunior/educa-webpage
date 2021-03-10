@@ -193,7 +193,7 @@ foreach($fetchdata as $key => $row){
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cursos:</h6>
                         <a class="collapse-item" href="publish.php?id=<?php echo $uid; ?>">Publicar</a>
-                        <a class="collapse-item" href="publish.php?id=<?php echo $uid; ?>">Ver publicações </a>
+                        <a class="collapse-item" href="publicacoes.php?id=<?php echo $uid; ?>">Todas publicações </a>
                     </div>
                 </div>
             </li>
@@ -376,7 +376,7 @@ foreach($fetchdata as $key => $row){
                     <div class="row">
 
                         <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-12 col-lg-12">
                             <div class="card">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -411,8 +411,62 @@ foreach($fetchdata as $key => $row){
                             </div>
                         </div>
 
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
+                      
+
+
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-7 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Contactos</h6>
+                                </div>
+                                <div class="card-body">
+
+                                    <form>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <input type="email" class="form-control" id="inputEmail"
+                                                    value="<?php echo $email; ?>" placeholder="Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <input type="contact" class="form-control" id="inputContact"
+                                                    value="<?php echo $phone; ?>" placeholder="Contacto">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <input type="text" class="form-control" id="inputLocalization"
+                                                    value="<?php echo $localization; ?>" placeholder="Localização">
+                                            </div>
+                                        </div>
+
+                                        <button type="button" onClick="updateContact()"
+                                            class="btn btn-secondary btn-lg btn-block">Actualizar</button>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <!-- Color System -->
+
+
+                        </div>
+
+  <!-- Pie Chart -->
+  <div class="col-xl-5 col-lg-5 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -458,61 +512,7 @@ foreach($fetchdata as $key => $row){
                             </div>
                             <!--- CONTACTOS -->
                         </div>
-
-
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Contactos</h6>
-                                </div>
-                                <div class="card-body">
-
-                                    <form>
-
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <input type="email" class="form-control" id="inputEmail"
-                                                    value="<?php echo $email; ?>" placeholder="Email">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <input type="contact" class="form-control" id="inputContact"
-                                                    value="<?php echo $phone; ?>" placeholder="Contacto">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="inputLocalization"
-                                                    value="<?php echo $localization; ?>" placeholder="Localização">
-                                            </div>
-                                        </div>
-
-                                        <button type="button" onClick="updateContact()"
-                                            class="btn btn-secondary btn-lg btn-block">Actualizar</button>
-
-                                    </form>
-
-                                </div>
-                            </div>
-
-                            <!-- Color System -->
-
-
-                        </div>
-
-
-                    </div>
+                    </div> 
 
                 </div>
                 <!-- /.container-fluid -->

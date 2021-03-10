@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Lista de Publicações</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@ if($uid == null){
   if(isset($_SESSION['uidInstitute'])){
     $uid = $_SESSION['uidInstitute'];
   }else{
-    header("Location: login.html");
+    header("Location: expositor_login.php");
   }
   
 }
@@ -63,39 +63,10 @@ if($uid == null){
           <span>Admin</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="college.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Faculdades</span>
-        </a>
-       
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Home</span>
-        </a>
-      
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-      
-      </div>
+     
 
       <!-- Nav Item - Pages Collapse Menu -->
   
@@ -125,6 +96,7 @@ if($uid == null){
           <form class="form-inline">
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
               <i class="fa fa-bars"></i>
+              
             </button>
           </form>
 
@@ -137,7 +109,9 @@ if($uid == null){
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
+                
               </a>
+              
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -154,10 +128,13 @@ if($uid == null){
             </li>
 
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block">
+            
+            </div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
+            
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               
                 <img class="img-profile rounded-circle" src="../img/educa/logo.png">
@@ -178,7 +155,7 @@ if($uid == null){
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de cursos</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Lista de publicações</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -187,9 +164,10 @@ if($uid == null){
     <table id="productSizes" class="table">
         <thead>
             <tr class="d-flex">
-                <th class="col-1">Posição</th>
-                <th class="col-10">Curso</th>
-                <th class="col-1">Delete</th>
+                <th class="col-2">Categoria</th>
+                <th class="col-6">Título</th>
+                <th class="col-2">Data</th>
+                <th class="col-2">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -200,7 +178,7 @@ if($uid == null){
 
            
         include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/course';
+        $ref = 'institution/'.$uid.'/publication';
         $fetchdata = $database->getReference($ref)->getValue();
         
                         $count = 0;
@@ -211,9 +189,10 @@ if($uid == null){
                                 ?>
 
             <tr class="d-flex">
-                <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["course"]; ?></td>
-                <td class="col-1"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                <td class="col-2"><?php echo  $row['category']; ?></td>
+                <td class="col-6"><?php echo $row["title"]; ?></td>
+                <td class="col-2"><?php echo $row["date"]; ?></td>
+                <td class="col-2"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
   
                             <?php endforeach ?>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Noticias - </title>
+    <title>Publicação - Educa </title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -32,58 +32,49 @@
     
 
     include_once('includes/dbconfig.php');
-    $ref = 'institution/';
+    $ref = 'publication/';
     $fetchdata = $database->getReference($ref)->getValue();
     $uid  = $_GET['id'];
-    $chat = "";
+   $author = "";
     $title           = "";
-    $localization    = "";
-    $institution_description = "";
-    $phone                   = "";
-    $email                   = "";
-    $website                 = "";
-    $video_link              = "";
-    $p1 = "";
-    $p2 = "";
-    $img1 = "";
-    $img2 = "";
-    $currentCategory = "";
+  $img= "";
+  $text="";
+    $category = "";
+$data = "";
+   
 
     foreach($fetchdata as $key => $row){
         if($row['uid'] == $uid ){
-          $chat = $row['chat'];
-          $title           = $row['institution_name'];
-          $localization    = $row['location'];
-          $institution_description = $row['institution_description'];
-          $img1                    = $row['img1'];
-          $img2                    = $row['img2'];
-          $phone                   = $row['phone'];
-          $email                   = $row['email'];
-          $website                 = $row['website'];
-          $video_link              = $row['video_link'];
-          $visits                  = $row['visits'];
-          $contact                 = $row['contact'];
-          $currentCategory         = $row['category'];
+         
+          $title           = $row['title'];
+         
+          $author = $row['author'];
+                  $category                  = $row['category'];
+          $img                = $row['img'];
+         
+       
+          $text              = $row['text'];
+         $data = $row['date'];
 
           break;
         }
     }
 
-    $public = $_GET['public'];
-    $ref = 'institution/'.$uid.'/publication';
-    $fetchdata = $database->getReference($ref)->getValue(); 
+    // $public = $_GET['public'];
+    // $ref = 'institution/'.$uid.'/publication';
+    // $fetchdata = $database->getReference($ref)->getValue(); 
 
-    foreach($fetchdata as $key => $row){
-        if($row['uid'] == $public ){
-            $category = $row['category'];
-            $date  = $row['date'];
-            $img = $row['img'];
-            $text = $row['text'];
-            $titlePublic = $row['title'] ;
-            $author = $row['author'];
-        }
+    // foreach($fetchdata as $key => $row){
+    //     if($row['uid'] == $public ){
+    //         $category = $row['category'];
+    //         $date  = $row['date'];
+    //         $img = $row['img'];
+    //         $text = $row['text'];
+    //         $titlePublic = $row['title'] ;
+    //         $author = $row['author'];
+    //     }
 
-    }
+    // }
 
     ?>
 
@@ -130,31 +121,27 @@
     </header>
     <!-- Header Area End -->
 
-  
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
+
+    <section class="our-speaker-area section-padding-150 jarallax ">
+        <div class="container">
+            <div class="row">
                 <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="page-title"><?php echo $title ?></h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item"><a href="blog.php?id=<?php echo $uid ?>"><?php echo $title ?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><?php echo $titlePublic ?></li>
-                            </ol>
-                        </nav>
+                    <div class="section-heading text-center wow fadeInUp" 
+                        data-wow-delay="300ms">
+                        
+                        <h4 style="color: #414c52;"><?php echo $title ?></h4>
+                        <p><?php echo $category ?></p>
                     </div>
                 </div>
+
+               
+
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Area End -->
-
 
     <!-- Blog Area Start -->
-    <section class="confer-blog-details-area section-padding-100-0">
+    <section class="confer-blog-details-area section-padding-20">
         <div class="container">
             <div class="row justify-content-center">
                 <!-- Single Post Details Area -->
@@ -165,24 +152,26 @@
 
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
-                                <img src="<?php  echo $img;?> " alt=" " style="width: 600px; height:380px; ">
+                                <img src="<?php  echo $img;?> " alt=" " >
                             </div>
 
                             <!-- Post Title -->
                             <h4 class="post-title "><?php echo $title; ?></h4>
 
-                              <!-- Post Meta -->
-                              <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> <?php echo $date; ?> </a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>  <?php echo $author; ?> </a>
+                            <!-- Post Meta -->
+                            <div class="post-meta">
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> <?php echo $data; ?>
+                                </a>
+                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> <?php echo $author; ?>
+                                </a>
                                 <!-- <a class="post-author" href="#"><i class="zmdi zmdi-favorite-outline"></i> 8 Likes</a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-comment-outline"></i> 12 Comments</a> -->
                             </div>
 
 
                             <p style="white-space: pre-line"><?php echo $text; ?></p>
-                     
-                            </div>
+
+                        </div>
 
 
                     </div>
@@ -192,94 +181,55 @@
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
                     <div class="confer-sidebar-area mb-100 ">
 
-                       
-
-                        <!-- Single Widget Area -->
-                        <div class="single-widget-area ">
-                            <!-- Post Author Widget -->
-                            <div class="post-author-widget ">
-                                <!-- Thumbnail -->
-                                <div class="post-author-avatar ">
-                                    <img src="<?php echo $img; ?>" alt=" " style="width: 107px; height: 107px;">
-                                </div>
-                                <!-- Author Content -->
-                                <div class="post-author-content ">
-                                    <h5><?php echo $title; ?></h5>
-                                    <?php
-                                        
-                                        if($currentCategory == 1){
-                                            $currentCategory = "Empresa";
-                                        }else{
-                                            $currentCategory = " Instituição de ensino";
-                                        }
-                                    
-                                    ?>
-                                    <span><?php echo $currentCategory ?></span>
-                                    <p> <?php  echo substr($institution_description , 0 , 43).".."; ?></p>
-                                </div>
-                                <!-- Social Info -->
-                                <div class="author-social-info ">
-                                    <a href="institute.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-home "></i></a>
-                                    <a href="blog.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-collection-text "></i></a>
-                                    <a href="institute.php?id=<?php echo $uid ?> "><i class="zmdi zmdi-eye"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Single Widget Area -->
                         <div class="single-widget-area ">
                             <h5 class="widget-title mb-30 ">Publicações recentes</h5>
 
-
-  
-
-
-                    <?php 
-                        $ref = 'institution/'.$uid.'/publication';
+                            <?php 
+                        $ref = '/publication';
                         $fetchdata = $database->getReference($ref)->getValue(); 
                     ?>
 
-                    <?php if($fetchdata != null):?>
-                    <?php foreach( $fetchdata as $key => $row):   ?>
+                            <?php if($fetchdata != null):?>
+                            <?php foreach( $fetchdata as $key => $row):   ?>
 
-                     <!-- Single Recent Post Area -->
-                     <div class="single-recent-post-area d-flex align-items-center">
-                        <!-- Thumb -->
-                        <div class="post-thumb">
-                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>"><img src="<?php echo $row['img']; ?>" alt=""></a>
-                        </div> 
-                        <!-- Content -->
-                        <div class="post-content">
-                            <?php  
+                            <!-- Single Recent Post Area -->
+                            <div class="single-recent-post-area d-flex align-items-center">
+                                <!-- Thumb -->
+                                <div class="post-thumb">
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><img
+                                            src="<?php echo $row['img']; ?>" alt=""></a>
+                                </div>
+                                <!-- Content -->
+                                <div class="post-content">
+
+                                    <?php  
                                 $currentTitle = "";
-                                 if(strlen($row['title']) > 17) {
-                                     $currentTitle = substr( $row['title'] , 0 , 17)."..";
+                                 if(strlen($row['title']) > 30) {
+                                     $currentTitle = substr( $row['title'] , 0 , 30)."..";
                                  } else {
                                      $currentTitle = $row['title'];
                                  }
                             
                             ?>
-                            <a href="single-blog.php?id=<?php echo $uid. "&" ."public=".$row['uid'] ?>" class="post-title"> <?php echo $currentTitle; ?> </a>
-                            <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>  <?php echo $row['date']; ?> </a>
-                        </div>
-                    </div>
-                 
-                <?php endforeach ?>
-            <?php endif?>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
+                                        class="post-title"> <?php echo $currentTitle; ?> </a>
+                                        <p><?php echo $row['category']; ?></p>
+                                    <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
+                                        <?php echo $row['date']; ?> </a>
+                                </div>
+                            </div>
 
-
-                            
-                            
-
+                            <?php endforeach ?>
+                            <?php endif?>
 
 
                         </div>
-
-
-
 
                     </div>
                 </div>
+
+                
             </div>
         </div>
     </section>
@@ -305,7 +255,7 @@
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                             Copyright &copy;
                                             <script>
-                                                document.write(new Date().getFullYear());
+                                            document.write(new Date().getFullYear());
                                             </script> EDUCA MOÇAMBIQUE</a>
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         </p>

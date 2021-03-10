@@ -9,18 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
+
     <link rel="icon" href="../img/educa/logo.png">
 
     <title>Publicar - Educa</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
@@ -48,19 +51,20 @@
                                     <input type="text" id="title" class="form-control" placeholder="Título">
                                 </div>
 
-                                
+
                                 <div class="form-group">
-                                    <input type="text" id="author" class="form-control" placeholder="Autor" maxlength="50">
+                                    <input type="text" id="author" class="form-control" placeholder="Autor"
+                                        maxlength="50">
                                 </div>
 
                                 <div class="form-group ">
                                     <select class="browser-default custom-select " id="category ">
-                                    <option selected>Seleciona categoria</option>
-                                    <option value="technology ">Tecnologia</option>
-                                    <option value="news ">Noticias</option>
-                                    <option value="event ">Evento</option>
-                                    <option value="workshops ">Workshops</option>
-                                    <option value="other ">Outro</option>
+                                        <option selected>Seleciona categoria</option>
+                                        <option value="technology ">Tecnologia</option>
+                                        <option value="news ">Noticias</option>
+                                        <option value="event ">Evento</option>
+                                        <option value="workshops ">Workshops</option>
+                                        <option value="other ">Outro</option>
                                     </select>
                                 </div>
 
@@ -71,16 +75,18 @@
                                     <div class="col-sm-12">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <img src="../img/educa/noimg.png" id="target" height="200" class="input-group-text" />
+                                                <img src="../img/educa/noimg.png" id="target" height="200"
+                                                    class="input-group-text" />
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input" id="photo" aria-describedby="inputGroupFileAddon01"/>
+                                                <input type="file" name="photo" class="custom-file-input" id="photo"
+                                                    aria-describedby="inputGroupFileAddon01" />
                                                 <label class="custom-file-label" for="photo">Foto</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                               
+
 
                                 <div class="form-group ">
                                     <label for="publication " class="text-uppercase ">Publicação</label>
@@ -94,7 +100,8 @@
 
 
                             </form>
-                            <button onclick="addPublication() " class="btn btn-user btn-block " style="background:#f8871f;border-radius:0px; color: white; ">
+                            <button onclick="addPublication() " class="btn btn-user btn-block "
+                                style="background:#f8871f;border-radius:0px; color: white; ">
                                 <i class="fab fa-sign-in fa-fw "></i> publicar
                             </button>
 
@@ -123,95 +130,102 @@
     <script src="../js/db/app.js "></script>
     <script src="../js/db/real-time-database.js "></script>
     <script>
-        //add publication
+    //add publication
 
-        function addPublication() {
-            var title = document.getElementById('title').value;
-            var e = document.getElementById("category ");
-            var category = e.options[e.selectedIndex].text;
-            var text = document.getElementById("publication ").value;
-            var date = new Date().toLocaleDateString();
-            var author = document.getElementById('author').value;
-            var uid = "<?php echo $_GET['id'] ; ?>";
-            
-
-
-            //upload img perfil
-            const ref = firebase.storage().ref();
-            const file = document.querySelector("#photo ").files[0];
-
-            if (file != null) {
-
-                const name = +new Date() + "-" + file.name;
-                const metadata = {
-                    contentType: file.type
-                };
-                const task = ref.child(name).put(file, metadata);
-                task
-                    .then(snapshot => snapshot.ref.getDownloadURL())
-                    .then(url => {
-                        addPublicationInDB(title, category, text, date, author, url,uid );
-                    })
-                    .catch(console.error);
-
-            } else {
-                addPublicationInDB(title, category, text, date, author, "",uid);
-            }
+    function addPublication() {
+        var title = document.getElementById('title').value;
+        var e = document.getElementById("category ");
+        var category = e.options[e.selectedIndex].text;
+        var text = document.getElementById("publication ").value;
+        var date = new Date().toLocaleDateString();
+        var author = document.getElementById('author').value;
+        var uid = "<?php echo $_GET['id'] ; ?>";
 
 
+
+        //upload img perfil
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#photo ").files[0];
+
+        if (file != null) {
+
+            const name = +new Date() + "-" + file.name;
+            const metadata = {
+                contentType: file.type
+            };
+            const task = ref.child(name).put(file, metadata);
+            task
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url => {
+                    addPublicationInDB(title, category, text, date, author, url, uid);
+                })
+                .catch(console.error);
+
+        } else {
+            addPublicationInDB(title, category, text, date, author, "", uid);
         }
 
-        function addPublicationInDB(title, category, text, date, author, img , uid) {
-            var uidPublication = uuidv4();
-            var data = {
-                title: title,
-                category: category,
-                text: text,
-                date: date,
-                author: author,
-                img: img,
-                uid:uidPublication,
-                author: author
-            }
+
+    }
+
+    function addPublicationInDB(title, category, text, date, author, img, uid) {
+        var uidPublication = uuidv4();
+        var data = {
+            title: title,
+            category: category,
+            text: text,
+            date: date,
+            author: author,
+            img: img,
+            uid: uidPublication,
+            author: author
+        }
 
 
-            firebase.database().ref().child('institution').child(uid).child("publication").child(uidPublication).set(data, function(error) {
+        firebase.database().ref().child('institution').child(uid).child("publication").child(uidPublication).set(data,
+            function(error) {
                 if (error) {
                     alert("Data could not be saved. " + error);
                 } else {
-                    window.location.replace("index.php?id=" + uid);
+                    window.location.replace("expositor_admin.php?id=" + uid);
                 }
             });
 
+        firebase.database().ref().child('publication').child(uidPublication).set(data, function(error) {
+            if (error) {
+                alert("Data could not be saved. " + error);
+            } else {
+                console.log("saved");
+            }
+        });
+
+    }
+
+    function showImage(src, target) {
+        var fr = new FileReader();
+        // when image is loaded, set the src of the image where you want to display it
+        fr.onload = function(e) {
+            target.src = this.result;
+        };
+        src.addEventListener("change", function() {
+            // fill fr with image data    
+            fr.readAsDataURL(src.files[0]);
+        });
+    }
+
+    var src = document.getElementById("photo");
+    var target = document.getElementById("target");
+    showImage(src, target);
 
 
-        }
 
-        function showImage(src, target) {
-            var fr = new FileReader();
-            // when image is loaded, set the src of the image where you want to display it
-            fr.onload = function(e) {
-                target.src = this.result;
-            };
-            src.addEventListener("change", function() {
-                // fill fr with image data    
-                fr.readAsDataURL(src.files[0]);
-            });
-        }
-
-        var src = document.getElementById("photo");
-        var target = document.getElementById("target");
-        showImage(src, target);
-
-
-
-        function uuidv4() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0,
-                    v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
     </script>
 </body>
 
