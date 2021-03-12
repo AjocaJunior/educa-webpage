@@ -173,7 +173,7 @@ $data = "";
 
                         </div>
 
-                        <div class="confer-leave-a-reply-form clearfix" id="contact">
+                        <div class="confer-leave-a-reply-form clearfix section-padding-50" id="contact">
                             <h4 class="mb-30">Deixa seu Comentário</h4>
 
                             <!-- Leave A Reply -->

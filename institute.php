@@ -87,7 +87,7 @@
     ?>
 
     <!-- Header Area Start -->
-    <header class="header-area"  style="background-color: #414c52;">
+    <header class="header-area" style="background-color: #414c52;">
         <div class="classy-nav-container breakpoint-off">
             <div class="container">
                 <!-- Classy Menu -->
@@ -119,9 +119,7 @@
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
                             <a href="<?php echo $chat; ?>" onClick="countContact()" target="_blank"
-                            
-                            class="btn mt-3 mt-lg-0 ml-3 ml-lg-5"  style="background:#f8871f; color:white"> Chat <i
-                                    class="zmdi zmdi-email"></i></a>
+                                class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -132,7 +130,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;" >
+    <section class="breadcrumb-area jarallax" style="background-color: #f2871c;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -218,7 +216,9 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title"> <!-- exames-->  </a>
+                                    <a href="#" class="post-title">
+                                        <!-- exames-->
+                                    </a>
                                     <span><?php echo " ".$title; ?></span>
                                 </div>
                             </div>
@@ -229,7 +229,8 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e noticias</a>
+                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e
+                                        noticias</a>
                                     <!---institute-blog.php-->
                                     <span>Ver publicações</span>
                                 </div>
@@ -290,7 +291,9 @@
                                 </form>
 
                                 <div class="col-12">
-                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
+                                    <a href="mailto:<?php echo $email; ?>"
+                                        class="btn confer-btn-white mt-50 wow fadeInUp"
+                                        style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -301,17 +304,14 @@
 
                 <!-- Blog Sidebar Area -->
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="confer-sidebar-area mb-100">
 
-                        <!-- Single Widget Area -->
-                        <!-- <div class="single-widget-area">
-                            <div class="search-widget">
-                                <form action="#" method="post">
-                                    <input type="search" name="search-form" id="searchForm" placeholder="Search">
-                                    <button type="submit"><i class="zmdi zmdi-search"></i></button>
-                                </form>
-                            </div>
-                        </div> -->
+
+                    <div class="confer-sidebar-area mb-100">
+                        <div class="text-center mb-30">
+                            <a class="btn confer-btn-white" href="#" data-toggle="modal" data-target="#myModalAgenda"
+                                role="button">Agendar Chat <span class="fa fa-wechat"></span> </a>
+                        </div>
+
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area">
@@ -527,40 +527,108 @@
                         </div>
 
                         <!-- Single Widget Area -->
-<div class="single-widget-area">
-    <h5 class="widget-title mb-30">Galeria</h5>
+                        <div class="single-widget-area">
+                            <h5 class="widget-title mb-30">Galeria</h5>
 
-    <!-- Blog Area End -->
-    <div class=" footer-gallery">
-       
-        <div class="row">
+                            <!-- Blog Area End -->
+                            <div class=" footer-gallery">
 
-            <?php
+                                <div class="row">
+
+                                    <?php
                 $ref = 'institution/'.$uid.'/gallery';
                 $fetchdata = $database->getReference($ref)->getValue();
            ?>
-            <?php if($fetchdata != null):?>
-            <?php
+                                    <?php if($fetchdata != null):?>
+                                    <?php
             foreach( $fetchdata as $key => $row): ?>
-            <div class="col-4">
-                <a href="<?php echo $row['url']; ?>" class="single-gallery-item">
-                                           
-                            <img class=" wow fadeInUp" data-wow-delay="300ms" src="<?php echo $row['url']; ?>" alt="">
-                        
-                </a>
-            </div>
-            <?php endforeach ?>
-            <?php endif?>
-        </div>
-    </div>
-</div>
+                                    <div class="col-4">
+                                        <a href="<?php echo $row['url']; ?>" class="single-gallery-item">
+
+                                            <img class=" wow fadeInUp" data-wow-delay="300ms"
+                                                src="<?php echo $row['url']; ?>" alt="">
+
+                                        </a>
+                                    </div>
+                                    <?php endforeach ?>
+                                    <?php endif?>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+    <div id="myModalAgenda" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Agendar Chat</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+
+                            <form method="POST" action="/schedule-chat">
+                                <div class="row no-margin">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <span class="form-label">Email</span>
+                                            <input class="form-control" type="text" id="email" name="email"
+                                                placeholder="Digite seu email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row no-margin">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Data</span>
+                                                    <input class="form-control" id="day" name="day" type="date"
+                                                        required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <span class="form-label">Hora</span>
+                                                    <input class="form-control" id="time" name="time" type="time"
+                                                        required>
+                                                </div>
+                                            </div>
+
+                                            <input type="hidden" id="itemId" name="itemId" value="">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-btn">
+                                            <button class="submit-btn btn confer-btn-white">Agendar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn confer-btn-white" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <!-- Footer Area Start -->
     <footer class="footer-area bg-img section-padding-100-0" style="background:#414c52">
         <!-- Main Footer Area -->
@@ -666,31 +734,51 @@
     <script src="js/db/real-time-database.js"></script>
 
     <script>
-        countVisits();
-        function countVisits() {
-            var visit = "<?php echo $visits ?>";
-            var id    = "<?php echo $uid ?>"
 
-            firebase.database().ref().child('institution').child(id).child('visits').set(visit , function(error){      
-                console.log(id+"-"+visit);
-            });
-            
+
+function add_agenda(){
+      var data         = document.getElementById("course").value;
+      var description    = document.getElementById("description").value;
+      var uid            = "<?php echo $_GET['id'] ?>";
+
+      var data = {
+        course : course,
+        description : description,
+        uid : uid
+      }
+
+      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
+        if (error) {
+          alert("Data could not be saved." + error);
+        } else {
+          window.location.reload();
         }
+      });
+    }
+    countVisits();
 
-        
-        function countContact(){
-            var contact = "<?php echo $contact ?>";
-            var id    = "<?php echo $uid ?>";
+    function countVisits() {
+        var visit = "<?php echo $visits ?>";
+        var id = "<?php echo $uid ?>"
 
-            contact =  Number(contact) + 1 ;
+        firebase.database().ref().child('institution').child(id).child('visits').set(visit, function(error) {
+            console.log(id + "-" + visit);
+        });
 
-            firebase.database().ref().child('institution').child(id).child('contact').set(contact , function(error){      
-                console.log(contact + " -- "+ id);
-            });
+    }
 
-        }
-        
-            
+
+    function countContact() {
+        var contact = "<?php echo $contact ?>";
+        var id = "<?php echo $uid ?>";
+
+        contact = Number(contact) + 1;
+
+        firebase.database().ref().child('institution').child(id).child('contact').set(contact, function(error) {
+            console.log(contact + " -- " + id);
+        });
+
+    }
     </script>
 
 </body>

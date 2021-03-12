@@ -58,12 +58,12 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="admin/index.php?id=<?php echo $uid ?>">Dashboard</a></li>
+                                <li class="active"><a href="admin/expositor_admin.php?id=<?php echo $uid ?>">Dashboard</a></li>
                                 <!-- <li><a href="speakers.html">Speakears</a></li> -->
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="admin/index.php?id=<?php echo $uid ?>" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="admin/expositor_admin.php?id=<?php echo $uid ?>" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>

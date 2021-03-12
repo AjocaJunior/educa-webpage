@@ -98,10 +98,11 @@
                                         <li><a href="cultura/danca.html">Dança</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="informacoes-diversas.html">Informações</a>
+                                <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
-                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
-                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                    <li><a href="informacoes-diversas.php#blog">Blog</a></li>
+                                        <li><a href="informacoes-diversas.php#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.php#bolsas">Bolsas</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#contact">Contactos</a></li>

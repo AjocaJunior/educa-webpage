@@ -317,6 +317,9 @@ input:required {
 .mb-50 {
   margin-bottom: 50px; }
 
+  .mb--50 {
+    margin-bottom: -50px; }
+
 .mb-60 {
   margin-bottom: 60px; }
 

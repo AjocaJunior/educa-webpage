@@ -221,7 +221,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <p id="galeria">Calendários Académicos</p>
+                        <p id="calendario">Calendários Académicos</p>
                         <h4 style="color:#414c52;">Calendários</h4>
                     </div>
                     <div id="accordion">
