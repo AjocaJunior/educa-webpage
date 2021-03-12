@@ -580,10 +580,10 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Email</span>
-                                            <input class="form-control" type="text" id="" name="email"
+                                            <input class="form-control" type="text" id="email" name="email"
                                                 placeholder="Digite seu email">
-                                            <h3 id="user-name" >Carregando...</h3>
-                                            <div id="email" class="h6 font-weight-300"></div>
+                                           
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -754,7 +754,7 @@
                             var name = document.getElementById("user-name");
                             var email = document.getElementById("email");
 
-                            user_name.innerHTML = item.val().name;
+                            name.innerHTML = item.val().name;
                             email.innerHTML = item.val().email;
 
                             return;
@@ -774,10 +774,9 @@
 
 
     function add_agenda() {
-        var name = document.getElementById("user-name").value;
-        var data = document.getElementById("data").value;
+        var name = "";
         var email = document.getElementById("email").value;
-
+        var data = document.getElementById("data").value;
         var time = document.getElementById("time").value;
         var chat = "<?php  echo $chat ?>";
         var uid = "<?php echo $_GET['id'] ?>";
