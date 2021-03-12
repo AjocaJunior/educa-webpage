@@ -94,6 +94,7 @@ foreach($fetchdata as $key => $row){
 
 
 
+
     <?php
   $ref = 'institution/'.$uid.'/course';
   $fetchdata = $database->getReference($ref)->getValue();
@@ -375,6 +376,80 @@ foreach($fetchdata as $key => $row){
 
                     <div class="row">
 
+
+                        <div class="col-xl-12 col-lg-12">
+
+                            <!-- DataTales Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Agenda de chat</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Email</th>
+                                                    <th>Data</th>
+                                                    <th>Hora</th>
+                                                    <th>Chat</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                                <?php
+                                                 include_once('../includes/dbconfig.php');  
+  $ref = 'institution/'.$uid.'/agendachat';
+  $fetchdata = $database->getReference($ref)->getValue();
+  $countAgenda= 0;
+
+  if($fetchdata != null){
+    foreach($fetchdata as $key => $row){
+      $countAgenda++;
+      
+ 
+?>
+                                                <tr>
+                                                    <td><?php echo $row['name'] ?></td>
+                                                    <td><?php echo $row['email'] ?> </td>
+                                                    <td><?php echo $row['data'] ?> </td>
+                                                    <td><?php echo $row['time'] ?></td>
+                                                    <td>
+                                                        <form method="POST" id="openChatForm" action="/openVideoChat">
+                                                            <input type="hidden" name="uidSchedule"
+                                                                value="<%= schedule.uid %>" />
+                                                            <input type="hidden" name="uidExhibitor"
+                                                                value="<%= data.uid %>" />
+                                                            <input type="hidden" name="link"
+                                                                value="<%= schedule.linkChat %>" />
+
+                                                            <a type="submit" href="<?php echo $row['chat'] ?>"
+                                                                class="btn btn-outline-primary waves-effect col-12"> <i
+                                                                    class="fas  fa-video pr-2"
+                                                                    aria-hidden="true"></i>Iniciar </a>
+
+
+                                                        </form>
+                                                    </td>
+                                                </tr>
+
+
+                                                <?php 
+    }
+            }?>
+
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Area Chart -->
                         <div class="col-xl-12 col-lg-12">
                             <div class="card">
@@ -411,7 +486,7 @@ foreach($fetchdata as $key => $row){
                             </div>
                         </div>
 
-                      
+
 
 
                     </div>
@@ -465,8 +540,8 @@ foreach($fetchdata as $key => $row){
 
                         </div>
 
-  <!-- Pie Chart -->
-  <div class="col-xl-5 col-lg-5 ">
+                        <!-- Pie Chart -->
+                        <div class="col-xl-5 col-lg-5 ">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -512,7 +587,7 @@ foreach($fetchdata as $key => $row){
                             </div>
                             <!--- CONTACTOS -->
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -571,6 +646,11 @@ foreach($fetchdata as $key => $row){
     <!-- my script -->
 
     <script>
+    function openChat() {
+
+    }
+
+
     function updateLink() {
         var linkUrl = document.getElementById('link').value;
         if (linkUrl != null) {

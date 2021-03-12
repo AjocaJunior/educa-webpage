@@ -573,15 +573,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12">
 
-                            <form method="POST" action="/schedule-chat">
+                            <form>
                                 <div class="row no-margin">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Email</span>
-                                            <input class="form-control" type="text" id="email" name="email"
+                                            <input class="form-control" type="text" id="" name="email"
                                                 placeholder="Digite seu email">
+                                            <h3 id="user-name" >Carregando...</h3>
+                                            <div id="email" class="h6 font-weight-300"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -589,7 +591,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <span class="form-label">Data</span>
-                                                    <input class="form-control" id="day" name="day" type="date"
+                                                    <input class="form-control" id="data" name="data" type="date"
                                                         required>
                                                 </div>
                                             </div>
@@ -609,7 +611,8 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-btn">
-                                            <button class="submit-btn btn confer-btn-white">Agendar</button>
+                                            <button onclick="add_agenda()"
+                                                class="submit-btn btn confer-btn-white">Agendar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -733,28 +736,73 @@
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
+
     <script>
+    firebase.auth().onAuthStateChanged(function(user) {
 
+        if (user) {
 
-function add_agenda(){
-      var data         = document.getElementById("course").value;
-      var description    = document.getElementById("description").value;
-      var uid            = "<?php echo $_GET['id'] ?>";
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
-      var data = {
-        course : course,
-        description : description,
-        uid : uid
-      }
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
 
-      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
-        if (error) {
-          alert("Data could not be saved." + error);
+                        if (db_uid == user_uid) {
+
+                            var name = document.getElementById("user-name");
+                            var email = document.getElementById("email");
+
+                            user_name.innerHTML = item.val().name;
+                            email.innerHTML = item.val().email;
+
+                            return;
+                        }
+
+                    }
+
+                });
+            });
+
         } else {
-          window.location.reload();
+            location.href = 'intro.php';
         }
-      });
+
+    });
+
+
+
+    function add_agenda() {
+        var name = document.getElementById("user-name").value;
+        var data = document.getElementById("data").value;
+        var email = document.getElementById("email").value;
+
+        var time = document.getElementById("time").value;
+        var chat = "<?php  echo $chat ?>";
+        var uid = "<?php echo $_GET['id'] ?>";
+
+        var data = {
+            name: name,
+            data: data,
+            email: email,
+            time: time,
+            chat: chat,
+            uid: uid
+        }
+
+        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uuidv4()).set(data,
+            function(error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+
+                    location.href = "institute.php?id=<?php echo $uid?>";
+
+                }
+            });
     }
+
     countVisits();
 
     function countVisits() {
