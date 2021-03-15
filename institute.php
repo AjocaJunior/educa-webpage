@@ -118,8 +118,10 @@
                             </ul>
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
-                            <a href="<?php echo $chat; ?>" onClick="countContact()" target="_blank"
-                                class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a>
+                            <!-- <a href="" onClick="countContact()" target="_blank"
+                                class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a> -->
+                            <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -580,11 +582,12 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Email</span>
-                                            <input class="form-control" type="text" id="email" name="email"
+                                            <input class="form-control" type="text" id="emaill" name="emaill"
                                                 placeholder="Digite seu email">
-                                           
-                                            
+
+
                                         </div>
+
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row no-margin">
@@ -738,6 +741,8 @@
 
 
     <script>
+    var user_name = "";
+    var useruid = "";
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -745,17 +750,14 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
-                        var user_uid = user.uid.toString().trim();
+                        user_uid = user.uid.toString().trim();
+                        useruid.innerHTML = user_uid;
 
                         if (db_uid == user_uid) {
-
-                            var name = document.getElementById("user-name");
-                            var email = document.getElementById("email");
-
-                            name.innerHTML = item.val().name;
-                            email.innerHTML = item.val().email;
+                            user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
 
                             return;
                         }
@@ -774,15 +776,17 @@
 
 
     function add_agenda() {
-        var name = "";
-        var email = document.getElementById("email").value;
+        var userid = user_uid;
+        var username = user_name.innerHTML;
+        var email = document.getElementById("emaill").value;
         var data = document.getElementById("data").value;
         var time = document.getElementById("time").value;
         var chat = "<?php  echo $chat ?>";
         var uid = "<?php echo $_GET['id'] ?>";
 
         var data = {
-            name: name,
+            userid: userid,
+            username: username,
             data: data,
             email: email,
             time: time,
@@ -800,7 +804,27 @@
 
                 }
             });
+
+
+
+
+        firebase.database().ref().child('users').child(userid).child("agendachat").child(uuidv4()).set(data,
+        function(error) {
+            if (error) {
+                alert("Data could not be saved." + error);
+            } else {
+                myFunction();
+                // location.href = "institute.php?id=<?php echo $uid?>";
+
+            }
+        });
+
+
     }
+
+    function myFunction() {
+  setTimeout(function(){ alert("Chat Agendado com Sucesso, veja no seu perfil"); }, 10000);
+}
 
     countVisits();
 

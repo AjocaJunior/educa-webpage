@@ -37,6 +37,12 @@ Coded by www.creative-tim.com
 
 <body class="profile-page">
 
+
+    <?php 
+ include_once('../includes/dbconfig.php');  
+
+ $uid = "";
+?>
     <div class="wrapper">
         <section class="section-profile-cover section-shaped my-0">
             <!-- Circles background -->
@@ -109,11 +115,83 @@ Coded by www.creative-tim.com
                             <h3 id="user-name">Carregando...<span class="font-weight-light"></span></h3>
                             <div id="email" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                             <div id="category" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-                            <div id="contact" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-                            <div id="data_de_nascimento" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
+                            <div id="contact" class="h6 font-weight-300"><i class="ni business_briefcase-24 mr-2"></i></div>
+                            <div id="date_of_birth" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
                             </div>
-                            <div id="residence" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
+                            <div id="residence" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
 
+                        </div>
+                        <div class="col-xl-12 col-lg-12">
+
+                            <!-- DataTales Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Agenda de chat</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Email</th>
+                                                    <th>Data</th>
+                                                    <th>Hora</th>
+                                                    <th>Chat</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                                <?php
+                                                  
+  $ref = 'users/MBAN2IfdWcWTpZWvpBaN1AQMvz73/agendachat';
+  $fetchdata = $database->getReference($ref)->getValue();
+  $countAgenda= 0;
+
+  if($fetchdata != null){
+    foreach($fetchdata as $key => $row){
+      $countAgenda++;
+      
+ 
+?>
+                                                <tr>
+
+                                                    <td><?php echo $row['email'] ?>Email </td>
+                                                    <td><?php echo $row['data'] ?> </td>
+                                                    <td><?php echo $row['time'] ?></td>
+                                                    <td>
+                                                        <form method="POST" id="openChatForm" action="/openVideoChat">
+                                                            <input type="hidden" name="uidSchedule"
+                                                                value="<%= schedule.uid %>" />
+                                                            <input type="hidden" name="uidExhibitor"
+                                                                value="<%= data.uid %>" />
+                                                            <input type="hidden" name="link"
+                                                                value="<%= schedule.linkChat %>" />
+
+                                                            <a type="submit" href="<?php echo $row['chat'] ?>"
+                                                                class="btn btn-outline-primary waves-effect col-12"> <i
+                                                                    class="fas  fa-video pr-2"
+                                                                    aria-hidden="true"></i>Iniciar </a>
+
+
+                                                        </form>
+                                                    </td>
+                                                </tr>
+
+
+                                                <?php 
+    }
+            }?>
+
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="mt-5 py-5 border-top text-center">
                             <div class="row justify-content-center">
@@ -143,7 +221,7 @@ Coded by www.creative-tim.com
                         <div class="copyright">
                             <p> Copyright &copy;
                                 <script>
-                                    document.write(new Date().getFullYear());
+                                document.write(new Date().getFullYear());
                                 </script> Todos os direitos reservados <i class="fa fa-heart-o" aria-hidden="true"></i>
                                 por <a href="https://www.educa.co.mz" target="_blank">Educa</a>
                             </p>
@@ -187,11 +265,11 @@ Coded by www.creative-tim.com
     <script src="assets/js/argon-design-system.min.js?v=1.2.0" type="text/javascript"></script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
     <script>
-        window.TrackJS &&
-            TrackJS.install({
-                token: "ee6fab19c5a04ac1a32a645abde4613a",
-                application: "argon-design-system-pro"
-            });
+    window.TrackJS &&
+        TrackJS.install({
+            token: "ee6fab19c5a04ac1a32a645abde4613a",
+            application: "argon-design-system-pro"
+        });
     </script>
 
 
@@ -201,110 +279,111 @@ Coded by www.creative-tim.com
     <script src="../js/db/app.js"></script>
     <script src="../js/db/real-time-database.js"></script>
     <script>
-        function hideButton() {
-            var btn = document.getElementById("btnUpdate");
-            btn.style.visibility = "hidden";
-            updatePerfil();
-        }
+    function hideButton() {
+        var btn = document.getElementById("btnUpdate");
+        btn.style.visibility = "hidden";
+        updatePerfil();
+    }
 
-        function showButton() {
-            var btn = document.getElementById("btnUpdate");
-            btn.style.visibility = "visible";
-        }
-
-
-        function updatePerfil() {
-            firebase.auth().onAuthStateChanged(function (user) {
-                var user_name = document.getElementById("user-name").textContent;
-                firebase.database().ref().child('users').child(user.uid).child('name').set(user_name, function (error) { });
-            });
-        }
+    function showButton() {
+        var btn = document.getElementById("btnUpdate");
+        btn.style.visibility = "visible";
+    }
 
 
-        function uploadImage() {
-            const ref = firebase.storage().ref();
-            const file = document.querySelector("#photo").files[0];
-            const name = +new Date() + "-" + file.name;
-            const metadata = {
-                contentType: file.type
-            };
-            const task = ref.child(name).put(file, metadata);
-            task
-                .then(snapshot => snapshot.ref.getDownloadURL())
-                .then(url => {
+    function updatePerfil() {
+        firebase.auth().onAuthStateChanged(function(user) {
+            var user_name = document.getElementById("user-name").textContent;
+            firebase.database().ref().child('users').child(user.uid).child('name').set(user_name, function(
+                error) {});
+        });
+    }
 
 
-                    firebase.auth().onAuthStateChanged(function (user) {
-
-                        var db = firebase.database();
-                        db.ref("users/" + user.uid + "/imageUrl").set(url);
-                        location.href = 'profile.html';
-                    });
-
-
-
-                    //document.querySelector("#image").src = url;
-                })
-                .catch(console.error);
-        }
+    function uploadImage() {
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#photo").files[0];
+        const name = +new Date() + "-" + file.name;
+        const metadata = {
+            contentType: file.type
+        };
+        const task = ref.child(name).put(file, metadata);
+        task
+            .then(snapshot => snapshot.ref.getDownloadURL())
+            .then(url => {
 
 
+                firebase.auth().onAuthStateChanged(function(user) {
 
-        function signOut() {
-            firebase.auth().signOut().then(function () {
-                location.href = '../login.html';
-            }).catch(function (error) {
-                // An error happened.
-            });
-        }
-
-        firebase.auth().onAuthStateChanged(function (user) {
-
-            if (user) {
-                firebase.database().ref('users').on('value', function (snapshot) {
-                    snapshot.forEach(function (item) {
-
-                        if (item.val().userId !== null && item.val().userId !== undefined) {
-                            var db_uid = item.val().userId.toString().trim();
-                            var user_uid = user.uid.toString().trim();
-
-
-                            if (db_uid == user_uid) {
-                                var fotoperfil = document.getElementById("fotoperfil");
-                                var user_name = document.getElementById("user-name");
-                                var email = document.getElementById("email");
-                                var category = document.getElementById('category');
-                                var contact = document.getElementById("contact");
-                                var residence = document.getElementById("residence");
-                                var data_de_nascimento = document.getElementById("date_of_birth");
-
-                                email.innerHTML = item.val().email;
-                                user_name.innerHTML = item.val().name;
-                                category.innerHTML = item.val().category;
-                                var fotoperfil = document.getElementById("fotoperfil");
-
-                                contact.innerHTML = item.val().contact;
-                                residence.innerHTML = item.val().residence;
-                                data_de_nascimento.innerHTML = item.val().data_de_nascimento;
-
-                                if (item.val().imageUrl != null && item.val().imageUrl != "ddd") {
-                                    fotoperfil.src = item.val().imageUrl;
-                                }
-                                return;
-                            }
-
-                        }
-
-                    });
+                    var db = firebase.database();
+                    db.ref("users/" + user.uid + "/imageUrl").set(url);
+                    location.href = 'profile.html';
                 });
 
-            } else {
-                location.href = '../login.html';
-            }
+
+
+                //document.querySelector("#image").src = url;
+            })
+            .catch(console.error);
+    }
 
 
 
+    function signOut() {
+        firebase.auth().signOut().then(function() {
+            location.href = '../login.html';
+        }).catch(function(error) {
+            // An error happened.
         });
+    }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
+                        $uid = user_uid;
+
+                        if (db_uid == user_uid) {
+                            var fotoperfil = document.getElementById("fotoperfil");
+                            var user_name = document.getElementById("user-name");
+                            var email = document.getElementById("email");
+                            var category = document.getElementById('category');
+                            var contact = document.getElementById("contact");
+                            var residence = document.getElementById("residence");
+                            var data_de_nascimento = document.getElementById("date_of_birth");
+
+                            email.innerHTML = item.val().email;
+                            user_name.innerHTML = item.val().name;
+                            category.innerHTML = item.val().category;
+                            var fotoperfil = document.getElementById("fotoperfil");
+
+                            contact.innerHTML = item.val().contact;
+                            residence.innerHTML = item.val().residence;
+                            data_de_nascimento.innerHTML = item.val().date_of_birth;
+
+                            if (item.val().imageUrl != null && item.val().imageUrl != "ddd") {
+                                fotoperfil.src = item.val().imageUrl;
+                            }
+                            return;
+                        }
+
+                    }
+
+                });
+            });
+
+        } else {
+            location.href = '../login.html';
+        }
+
+
+
+    });
     </script>
 
 
