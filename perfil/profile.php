@@ -37,11 +37,31 @@ Coded by www.creative-tim.com
 
 <body class="profile-page">
 
+<input type="hidden" name="uid" id="uid">
 
+<script>
+var uiduserjs = sessionStorage.getItem('usuarioId');
+
+
+</script>
     <?php 
- include_once('../includes/dbconfig.php');  
 
- $uid = "";
+if(isset($_GET["uid"])){
+    $uiduser =  $_GET["uid"];
+} else {
+    ///header(location : "profile.php?uid=")
+    echo "<script> window.location.href='profile.php?uid='+uiduserjs</script>";
+}
+
+ include_once('../includes/dbconfig.php');  
+    
+ 
+
+ 
+$usuario = '<script>uiduserjs</script>';
+
+$us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
+
 ?>
     <div class="wrapper">
         <section class="section-profile-cover section-shaped my-0">
@@ -119,7 +139,8 @@ Coded by www.creative-tim.com
                             <div id="date_of_birth" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
                             </div>
                             <div id="residence" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-                            <div hidden id="uid-user" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
+                            
+                            
                         </div>
                         <div class="col-xl-12 col-lg-12">
 
@@ -144,18 +165,20 @@ Coded by www.creative-tim.com
                                             <tbody>
 
                                                 <?php
-                                                  
-  $ref = 'users/'.$uid.'/agendachat';
-  $fetchdata = $database->getReference($ref)->getValue();
-  $countAgenda= 0;
+                                            
+                                                $ref = 'users/'.$uiduser.'/agendachat';
 
-  if($fetchdata != null){
-    foreach($fetchdata as $key => $row){
-      $countAgenda++;
-      
- 
-?>
+                                               
+                                                $fetchdata = $database->getReference($ref)->getValue();
+                                                $countAgenda= 0;
+
+                                                if($fetchdata != null){
+                                                    foreach($fetchdata as $key => $row){
+                                                    $countAgenda++;
+                                                    
+                                                ?>
                                                 <tr>
+                                                
                                                     <td><?php echo $row['email'] ?></td>
                                                     <td><?php echo $row['data'] ?> </td>
                                                     <td><?php echo $row['time'] ?></td>
@@ -178,8 +201,8 @@ Coded by www.creative-tim.com
 
 
                                                 <?php 
-    }
-            }?>
+                                                  }
+                                                }?>
 
 
 
@@ -244,6 +267,8 @@ Coded by www.creative-tim.com
             </div>
         </footer>
     </div>
+    
+
     <!--   Core JS Files   -->
     <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -336,6 +361,8 @@ Coded by www.creative-tim.com
 
     firebase.auth().onAuthStateChanged(function(user) {
         var useruid = "";
+        var uid = document.getElementBy("uid");
+        
         if (user) {
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
@@ -357,13 +384,15 @@ Coded by www.creative-tim.com
                             email.innerHTML = item.val().email;
                             user_name.innerHTML = item.val().name;
                             category.innerHTML = item.val().category;
-                            useruid.innerHTML = item.val().userId;
-                            
-                            var fotoperfil = document.getElementById("fotoperfil");
-
                             contact.innerHTML = item.val().contact;
                             residence.innerHTML = item.val().residence;
                             data_de_nascimento.innerHTML = item.val().date_of_birth;
+                            useruid.innerHTML = item.val().userId;
+                            sessionStorage.setItem('usuarioId', item.val().userId).trim();
+                            uiduserjs = sessionStorage.getItem('usuarioId').trim();
+                            var fotoperfil = document.getElementById("fotoperfil");
+                           
+                        //    console.log(uiduserjs);
 
                             if (item.val().imageUrl != null && item.val().imageUrl != "ddd") {
                                 fotoperfil.src = item.val().imageUrl;
@@ -380,7 +409,7 @@ Coded by www.creative-tim.com
             location.href = '../login.html';
         }
 
-
+       
 
     });
     </script>

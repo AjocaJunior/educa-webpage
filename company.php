@@ -111,9 +111,11 @@
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="https://educam.herokuapp.com/<?php echo $uid; ?>"
+                            <a hidden href="https://educam.herokuapp.com/<?php echo $uid; ?>"
                                 class="btn mt-3 mt-lg-0 ml-3 ml-lg-5" style="background:#f8871f; color:white"> Chat <i
                                     class="zmdi zmdi-email"></i></a>
+                                    <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>

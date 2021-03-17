@@ -122,7 +122,7 @@
                                 class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a> -->
                             <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
-                                <a hidden href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a hidden href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="emaill">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -312,7 +312,7 @@
 
                     <div class="confer-sidebar-area mb-100">
                         <div class="text-center mb-30">
-                        
+
                             <a class="btn confer-btn-white" href="#" data-toggle="modal" data-target="#myModalAgenda"
                                 role="button">Agendar Chat <span class="fa fa-wechat"></span> </a>
                         </div>
@@ -575,8 +575,8 @@
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
                                 <div class="post-thumb">
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank" ><img
-                                            src="<?php echo $row['img']; ?>" alt="" ></a>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><img
+                                            src="<?php echo $row['img']; ?>" alt=""></a>
                                 </div>
                                 <!-- Content -->
                                 <div class="post-content">
@@ -590,9 +590,9 @@
                                  }
                             
                               ?>
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
-                                        class="post-title" target="_blank"> <?php echo $currentTitle; ?> </a>
-                                        <p><?php echo $row['category']; ?></p>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>" class="post-title"
+                                        target="_blank"> <?php echo $currentTitle; ?> </a>
+                                    <p><?php echo $row['category']; ?></p>
                                     <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
                                         <?php echo $row['date']; ?> </a>
                                 </div>
@@ -614,7 +614,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5>Agendar Chat</h5>
-                    
+
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
@@ -624,7 +624,7 @@
 
                             <form>
                                 <div class="row no-margin">
-                                       <div class="col-12">
+                                    <div class="col-12">
                                         <div class="row no-margin">
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -642,17 +642,17 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                        <div class="form-btn">
-                                            <button onclick="add_agenda()"
-                                                class="submit-btn btn confer-btn-white">Agendar</button>
-                                        </div>
-                                    </div>
+                                                <div class="form-btn">
+                                                    <button onclick="add_agenda()"
+                                                        class="submit-btn btn confer-btn-white">Agendar</button>
+                                                </div>
+                                            </div>
                                             <input type="hidden" id="itemId" name="itemId" value="">
 
 
                                         </div>
                                     </div>
-                                  
+
                                 </div>
                             </form>
 
@@ -778,7 +778,7 @@
     <script>
     var user_name = "";
     var useruid = "";
-    var emaill="";
+    var emaill = "";
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -816,25 +816,26 @@
 
 
     function add_agenda() {
-        var userid = user_uid;
+        var userId =user_uid;
         var username = user_name.innerHTML;
         var email = email_user.innerHTML;
         var data = document.getElementById("data").value;
         var time = document.getElementById("time").value;
         var chat = "<?php  echo $chat ?>";
         var uid = "<?php echo $_GET['id'] ?>";
-
+        var uidchat = uuidv4();
         var data = {
-            userid: userid,
+            userId:userId,
             username: username,
             data: data,
             email: email,
             time: time,
             chat: chat,
-            uid: uid
+            uid: uid,
+            uidchat:uidchat
         }
 
-        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uuidv4()).set(data,
+        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uidchat).set(data,
             function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);
@@ -847,24 +848,25 @@
 
 
 
+        firebase.database().ref().child('users').child(userId).child("agendachat").child(uidchat).set(data,
+            function(error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+                    myFunction();
+                    // location.href = "institute.php?id=<?php echo $uid?>";
 
-        firebase.database().ref().child('users').child(userid).child("agendachat").child(uuidv4()).set(data,
-        function(error) {
-            if (error) {
-                alert("Data could not be saved." + error);
-            } else {
-                myFunction();
-                // location.href = "institute.php?id=<?php echo $uid?>";
-
-            }
-        });
+                }
+            });
 
 
     }
 
     function myFunction() {
-  setTimeout(function(){ alert("Chat Agendado com Sucesso, veja no seu perfil"); }, 10000);
-}
+        setTimeout(function() {
+            alert("Chat Agendado com Sucesso, veja no seu perfil");
+        }, 10000);
+    }
 
     countVisits();
 
