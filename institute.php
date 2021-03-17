@@ -120,8 +120,10 @@
                             <!-- Get Tickets Button -->
                             <!-- <a href="" onClick="countContact()" target="_blank"
                                 class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a> -->
-                            <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
+                                <a hidden href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="emaill">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -231,7 +233,7 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e
+                                    <a href="single-blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e
                                         noticias</a>
                                     <!---institute-blog.php-->
                                     <span>Ver publicações</span>
@@ -310,6 +312,7 @@
 
                     <div class="confer-sidebar-area mb-100">
                         <div class="text-center mb-30">
+                        
                             <a class="btn confer-btn-white" href="#" data-toggle="modal" data-target="#myModalAgenda"
                                 role="button">Agendar Chat <span class="fa fa-wechat"></span> </a>
                         </div>
@@ -326,7 +329,7 @@
                                 <!-- Author Content -->
                                 <div class="post-author-content">
                                     <h5 id="institute_name"><?php echo $title; ?></h5>
-                                    <p id="location_and_contact">contacto e localização</p>
+                                    <p id="location_and_contact">Contacto e Localização</p>
                                 </div>
                                 <!-- Social Info -->
                                 <div class="author-social-info">
@@ -538,12 +541,12 @@
                                 <div class="row">
 
                                     <?php
-                $ref = 'institution/'.$uid.'/gallery';
-                $fetchdata = $database->getReference($ref)->getValue();
-           ?>
+                                    $ref = 'institution/'.$uid.'/gallery';
+                                   $fetchdata = $database->getReference($ref)->getValue();
+                                    ?>
                                     <?php if($fetchdata != null):?>
                                     <?php
-            foreach( $fetchdata as $key => $row): ?>
+                                       foreach( $fetchdata as $key => $row): ?>
                                     <div class="col-4">
                                         <a href="<?php echo $row['url']; ?>" class="single-gallery-item">
 
@@ -556,6 +559,47 @@
                                     <?php endif?>
                                 </div>
                             </div>
+                        </div>
+                        <div class="single-widget-area">
+                            <h5 class="widget-title mb-30">Publicações Recentes</h5>
+
+                            <?php 
+                        $ref = 'institution/'.$uid.'/publication';
+                        $fetchdata = $database->getReference($ref)->getValue(); 
+                          ?>
+
+                            <?php if($fetchdata != null):?>
+                            <?php foreach( $fetchdata as $key => $row):   ?>
+
+                            <!-- Single Recent Post Area -->
+                            <div class="single-recent-post-area d-flex align-items-center">
+                                <!-- Thumb -->
+                                <div class="post-thumb">
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank" ><img
+                                            src="<?php echo $row['img']; ?>" alt="" ></a>
+                                </div>
+                                <!-- Content -->
+                                <div class="post-content">
+
+                                    <?php  
+                                $currentTitle = "";
+                                 if(strlen($row['title']) > 30) {
+                                     $currentTitle = substr( $row['title'] , 0 , 30)."..";
+                                 } else {
+                                     $currentTitle = $row['title'];
+                                 }
+                            
+                              ?>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
+                                        class="post-title" target="_blank"> <?php echo $currentTitle; ?> </a>
+                                        <p><?php echo $row['category']; ?></p>
+                                    <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
+                                        <?php echo $row['date']; ?> </a>
+                                </div>
+                            </div>
+
+                            <?php endforeach ?>
+                            <?php endif?>
                         </div>
 
                     </div>
@@ -570,6 +614,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5>Agendar Chat</h5>
+                    
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
@@ -579,19 +624,9 @@
 
                             <form>
                                 <div class="row no-margin">
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Email</span>
-                                            <input class="form-control" type="text" id="emaill" name="emaill"
-                                                placeholder="Digite seu email">
-
-
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-6">
+                                       <div class="col-12">
                                         <div class="row no-margin">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <span class="form-label">Data</span>
                                                     <input class="form-control" id="data" name="data" type="date"
@@ -599,25 +634,25 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <span class="form-label">Hora</span>
                                                     <input class="form-control" id="time" name="time" type="time"
                                                         required>
                                                 </div>
                                             </div>
-
-                                            <input type="hidden" id="itemId" name="itemId" value="">
-
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
+                                            <div class="col-md-4">
                                         <div class="form-btn">
                                             <button onclick="add_agenda()"
                                                 class="submit-btn btn confer-btn-white">Agendar</button>
                                         </div>
                                     </div>
+                                            <input type="hidden" id="itemId" name="itemId" value="">
+
+
+                                        </div>
+                                    </div>
+                                  
                                 </div>
                             </form>
 
@@ -743,6 +778,7 @@
     <script>
     var user_name = "";
     var useruid = "";
+    var emaill="";
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -757,8 +793,12 @@
 
                         if (db_uid == user_uid) {
                             user_name = document.getElementById("user-name");
+
+                            email_user = document.getElementById("emaill");
+
                             user_name.innerHTML = item.val().name;
 
+                            email_user.innerHTML = item.val().email;
                             return;
                         }
 
@@ -778,7 +818,7 @@
     function add_agenda() {
         var userid = user_uid;
         var username = user_name.innerHTML;
-        var email = document.getElementById("emaill").value;
+        var email = email_user.innerHTML;
         var data = document.getElementById("data").value;
         var time = document.getElementById("time").value;
         var chat = "<?php  echo $chat ?>";

@@ -119,7 +119,7 @@ Coded by www.creative-tim.com
                             <div id="date_of_birth" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
                             </div>
                             <div id="residence" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-
+                            <div hidden id="uid-user" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
                         </div>
                         <div class="col-xl-12 col-lg-12">
 
@@ -145,7 +145,7 @@ Coded by www.creative-tim.com
 
                                                 <?php
                                                   
-  $ref = 'users/MBAN2IfdWcWTpZWvpBaN1AQMvz73/agendachat';
+  $ref = 'users/'.$uid.'/agendachat';
   $fetchdata = $database->getReference($ref)->getValue();
   $countAgenda= 0;
 
@@ -156,8 +156,7 @@ Coded by www.creative-tim.com
  
 ?>
                                                 <tr>
-
-                                                    <td><?php echo $row['email'] ?>Email </td>
+                                                    <td><?php echo $row['email'] ?></td>
                                                     <td><?php echo $row['data'] ?> </td>
                                                     <td><?php echo $row['time'] ?></td>
                                                     <td>
@@ -173,8 +172,6 @@ Coded by www.creative-tim.com
                                                                 class="btn btn-outline-primary waves-effect col-12"> <i
                                                                     class="fas  fa-video pr-2"
                                                                     aria-hidden="true"></i>Iniciar </a>
-
-
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -317,7 +314,7 @@ Coded by www.creative-tim.com
 
                     var db = firebase.database();
                     db.ref("users/" + user.uid + "/imageUrl").set(url);
-                    location.href = 'profile.html';
+                    location.href = 'profile.php';
                 });
 
 
@@ -338,7 +335,7 @@ Coded by www.creative-tim.com
     }
 
     firebase.auth().onAuthStateChanged(function(user) {
-
+        var useruid = "";
         if (user) {
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
@@ -346,7 +343,7 @@ Coded by www.creative-tim.com
                     if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
-                        $uid = user_uid;
+                        
 
                         if (db_uid == user_uid) {
                             var fotoperfil = document.getElementById("fotoperfil");
@@ -356,10 +353,12 @@ Coded by www.creative-tim.com
                             var contact = document.getElementById("contact");
                             var residence = document.getElementById("residence");
                             var data_de_nascimento = document.getElementById("date_of_birth");
-
+                            useruid = document.getElementById("uid-user");
                             email.innerHTML = item.val().email;
                             user_name.innerHTML = item.val().name;
                             category.innerHTML = item.val().category;
+                            useruid.innerHTML = item.val().userId;
+                            
                             var fotoperfil = document.getElementById("fotoperfil");
 
                             contact.innerHTML = item.val().contact;

@@ -97,7 +97,7 @@
                                 </ul>
 
                                 <!-- Get Tickets Button -->
-                                <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                     id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                             </div>
                             <!-- Nav End -->

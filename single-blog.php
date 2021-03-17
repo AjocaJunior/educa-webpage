@@ -88,7 +88,7 @@ $data = "";
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -105,9 +105,7 @@ $data = "";
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="<?php echo "institute.php?id=".$uid."#about" ?>">Sobre</a></li>
-
-                                <li><a href="<?php echo "institute.php?id=".$uid."#contact" ?>">Contacto</a></li>
+          
                             </ul>
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
@@ -172,8 +170,66 @@ $data = "";
                             <p style="white-space: pre-line"><?php echo $text; ?></p>
 
                         </div>
+                        
+                     
+                    </div>
+                </div>
 
-                        <div class="confer-leave-a-reply-form clearfix section-padding-50" id="contact">
+                <!-- Blog Sidebar Area -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="confer-sidebar-area mb-50 ">
+
+                        <!-- Single Widget Area -->
+                        <div class="single-widget-area ">
+                            <h5 class="widget-title mb-30 ">Publicações recentes</h5>
+
+                            <?php 
+                        $ref = '/publication';
+                        $fetchdata = $database->getReference($ref)->getValue(); 
+                          ?>
+
+                            <?php if($fetchdata != null):?>
+                            <?php foreach( $fetchdata as $key => $row):   ?>
+
+                            <!-- Single Recent Post Area -->
+                            <div class="single-recent-post-area d-flex align-items-center">
+                                <!-- Thumb -->
+                                <div class="post-thumb">
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><img
+                                            src="<?php echo $row['img']; ?>" alt=""></a>
+                                </div>
+                                <!-- Content -->
+                                <div class="post-content">
+
+                                    <?php  
+                                $currentTitle = "";
+                                 if(strlen($row['title']) > 30) {
+                                     $currentTitle = substr( $row['title'] , 0 , 30)."..";
+                                 } else {
+                                     $currentTitle = $row['title'];
+                                 }
+                            
+                              ?>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
+                                        class="post-title"> <?php echo $currentTitle; ?> </a>
+                                        <p><?php echo $row['category']; ?></p>
+                                    <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
+                                        <?php echo $row['date']; ?> </a>
+                                </div>
+                            </div>
+
+                            <?php endforeach ?>
+                            <?php endif?>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12">
+                
+                <div class="confer-leave-a-reply-form clearfix section-padding-20" id="contact">
                             <h4 class="mb-30">Deixa seu Comentário</h4>
 
                             <!-- Leave A Reply -->
@@ -200,7 +256,7 @@ $data = "";
                                             <!-- Form Group -->
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <textarea name="message" class="form-control mb-30" id="Mensagem"
+                                                    <textarea name="message" class="form-control mb-30" id="mensagem"
                                                         cols="30" rows="6" placeholder="Comentário" required></textarea>
                                                 </div>
                                             </div>
@@ -211,67 +267,44 @@ $data = "";
                                 </form>
 
                                 <div class="col-12">
-                                    <a href="mailto:<?php echo $email; ?>" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Mensagem <i
-                                            class="zmdi zmdi-long-arrow-right"></i></a>
+                                    <button onclick="addComentario();" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Comentário <i
+                                            class="zmdi zmdi-long-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Blog Sidebar Area -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="confer-sidebar-area mb-100 ">
-
-                        <!-- Single Widget Area -->
-                        <div class="single-widget-area ">
-                            <h5 class="widget-title mb-30 ">Publicações recentes</h5>
+                   <div class="confer-leave-a-reply-form section-padding-20 clearfix" id="comments">
+                            <h5 class="mb-30">Comentários</h5>
 
                             <?php 
-                        $ref = '/publication';
-                        $fetchdata = $database->getReference($ref)->getValue(); 
-                    ?>
-
-                            <?php if($fetchdata != null):?>
+                            $ref = 'publication/'.$uid.'/comentario';
+                            $fetchdata = $database->getReference($ref)->getValue(); 
+                          ?>
+                           <?php if($fetchdata != null):?>
                             <?php foreach( $fetchdata as $key => $row):   ?>
-
-                            <!-- Single Recent Post Area -->
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
-                                <div class="post-thumb">
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><img
-                                            src="<?php echo $row['img']; ?>" alt=""></a>
-                                </div>
+                                <!-- <div class="post-thumb">
+                                    <a href="#"><img
+                                            src="./img/educa/user.png" alt=""></a>
+                                </div> -->
                                 <!-- Content -->
+
+                               
                                 <div class="post-content">
-
-                                    <?php  
-                                $currentTitle = "";
-                                 if(strlen($row['title']) > 30) {
-                                     $currentTitle = substr( $row['title'] , 0 , 30)."..";
-                                 } else {
-                                     $currentTitle = $row['title'];
-                                 }
-                            
-                            ?>
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
-                                        class="post-title"> <?php echo $currentTitle; ?> </a>
-                                        <p><?php echo $row['category']; ?></p>
-                                    <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
-                                        <?php echo $row['date']; ?> </a>
+                                    <a class="" href="#"><?php echo $row['name']; ?></a>
+                                      <p
+                                        class=""> <?php echo  $row['mensagem']; ?> </p>
+                                        <p class="post-date"><?php echo $row['date']; ?></p>
+                                        
+                                   
                                 </div>
-                            </div>
 
+                                
+                            </div>
                             <?php endforeach ?>
                             <?php endif?>
-
-
                         </div>
-
-                    </div>
                 </div>
-
-                
             </div>
         </div>
     </section>
@@ -323,7 +356,64 @@ $data = "";
     <script src="js/confer.bundle.js "></script>
     <!-- Active -->
     <script src="js/default-assets/active.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js "></script>
+    <script src="js/db/app.js "></script>
+    <script src="js/db/real-time-database.js "></script>
+<script>
 
+function addComentario() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById("email").value;
+        var mensagem = document.getElementById('mensagem').value;
+        var date = new Date().toLocaleDateString();
+        var uid = "<?php echo $_GET['id'] ; ?>";
+        var uidComentario = uuidv4();
+        addComment(name, email, mensagem, date,uid);
+
+    }
+
+function addComment(name, email, mensagem, date,uid) {
+      var uidComentario = uuidv4();
+        var data = {
+            name: name,
+            date:date,
+            email: email,
+            mensagem:mensagem,
+            uid:uidComentario
+
+        }
+
+
+        // firebase.database().ref().child('institution').child(uidInstitute).child("publication").child(uid).child("comentario").child(uidComentario).set(data,
+        //     function(error) {
+        //         if (error) {
+        //             alert("Data could not be saved. " + error);
+        //         } else {
+        //             window.location.replace("expositor_admin.php?id=" + uid);
+        //         }
+        //     });
+
+        firebase.database().ref().child('publication').child(uid).child("comentario").child(uidComentario).set(data, function(error) {
+            if (error) {
+                alert("Data could not be saved. " + error);
+            } else {
+                console.log("saved");
+                window.location.reload(true);
+            }
+        });
+
+    }
+
+
+
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+</script>
 </body>
 
 </html>

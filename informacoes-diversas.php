@@ -105,7 +105,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         </div>
                         <div class="single-blog-text text-center">
                             <h6>
-                            <a class="" href="#"><?php echo $row['title'] ?></a>
+                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><?php echo $row['title'] ?></a>
                             <h6>
                             
                             <!-- Post Meta -->
@@ -194,7 +194,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><i class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

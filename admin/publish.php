@@ -179,6 +179,7 @@
             img: img,
             uid: uidPublication,
             author: author
+            
         }
 
 

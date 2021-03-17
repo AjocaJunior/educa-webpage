@@ -401,18 +401,18 @@ foreach($fetchdata as $key => $row){
 
                                                 <?php
                                                  include_once('../includes/dbconfig.php');  
-  $ref = 'institution/'.$uid.'/agendachat';
-  $fetchdata = $database->getReference($ref)->getValue();
-  $countAgenda= 0;
+                                                    $ref = 'institution/'.$uid.'/agendachat';
+                                                    $fetchdata = $database->getReference($ref)->getValue();
+                                                    $countAgenda= 0;
 
-  if($fetchdata != null){
-    foreach($fetchdata as $key => $row){
-      $countAgenda++;
-      
+                                                    if($fetchdata != null){
+                                                        foreach($fetchdata as $key => $row){
+                                                        $countAgenda++;
+                                                        
  
-?>
+                                                ?>
                                                 <tr>
-                                                    <td><?php echo $row['name'] ?></td>
+                                                    <td><?php echo $row['username'] ?></td>
                                                     <td><?php echo $row['email'] ?> </td>
                                                     <td><?php echo $row['data'] ?> </td>
                                                     <td><?php echo $row['time'] ?></td>
@@ -437,8 +437,8 @@ foreach($fetchdata as $key => $row){
 
 
                                                 <?php 
-    }
-            }?>
+                                                           }
+                                                }?>
 
 
 
