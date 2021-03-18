@@ -42,25 +42,18 @@ Coded by www.creative-tim.com
 <script>
 var uiduserjs = sessionStorage.getItem('usuarioId');
 
-
 </script>
     <?php 
 
 if(isset($_GET["uid"])){
     $uiduser =  $_GET["uid"];
 } else {
-    ///header(location : "profile.php?uid=")
     echo "<script> window.location.href='profile.php?uid='+uiduserjs</script>";
 }
 
  include_once('../includes/dbconfig.php');  
     
- 
 
- 
-$usuario = '<script>uiduserjs</script>';
-
-$us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
 
 ?>
     <div class="wrapper">
@@ -155,7 +148,7 @@ $us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
                                             <thead>
                                                 <tr>
 
-                                                    <th>Email</th>
+                                                    <th>Instituição</th>
                                                     <th>Data</th>
                                                     <th>Hora</th>
                                                     <th>Chat</th>
@@ -179,7 +172,7 @@ $us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
                                                 ?>
                                                 <tr>
                                                 
-                                                    <td><?php echo $row['email'] ?></td>
+                                                    <td><?php echo $row['title'] ?></td>
                                                     <td><?php echo $row['data'] ?> </td>
                                                     <td><?php echo $row['time'] ?></td>
                                                     <td>
@@ -333,17 +326,12 @@ $us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
         task
             .then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
-
-
                 firebase.auth().onAuthStateChanged(function(user) {
-
                     var db = firebase.database();
-                    db.ref("users/" + user.uid + "/imageUrl").set(url);
+                    db.ref("users/"+user.uid+"/imageUrl").set(url);
                     location.href = 'profile.php';
+                    console.log(user.uid);
                 });
-
-
-
                 //document.querySelector("#image").src = url;
             })
             .catch(console.error);
@@ -361,7 +349,7 @@ $us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
 
     firebase.auth().onAuthStateChanged(function(user) {
         var useruid = "";
-        var uid = document.getElementBy("uid");
+        var uid = document.getElementById("uid");
         
         if (user) {
             firebase.database().ref('users').on('value', function(snapshot) {
@@ -388,12 +376,10 @@ $us = 'MBAN2IfdWcWTpZWvpBaN1AQMvz73';
                             residence.innerHTML = item.val().residence;
                             data_de_nascimento.innerHTML = item.val().date_of_birth;
                             useruid.innerHTML = item.val().userId;
-                            sessionStorage.setItem('usuarioId', item.val().userId).trim();
-                            uiduserjs = sessionStorage.getItem('usuarioId').trim();
+                            sessionStorage.setItem('usuarioId', item.val().userId);
+                            
                             var fotoperfil = document.getElementById("fotoperfil");
                            
-                        //    console.log(uiduserjs);
-
                             if (item.val().imageUrl != null && item.val().imageUrl != "ddd") {
                                 fotoperfil.src = item.val().imageUrl;
                             }

@@ -1294,7 +1294,8 @@
                                 name = item.val().name;
                             }
                             user_name.innerHTML = name;
-                            return;
+                            
+                            sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 
                     }

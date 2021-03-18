@@ -94,7 +94,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <li><a href="cultura/danca.html">Dança</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="informacoes-diversas.html">Informações</a>
+                                <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
                                     <li><a href="#blog">Blog</a></li>
                                         <li><a href="#calendario">Calendário</a></li>
@@ -848,6 +848,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 var user_name = document.getElementById("user-name");
                                 user_name.innerHTML = item.val().name;
                                 return;
+                                sessionStorage.setItem('usuarioId', item.val().userId);
                             }
 
                         }

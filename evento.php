@@ -25,6 +25,19 @@
     <div id="preloader">
         <div class="loader"></div>
     </div>
+
+
+    <?php 
+    include_once('includes/dbconfig.php');
+    $ref = 'evento/';
+    $fetchdata = $database->getReference($ref)->getValue();
+    $tipodiscurso='Discurso';
+    $tipowebinar = 'Webinar';
+    $tipoconferencia = 'Conferencia';
+    $tipodiscursofim = 'DiscursoFim';
+    $tipopalestra = 'Palestra';
+   
+    ?>
     <!-- /Preloader -->
 
     <!-- Header Area Start -->
@@ -52,7 +65,7 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-                                <li><a href="evento.html">Evento</a>
+                                <li><a href="evento.php">Evento</a>
                                     <ul class="dropdown">
                                         <li><a href="#abertura">Abertura</a></li>
                                         <li><a href="#conferencias">Conferências</a></li>
@@ -68,7 +81,7 @@
                                 </li>
                                 <li><a href="actividades-culturais.html">Cultura</a>
                                     <ul class="dropdown">
-                                    
+
                                         <li><a href="cultura/pintura.html">Pintura</a></li>
                                         <li><a href="cultura/musica.html">Música</a></li>
                                         <li><a href="cultura/cinema.html">Cinema</a></li>
@@ -77,10 +90,11 @@
                                         <li><a href="cultura/danca.html">Dança</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="informacoes-diversas.html">Informações</a>
+                                <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
-                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
-                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                        <li><a href="informacoes-diversas.php#blog">Blog</a></li>
+                                        <li><a href="informacoes-diversas.php#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.php#bolsas">Bolsas</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="index.php#contact">Contactos</a></li>
@@ -131,24 +145,21 @@
                     </div>
                 </div>
                 <?php
-                include_once('includes/dbconfig.php');
-                $ref = 'evento/';
-                $fetchdata = $database->getReference($ref)->getValue();
+                
                 $count = 0;
-                $tipodiscurso='discurso';
+              
                 ?>
-            
+
                 <!-- Single Blog Area -->
 
                 <?php
                 foreach( $fetchdata as $key => $row):
                     $count++;
-                   $row['tipo'];
-                    if($count==2 ){
-                    break;
-                    }
-                    
+                    $tipo=  $row['tipo'];
+                    if($tipo==$tipodiscurso ){
+                        
                 ?>
+
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
@@ -160,10 +171,13 @@
                         </div>
                         <div class="single-blog-text text-center">
                             <a class="blog-title" href="#">Discurso de Abertura</a>
+
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i><?php echo $row['evento_titulo'] ?></a></br>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i><?php echo $row['moderador_nome']?></a>
+                                <a class="post-date" href="#"><i
+                                        class="zmdi zmdi-assignment"></i><?php echo $row['evento_titulo'] ?></a></br>
+                                <a class="post-author" href="#"><i
+                                        class="zmdi zmdi-account"></i><?php echo $row['moderador_nome']?></a>
                             </div>
 
                         </div>
@@ -176,11 +190,11 @@
 
                 <?php
 
-
+                }
                 endforeach;
                 ?>
 
-          
+
 
             </div>
         </div>
@@ -206,89 +220,50 @@
                         <h4 style="color: #414c52;">CONFERÊNCIAS</h4>
                     </div>
                 </div>
-
+                <?php
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                    $tipo=  $row['tipo'];
+                    if($tipo==$tipoconferencia ){
+                       
+                ?>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
                             <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ba7JNTI17uo" frameborder="0"
+                                src="<?php echo $row['video_link'] ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
+                            <a class="blog-title" href="#"><?php echo $row['evento_titulo'] ?></a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
+                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>
+                                    <?php echo $row['data'] ?></a>
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
+                            <p><?php echo $row['evento_descricao'] ?></p>
                         </div>
                         <div class="blog-btn">
                             <a href="#" data-toggle="modal" data-target="#myModal"><i class="zmdi zmdi-eye"></i></a>
                         </div>
                     </div>
                 </div>
+                <?php
+}
+endforeach;
+?>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ba7JNTI17uo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
 
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal1"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ba7JNTI17uo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal2"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
     </section>
 
-    
+
     <!-- Our Blog Area End -->
 
     <!-- Our Blog Area End -->
@@ -306,6 +281,7 @@
         <div class="countdown-up-area">
             <div class="container">
                 <div class="row align-items-center">
+
                     <div class="col-12 col-md-3">
                         <!-- Countdown Text -->
                         <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
@@ -340,87 +316,49 @@
                         <h4 style="color: #414c52;">Nossos Webinares</h4>
                     </div>
                 </div>
-
+                <?php
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                    $tipo=  $row['tipo'];
+                    if($tipo==$tipowebinar ){
+   
+                ?>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
                             <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
+                                src="<?php echo $row['video_link'] ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
+                            <a class="blog-title" href="#"><?php echo $row['evento_titulo'] ?></a>
                             <!-- Post Meta -->
                             <div class="post-meta">
 
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
+                            <p><?php echo $row['evento_descricao'] ?></p>
                         </div>
                         <div class="blog-btn">
                             <a href="#" data-toggle="modal" data-target="#myModal4"><i class="zmdi zmdi-eye"></i></a>
                         </div>
                     </div>
                 </div>
+                <?php
+}
+endforeach;
+?>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
 
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal5"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal6"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
     </section>
     <!-- Our Blog Area End -->
-    
+
     <!-- Our Blog Area End -->
 
 
@@ -442,25 +380,30 @@
 
                     </div>
                 </div>
-
+                <?php
+                foreach( $fetchdata as $key => $row):
+                    $count++;
+                    $tipo=  $row['tipo'];
+                    if($tipo==$tipopalestra ){
+   
+                ?>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
                             <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
+                                src="<?php echo $row['video_link'] ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
+                            <a class="blog-title" href="#"><?php echo $row['evento_titulo'] ?></a>
                             <!-- Post Meta -->
                             <div class="post-meta">
 
                             </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
+                            <p><?php echo $row['evento_descricao'] ?></p>
                         </div>
                         <div class="blog-btn">
                             <a href="#" data-toggle="modal" data-target="#myModal7"><i class="zmdi zmdi-eye"></i></a>
@@ -468,62 +411,16 @@
                     </div>
                 </div>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Educação Digitalizada em Moçambique</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal8"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Los Angeles Institute</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-
-                            </div>
-                            <p>Street Food Convention will showcase products like Packed food, beef and lamb, street
-                                food.</p>
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal9"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php
+}
+endforeach;
+?>
             </div>
         </div>
     </section>
     <!-- Our Blog Area End -->
 
-    
+
 
 
 
@@ -535,7 +432,14 @@
     <section id="encerramento" class="our-blog-area section-padding-50-20" style="background-color: #d7dbe0;">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-12">
+            
+              
+                <?php
+                foreach( $fetchdata as $key => $row):
+
+                    ?>
+
+<div class="col-12">
                     <!-- Heading -->
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>DISCURSOS</p>
@@ -544,59 +448,44 @@
                     </div>
                 </div>
 
+                    <?php
+                    $count++;
+                    $tipo=  $row['tipo'];
+                    if($tipo==$tipodiscursofim ){
+   
+                ?>
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb">
                             <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
+                                src="<?php echo $row['video_link'] ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Discurso de Encerramento</a>
+                            <a class="blog-title" href="#"><?php echo $row['evento_titulo'] ?></a>
                             <!-- Post Meta -->
                             <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i>Ministra da
-                                    Educação</a></br>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Carmelina
-                                    Nhamashulua</a>
+                                <a class="post-date" href="#"><i
+                                        class="zmdi zmdi-assignment"></i><?php echo $row['profissao'] ?></a></br>
+                                <a class="post-author" href="#"><i
+                                        class="zmdi zmdi-account"></i><?php echo $row['moderador_nome'] ?></a>
                             </div>
 
                         </div>
                         <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModaldisc4"><i class="zmdi zmdi-eye"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#myModaldisc4"><i
+                                    class="zmdi zmdi-eye"></i></a>
                         </div>
                     </div>
                 </div>
+                <?php
+}
+endforeach;
+?>
 
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Single blog Thumb -->
-                        <div class="single-blog-thumb">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/ZyMoJgpRgAo" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="single-blog-text text-center">
-                            <a class="blog-title" href="#">Discurso de Abertura</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-assignment"></i>Ministra da
-                                    Educação</a></br>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Carmelina
-                                    Nhamashulua</a>
-                            </div>
-
-                        </div>
-                        <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModaldisc5"><i class="zmdi zmdi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -604,7 +493,7 @@
         </div>
     </section>
     <!-- Our Blog Area End -->
-   
+
 
 
 
@@ -631,11 +520,14 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -650,10 +542,13 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a>
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a>
                             </div>
 
                         </div>
@@ -667,10 +562,13 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn "> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn "> <i class="zmdi zmdi-linkedin"></i></button></a>
+                                <a href=" #" target="_blank"><button class="btn "> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn "> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a>
                             </div>
 
                         </div>
@@ -708,12 +606,15 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                               
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -728,12 +629,15 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -749,12 +653,15 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -808,12 +715,15 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -828,12 +738,15 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -873,11 +786,14 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -892,12 +808,15 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -912,12 +831,15 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -957,12 +879,15 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -977,12 +902,15 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -997,12 +925,15 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1041,11 +972,14 @@
                                 <h6>Assis Junior</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1060,11 +994,14 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1079,11 +1016,14 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1122,13 +1062,16 @@
                                 <h6>Assis Junior</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
-                                
+
                             </div>
 
                         </div>
@@ -1142,11 +1085,14 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1161,11 +1107,14 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1204,11 +1153,14 @@
                                 <h6>Assis Junior</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1223,11 +1175,14 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1242,11 +1197,14 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1285,12 +1243,15 @@
                                 <h6>Assis Junior</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
-                         
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
+
 
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
@@ -1306,11 +1267,14 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
 
                             </div>
@@ -1326,11 +1290,14 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1370,11 +1337,14 @@
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
 
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1389,11 +1359,14 @@
                                 <h6>Messias Manhiça</h6>
                                 <p>Moderador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1408,11 +1381,14 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-facebook"></i></button></a>
                                 <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
-                                
+                                <a href=" #" target="_blank"><button class="btn"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
+
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1441,7 +1417,7 @@
 
                 </div>
                 <div class="modal-body">
-                   
+
                     <div class="row">
 
                         <div class="col">
@@ -1455,11 +1431,15 @@
                                 <p>The greatest speaker the world knows</p>
 
 
-                                
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-facebook"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-linkedin"></i></button></a></br>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white">
+                                        <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-instagram""></i></button></a>
+                                <a href=" #" target="_blank"><button class="btn confer-btn-white"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a></br>
                                 <button class="btn confer-btn-white">Chat</button>
                             </div>
 
@@ -1501,18 +1481,22 @@
                                 <p>The greatest speaker the world knows</p>
 
                                 <button class="btn confer-btn-white">Chat</button>
-                                
-                                    <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-facebook"></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-linkedin"></i></button></a>
-    
-                            
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white">
+                                        <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-instagram""></i></button></a>
+                                    <a href=" #" target="_blank"><button class="btn confer-btn-white"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a>
+
+
                             </div>
 
                         </div>
-                   
-                       
+
+
 
                     </div>
                 </div>
@@ -1538,8 +1522,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                     
-                      
+
+
                         <div class="col">
                             <div class="speaker-single-thumb text-center">
                                 <img src="img/educa/3.jpg" width="50%" height="50%;" alt="">
@@ -1550,12 +1534,16 @@
                                 <h6>Agostinho dos Santos</h6>
                                 <p>Orador</p>
                                 <p>The greatest speaker the world knows</p>
-                            
-                            <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-facebook"></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                    <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-linkedin"></i></button></a>
-</div>
+
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white">
+                                        <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-instagram""></i></button></a>
+                                    <a href=" #" target="_blank"><button class="btn confer-btn-white"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a>
+                            </div>
                         </div>
 
                     </div>
@@ -1594,15 +1582,19 @@
                                 <p>The greatest speaker the world knows</p>
 
                                 <button class="btn confer-btn-white">Chat</button>
-                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-facebook"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-instagram""></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-twitter"></i></button></a>
-                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i class="zmdi zmdi-linkedin"></i></button></a>
+                                <a href="https://www.facebook.com" target="_blank"><button class="btn confer-btn-white">
+                                        <i class="zmdi zmdi-facebook"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-instagram""></i></button></a>
+                                <a href=" #" target="_blank"><button class="btn confer-btn-white"> <i
+                                                    class="zmdi zmdi-twitter"></i></button></a>
+                                <a href="#" target="_blank"><button class="btn confer-btn-white"> <i
+                                            class="zmdi zmdi-linkedin"></i></button></a>
                             </div>
 
                         </div>
-                
-                    
+
+
 
                     </div>
                 </div>
@@ -1637,8 +1629,10 @@
                                         <p style="color: white;">
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                             Copyright &copy;
-                                            <script>document.write(new Date().getFullYear());</script> <i
-                                                class="fa fa-heart-o" aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
+                                            <script>
+                                            document.write(new Date().getFullYear());
+                                            </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA
+                                            MOÇAMBIQUE</a>
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         </p>
                                     </div>
@@ -1670,38 +1664,40 @@
     <script src="js/db/real-time-database.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script>
-        firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
 
-            if (user) {
+        if (user) {
 
-                firebase.database().ref('users').on('value', function (snapshot) {
-                    snapshot.forEach(function (item) {
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
-                        if (item.val().userId !== null && user.uid !== null) {
-                            var db_uid = item.val().userId.toString().trim();
-                            var user_uid = user.uid.toString().trim();
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
 
-                            if (db_uid == user_uid) {
-                                var user_name = document.getElementById("user-name");
-                                user_name.innerHTML = item.val().name;
-                                return;
-                            }
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
+                            return;
 
+                            sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 
-                    });
+                    }
+
                 });
+            });
 
-            } else {
-                location.href = 'intro.php';
-            }
+        } else {
+            location.href = 'intro.php';
+        }
 
-        });
+    });
     </script>
 
 
 
-<script>
+    <script>
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         var maxY = 1000;
