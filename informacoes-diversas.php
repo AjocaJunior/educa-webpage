@@ -847,7 +847,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             if (db_uid == user_uid) {
                                 var user_name = document.getElementById("user-name");
                                 user_name.innerHTML = item.val().name;
-                                return;
+                               
                                 sessionStorage.setItem('usuarioId', item.val().userId);
                             }
 

@@ -20,9 +20,9 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <!-- /Preloader -->
 
     <!-- Header Area Start -->
@@ -64,7 +64,7 @@
                                         <li><a href="feira.php#testes">Testes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="actividades-culturais.html">Cultura</a>
+                                <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
                                         <li><a href="cultura/pintura.html">Pintura</a></li>
                                         <li><a href="cultura/musica.html">Música</a></li>
@@ -75,17 +75,18 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="informacoes-diversas.html">Informações</a>
+                                <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
-                                        <li><a href="informacoes-diversas.html#calendario">Calendário</a></li>
-                                        <li><a href="informacoes-diversas.html#bolsas">Bolsas</a></li>
+                                        <li><a href="informacoes-diversas.php#blog">Blog</a></li>
+                                        <li><a href="informacoes-diversas.php#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.php#bolsas">Bolsas</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="index.php#contact">Contactos</a></li>
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -102,202 +103,167 @@
 
     <!-- Our Ticket Pricing Table Area Start -->
 
-    <!-- <section id="tickets" class="our-ticket-pricing-table-area section-padding-0-80 mt-30 jarallax"> -->
-    <div class="container">
-        <!-- <div class="row">
-                
+    <section id="tickets" class="our-ticket-pricing-table-area section-padding-150 jarallax">
+        <div class="container">
+            <div class="row">
+
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp"  data-wow-delay="300ms">
-                        <p id="espetaculos">Espetáculos Gravados</p>
-                        <h4 style="color: #414c52;">ASSISTA OS ESPETÁCULOS CULTURAIS GRAVADOS</h4>
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p id="espetaculos">SELECCIONAMOS AS MELHORES NOTÍCIAS PARA O JOVEM MOÇAMBICANO</p>
+                        <h4 style="color: #414c52;">NOTÍCIAS</h4>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-        <div class="row">
 
-            <!-- <div class="col-12 col-md-6">
-                    <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp"
-                        data-wow-delay="300ms">
-                        <h6 class=""></h6>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/V4pQ1DEa7W8" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
 
-                    </div>
-                </div> -->
-            <!-- 
+            <div class="row">
 
-                <div class="col-12 col-md-6">
-                    <div class="about-content-text mb-80" style="text-align: center;">
-                        <h6 class="wow fadeInUp" data-wow-delay="300ms">TÍTULO DO ESPETÁCULO</h6>
-                       
-                        <p class="wow fadeInUp text-justify"  data-wow-delay="300ms" style="text-transform: justify;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu pharetra ante. Duis elementum nunc tortor, vitae finibus nibh lobortis vel. Suspendisse ante risus, finibus a laoreet ac, aliquam nec odio. Fusce at diam eleifend, pretium elit vitae, feugiat lectus. Donec feugiat nibh at maximus consectetur. Morbi congue, felis ac posuere gravida, velit mauris maximus massa, a finibus diam nunc eget sem. Sed vel sapien tempus, suscipit nisi quis, sollicitudin mauris. Nunc varius molestie felis, quis iaculis nisl tincidunt id. Ut sit amet interdum nunc, vel aliquet nisl. Aenean cursus tortor sit amet felis feugiat, ac mattis arcu sodales
-                        </p>
-                        
-                    </div>
-                </div> -->
+                           <div class="col-12 col-md-6">
+                    <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp" data-wow-delay="300ms">
 
-            <!-- <div class="col-12 col-md-6">
-                    <div class="about-content-text mb-80" style="text-align: center;">
-                        <h6 class="wow fadeInUp" data-wow-delay="300ms">TÍTULO DO ESPETÁCULO</h6>
-                      
-                        <p class="wow fadeInUp text-justify" data-wow-delay="300ms" style="text-transform: justify;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu pharetra ante. Duis elementum nunc tortor, vitae finibus nibh lobortis vel. Suspendisse ante risus, finibus a laoreet ac, aliquam nec odio. Fusce at diam eleifend, pretium elit vitae, feugiat lectus. Donec feugiat nibh at maximus consectetur. Morbi congue, felis ac posuere gravida, velit mauris maximus massa, a finibus diam nunc eget sem. Sed vel sapien tempus, suscipit nisi quis, sollicitudin mauris. Nunc varius molestie felis, quis iaculis nisl tincidunt id. Ut sit amet interdum nunc, vel aliquet nisl. Aenean cursus tortor sit amet felis feugiat, ac mattis arcu sodales
-                        </p>
-                        
-                    </div>
-                </div> -->
-            <!--               
-                <div class="col-12 col-md-6">
-                    <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp"
-                        data-wow-delay="300ms">
-                        
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" width="100%" height="100%"
-                                src="https://www.youtube.com/embed/V4pQ1DEa7W8" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
+                        <p>Titulo
+                        <p>
+                        <h6 class="">Descrição</h6>
+
 
                     </div>
-                </div> -->
+                </div>
+
+
+
+            </div>
         </div>
-    </div>
-    <!-- </section> -->
+    </section>
 
 
     <section class="our-speaker-area section-padding-150-20 bg-design" ">
-        <div class="container">
-            <div class="row">
-                <!-- Heading -->
-                <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
-                        style="margin-bottom: 10px;">
+        <div class=" container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
+                    style="margin-bottom: 10px;">
 
-                        <h5 style="color:#414c52;">Artes e Cultura</h5>
-                        <p class="mt-30">PINTURA</p>
+                    <h5 style="color:#414c52;">Artes e Cultura</h5>
+                    <p class="mt-30">PINTURA</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Single Speaker Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="cultura/pintura.html">
+
+
+
+                    <div id="carouselExampleSlidesOnly" data-interval="1400"
+                        class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item speaker-single-thumb active">
+                                <img class="d-block w-100" src="img/educa/galeria10.jpg" alt="First slide">
+                            </div>
+                            <div class="speaker-info">
+                                <h5>Albino Mahumana</h5>
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria2.JPG" alt="Second slide">
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria3.JPG" alt="Third slide">
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
-            <div class="row">
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="cultura/pintura.html">
 
 
 
-                        <div id="carouselExampleSlidesOnly" data-interval="1400"
-                            class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="img/educa/galeria10.jpg" alt="First slide">
-                                </div>
-                                <div class="speaker-info">
-                                    <h5>Albino Mahumana</h5>
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria2.JPG" alt="Second slide">
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria3.JPG" alt="Third slide">
-                                </div>
+
+
+            <!-- Single Speaker Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="cultura/pintura.html">
+                    <div id="carouselExampleSlidesOnly" data-interval="1600"
+                        class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item speaker-single-thumb active">
+                                <img class="d-block w-100" src="img/educa/galeria4.jpg" alt="First slide">
+                            </div>
+                            <div class="speaker-info">
+                                <h5>Teresa Gouveia</h5>
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria5.JPG" alt="Second slide">
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria6.JPG" alt="Third slide">
                             </div>
                         </div>
-                    </a>
-
-                </div>
-
-
-
-
-
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="cultura/pintura.html">
-                        <div id="carouselExampleSlidesOnly" data-interval="1600"
-                            class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="img/educa/galeria4.jpg" alt="First slide">
-                                </div>
-                                <div class="speaker-info">
-                                    <h5>Teresa Gouveia</h5>
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria5.JPG" alt="Second slide">
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria6.JPG" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                </div>
-
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="cultura/pintura.html">
-                        <div id="carouselExampleSlidesOnly" data-interval="2200"
-                            class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="img/educa/galeria1.jpg" alt="First slide">
-                                </div>
-                                <div class="speaker-info">
-                                    <h5>Drizzy Drake</h5>
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria6.JPG" alt="Second slide">
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria10.jpg" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                </div>
-
-                <!-- Single Speaker Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="cultura/pintura.html">
-                        <div id="carouselExampleSlidesOnly" data-interval="2000"
-                            class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="img/educa/galeria8.jpg" alt="First slide">
-                                </div>
-                                <div class="speaker-info">
-                                    <h5>Aubrey Graham</h5>
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria2.JPG" alt="Second slide">
-                                </div>
-                                <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="img/educa/galeria3.JPG" alt="Third slide">
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                </div>
-
-                <div class="col-12 text-center">
-                    <a href="cultura/pintura.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER PINTURAS<i class="zmdi zmdi-long-arrow-right"></i></a>
-                </div>
+                    </div>
+                </a>
 
 
             </div>
+
+            <!-- Single Speaker Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="cultura/pintura.html">
+                    <div id="carouselExampleSlidesOnly" data-interval="2200"
+                        class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item speaker-single-thumb active">
+                                <img class="d-block w-100" src="img/educa/galeria1.jpg" alt="First slide">
+                            </div>
+                            <div class="speaker-info">
+                                <h5>Drizzy Drake</h5>
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria6.JPG" alt="Second slide">
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria10.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
+            </div>
+
+            <!-- Single Speaker Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="cultura/pintura.html">
+                    <div id="carouselExampleSlidesOnly" data-interval="2000"
+                        class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item speaker-single-thumb active">
+                                <img class="d-block w-100" src="img/educa/galeria8.jpg" alt="First slide">
+                            </div>
+                            <div class="speaker-info">
+                                <h5>Aubrey Graham</h5>
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria2.JPG" alt="Second slide">
+                            </div>
+                            <div class="carousel-item speaker-single-thumb">
+                                <img class="d-block w-100" src="img/educa/galeria3.JPG" alt="Third slide">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
+            </div>
+
+            <div class="col-12 text-center">
+                <a href="cultura/pintura.html" target="_blank" class="btn confer-btn-white text-center">VER PINTURAS<i
+                        class="zmdi zmdi-long-arrow-right"></i></a>
+            </div>
+
+
+        </div>
         </div>
     </section>
 
@@ -309,7 +275,7 @@
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
-                 
+
                         <p>MÚSICA</p>
                     </div>
                 </div>
@@ -401,7 +367,7 @@
 
                 </div>
 
-                
+
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="cultura/musica.html" target="_blank">
@@ -429,8 +395,8 @@
 
 
                 <div class="col-12 text-center">
-                    <a href="cultura/musica.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER MÚSICAS<i class="zmdi zmdi-long-arrow-right"></i></a>
+                    <a href="cultura/musica.html" target="_blank" class="btn confer-btn-white text-center">VER MÚSICAS<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
 
 
@@ -438,7 +404,7 @@
         </div>
     </section>
 
-    <section class="our-speaker-area section-padding-100-60 bg-design" >
+    <section class="our-speaker-area section-padding-100-60 bg-design">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -446,7 +412,7 @@
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
-                 
+
                         <p>CINEMA</p>
                     </div>
                 </div>
@@ -462,18 +428,21 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Bros & Bradas</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg"
+                                        alt="Third slide">
                                 </div>
-                               
+
                             </div>
                         </div>
                     </a>
@@ -489,7 +458,8 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Mahla Filmes</h5>
@@ -518,9 +488,9 @@
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio2.jpg" alt="First slide">
                                 </div>
                                 <div class="speaker-info">
-                                    
+
                                     <h5>Licínio de Azevedo</h5>
-                                  
+
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio3.jpg" alt="Second slide">
@@ -528,7 +498,7 @@
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio5.jpg" alt="Third slide">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </a>
@@ -536,7 +506,7 @@
 
                 </div>
 
-                
+
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="cultura/cinema.html" target="_blank">
@@ -544,16 +514,19 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Sol de Carvalho</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png"
+                                        alt="Third slide">
                                 </div>
                             </div>
                         </div>
@@ -564,8 +537,8 @@
 
 
                 <div class="col-12 text-center">
-                    <a href="cultura/cinema.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER FILMES<i class="zmdi zmdi-long-arrow-right"></i></a>
+                    <a href="cultura/cinema.html" target="_blank" class="btn confer-btn-white text-center">VER FILMES<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
 
 
@@ -574,7 +547,7 @@
     </section>
 
 
-    <section class="our-speaker-area section-padding-100-60 bg-design" >
+    <section class="our-speaker-area section-padding-100-60 bg-design">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -582,7 +555,7 @@
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
-                 
+
                         <p>TEATRO</p>
                     </div>
                 </div>
@@ -598,18 +571,21 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Bros & Bradas</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg"
+                                        alt="Third slide">
                                 </div>
-                               
+
                             </div>
                         </div>
                     </a>
@@ -625,7 +601,8 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Mahla Filmes</h5>
@@ -654,9 +631,9 @@
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio2.jpg" alt="First slide">
                                 </div>
                                 <div class="speaker-info">
-                                    
+
                                     <h5>Licínio de Azevedo</h5>
-                                  
+
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio3.jpg" alt="Second slide">
@@ -664,7 +641,7 @@
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio5.jpg" alt="Third slide">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </a>
@@ -672,7 +649,7 @@
 
                 </div>
 
-                
+
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="cultura/cinema.html" target="_blank">
@@ -680,16 +657,19 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Sol de Carvalho</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png"
+                                        alt="Third slide">
                                 </div>
                             </div>
                         </div>
@@ -700,8 +680,8 @@
 
 
                 <div class="col-12 text-center">
-                    <a href="cultura/teatro.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER TEATROS<i class="zmdi zmdi-long-arrow-right"></i></a>
+                    <a href="cultura/teatro.html" target="_blank" class="btn confer-btn-white text-center">VER TEATROS<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
 
 
@@ -709,7 +689,7 @@
         </div>
     </section>
 
-    <section class="our-speaker-area section-padding-100-60 bg-design" >
+    <section class="our-speaker-area section-padding-100-60 bg-design">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -717,7 +697,7 @@
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
-                 
+
                         <p>LITERATURA</p>
                     </div>
                 </div>
@@ -733,18 +713,21 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Bros & Bradas</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg"
+                                        alt="Third slide">
                                 </div>
-                               
+
                             </div>
                         </div>
                     </a>
@@ -760,7 +743,8 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Mahla Filmes</h5>
@@ -789,9 +773,9 @@
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio2.jpg" alt="First slide">
                                 </div>
                                 <div class="speaker-info">
-                                    
+
                                     <h5>Licínio de Azevedo</h5>
-                                  
+
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio3.jpg" alt="Second slide">
@@ -799,7 +783,7 @@
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio5.jpg" alt="Third slide">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </a>
@@ -807,7 +791,7 @@
 
                 </div>
 
-                
+
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="cultura/cinema.html" target="_blank">
@@ -815,16 +799,19 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Sol de Carvalho</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png"
+                                        alt="Third slide">
                                 </div>
                             </div>
                         </div>
@@ -835,15 +822,15 @@
 
 
                 <div class="col-12 text-center">
-                    <a href="cultura/literatura.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER LITERATURA<i class="zmdi zmdi-long-arrow-right"></i></a>
+                    <a href="cultura/literatura.html" target="_blank" class="btn confer-btn-white text-center">VER
+                        LITERATURA<i class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
 
 
             </div>
         </div>
     </section>
-    <section class="our-speaker-area section-padding-100-60 bg-design" >
+    <section class="our-speaker-area section-padding-100-60 bg-design">
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -851,7 +838,7 @@
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
-                 
+
                         <p>DANÇA</p>
                     </div>
                 </div>
@@ -867,18 +854,21 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas1.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Bros & Bradas</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas2.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/brosebradas3.jpg"
+                                        alt="Third slide">
                                 </div>
-                               
+
                             </div>
                         </div>
                     </a>
@@ -894,7 +884,8 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/mahlaresgate.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Mahla Filmes</h5>
@@ -923,9 +914,9 @@
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio2.jpg" alt="First slide">
                                 </div>
                                 <div class="speaker-info">
-                                    
+
                                     <h5>Licínio de Azevedo</h5>
-                                  
+
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio3.jpg" alt="Second slide">
@@ -933,7 +924,7 @@
                                 <div class="carousel-item speaker-single-thumb">
                                     <img class="d-block w-100" src="cultura/img/cinema/licinio5.jpg" alt="Third slide">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </a>
@@ -941,7 +932,7 @@
 
                 </div>
 
-                
+
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="cultura/cinema.html" target="_blank">
@@ -949,16 +940,19 @@
                             class="carousel slide carousel-fade single-speaker-area fill" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item speaker-single-thumb active">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho.jpg"
+                                        alt="First slide">
                                 </div>
                                 <div class="speaker-info">
                                     <h5>Sol de Carvalho</h5>
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho1.jpg"
+                                        alt="Second slide">
                                 </div>
                                 <div class="carousel-item speaker-single-thumb">
-                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png" alt="Third slide">
+                                    <img class="d-block w-100" src="cultura/img/cinema/soldecarvalho2.png"
+                                        alt="Third slide">
                                 </div>
                             </div>
                         </div>
@@ -969,8 +963,8 @@
 
 
                 <div class="col-12 text-center">
-                    <a href="cultura/dança.html" target="_blank" class="btn confer-btn-white text-center"
-                        >VER DANÇA<i class="zmdi zmdi-long-arrow-right"></i></a>
+                    <a href="cultura/dança.html" target="_blank" class="btn confer-btn-white text-center">VER DANÇA<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
                 </div>
 
 
@@ -1051,8 +1045,9 @@
                             <p style="color: white;">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o"
-                                    aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
+                                <script>
+                                document.write(new Date().getFullYear());
+                                </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
@@ -1079,39 +1074,43 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="/cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script>
-        firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
 
-            if (user) {
+        if (user) {
 
-                firebase.database().ref('users').on('value', function (snapshot) {
-                    snapshot.forEach(function (item) {
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
-                        if (item.val().userId !== null && user.uid !== null) {
-                            var db_uid = item.val().userId.toString().trim();
-                            var user_uid = user.uid.toString().trim();
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
 
-                            if (db_uid == user_uid) {
-                                var user_name = document.getElementById("user-name");
-                                user_name.innerHTML = item.val().name;
-                                return;
-                            }
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
 
+                            sessionStorage.setItem('usuarioId', item.val().userId);
+                            return;
                         }
 
-                    });
+                    }
+
                 });
+            });
 
-            } else {
-                location.href = 'intro.php';
-            }
+        } else {
+            location.href = 'intro.php';
+        }
 
-        });
+    });
     </script>
 
 
-<script>
+    <script>
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         console.log(scrolled);
@@ -1179,30 +1178,30 @@
 </body>
 
 <style>
-    .fill {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
-    .fill a img {
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: 90%;
-        height: 200px;
-        object-fit: cover;
-    }
+.fill a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+}
 
-    .fill img {
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: 90%;
-        height: 250px;
-        object-fit: cover;
-    }
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+}
 
 </style>
 
