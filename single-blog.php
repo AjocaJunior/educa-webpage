@@ -55,7 +55,9 @@ $data = "";
        
           $text              = $row['text'];
          $data = $row['date'];
-
+         if($img == null || $img == ""){
+            $img = "EXPOSITOR SEM PUBLICAÇÕES";
+        }
           break;
         }
     }
@@ -150,6 +152,7 @@ $data = "";
 
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
+                            
                                 <img src="<?php  echo $img;?> " alt=" " >
                             </div>
 

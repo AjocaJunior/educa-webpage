@@ -1077,7 +1077,16 @@
     <script src="/cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+<script>
+
+
+</script>
+
     <script>
+
+
+
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {

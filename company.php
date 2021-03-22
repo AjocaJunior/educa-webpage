@@ -32,6 +32,7 @@
       $ref = 'institution/';
       $fetchdata = $database->getReference($ref)->getValue();
       $uid  = $_GET['id'];
+      $chat = "";
       $title           = "";
       $localization    = "";
       $institution_description = "";
@@ -46,6 +47,7 @@
 
       foreach($fetchdata as $key => $row){
           if($row['uid'] == $uid ){
+            $chat = $row['chat'];
             $title           = $row['institution_name'];
             $localization    = $row['location'];
             $institution_description = $row['institution_description'];
@@ -87,7 +89,7 @@
                 <nav class="classy-navbar justify-content-between" id="conferNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="./index.php"><img src="./img/educa/logo.png" alt=""></a>
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -110,11 +112,7 @@
                                 <li><a href="#contact">Contacto</a></li>
                             </ul>
 
-                            <!-- Get Tickets Button -->
-                            <a hidden href="https://educam.herokuapp.com/<?php echo $uid; ?>"
-                                class="btn mt-3 mt-lg-0 ml-3 ml-lg-5" style="background:#f8871f; color:white"> Chat <i
-                                    class="zmdi zmdi-email"></i></a>
-                                    <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
                         <!-- Nav End -->
@@ -126,7 +124,7 @@
     <!-- Header Area End -->
 
     <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img jarallax" style="background-color: #f2871c;">
+    <section class="breadcrumb-area jarallax" style="background-color: #f2871c;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -205,24 +203,24 @@
 
                         <!-- Pager Area -->
                         <div class="pager-area d-flex align-items-center flex-wrap mb-80">
-                            <!-- Prev Post --
+                            <!-- Prev Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
+                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">Exames</a>
-                                    <span><?php echo "Exames ".$title; ?></span>
+                                    <a href="#" class="post-title">Vagas</a>
+                                    <span><?php echo " ".$title; ?></span>
                                 </div>
                             </div>
 
-                            -- Next Post -->
+                            <!-- Next Post -->
                             <div class="pager-single-post d-flex align-items-center">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/55.jpg" alt=""></a>
+                                    <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e
+                                    <a href="single-blog.php?id=<?php  echo $uid;?>" target="_blank" class="post-title">Publicações e
                                         noticias</a>
                                     <span>Ver publicações</span>
                                 </div>
@@ -297,7 +295,12 @@
                 <!-- Blog Sidebar Area -->
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="confer-sidebar-area mb-100">
+                        <div class="text-center mb-30">
 
+                            <a class="btn confer-btn-white" href="#" data-toggle="modal" data-target="#myModalAgenda"
+                                role="button">Agendar Chat <span class="fa fa-wechat"></span> </a>
+
+                        </div>
                         <!-- Single Widget Area -->
                         <!-- <div class="single-widget-area">
                             <div class="search-widget">
@@ -377,49 +380,7 @@
                         </div>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <?php
-                                        $ref = 'institution/'.$uid.'/college';
-                                        $fetchdata = $database->getReference($ref)->getValue();
-                                        ?>
-
-                                        <?php if($fetchdata != null):?>
-                                        <?php foreach( $fetchdata as $key => $row):?>
-                                        <!-- Single Recent Post Area -->
-                                        <div class="single-recent-post-area d-flex align-items-center">
-                                            <!-- Thumb -->
-                                            <div class="post-thumb">
-                                                <a href="single-blog.html"><img src="img/bg-img/43.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-title"><?php echo $row['college']; ?></a>
-                                                <!-- <a href="#" class="post-date"><i class="zmdi zmdi-time"></i> January 14, 2019</a> -->
-                                            </div>
-                                        </div>
-                                        <?php endforeach ?>
-                                        <?php endif?>
-
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <!-- Single Widget Area -->
                         <div class="single-widget-area" id="categories-list-course">
                             <!-- <h5 class="widget-title mb-30">Cursos</h5> -->
@@ -453,8 +414,8 @@
                             <h5 class="widget-title mb-30">Galeria</h5>
 
                             <!-- Sidebar Gallery -->
-                                  <!-- Footer Gallery -->
-                                  <div class="footer-gallery">
+                            <!-- Footer Gallery -->
+                            <div class="footer-gallery">
                                 <div class="row">
 
                                     <?php
@@ -484,7 +445,75 @@
         </div>
     </section>
     <!-- Blog Area End -->
+    <div id="myModalAgenda" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Agendar Chat</h5>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 mb-100">
+
+                            <form>
+                                <div class="row no-margin">
+                                    <div class="col-12">
+                                        <div class="row no-margin">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <span class="form-label">Data</span>
+                                                    <input class="form-control" id="data" name="data" type="date"
+                                                        required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <span class="form-label">Hora</span>
+                                                    <input class="form-control" id="time" name="time" type="time"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-btn">
+                                                    <button onclick="add_agenda();"
+                                                        class="submit-btn btn confer-btn-white">Agendar</button>
+                                                </div>
+
+                                            </div>
+
+                                            <input type="hidden" id="itemId" name="itemId" value="">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="notify mt-30"><span id="notifyType" class=""></div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+
+
+                        <button type="button" class="btn confer-btn-white" data-dismiss="modal">Fechar</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Footer Area Start -->
     <footer class="footer-area section-padding-100-0" style="background-color:#414c52; color: white">
         <!-- Main Footer Area -->
@@ -543,7 +572,7 @@
                     </div>
 
                     <!-- Single Footer Widget Area -->
-                  
+
                 </div>
             </div>
         </div>
@@ -597,7 +626,195 @@
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
 
+    <script>
+    var user_name = "";
+    var useruid = "";
+    var emaill = "";
 
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
+
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            var name = item.val().name;
+
+
+                            user_name.innerHTML = name;
+                            email_user = document.getElementById("emaill");
+
+                            user_name.innerHTML = item.val().name;
+
+                            email_user.innerHTML = item.val().email;
+                            sessionStorage.setItem('usuarioId', item.val().userId);
+                        }
+
+                    }
+
+                });
+            });
+
+        } else {
+            location.href = 'intro.php';
+        }
+
+    });
+    </script>
+
+
+    <script>
+    function add_agenda() {
+        var userId = user_uid;
+        var username = user_name.innerHTML;
+        var email = email_user.innerHTML;
+        var data = document.getElementById("data").value;
+        var time = document.getElementById("time").value;
+        var chat = "<?php  echo $chat ?>";
+        var uid = "<?php echo $_GET['id'] ?>";
+        var title = "<?php echo $title ?>"
+        var uidchat = uuidv4();
+        var data = {
+            userId: userId,
+            username: username,
+            title: title,
+            data: data,
+            email: email,
+            time: time,
+            chat: chat,
+            uid: uid,
+            uidchat: uidchat
+        }
+
+        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uidchat).set(data,
+            function(error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+
+                    location.href = "company.php?id=<?php echo $uid?>";
+                    funcaosucess();
+                }
+            });
+
+
+
+        firebase.database().ref().child('users').child(userId).child("agendachat").child(uidchat).set(data,
+            function(error) {
+                if (error) {
+                    alert("Data could not be saved." + error);
+                } else {
+
+
+
+                }
+            });
+
+
+    }
+    // myFunction();
+    //     function myFunction() {
+    //         setTimeout(function() {
+    //             alert("Chat Agendado com Sucesso, veja no seu perfil");
+    //         }, 1000);
+    //     }
+
+    function funcaosucess() {
+        $(".notify").toggleClass("active");
+        $("#notifyType").toggleClass("success");
+
+        setTimeout(function() {
+            $(".notify").removeClass("active");
+            $("#notifyType").removeClass("success");
+        }, 10000);
+    };
+
+    function funcaofailure() {
+        $(".notify").addClass("active");
+        $("#notifyType").addClass("failure");
+
+        setTimeout(function() {
+            $(".notify").removeClass("active");
+            $("#notifyType").removeClass("failure");
+        }, 5000);
+    };
+
+
+    countVisits();
+
+    function countVisits() {
+        var visit = "<?php echo $visits ?>";
+        var id = "<?php echo $uid ?>"
+
+        firebase.database().ref().child('institution').child(id).child('visits').set(visit, function(error) {
+            console.log(id + "-" + visit);
+        });
+
+    }
+
+
+    function countContact() {
+        var contact = "<?php echo $contact ?>";
+        var id = "<?php echo $uid ?>";
+
+        contact = Number(contact) + 1;
+
+        firebase.database().ref().child('institution').child(id).child('contact').set(contact, function(error) {
+            console.log(contact + " -- " + id);
+        });
+
+    }
+    </script>
+    <style>
+    #success {
+        background: #03a679;
+        color: #f0f0f0;
+    }
+
+    #failure {
+        background: #ff3939;
+        color: #f0f0f0;
+    }
+
+    .notify {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 0;
+        box-sizing: border-box;
+        color: white;
+        text-align: center;
+        background: rgba(0, 0, 0, .6);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: height .2s;
+    }
+
+    #notifyType:before {
+        display: block;
+        margin-top: 15px;
+
+    }
+
+    .active {
+        height: 50px;
+    }
+
+    .success:before {
+        Content: "CHAT AGENDADO COM SUCESSO, VEJA NO SEU PERFIL!";
+    }
+
+    .failure:before {
+        Content: "NÃO CONSEGUIMOS AGENDAR O CHAT, MUDE A DATA OU HORA!";
+    }
+
+    </style>
 
 </body>
 
