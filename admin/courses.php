@@ -73,7 +73,7 @@ if($uid == null){
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="college.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link" href="college.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-cog"></i>
           <span>Faculdades</span>
         </a>
@@ -82,7 +82,7 @@ if($uid == null){
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-wrench"></i>
           <span>Home</span>
         </a>

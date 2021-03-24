@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Seja Bem-Vinda ao educa - Dashboard</title>
+    <title>Seja Bem-Vinda ao Educa - Dashboard</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../img/educa/logo.png">
@@ -158,8 +158,8 @@ foreach($fetchdata as $key => $row){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Faculdades:</h6>
-                        <a class="collapse-item" href="add_college.php?id=<?php echo $uid; ?>">Adicionar faculdades</a>
-                        <a class="collapse-item" href="college.php?id=<?php echo $uid; ?>">Todas faculdades</a>
+                        <a class="collapse-item" target="_blank"  href="add_college.php?id=<?php echo $uid; ?>">Adicionar faculdades</a>
+                        <a class="collapse-item" target="_blank"  href="college.php?id=<?php echo $uid; ?>">Todas faculdades</a>
                     </div>
                 </div>
             </li>
@@ -175,8 +175,8 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cursos:</h6>
-                        <a class="collapse-item" href="add_course.php?id=<?php echo $uid; ?>">Publicar cursos</a>
-                        <a class="collapse-item" href="courses.php?id=<?php echo $uid; ?>">Todos cursos</a>
+                        <a class="collapse-item" target="_blank" href="add_course.php?id=<?php echo $uid; ?>">Publicar cursos</a>
+                        <a class="collapse-item" target="_blank" href="courses.php?id=<?php echo $uid; ?>">Todos cursos</a>
                     </div>
                 </div>
             </li>
@@ -193,8 +193,8 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cursos:</h6>
-                        <a class="collapse-item" href="publish.php?id=<?php echo $uid; ?>">Publicar</a>
-                        <a class="collapse-item" href="publicacoes.php?id=<?php echo $uid; ?>">Todas publicações </a>
+                        <a class="collapse-item" target="_blank" href="publish.php?id=<?php echo $uid; ?>">Publicar</a>
+                        <a class="collapse-item" target="_blank"  href="publicacoes.php?id=<?php echo $uid; ?>">Todas publicações </a>
                     </div>
                 </div>
             </li>
@@ -211,8 +211,8 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fotos:</h6>
-                        <a class="collapse-item" href="add_gallery.php?id=<?php echo $uid; ?>">Publicar fotos</a>
-                        <a class="collapse-item" href="../gallery.php?id=<?php echo $uid; ?>">Galeria </a>
+                        <a class="collapse-item" target="_blank"  href="add_gallery.php?id=<?php echo $uid; ?>">Publicar fotos</a>
+                        <a class="collapse-item" target="_blank"  href="../gallery.php?id=<?php echo $uid; ?>">Galeria </a>
                     </div>
                 </div>
             </li>

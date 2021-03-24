@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="icon" href="../img/educa/logo.png">
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.php?id=<?php echo $uid; ?>">
+        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>
@@ -59,7 +59,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="courses.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-cog"></i>
           <span>Cursos</span>
         </a>
@@ -68,15 +68,14 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?id=<?php echo $uid; ?>" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-wrench"></i>
           <span>Home</span>
         </a>
       
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+     
 
       <!-- Heading -->
       <div class="sidebar-heading">

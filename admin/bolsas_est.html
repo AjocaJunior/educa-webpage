@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cadastrar Calendario Académicos</title>
+    <title>Cadastrar Bolsas de Estudo</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,21 +34,36 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">Cadastrar Calendario</h1>
+                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">Cadastrar Bolsas</h1>
                             </div>
                             <form class="user">
+                                <div class="form-group">
+                                    <select class="browser-default custom-select" id="category">
+                                        <option selected>Selecciona </option>
+                                        <option value="Interna">Interna</option>
+                                        <option value="Externa">Externa</option>
+                                    </select>
+                                </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-9 mb-3 mb-sm-0">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" id="descricao" class="form-control form-control-user"
                                             placeholder="Descrição">
                                     </div>
-                                    <div class="col-sm-3">
-                                        <input type="text" id="ano" class="form-control form-control-user"
-                                            placeholder="Ano">
+                                    <div class="col-sm-6">
+                                        <input type="text" id="pais" class="form-control form-control-user"
+                                            placeholder="País">
                                     </div>
                                 </div>
-
-
+                                <div class="form-group row">
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <input type="text" id="instituicao" class="form-control form-control-user"
+                                            placeholder="Instituição">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="date" id="date" class="form-control form-control-user"
+                                            placeholder="Data Limite">
+                                    </div>
+                                </div>
 
 
                                 <div class="form-group row">
@@ -76,14 +91,17 @@
 
 
                             </form>
-                            <button onclick="register_calendario()" class="btn  btn-user btn-block"
+                            <button onclick="register_bolsa()" class="btn  btn-user btn-block"
                                 style="background:#f8871f;border-radius:0px; color: white;">
-                                <i class="fab fa-sign-in fa-fw"></i> Registrar Calendário
+                                <i class="fab fa-sign-in fa-fw"></i> Registrar Bolsa
                             </button>
                             <hr>
 
 
                         </div>
+                    </div>
+                    <div class="col-lg-12">
+
                     </div>
                 </div>
             </div>
@@ -107,10 +125,16 @@
     <script src="../js/db/real-time-database.js"></script>
     <script>
         //add institution
-        function register_calendario() {
+        function register_bolsa() {
+            var instituicao = document.getElementById('instituicao').value;
+            var pais = document.getElementById('pais').value;
             var descricao = document.getElementById('descricao').value;
-            var ano = document.getElementById('ano').value;
+            var date = document.getElementById('date').value;
             var uid = uuidv4();
+
+            var e = document.getElementById("category").value;
+
+            var category = e;
 
             //upload img perfil
 
@@ -127,27 +151,32 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addCalendario(descricao, ano, uid,url);
+                        addCalendario(instituicao, pais,descricao, category, date, uid,url);
                     })
                     .catch(console.error);
 
             } else {
-                addCalendario(descricao, ano, uid,"");
+                addCalendario(instituicao, pais, descricao, category, date, uid,"");
             }
 
         }
 
-        function addCalendario(descricao, ano, uid, url) {
+        function addCalendario(instituicao, pais, descricao,category, date, uid, url) {
 
 
             var data = {
+                instituicao:instituicao,
+                pais:pais,
                 descricao: descricao,
-                url:url,
-                ano: ano,
-                uid: uid
+                category: category,
+               
+                
+                date: date,
+                uid: uid,
+                url:url
             }
 
-            firebase.database().ref().child('calendarioacademico').child(uid).set(data, function (error) {
+            firebase.database().ref().child('bolsadeestudo').child(uid).set(data, function (error) {
                 if (error) {
                     alert("Data could not be saved." + error);
                 } else {
