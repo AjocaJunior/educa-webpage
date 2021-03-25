@@ -24,6 +24,20 @@
 
 <body style="background-color: #e9eef4">
 
+<?php
+
+// $id = '';
+// if(isset($_GET['id'])) {
+//     $id = $_GET['id'];
+
+// } else {
+//     header('Location: calendario_login.php');
+// }
+
+
+?>
+
+
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -85,6 +99,58 @@
 
                         </div>
                     </div>
+                    <div class="col-lg-12">
+                       
+
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Calendário Académico</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Descrição</th>
+                                                <th>Ano Lectivo</th>
+                                                
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                         <?php
+                                             
+                                                 include_once('../includes/dbconfig.php');  
+                                                 $ref = 'calendarioacademico';
+                                                    $fetchdata = $database->getReference($ref)->getValue();
+                                                  
+
+                                                    if($fetchdata != null){
+                                                        foreach($fetchdata as $key => $row){
+                                                     
+                                                        
+ 
+                                                ?>
+                                            <tr>
+                                                <td><?php echo $row['descricao'] ?></td>
+                                                <td><?php echo $row['ano'] ?> </td>
+                                         
+                                            </tr>
+
+
+                                            <?php 
+                                                           }
+                                                }?>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,66 +172,66 @@
     <script src="../js/db/app.js"></script>
     <script src="../js/db/real-time-database.js"></script>
     <script>
-        //add institution
-        function register_calendario() {
-            var descricao = document.getElementById('descricao').value;
-            var ano = document.getElementById('ano').value;
-            var uid = uuidv4();
+    //add institution
+    function register_calendario() {
+        var descricao = document.getElementById('descricao').value;
+        var ano = document.getElementById('ano').value;
+        var uid = uuidv4();
 
-            //upload img perfil
+        //upload img perfil
 
-            const ref = firebase.storage().ref();
-            const file = document.querySelector("#arquivo").files[0];
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#arquivo").files[0];
 
-            if (file != null) {
+        if (file != null) {
 
-                const name = +new Date() + "-" + file.name;
-                const metadata = {
-                    contentType: file.type
-                };
-                const task = ref.child(name).put(file, metadata);
-                task
-                    .then(snapshot => snapshot.ref.getDownloadURL())
-                    .then(url => {
-                        addCalendario(descricao, ano, uid,url);
-                    })
-                    .catch(console.error);
+            const name = +new Date() + "-" + file.name;
+            const metadata = {
+                contentType: file.type
+            };
+            const task = ref.child(name).put(file, metadata);
+            task
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then(url => {
+                    addCalendario(descricao, ano, uid, url);
+                })
+                .catch(console.error);
 
+        } else {
+            addCalendario(descricao, ano, uid, "");
+        }
+
+    }
+
+    function addCalendario(descricao, ano, uid, url) {
+
+
+        var data = {
+            descricao: descricao,
+            url: url,
+            ano: ano,
+            uid: uid
+        }
+
+        firebase.database().ref().child('calendarioacademico').child(uid).set(data, function(error) {
+            if (error) {
+                alert("Data could not be saved." + error);
             } else {
-                addCalendario(descricao, ano, uid,"");
+                alert("Adicionado com sucesso!");
+                window.location.reload();
+
             }
-
-        }
-
-        function addCalendario(descricao, ano, uid, url) {
+        });
+    }
 
 
-            var data = {
-                descricao: descricao,
-                url:url,
-                ano: ano,
-                uid: uid
-            }
-
-            firebase.database().ref().child('calendarioacademico').child(uid).set(data, function (error) {
-                if (error) {
-                    alert("Data could not be saved." + error);
-                } else {
-                    alert("Adicionado com sucesso!");
-                    window.location.reload();
-
-                }
-            });
-        }
-
-
-        function uuidv4() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-                var r = Math.random() * 16 | 0,
-                    v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
     </script>
 </body>
 

@@ -58,12 +58,15 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="active"><a href="admin/expositor_admin.php?id=<?php echo $uid ?>">Dashboard</a></li>
+                                <li class="active"><a
+                                        href="admin/expositor_admin.php?id=<?php echo $uid ?>">Dashboard</a></li>
                                 <!-- <li><a href="speakers.html">Speakears</a></li> -->
                             </ul>
 
                             <!-- Get Tickets Button -->
-                            <a href="admin/expositor_admin.php?id=<?php echo $uid ?>" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="admin/expositor_admin.php?id=<?php echo $uid ?>"
+                                class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5">Admin<i
+                                    class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                         <!-- Nav End -->
                     </div>
@@ -79,31 +82,32 @@
 
     <!-- Our Speakings Area Start -->
 
- 
+
     <section class="our-speaker-area section-padding-100 ">
         <div class="container ">
             <div class="row ">
 
-            
-            <?php
+
+                <?php
                 $ref = 'institution/'.$uid.'/gallery';
                 $fetchdata = $database->getReference($ref)->getValue();
            ?>
-            <?php if($fetchdata != null):?>
-            <?php
+                <?php if($fetchdata != null):?>
+                <?php
             foreach( $fetchdata as $key => $row): ?>
 
 
                 <!-- Single Speaker Area -->
-                <div class="col-12 col-sm-6 col-lg-4 " >
-                            <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp " data-wow-delay="300ms ">
+                <div class="col-12 col-sm-6 col-lg-4 ">
+                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp " data-wow-delay="300ms ">
                         <!-- Thumb -->
-                        <div class="speaker-single-thumb " >
+                        <div class="speaker-single-thumb ">
                             <img src="<?php echo $row['url']; ?>" alt=" " style="min-height: 300px; max-height: 350px;">
                         </div>
                         <!-- Social Info -->
-                        <div class="social-info ">                         
-                            <a href="" type="button"  onclick="deleteImg('<?php echo $row['uid']; ?>')"  ><i class="zmdi zmdi-delete "></i></a>
+                        <div class="social-info ">
+                            <a href="" type="button" onclick="deleteImg('<?php echo $row['uid']; ?>')"><i
+                                    class="zmdi zmdi-delete "></i></a>
                         </div>
                         <!-- Info -->
                         <!-- <div class="speaker-info ">
@@ -112,9 +116,9 @@
                         </div> -->
                     </div>
                 </div>
-         
-            <?php endforeach ?>
-            <?php endif?>
+
+                <?php endforeach ?>
+                <?php endif?>
 
             </div>
         </div>
@@ -144,16 +148,17 @@
     <script src="js/db/real-time-database.js"></script>
 
     <script>
-       function deleteImg(uidImg) {
-        
-            firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("gallery").child(uidImg).remove()
-                .then(function() {
-                    window.location.reload();
+    function deleteImg(uidImg) {
+
+        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("gallery").child(uidImg)
+            .remove()
+            .then(function() {
+                window.location.reload();
             })
             .catch(function(error) {
-            alert("Opsss ocoreu uma falha");
-            });  
-        }
+                alert("Opsss ocoreu uma falha");
+            });
+    }
     </script>
 
 </body>
