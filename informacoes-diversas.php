@@ -43,7 +43,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
         $fetchdata = $database->getReference($ref)->getValue();
         // $uid  = $_GET['id'];
 
-
+       
     ?>
     <!-- Header Area Start -->
     <header class="header-area" style="background-color: #414c52;">
@@ -96,7 +96,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
-                                    <li><a href="#blog">Blog</a></li>
+                                        <li><a href="#blog">Blog</a></li>
                                         <li><a href="#calendario">Calendário</a></li>
                                         <li><a href="#bolsas">Bolsas</a></li>
                                     </ul>
@@ -137,16 +137,15 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
     <!-- Our Schedule Area Start -->
 
-      <!-- Breadcrumb Area End -->
-      <section class="our-speaker-area section-padding-150-20 jarallax ">
+    <!-- Breadcrumb Area End -->
+    <section class="our-speaker-area section-padding-150-20 jarallax ">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" 
-                        data-wow-delay="300ms">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>Informe-te sobre a Feira</p>
                         <h4 style="color: #414c52;" id="blog">BLOG DE EXPOSITORES</h4>
-                        
+
                     </div>
                 </div>
 
@@ -154,7 +153,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
         </div>
     </section>
     <!-- Our Blog Area Start -->
-    <div class="our-blog-area h-100" >
+    <div class="our-blog-area h-100">
         <div class="container">
             <div class="row">
                 <?php 
@@ -169,20 +168,23 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                     <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb filla">
-                            <img src="<?php echo $row['img'] ?>" alt=""   >
+                            <img src="<?php echo $row['img'] ?>" alt="">
                         </div>
                         <div class="single-blog-text text-center">
                             <h6>
-                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><?php echo $row['title'] ?></a>
-                            <h6>
-                            
-                            <!-- Post Meta -->
-                            <div class="post-meta">
-                                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i><?php echo $row['date'] ?></a>
-                                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i><?php echo $row['author'] ?></a>
-                            </div>
+                                <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
+                                    target="_blank"><?php echo $row['title'] ?></a>
+                                <h6>
 
-                            <?php
+                                    <!-- Post Meta -->
+                                    <div class="post-meta">
+                                        <a class="post-date" href="#"><i
+                                                class="zmdi zmdi-alarm-check"></i><?php echo $row['date'] ?></a>
+                                        <a class="post-author" href="#"><i
+                                                class="zmdi zmdi-account"></i><?php echo $row['author'] ?></a>
+                                    </div>
+
+                                    <?php
                                 $pharagraph = "";
 
                                 if(strlen($row['text']) > 14) {
@@ -191,19 +193,20 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     $pharagraph = $row['text'];
                                 }
                             ?>
-                            <p><?php echo  $pharagraph ;?></p>
+                                    <p><?php echo  $pharagraph ;?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><i class="zmdi zmdi-long-arrow-right"></i></a>
+                            <a href="single-blog.php?id=<?php echo $row['uid'] ?>" target="_blank"><i
+                                    class="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
 
                 <?php endforeach ?>
-            <?php endif?>
-              
-              
+                <?php endif?>
+
+
             </div>
 
             <!-- <div class="row">
@@ -224,13 +227,33 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         <p id="calendario">Calendários Académicos</p>
                         <h4 style="color:#414c52;">Calendários</h4>
                     </div>
+                    <?php
+
+include_once('includes/dbconfig.php');
+$ref = 'calendarioacademico';
+$fetchdata = $database->getReference($ref)->getValue();
+
+
+// $uid  = $_GET['id'];
+
+
+?>
                     <div id="accordion">
                         <div class="card">
+                        <?php
+                                                   
+                                                   if($fetchdata != null):
+                                                   foreach( $fetchdata as $key => $row):  
+                                                        
+                                                         
+                                       
+                                                       ?>
                             <div class="card-header text-center" id="headingOne">
-                                <h5 class="mb-0">   
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne" style="color:#414c52">
-                                        Calendário Académico do Ensino Geral 2021
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                                        style="color:#414c52">
+                                        <?php echo $row['descricao'] ?>
                                     </button>
                                 </h5>
                             </div>
@@ -248,380 +271,37 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                                     DATA
                                                 </th>
                                                 <th style="width: 317px;">
-                                                ACTIVIDADE
+                                                    ACTIVIDADE
                                                 </th>
                                             </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="3">
-                                                    <strong>Preparat&oacute;rio</strong>
-                                                </td>
-                                                <td style="width: 170px;">
-                                                    16 de Dezembro de 2019 a 25 de&nbsp; Janeiro de 2020
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Matr&iacute;culas
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    28 de Janeiro a 1 de Fevereiro de 2020
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Apresenta&ccedil;&atilde;o dos professores
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    28 a 1 de Fevereiro de 2020
-                                                    <p>&nbsp;</p>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Actividades de Prepara&ccedil;&atilde;o Trimestral;
-                                                        Planifica&ccedil;&atilde;o conjunta dos professores;
-                                                        Elabora&ccedil;&atilde;o dos Planos dos Cursos Regulares
-                                                        e distribui&ccedil;&atilde;o de Hor&aacute;rios
-                                                        Trimestrais e Material Did&aacute;ctico&nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="6">
-                                                    <strong>I Trimestre</strong>
-                                                    <strong>(12 Semanas)</strong>
-                                                </td>
-                                                <td style="width: 170px;">
-                                                    <strong>04/02/ 2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>In&iacute;cio de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>08/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>06/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Oral</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>07 &amp; 08/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Escrito</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>08/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim do 1&ordm; Trimestre</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>15/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Divulga&ccedil;&atilde;o de Pautas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="3">
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <strong>Preparat&oacute;rio</strong>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                </td>
-                                                <td style="width: 170px;">
-                                                    06 de&nbsp; Abril de 2020 a 15 de&nbsp; Maio de 2020
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Matr&iacute;culas
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    11 a 22 de Maio de 2020
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Realiza&ccedil;&atilde;o de Testes de Apuramento de
-                                                        N&iacute;vel dos Estudantes
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    11 a 22 de Maio de 2020
-                                                    &nbsp;
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Actividades de Prepara&ccedil;&atilde;o Trimestral;
-                                                        Planifica&ccedil;&atilde;o conjunta dos professores;
-                                                        Actualiza&ccedil;&atilde;o de Hor&aacute;rios dos
-                                                        Professores; Distribui&ccedil;&atilde;o do Material
-                                                        Did&aacute;ctico e elabora&ccedil;&atilde;o dos Planos
-                                                        dos Cursos Regulares
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="6">
-                                                    <strong>&nbsp;</strong>
-                                                    <strong>&nbsp;</strong>
-                                                    <strong>II Trimestre</strong>
-                                                    <strong>(12 Semanas)</strong>
-                                                </td>
-                                                <td style="width: 170px;">
-                                                    <strong>25/05/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>In&iacute;cio de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>21/08/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>19/08/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Oral</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>20 &amp; 21 /8/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Escrito</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>21/08/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim do 2&ordm; Trimestre</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                <strong>28/08/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Divulga&ccedil;&atilde;o de Pautas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="3">
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <strong>Preparat&oacute;rio</strong>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                    <p><strong>&nbsp;</strong></p>
-                                                </td>
-                                                <td style="width: 170px;" rowspan="3">
-                                                    &nbsp;
-                                                    &nbsp;
-                                                    17 de Agosto &nbsp;a 4 de Setembro de 2020
-                                                    &nbsp;
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    Matr&iacute;culas
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 317px;">
-                                                    Realiza&ccedil;&atilde;o de Testes de Apuramento de
-                                                        N&iacute;vel dos Estudantes
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 317px;">
-                                                    Actividades de Prepara&ccedil;&atilde;o Trimestral;
-                                                        Planifica&ccedil;&atilde;o conjunta dos professores;
-                                                        Actualiza&ccedil;&atilde;o de Hor&aacute;rios dos
-                                                        Professores; Distribui&ccedil;&atilde;o do Material
-                                                        Did&aacute;ctico e elabora&ccedil;&atilde;o dos Planos
-                                                        dos Cursos Regulares
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 142px;" rowspan="6">
-                                                    <strong>&nbsp;</strong>
-                                                    <strong>&nbsp;</strong>
-                                                    <strong>&nbsp;</strong>
-                                                    <strong>III Trimestre</strong>
-                                                    <strong>(12 Semanas)</strong>
-                                                </td>
-                                                <td style="width: 170px;">
-                                                    <strong>08/09/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>In&iacute;cio de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>04/12/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim de Aulas</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>02/12/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Oral</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>03 &amp; 04 /12/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Exame Escrito</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>04/12/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Fim do 2&ordm; Trimestre</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 170px;">
-                                                    <strong>11/12/2020</strong>
-                                                </td>
-                                                <td style="width: 317px;">
-                                                    <strong>Divulga&ccedil;&atilde;o de Pautas</strong>
-                                                </td>
-                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                         
+
+                                   
                                         </tbody>
                                     </table>
-                                   
+
                                     <!-- Schedule Btn -->
                                     <a href="http://www.facebook.com/sharer.php?u=https://www.educa.co.mz"
                                         target="_blank" class="btn confer-btn-white">Partilhar <i
                                             class="fa fa-facebook-f"></i></a>
-                                    <a href="https://drive.google.com/u/0/uc?id=1K85uE2bZfT1wEI289Rv9U7VAHq2PQ_Pp&export=download"
+                                    <a href=" <?php echo $row['url'] ?>"
                                         download class="btn confer-btn-white">Baixar <i class="fa fa-download"></i></a>
                                 </div>
 
 
                             </div>
+
+                            <?php
+// }
+                                                        
+                    endforeach;
+                endif;
+?>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header text-center id=" headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo" style="color:#414c52">
-                                    Calendário Académico do Ensino Técnico
-                                    e Profissional
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body">
-
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">PERIODO</th>
-                                            <th scope="col">DATA</th>
-                                            <th scope="col">ACTIVIDADE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td rowspan="4" style="text-align: left;">
-                                                Preparatório</td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>16 de Dezembro de 2019 a 2​5 de Janeiro de 2020</td>
-                                            <td>Matrículas</td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>28 de Janeiro a 1 de Fevereiro de 2020</td>
-                                            <td>Apresentação dos professores</td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>28 a 1 de Fevereiro de 2020</td>
-                                            <td>Actividades de Preparação Trimestral; Planificação conjunta
-                                                dos professores; Elaboração dos Planos dos Cursos Regulares
-                                                e distribuição de Horários Trimestrais e Material Didáctico
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td rowspan="7" style="text-align: left;">I Trimestre
-                                                (12 Semanas)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>04/02/ 2020</td>
-                                            <td>Início de Aulas</td>
-                                        </tr>
-                                        <tr>
-                                            <td>08/05/2020</td>
-                                            <td>Fim de Aulas</td>
-                                        </tr>
-                                        <tr>
-                                            <td>06/05/2020</td>
-                                            <td>
-                                                Exame Oral</td>
-                                        </tr>
-                                        <tr>
-                                            <td>07 & 08/05/2020</td>
-                                            <td>Exame Escrito</td>
-                                        </tr>
-                                        <tr>
-                                            <td>08/05/2020</td>
-                                            <td>Fim do 1º Trimestre</td>
-                                        </tr>
-                                        <tr>
-                                            <td>15/05/2020</td>
-                                            <td>Divulgação de Pautas</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                                <a href="http://www.facebook.com/sharer.php?u=https://www.educa.co.mz" target="_blank"
-                                    class="btn confer-btn-white">Partilhar <i class="fa fa-facebook-f"></i></a>
-                                <a href="https://drive.google.com/u/0/uc?id=1Davy1rHQZFw8bta3CvWuQX3FoBemYXBy&export=download"
-                                    download class="btn confer-btn-white">Baixar <i class="fa fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                 
 
                 </div>
             </div>
@@ -665,6 +345,19 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                         </div>
                     </div>
                 </div>
+
+                <?php
+
+include_once('includes/dbconfig.php');
+$ref = 'bolsadeestudo';
+$fetchdata = $database->getReference($ref)->getValue();
+$Interna = 'Interna';
+$Externa = 'Externa';
+
+// $uid  = $_GET['id'];
+
+
+?>
                 <div class="col-12">
                     <div class="section-padding-50">
                         <div class="section-heading-3 text-center wow fadeInUp" data-wow-delay="300ms">
@@ -687,32 +380,35 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-
+                                                        <?php
+                                                   
+                                                if($fetchdata != null):
+                                                foreach( $fetchdata as $key => $row):  
+                                                        $categoria=  $row['category'];
+                                                        if($categoria==$Interna){
+                                    
+                                                    ?>
                                                         <tr>
+
+
+
+
                                                             <td class="align-middle" style="text-align: center;">
-                                                                Mestrado</td>
-                                                            <td>Universidade Lúrio</td>
-                                                            <td>31 de Julho de 2021</td>
+                                                                <?php echo $row['descricao'] ?></td>
+                                                            <td><?php echo $row['instituicao'] ?></td>
+                                                            <td><?php echo $row['date'] ?></td>
                                                             <td>
                                                                 <a class="btn confer-btn-white"
-                                                                    href="https://www.mctestp.gov.mz/por/content/download/8330/57570/version/1/file/Edital++de+Mestrado+e+Doutoramento++no+Jap%C3%A3o++2021.pdf"
-                                                                    download><i class="fa fa-download"></i></a>
+                                                                    href="<?php echo $row['url'] ?>" download><i
+                                                                        class="fa fa-download"></i></a>
                                                             </td>
+                                                            <?php
+// }
+                                                        }
+                    endforeach;
+                endif;
+?>
                                                         </tr>
-                                                        <tr>
-                                                            <td class="align-middle" style="text-align: center;">
-                                                                Licenciatura</td>
-                                                            <td>Universidade Eduardo Mondlane</td>
-                                                            <td>30 de Dezembro de 2020</td>
-                                                            <td>
-                                                                <a class="btn confer-btn-white"
-                                                                    href="https://www.mctestp.gov.mz/por/content/download/8330/57570/version/1/file/Edital++de+Mestrado+e+Doutoramento++no+Jap%C3%A3o++2021.pdf"
-                                                                    download><i class="fa fa-download"></i></a>
-                                                            </td>
-                                                        </tr>
-
-
-
 
                                                     </tbody>
                                                 </table>
@@ -732,34 +428,40 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                                         <tr>
                                                             <th scope="col">DESCRIÇÃO</th>
                                                             <th scope="col">PAÍS</th>
+                                                            <th scope="col">INSTITUIÇÃO</th>
                                                             <th scope="col">DATA LIMITE</th>
                                                             <th scope="col">EDITAL</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    <?php
+                                                   
+                                                   if($fetchdata != null):
+                                                   foreach( $fetchdata as $key => $row):  
+                                                           $categoria=  $row['category'];
+                                                           if($categoria==$Externa){
+                                       
+                                                       ?>
+                                                        <tr>
+                                                            <td class="align-middle" style="text-align: center;">
+                                                            <?php echo $row['descricao'] ?></td>
+                                                            <td> <?php echo $row['pais'] ?></td>
+                                                            <td> <?php echo $row['instituicao'] ?></td>
+                                                            <td> <?php echo $row['date'] ?></td>
+                                                            <td>
+                                                                <a class="btn confer-btn-white"
+                                                                    href=" <?php echo $row['url'] ?>"
+                                                                    download><i class="fa fa-download"></i> </a>
+                                                            </td>
+                                                        </tr>
 
-                                                        <tr>
-                                                            <td class="align-middle" style="text-align: center;">
-                                                                Mestrado</td>
-                                                            <td>Japão</td>
-                                                            <td>31 de Julho de 2020</td>
-                                                            <td>
-                                                                <a class="btn confer-btn-white"
-                                                                    href="https://www.mctestp.gov.mz/por/content/download/8330/57570/version/1/file/Edital++de+Mestrado+e+Doutoramento++no+Jap%C3%A3o++2021.pdf"
-                                                                    download><i class="fa fa-download"></i> </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle" style="text-align: center;">
-                                                                Licenciatura</td>
-                                                            <td>Moçambique</td>
-                                                            <td>30 de Dezembro de 2020</td>
-                                                            <td>
-                                                                <a class="btn confer-btn-white"
-                                                                    href="https://www.mctestp.gov.mz/por/content/download/8330/57570/version/1/file/Edital++de+Mestrado+e+Doutoramento++no+Jap%C3%A3o++2021.pdf"
-                                                                    download><i class="fa fa-download"></i> </a>
-                                                            </td>
-                                                        </tr>
+                                                        <?php
+// }
+                                                        }
+                    endforeach;
+                endif;
+?>
+                                                       
 
 
 
@@ -793,8 +495,9 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                             <p style="color: white;">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o"
-                                    aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
+                                <script>
+                                document.write(new Date().getFullYear());
+                                </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
@@ -825,63 +528,67 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
     <script>
-        firebase.auth().onAuthStateChanged(function (user) {
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
 
-            if (user) {
+        if (user) {
 
-                firebase.database().ref('users').on('value', function (snapshot) {
-                    snapshot.forEach(function (item) {
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
-                        if (item.val().userId !== null && user.uid !== null) {
-                            var db_uid = item.val().userId.toString().trim();
-                            var user_uid = user.uid.toString().trim();
+                    if (item.val().userId !== null && user.uid !== null) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
 
-                            if (db_uid == user_uid) {
-                                var user_name = document.getElementById("user-name");
-                                user_name.innerHTML = item.val().name;
-                               
-                                sessionStorage.setItem('usuarioId', item.val().userId);
-                            }
+                        if (db_uid == user_uid) {
+                            var user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
 
+                            sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 
-                    });
+                    }
+
                 });
+            });
 
-            } else {
-                location.href = 'intro.php';
-            }
+        } else {
+            location.href = 'intro.php';
+        }
 
-        });
+    });
     </script>
 
-<style>
+    <style>
     .filla {
- display: flex;
- justify-content: center;
- align-items: center;
- overflow: hidden
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden
+    }
 
 
 
-.filla img {
- flex-shrink: 0;
- min-width: 100%;
- min-height: 100%;
- width: 90%;
- height: 200px;
- object-fit: cover;
-}
-</style>
+    .filla img {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    </style>
 </body>
 
 </html>

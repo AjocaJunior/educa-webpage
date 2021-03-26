@@ -195,10 +195,10 @@
                                 style="background:#f8871f;color:white">Entrar<i
                                     class="zmdi zmdi-long-arrow-right"></i></button>
 
-                            <button onclick="facebookSignin()" type="login" name="loginfb" class="btn confer-btn-white">
+                            <!-- <button onclick="facebookSignin()" type="login" name="loginfb" class="btn confer-btn-white">
                                 <i class="zmdi zmdi-facebook"></i></button> 
                                 <button onclick="googleSignin()" type="login" name="logingoogle" class="btn confer-btn-white">
-                                <i class="zmdi zmdi-google"></i></button> 
+                                <i class="zmdi zmdi-google"></i></button>  -->
                         </div>
 
                         
