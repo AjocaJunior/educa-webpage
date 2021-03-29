@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cadastrar instituição - Educa</title>
+  <title>Cadastrar Cursos - Educa</title>
 
    <!-- Favicon -->
    <link rel="icon" href="../img/educa/logo.png">
@@ -24,6 +24,27 @@
 </head>
 
 <body style="background-color: #e9eef4">
+
+<?php 
+
+$id='';
+
+$uid;
+include_once('../includes/dbconfig.php');
+$reff = 'institution/'.$id.'/college';
+
+// $fetchdataa = $database->getReference($reff)->getValue();
+//  if($fetchdataa != null):
+//  foreach( $fetchdataa as $key => $row): 
+//  if($row['uidCollege']==$_GET['id']): 
+
+// $uid = $row['uid'];
+
+//  endif;
+//    endforeach; 
+//   endif;
+
+?>
 
   <div class="container">
 
@@ -90,8 +111,7 @@
 
                 <br>
 
-               <?php $href = "add_college.php?id=".$_GET['id']; ?>
-               <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">ADICIONAR FACULDADES</button>
+               
 
             </div>
           </div>
@@ -117,21 +137,26 @@
   <script src="../js/db/real-time-database.js"></script>
 
   <script>
-
+  // console.log($uid);
 
 
     function addCourse(){
+      
+     
       var course         = document.getElementById("course").value;
       var description    = document.getElementById("description").value;
-      var uid            = "<?php echo $_GET['id'] ?>";
+      var uidCollege            = "<?php echo $_GET['id'] ?>";
+      var uid = "<?php echo $uid ?>";
+
 
       var data = {
         course : course,
         description : description,
-        uid : uid
+        uidCollege : uidCollege,
+        uid: uid
       }
 
-      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
+      firebase.database().ref().child('institution').child(uid).child("college").child(uidCollege).child("course").child(uuidv4()).set(data , function(error){
         if (error) {
           alert("Data could not be saved." + error);
         } else {

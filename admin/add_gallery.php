@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cadastrar instituição - Educa</title>
+  <title>Cadastrar Fotos - Educa</title>
 
    <!-- Favicon -->
    <link rel="icon" href="../img/educa/logo.png">
@@ -60,7 +60,8 @@
 
                 <button  onclick="uploadImage()" type="button"  class="btn btn-secondary btn-lg btn-block">PUBLICAR FOTO</button>
                 <br>
-
+                <?php $href = "expositor_admin.php?id=".$_GET['id']; ?>
+               <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">PAINEL DE ADMINISTRAÇÃO</button>
 
             </div>
           </div>

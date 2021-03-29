@@ -154,8 +154,7 @@ $ref = 'bolsadeestudo';
                                                 <td><?php echo $row['instituicao'] ?> </td>
                                                 <td><?php echo $row['descricao'] ?></td>
                                                 <td><?php echo $row['date'] ?></td>
-                                                <td><button class="btn btn-warning" onclick="apagar('<?php echo $row['uid'] ?>')">Apagar</button></td>
-                                            </tr>
+                                             </tr>
 
 
                                             <?php 
