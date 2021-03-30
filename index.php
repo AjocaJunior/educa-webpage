@@ -87,7 +87,7 @@
                                         <li><a href="feira.php#testes">Testes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="actividades-culturais.html">Cultura</a>
+                                <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
 
                                     <li><a href="cultura/pintura.html">Pintura</a></li>

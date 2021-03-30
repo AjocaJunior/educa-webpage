@@ -79,7 +79,7 @@
                                         <li><a href="feira.php#testes">Testes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="actividades-culturais.html">Cultura</a>
+                                <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
 
                                         <li><a href="cultura/pintura.html">Pintura</a></li>
@@ -434,10 +434,6 @@ endforeach;
             <div class="row d-flex justify-content-center">
             
               
-                <?php
-                foreach( $fetchdata as $key => $row):
-
-                    ?>
 
 <div class="col-12">
                     <!-- Heading -->
@@ -448,6 +444,10 @@ endforeach;
                     </div>
                 </div>
 
+                <?php
+                foreach( $fetchdata as $key => $row):
+
+                    ?>
                     <?php
                     $count++;
                     $tipo=  $row['tipo'];
@@ -1663,7 +1663,8 @@ endforeach;
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    <script>
+  
+ <script>
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -1671,15 +1672,21 @@ endforeach;
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
                         if (db_uid == user_uid) {
                             var user_name = document.getElementById("user-name");
-                            user_name.innerHTML = item.val().name;
-                            return;
+                            var name = item.val().name;
 
+                            if (item.val().name.length > 20) {
+                                name = item.val().name.substr(0, 20) + "..";
+                            } else {
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
+                            
                             sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 
@@ -1694,7 +1701,6 @@ endforeach;
 
     });
     </script>
-
 
 
     <script>

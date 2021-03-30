@@ -84,7 +84,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                         <li><a href="feira.php#testes">Testes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="actividades-culturais.html">Cultura</a>
+                                <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
                                         <li><a href="cultura/pintura.html">Pintura</a></li>
                                         <li><a href="cultura/musica.html">Música</a></li>
@@ -240,7 +240,7 @@ $fetchdata = $database->getReference($ref)->getValue();
 ?>
                     <div id="accordion">
                         <div class="card">
-                        <?php
+                            <?php
                                                    
                                                    if($fetchdata != null):
                                                    foreach( $fetchdata as $key => $row):  
@@ -261,33 +261,14 @@ $fetchdata = $database->getReference($ref)->getValue();
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <div class="card-body">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 142px;">
-                                                    <strong></strong>PERIODO
-                                                </th>
-                                                <th style="width: 170px;">
-                                                    DATA
-                                                </th>
-                                                <th style="width: 317px;">
-                                                    ACTIVIDADE
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                                         
-
-                                   
-                                        </tbody>
-                                    </table>
-
+                                    <h6>Baixe e Parilhe o Calendário Académico do <?php echo $row['descricao'] ?></h6>
+                                    <iframe width="100%" height="500px" src="<?php echo $row['url'] ?>"></iframe>
                                     <!-- Schedule Btn -->
                                     <a href="http://www.facebook.com/sharer.php?u=https://www.educa.co.mz"
                                         target="_blank" class="btn confer-btn-white">Partilhar <i
                                             class="fa fa-facebook-f"></i></a>
-                                    <a href=" <?php echo $row['url'] ?>"
-                                        download class="btn confer-btn-white">Baixar <i class="fa fa-download"></i></a>
+                                    <a href=" <?php echo $row['url'] ?>" download class="btn confer-btn-white">Baixar <i
+                                            class="fa fa-download"></i></a>
                                 </div>
 
 
@@ -301,7 +282,7 @@ $fetchdata = $database->getReference($ref)->getValue();
 ?>
                         </div>
                     </div>
-                 
+
 
                 </div>
             </div>
@@ -434,7 +415,7 @@ $Externa = 'Externa';
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <?php
+                                                        <?php
                                                    
                                                    if($fetchdata != null):
                                                    foreach( $fetchdata as $key => $row):  
@@ -444,14 +425,14 @@ $Externa = 'Externa';
                                                        ?>
                                                         <tr>
                                                             <td class="align-middle" style="text-align: center;">
-                                                            <?php echo $row['descricao'] ?></td>
+                                                                <?php echo $row['descricao'] ?></td>
                                                             <td> <?php echo $row['pais'] ?></td>
                                                             <td> <?php echo $row['instituicao'] ?></td>
                                                             <td> <?php echo $row['date'] ?></td>
                                                             <td>
                                                                 <a class="btn confer-btn-white"
-                                                                    href=" <?php echo $row['url'] ?>"
-                                                                    download><i class="fa fa-download"></i> </a>
+                                                                    href=" <?php echo $row['url'] ?>" download><i
+                                                                        class="fa fa-download"></i> </a>
                                                             </td>
                                                         </tr>
 
@@ -461,7 +442,7 @@ $Externa = 'Externa';
                     endforeach;
                 endif;
 ?>
-                                                       
+
 
 
 
