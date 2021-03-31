@@ -60,7 +60,9 @@
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
                                     </div>
-                                    
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Crie a sua conta aqui!</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +79,7 @@
 
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'evento/';
+        $ref = 'pontoturistico/';
         $fetchdata = $database->getReference($ref)->getValue();
 
 
@@ -94,8 +96,8 @@
                     if(trim($row['password'])  == $password){
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
-                        // header("location : evento_admin.php"+$row['uid']);
-                        $url = "evento_admin.php?id=".$row['uid'];
+                        // header("location : index.php"+$row['uid']);
+                        $url = "pontoturistico_admin.php?id=".$row['uid'];
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";

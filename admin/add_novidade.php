@@ -12,7 +12,7 @@
 
     <link rel="icon" href="../img/educa/logo.png">
 
-    <title>Publicar - Educa</title>
+    <title>Publicar Novidade - Educa</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -43,7 +43,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">publicar</h1>
+                                <h1 class="h4 text-gray-900 mb-4 text-uppercase">Publicar Novidade</h1>
                             </div>
                             <form class="user">
 
@@ -53,18 +53,25 @@
 
 
                                 <div class="form-group">
-                                    <input type="text" id="author" class="form-control" placeholder="Autor"
-                                        maxlength="50">
+                                    <input type="text" id="video_link" class="form-control" placeholder="Video_Link"
+                                        >
                                 </div>
-
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" id="author" class="form-control form-control-user" id="exampleFirstName" placeholder="Autor">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="fonte" class="form-control form-control-user" placeholder="Fonte">
+                                    </div>
+                                </div>
                                 <div class="form-group ">
-                                    <select class="browser-default custom-select " id="category ">
+                                    <select class="browser-default custom-select " id="category">
                                         <option selected>Seleciona categoria</option>
-                                        <option value="technology ">Tecnologia</option>
-                                        <option value="news ">Noticias</option>
-                                        <option value="event ">Evento</option>
-                                        <option value="workshops ">Workshops</option>
-                                        <option value="other ">Outro</option>
+                                        <option value="technology">Tecnologia</option>
+                                        <option value="news">Noticias</option>
+                                        <option value="event">Evento</option>
+                                        <option value="workshops">Workshops</option>
+                                        <option value="other">Outro</option>
                                     </select>
                                 </div>
 
@@ -89,8 +96,8 @@
 
 
                                 <div class="form-group ">
-                                    <label for="publication " class="text-uppercase ">Publicação</label>
-                                    <textarea class="form-control " id="publication " rows="8 "></textarea>
+                                    <label for="descricao" class="text-uppercase ">Descrição</label>
+                                    <textarea class="form-control " id="descricao" rows="8 "></textarea>
                                 </div>
 
 
@@ -102,7 +109,7 @@
                             </form>
                             <button onclick="addPublication() " class="btn btn-user btn-block "
                                 style="background:#f8871f;border-radius:0px; color: white; ">
-                                <i class="fab fa-sign-in fa-fw "></i> publicar
+                                <i class="fab fa-sign-in fa-fw "></i> Publicar
                             </button>
 
 
@@ -134,18 +141,19 @@
 
     function addPublication() {
         var title = document.getElementById('title').value;
-        var e = document.getElementById("category ");
-        var category = e.options[e.selectedIndex].text;
-        var text = document.getElementById("publication ").value;
+        var e = document.getElementById("category");
+        var video_link = document.getElementById("video_link").value;
+        var category = e.selectedIndex;
+        var fonte = document.getElementById("fonte").value;
+        var descricao = document.getElementById("descricao").value;
         var date = new Date().toLocaleDateString();
         var author = document.getElementById('author').value;
-        var uid = "<?php echo $_GET['id'] ; ?>";
-
+        var uid = uuidv4();
 
 
         //upload img perfil
         const ref = firebase.storage().ref();
-        const file = document.querySelector("#photo ").files[0];
+        const file = document.querySelector("#photo").files[0];
 
         if (file != null) {
 
@@ -157,42 +165,36 @@
             task
                 .then(snapshot => snapshot.ref.getDownloadURL())
                 .then(url => {
-                    addPublicationInDB(title, category, text, date, author, url, uid);
+                    addPublicationInDB(title, category,fonte, video_link, descricao, date, author, url, uid);
                 })
                 .catch(console.error);
 
         } else {
-            addPublicationInDB(title, category, text, date, author, "", uid);
+            addPublicationInDB(title, category, fonte, video_link, descricao, date, author, "", uid);
         }
 
 
     }
 
-    function addPublicationInDB(title, category, text, date, author, img, uid) {
-        var uidPublication = uuidv4();
+    function addPublicationInDB(title, category,fonte, video_link, descricao, date, author, img, uid) {
+        
         var data = {
             title: title,
             category: category,
-            text: text,
+            fonte: fonte,
+            video_link: video_link,
+            descricao: descricao,
             date: date,
             author: author,
             img: img,
-            uid: uidPublication,
+            uid: uid,
             author: author
             
         }
 
 
-        firebase.database().ref().child('institution').child(uid).child("publication").child(uidPublication).set(data,
-            function(error) {
-                if (error) {
-                    alert("Data could not be saved. " + error);
-                } else {
-                    window.location.replace("expositor_admin.php?id=" + uid);
-                }
-            });
 
-        firebase.database().ref().child('publication').child(uidPublication).set(data, function(error) {
+        firebase.database().ref().child('novidades').child(uid).set(data, function(error) {
             if (error) {
                 alert("Data could not be saved. " + error);
             } else {

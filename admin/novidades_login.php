@@ -77,7 +77,7 @@
 
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'evento/';
+        $ref = 'novidades/';
         $fetchdata = $database->getReference($ref)->getValue();
 
 
@@ -95,7 +95,7 @@
                         
                         // $_SESSION['uidInstitute'] = $row['uid'];
                         // header("location : evento_admin.php"+$row['uid']);
-                        $url = "evento_admin.php?id=".$row['uid'];
+                        $url = "novidades_admin.php?id=".$row['uid'];
                         header('Location: '. $url);
                     }else {
                         echo "password wrong";
