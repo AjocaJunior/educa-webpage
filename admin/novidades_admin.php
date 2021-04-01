@@ -64,7 +64,20 @@ if($uid == null){
       </li>
 
 
-      </li>
+      <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-university"></i>
+                    <span>Novidades</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Novidades:</h6>
+                        <a class="collapse-item" target="_blank"  href="add_novidade.php?id=<?php echo $uid; ?>">Adicionar Novidade</a>
+ 
+                    </div>
+                </div>
+            </li>
 
      
 

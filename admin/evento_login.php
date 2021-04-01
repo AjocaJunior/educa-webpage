@@ -56,10 +56,10 @@
                                         <button name="login" class="btn btn-primary btn-user btn-block">Login</button>
                                         <a href="index.php" class="btn btn-warning btn-user btn-block">Voltar ao admin</a>
                                     </form>
-                                    <hr>
+                                    <!-- <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
-                                    </div>
+                                    </div> -->
                                     
                                 </div>
                             </div>

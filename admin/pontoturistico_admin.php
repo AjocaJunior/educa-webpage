@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Seja Bem-Vinda ao Educa - Dashboard</title>
+    <title>Pontos Turísticos - Dashboard</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../img/educa/logo.png">
@@ -154,39 +154,10 @@ foreach($fetchdata as $key => $row){
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-book-open"></i>
-                    <span>Cursos</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cursos:</h6>
-                        <a class="collapse-item" target="_blank" href="add_course.php?id=<?php echo $uid; ?>">Publicar cursos</a>
-                        <a class="collapse-item" target="_blank" href="courses.php?id=<?php echo $uid; ?>">Todos cursos</a>
-                    </div>
-                </div>
-            </li>
+            
 
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePu"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-rss-square"></i>
-                    <span>Publicações </span>
-                </a>
-                <div id="collapsePu" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cursos:</h6>
-                        <a class="collapse-item" target="_blank" href="publish.php?id=<?php echo $uid; ?>">Publicar</a>
-                        <a class="collapse-item" target="_blank"  href="publicacoes.php?id=<?php echo $uid; ?>">Todas publicações </a>
-                    </div>
-                </div>
-            </li>
+           
 
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -200,8 +171,8 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fotos:</h6>
-                        <a class="collapse-item" target="_blank"  href="add_gallery.php?id=<?php echo $uid; ?>">Publicar fotos</a>
-                        <a class="collapse-item" target="_blank"  href="../gallery.php?id=<?php echo $uid; ?>">Galeria </a>
+                        <a class="collapse-item" target="_blank"  href="add_pontosfotos.php?id=<?php echo $uid; ?>">Publicar fotos</a>
+                        <a class="collapse-item" target="_blank"  href="pontosfotos.php?id=<?php echo $uid; ?>">Galeria </a>
                     </div>
                 </div>
             </li>
@@ -280,24 +251,7 @@ foreach($fetchdata as $key => $row){
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Cursos</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $countCourse; ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-book-open fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -306,7 +260,7 @@ foreach($fetchdata as $key => $row){
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Faculdades</div>
+                                                Pontos Turisticos</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $countCollege; ?></div>
                                         </div>
@@ -341,24 +295,7 @@ foreach($fetchdata as $key => $row){
                             </div>
                         </div>
 
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Contactos</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $contact; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
 
                     <!-- Content Row -->

@@ -19,6 +19,19 @@
 </head>
 
 <body>
+
+
+    <?php
+  include_once('includes/dbconfig.php');         
+  $ref = 'novidades/';
+  $fetchdata = $database->getReference($ref)->getValue();
+
+  $reff = 'jogoquiz/';
+   $fetchdataa = $database->getReference($reff)->getValue();
+
+?>
+
+
     <!-- Preloader -->
     <!-- <div id="preloader">
         <div class="loader"></div>
@@ -118,17 +131,35 @@
 
 
             <div class="row">
+<?php
+       if($fetchdata != null):?>
+        <?php foreach( $fetchdata as $key => $row):
 
-                           <div class="col-12 col-md-6">
+?>
+                <div class="col-12 col-md-6">
                     <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp" data-wow-delay="300ms">
+<?php
+ $pharagraph = "";
 
-                        <p>Titulo
-                        <p>
-                        <h6 class="">Descrição</h6>
+ if(strlen($row['descricao']) > 14) {
+     $pharagraph = substr($row['descricao'], 0, 90)."..";
+ } else {
+     $pharagraph = $row['descricao'];
+ }
+
+?>
+
+                        <h6><?php echo $row["title"]; ?>
+                        <h6>
+                        <img src="<?php echo $row["img"]; ?>">
+                        <p class=""><?php echo $pharagraph; ?></p>
 
 
                     </div>
                 </div>
+                <?php endforeach;?>
+<?php endif; ?>
+
 
 
 
@@ -989,42 +1020,25 @@
             <div class="col-12 collapse" id="demo"><div>COLLAPSE 1</div></div> -->
             <div class="row">
                 <!-- Single Ticket Pricing Table -->
+                <?php
+       if($fetchdataa != null):?>
+        <?php foreach( $fetchdataa as $key => $row):
+
+?>
                 <div class="col-12 col-md-4">
                     <div class="single-ticket-pricing-table bg-boxshadow text-center mb-100 wow fadeInUp"
                         data-wow-delay="300ms">
-                        <h6 class="ticket-plan-jogo">JOGO DE CULTURA GERAL 1</h6>
+                        <h6 class="ticket-plan-jogo"><?php echo $row["name"]; ?></h6>
                         <!-- Ticket Icon -->
                         <div class="ticket-icon">
-                            <img src="img/core-img/p1.png" alt="">
+                            <img src="<?php echo $row["img"]; ?>" alt="">
                         </div>
-                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Jogar <i
+                        <a href="<?php echo $row["link"]; ?>" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Jogar <i
                                 class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="single-ticket-pricing-table bg-boxshadow text-center mb-100 wow fadeInUp"
-                        data-wow-delay="300ms">
-                        <h6 class="ticket-plan-jogo">JOGO DE CULTURA GERAL 2</h6>
-                        <!-- Ticket Icon -->
-                        <div class="ticket-icon">
-                            <img src="img/core-img/p3.png" alt="">
-                        </div>
-                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Jogar <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="single-ticket-pricing-table bg-boxshadow text-center mb-100 wow fadeInUp"
-                        data-wow-delay="300ms">
-                        <h6 class="ticket-plan-jogo">JOGO DE CULTURA GERAL 3</h6>
-                        <!-- Ticket Icon -->
-                        <div class="ticket-icon">
-                            <img src="img/core-img/p2.png" alt="">
-                        </div>
-                        <a href="#" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Jogar <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                </div>
+                <?php endforeach; endif; ?>
+               
             </div>
         </div>
     </section>
@@ -1078,15 +1092,7 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-<script>
-
-
-</script>
-
     <script>
-
-
-
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -1094,16 +1100,22 @@
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
                         if (db_uid == user_uid) {
                             var user_name = document.getElementById("user-name");
-                            user_name.innerHTML = item.val().name;
+                            var name = item.val().name;
+
+                            if (item.val().name.length > 20) {
+                                name = item.val().name.substr(0, 20) + "..";
+                            } else {
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
 
                             sessionStorage.setItem('usuarioId', item.val().userId);
-                            return;
                         }
 
                     }
@@ -1117,6 +1129,8 @@
 
     });
     </script>
+
+
 
 
     <script>

@@ -519,7 +519,7 @@ $Externa = 'Externa';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script>
+      <script>
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -527,14 +527,21 @@ $Externa = 'Externa';
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && user.uid !== null) {
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
 
                         if (db_uid == user_uid) {
                             var user_name = document.getElementById("user-name");
-                            user_name.innerHTML = item.val().name;
+                            var name = item.val().name;
 
+                            if (item.val().name.length > 20) {
+                                name = item.val().name.substr(0, 20) + "..";
+                            } else {
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
+                            
                             sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 

@@ -29,6 +29,8 @@ include_once('../includes/dbconfig.php');
 $ref = 'bolsadeestudo';
    $fetchdata = $database->getReference($ref)->getValue();
 
+ 
+
 ?>
     <div class="container">
 
