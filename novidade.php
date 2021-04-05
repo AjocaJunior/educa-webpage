@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Publicação - Educa </title>
+    <title>Novidades - Educa </title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -32,7 +32,7 @@
     
 
     include_once('includes/dbconfig.php');
-    $ref = 'publication/';
+    $ref = 'novidades/';
     $fetchdata = $database->getReference($ref)->getValue();
     $uid  = $_GET['id'];
    $author = "";
@@ -41,7 +41,8 @@
   $text="";
     $category = "";
 $data = "";
-   
+$fonte = "";
+   $video_link = "";
 
     foreach($fetchdata as $key => $row){
         if($row['uid'] == $uid ){
@@ -51,12 +52,14 @@ $data = "";
           $author = $row['author'];
                   $category                  = $row['category'];
           $img                = $row['img'];
-         
-       
-          $text              = $row['text'];
+                
+          $text              = $row['descricao'];
          $data = $row['date'];
+         $fonte = $row['fonte'];
+$video_link = $row['video_link'];
+
          if($img == null || $img == ""){
-            $img = "EXPOSITOR SEM PUBLICAÇÕES";
+            $img = "SEM NOVIDADE";
         }
           break;
         }
@@ -107,7 +110,7 @@ $data = "";
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="active"><a href="index.php">Inicio</a></li>
-          
+
                             </ul>
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
@@ -126,15 +129,14 @@ $data = "";
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" 
-                        data-wow-delay="300ms">
-                        
-                        <h4 style="color: #414c52;"><?php echo $title ?></h4>
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+
+                        <h5 style="color: #414c52;"><?php echo $title ?></h5>
                         <p><?php echo $category ?></p>
                     </div>
                 </div>
 
-               
+
 
             </div>
         </div>
@@ -152,8 +154,8 @@ $data = "";
 
                             <!-- Post Thumbnail -->
                             <div class="post-blog-thumbnail mb-30">
-                            
-                                <img src="<?php  echo $img;?> " alt=" " >
+
+                                <img src="<?php  echo $img;?> " alt=" ">
                             </div>
 
                             <!-- Post Title -->
@@ -165,6 +167,9 @@ $data = "";
                                 </a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> <?php echo $author; ?>
                                 </a>
+                                <a class="post-author" href="<?php echo $fonte; ?>" target="_blank"><i
+                                        class="zmdi zmdi-account"></i>Fonte: <?php echo $fonte; ?>
+                                </a>
                                 <!-- <a class="post-author" href="#"><i class="zmdi zmdi-favorite-outline"></i> 8 Likes</a>
                                 <a class="post-author" href="#"><i class="zmdi zmdi-comment-outline"></i> 12 Comments</a> -->
                             </div>
@@ -172,9 +177,15 @@ $data = "";
 
                             <p style="white-space: pre-line"><?php echo $text; ?></p>
 
+                            <div class="post-blog-thumbnail mb-30">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" allowfullscreen width="640" height="480" src="<?php  echo $video_link;?>/autoplay=1"> </iframe>
+    </div>
+                            </div>
+
                         </div>
-                        
-                     
+
+
                     </div>
                 </div>
 
@@ -184,10 +195,10 @@ $data = "";
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area ">
-                            <h5 class="widget-title mb-30 ">Publicações recentes</h5>
+                            <h5 class="widget-title mb-30 ">Novidades Recentes</h5>
 
                             <?php 
-                        $ref = '/publication';
+                        $ref = 'novidades/';
                         $fetchdata = $database->getReference($ref)->getValue(); 
                           ?>
 
@@ -198,7 +209,7 @@ $data = "";
                             <div class="single-recent-post-area d-flex align-items-center">
                                 <!-- Thumb -->
                                 <div class="post-thumb">
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"><img
+                                    <a href="novidade.php?id=<?php echo $row['uid'] ?>"><img
                                             src="<?php echo $row['img']; ?>" alt=""></a>
                                 </div>
                                 <!-- Content -->
@@ -213,9 +224,9 @@ $data = "";
                                  }
                             
                               ?>
-                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>"
-                                        class="post-title"> <?php echo $currentTitle; ?> </a>
-                                        <p><?php echo $row['category']; ?></p>
+                                    <a href="single-blog.php?id=<?php echo $row['uid'] ?>" class="post-title">
+                                        <?php echo $currentTitle; ?> </a>
+                                    <p><?php echo $row['category']; ?></p>
                                     <a href="#" class="post-date"><i class="zmdi zmdi-time"></i>
                                         <?php echo $row['date']; ?> </a>
                                 </div>
@@ -231,82 +242,82 @@ $data = "";
                 </div>
 
                 <div class="col-12">
-                
-                <div class="confer-leave-a-reply-form clearfix section-padding-20" id="contact">
-                            <h4 class="mb-30">Deixa seu Comentário</h4>
 
-                            <!-- Leave A Reply -->
-                            <div class="contact_form">
-                                <form action="#" method="post">
-                                    <div class="contact_input_area">
-                                        <div class="row">
-                                            <!-- Form Group -->
-                                            <div class="col-12 col-lg-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mb-30" name="name" id="name"
-                                                        placeholder="Seu Nome" required>
-                                                </div>
-                                            </div>
-                                          
-                                            <!-- Form Group -->
-                                            <div class="col-12 col-lg-6">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control mb-30" name="email"
-                                                        id="email" placeholder="E-mail" required>
-                                                </div>
-                                            </div>
-                                           
-                                            <!-- Form Group -->
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <textarea name="message" class="form-control mb-30" id="mensagem"
-                                                        cols="30" rows="6" placeholder="Comentário" required></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- Button -->
+                    <div class="confer-leave-a-reply-form clearfix section-padding-20" id="contact">
+                        <h4 class="mb-30">Deixa seu Comentário</h4>
 
+                        <!-- Leave A Reply -->
+                        <div class="contact_form">
+                            <form action="#" method="post">
+                                <div class="contact_input_area">
+                                    <div class="row">
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-30" name="name" id="name"
+                                                    placeholder="Seu Nome" required>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
 
-                                <div class="col-12">
-                                    <button onclick="addComentario();" class="btn confer-btn-white mt-50 wow fadeInUp" style="background:#f8871f;border-radius:0px">Enviar Comentário <i
-                                            class="zmdi zmdi-long-arrow-right"></i></button>
+                                        <!-- Form Group -->
+                                        <div class="col-12 col-lg-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control mb-30" name="email" id="email"
+                                                    placeholder="E-mail" required>
+                                            </div>
+                                        </div>
+
+                                        <!-- Form Group -->
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control mb-30" id="mensagem"
+                                                    cols="30" rows="6" placeholder="Comentário" required></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- Button -->
+
+                                    </div>
                                 </div>
+                            </form>
+
+                            <div class="col-12">
+                                <button onclick="addComentario();" class="btn confer-btn-white mt-50 wow fadeInUp"
+                                    style="background:#f8871f;border-radius:0px">Enviar Comentário <i
+                                        class="zmdi zmdi-long-arrow-right"></i></button>
                             </div>
                         </div>
-                   <div class="confer-leave-a-reply-form section-padding-20 clearfix" id="comments">
-                            <h5 class="mb-30">Comentários</h5>
+                    </div>
+                    <div class="confer-leave-a-reply-form section-padding-20 clearfix" id="comments">
+                        <h5 class="mb-30">Comentários</h5>
 
-                            <?php 
-                            $ref = 'publication/'.$uid.'/comentario';
+                        <?php 
+                            $ref = 'novidades/'.$uid.'/comentario';
                             $fetchdata = $database->getReference($ref)->getValue(); 
                           ?>
-                           <?php if($fetchdata != null):?>
-                            <?php foreach( $fetchdata as $key => $row):   ?>
-                            <div class="single-recent-post-area d-flex align-items-center">
-                                <!-- Thumb -->
-                                <!-- <div class="post-thumb">
+                        <?php if($fetchdata != null):?>
+                        <?php foreach( $fetchdata as $key => $row):   ?>
+                        <div class="single-recent-post-area d-flex align-items-center">
+                            <!-- Thumb -->
+                            <!-- <div class="post-thumb">
                                     <a href="#"><img
                                             src="./img/educa/user.png" alt=""></a>
                                 </div> -->
-                                <!-- Content -->
+                            <!-- Content -->
 
-                               
-                                <div class="post-content">
-                                    <a class="" href="#"><?php echo $row['name']; ?></a>
-                                      <p
-                                        class=""> <?php echo  $row['mensagem']; ?> </p>
-                                        <p class="post-date"><?php echo $row['date']; ?></p>
-                                        
-                                   
-                                </div>
 
-                                
+                            <div class="post-content">
+                                <a class="" href="#"><?php echo $row['name']; ?></a>
+                                <p class=""> <?php echo  $row['mensagem']; ?> </p>
+                                <p class="post-date"><?php echo $row['date']; ?></p>
+
+
                             </div>
-                            <?php endforeach ?>
-                            <?php endif?>
+
+
                         </div>
+                        <?php endforeach ?>
+                        <?php endif?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,27 +373,26 @@ $data = "";
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js "></script>
     <script src="js/db/app.js "></script>
     <script src="js/db/real-time-database.js "></script>
-<script>
-
-function addComentario() {
+    <script>
+    function addComentario() {
         var name = document.getElementById('name').value;
         var email = document.getElementById("email").value;
         var mensagem = document.getElementById('mensagem').value;
         var date = new Date().toLocaleDateString();
         var uid = "<?php echo $_GET['id'] ; ?>";
         var uidComentario = uuidv4();
-        addComment(name, email, mensagem, date,uid);
+        addComment(name, email, mensagem, date, uid);
 
     }
 
-function addComment(name, email, mensagem, date,uid) {
-      var uidComentario = uuidv4();
+    function addComment(name, email, mensagem, date, uid) {
+        var uidComentario = uuidv4();
         var data = {
             name: name,
-            date:date,
+            date: date,
             email: email,
-            mensagem:mensagem,
-            uid:uidComentario
+            mensagem: mensagem,
+            uid: uidComentario
 
         }
 
@@ -396,14 +406,15 @@ function addComment(name, email, mensagem, date,uid) {
         //         }
         //     });
 
-        firebase.database().ref().child('publication').child(uid).child("comentario").child(uidComentario).set(data, function(error) {
-            if (error) {
-                alert("Data could not be saved. " + error);
-            } else {
-                console.log("saved");
-                window.location.reload(true);
-            }
-        });
+        firebase.database().ref().child('novidades').child(uid).child("comentario").child(uidComentario).set(data,
+            function(error) {
+                if (error) {
+                    alert("Data could not be saved. " + error);
+                } else {
+                    console.log("saved");
+                    window.location.reload(true);
+                }
+            });
 
     }
 
@@ -416,7 +427,7 @@ function addComment(name, email, mensagem, date,uid) {
             return v.toString(16);
         });
     }
-</script>
+    </script>
 </body>
 
 </html>

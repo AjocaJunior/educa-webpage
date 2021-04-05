@@ -82,13 +82,9 @@
                                 </li>
                                 <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
-                                        <li><a href="cultura/pintura.html">Pintura</a></li>
-                                        <li><a href="cultura/musica.html">Música</a></li>
-                                        <li><a href="cultura/cinema.html">Cinema</a></li>
-                                        <li><a href="cultura/teatro.html">Teatro</a></li>
-                                        <li><a href="cultura/literatura.html">Literatura</a></li>
-                                        <li><a href="cultura/danca.html">Dança</a></li>
-
+                                        <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
+                                        <li><a href="actividades-culturais.php#pontos">Turismo</a></li>
+                                        <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>
@@ -125,8 +121,8 @@
 
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <p id="espetaculos">SELECCIONAMOS AS MELHORES NOTÍCIAS PARA O JOVEM MOÇAMBICANO</p>
-                        <h5 style="color: #414c52;">NOTÍCIAS</h5>
+                        <p id="novidade">SELECCIONAMOS AS MELHORES NOVIDADES PARA O JOVEM MOÇAMBICANO</p>
+                        <h5 style="color: #414c52;">NOVIDADES</h5>
                     </div>
                 </div>
             </div>
@@ -134,34 +130,35 @@
 
 
             <div class="row">
-<?php
+                <?php
        if($fetchdata != null):?>
-        <?php foreach( $fetchdata as $key => $row):
+                <?php foreach( $fetchdata as $key => $row):
 
-?>
+                ?>
                 <div class="col-12 col-md-4">
                     <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp" data-wow-delay="300ms">
-<?php
- $pharagraph = "";
+                        <a href="novidade.php?id=<?php echo $row['uid'] ?>" target="_blank">
+                        <?php
+                            $pharagraph = "";
 
- if(strlen($row['descricao']) > 14) {
-     $pharagraph = substr($row['descricao'], 0, 90)."..";
- } else {
-     $pharagraph = $row['descricao'];
- }
+                            if(strlen($row['descricao']) > 14) {
+                                $pharagraph = substr($row['descricao'], 0, 90)."..";
+                            } else {
+                                $pharagraph = $row['descricao'];
+                            }
 
-?>
+                            ?>
 
                         <h6><?php echo $row["title"]; ?>
-                        <h6>
-                        <img src="<?php echo $row["img"]; ?>">
-                        <p class=""><?php echo $pharagraph; ?></p>
+                            <h6>
+                                <img src="<?php echo $row["img"]; ?>">
+                                <p class=""><?php echo $pharagraph; ?></p>
 
-
+                        </a>
                     </div>
                 </div>
                 <?php endforeach;?>
-<?php endif; ?>
+                <?php endif; ?>
 
 
 
@@ -173,56 +170,56 @@
 
     <section class="our-speaker-area section-padding-80">
         <div class=" container">
-        <div class="row">
-            <!-- Heading -->
-            <div class="col-12">
-                <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
-                    style="margin-bottom: 10px;">
+            <div class="row">
+                <!-- Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
+                        style="margin-bottom: 10px;">
 
-                    <h5 style="color:#414c52;">PONTOS TURÍSTICOS</h5>
-                    <!-- <p class="mt-30">Categoria</p> -->
+                        <h5 id="pontos" style="color:#414c52;">PONTOS TURÍSTICOS</h5>
+                        <!-- <p class="mt-30">Categoria</p> -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-        <?php
-       if($fetchdataaa != null):?>
-        <?php foreach( $fetchdataaa as $key => $row):
+            <div class="row">
+                <?php
+              if($fetchdataaa != null):?>
+                <?php foreach( $fetchdataaa as $key => $row):
+             ?>
 
-?>
-            <!-- Single Speaker Area -->
-            <div class="col-12 col-md-3 bg-boxshadow">
-                <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>">
+                <!-- Single Speaker Area -->
+                <div class="col-12 col-md-3 bg-boxshadow">
+                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>">
 
-                <div class="borda-branca text-center">
-                        <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
-                            <!-- Thumb -->
-                            <div class="speaker-single-thumb fill">
-                                <img src="<?php echo $row["img1"]; ?>" alt="">
+                        <div class="text-center">
+                            <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb fill">
+                                    <img src="<?php echo $row["img1"]; ?>" alt="">
+                                </div>
+                                <!-- Social Info -->
+
+
                             </div>
-                            <!-- Social Info -->
-                          
-                            
+                            <div class="speaker-info">
+                                <h6><?php echo $row["ponto_name"]; ?></h6>
+
+                            </div>
+
                         </div>
-                        <div class="speaker-info">
-                            <h6><?php echo $row["ponto_name"]; ?></h6>
-                            
-                        </div>
-                   
-                   </div>
-                </a>
+                    </a>
+
+                </div>
+
+                <?php endforeach;?>
+                <?php endif; ?>
+
 
             </div>
-
-            <?php endforeach;?>
-            <?php endif; ?>
-
-
-        </div>
         </div>
     </section>
 
-  
+
 
 
     <!-- Our Ticket Pricing Table Area Start -->
@@ -245,7 +242,7 @@
                 <!-- Single Ticket Pricing Table -->
                 <?php
        if($fetchdataa != null):?>
-        <?php foreach( $fetchdataa as $key => $row):
+                <?php foreach( $fetchdataa as $key => $row):
 
 ?>
                 <div class="col-12 col-md-4">
@@ -256,12 +253,12 @@
                         <div class="ticket-icon">
                             <img src="<?php echo $row["img"]; ?>" alt="">
                         </div>
-                        <a href="<?php echo $row["link"]; ?>" target="_blank" class="btn confer-btn-white w-100 mb-30" style="border-radius: 0px;">Jogar <i
-                                class="zmdi zmdi-long-arrow-right"></i></a>
+                        <a href="<?php echo $row["link"]; ?>" target="_blank" class="btn confer-btn-white w-100 mb-30"
+                            style="border-radius: 0px;">Jogar <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
                 <?php endforeach; endif; ?>
-               
+
             </div>
         </div>
     </section>

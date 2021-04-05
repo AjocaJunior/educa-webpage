@@ -86,12 +86,9 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                 </li>
                                 <li><a href="actividades-culturais.php">Cultura</a>
                                     <ul class="dropdown">
-                                        <li><a href="cultura/pintura.html">Pintura</a></li>
-                                        <li><a href="cultura/musica.html">Música</a></li>
-                                        <li><a href="cultura/cinema.html">Cinema</a></li>
-                                        <li><a href="cultura/teatro.html">Teatro</a></li>
-                                        <li><a href="cultura/literatura.html">Literatura</a></li>
-                                        <li><a href="cultura/danca.html">Dança</a></li>
+                                    <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
+                                        <li><a href="actividades-culturais.php#pontos">Turismo</a></li>
+                                        <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>

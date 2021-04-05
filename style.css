@@ -1503,7 +1503,7 @@ input:required {
   .single-we-offer-content:hover h5,
   .single-we-offer-content:hover p, .single-we-offer-content:focus h5,
   .single-we-offer-content:focus p {
-    color: #ffffff; }
+    color: #000; }
   .single-we-offer-content:hover .offer-icon::after, .single-we-offer-content:focus .offer-icon::after {
     width: 800%;
     height: 800%; }
