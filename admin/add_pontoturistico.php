@@ -184,9 +184,6 @@
             } else {
                 addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, "", category);
             }
-
-
-
         }
 
         function addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, img1, category) {

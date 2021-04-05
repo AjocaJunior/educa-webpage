@@ -61,7 +61,7 @@
                                         <a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Crie a sua conta aqui!</a>
+                                        <a class="small" href="add_pontoturistico.php">Crie a sua conta aqui!</a>
                                     </div>
                                 </div>
                             </div>
