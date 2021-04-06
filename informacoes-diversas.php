@@ -89,6 +89,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
                                     <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
                                         <li><a href="actividades-culturais.php#pontos">Turismo</a></li>
                                         <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
+                                        <li><a href="raffle.php">Sorteio</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>

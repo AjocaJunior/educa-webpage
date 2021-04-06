@@ -259,9 +259,6 @@ function create(userId ,name , email ,  password , imageUrl ,  contact ,  genre 
 
 
 
-
-
-
                 });
 
             });

@@ -90,8 +90,9 @@
                                 <li><a href="actividades-culturais.php">Cultura</a>
                                 <ul class="dropdown">
                                         <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
-                                        <li><a href="actividades-culturais.php#pontos">Pontos Turísticos</a></li>
+                                        <li><a href="actividades-culturais.php#pontos">Pontos</a></li>
                                         <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
+                                        <li><a href="raffle.php">Sorteio</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>

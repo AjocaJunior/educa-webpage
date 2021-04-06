@@ -85,6 +85,7 @@
                                         <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
                                         <li><a href="actividades-culturais.php#pontos">Turismo</a></li>
                                         <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
+                                        <li><a href="raffle.php">Sorteio</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>
@@ -131,14 +132,14 @@
 
             <div class="row">
                 <?php
-       if($fetchdata != null):?>
+                    if($fetchdata != null):?>
                 <?php foreach( $fetchdata as $key => $row):
 
                 ?>
                 <div class="col-12 col-md-4">
                     <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp" data-wow-delay="300ms">
                         <a href="novidade.php?id=<?php echo $row['uid'] ?>" target="_blank">
-                        <?php
+                            <?php
                             $pharagraph = "";
 
                             if(strlen($row['descricao']) > 14) {
@@ -149,10 +150,10 @@
 
                             ?>
 
-                        <h6><?php echo $row["title"]; ?>
-                            <h6>
-                                <img src="<?php echo $row["img"]; ?>">
-                                <p class=""><?php echo $pharagraph; ?></p>
+                            <h6><?php echo $row["title"]; ?>
+                                <h6>
+                                    <img src="<?php echo $row["img"]; ?>">
+                                    <p class=""><?php echo $pharagraph; ?></p>
 
                         </a>
                     </div>
@@ -189,7 +190,7 @@
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-md-3 bg-boxshadow">
-                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>"  target="_blank" >
+                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
 
                         <div class="text-center">
                             <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
@@ -356,66 +357,104 @@
     <script>
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
-        console.log(scrolled);
-        if (scrolled > 2666 && scrolled < 3000) {
+        var maxY = 700;
 
-            if (!isShowed()) {
-                showGameDialog();
-                localStorage.getItem('itemPlay');
+        if ('scrollMaxX' in window) {
+            maxY = window.scrollMaxX;
+        } else {
+            maxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        }
 
-
+        if (scrolled > (maxY / 2)) {
+            if (popupGameObject() !== null) {
+                if (popupGameObject().date == getDate()) {
+                    if (popupGameObject().isSwowed == false) {
+                        //show popup
+                        showNotification()
+                        console.log("Show")
+                    } else {
+                        // dont show
+                        console.log("dont Show")
+                    }
+                } else {
+                    //show popup
+                    showNotification()
+                    console.log("Show")
+                }
             } else {
-                showNotification();
-                console.log("Showed")
+                //show popup
+                showNotification()
+                console.log("Show")
             }
-
         }
 
     });
 
-    function showGameDialog() {
 
-        Swal.fire({
-            position: 'top-end',
-            title: '#Estou na feira',
-            text: "Compartilha com os amigos #ESTOU NA FEIRA!",
-            icon: 'info',
+    function popupGameObject() {
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('itemPlay2') !== null) {
+                return JSON.parse(localStorage.getItem('itemPlay2'));
+            } else {
+                return null;
+            }
+        }
+    }
+
+    function getDate() {
+        now = new Date
+        date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        return date;
+    }
+
+
+    function showNotification() {
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        }) swalWithBootstrapButtons.fire({
+            title: 'Quer ganhar bolsa de estudo ou laptop?',
+            text: "Roleta da sorte",
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Compartilhar'
+            confirmButtonText: 'Sim, quero!',
+            cancelButtonText: 'Nao!',
+            reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                showed();
-                location.href = "https://www.facebook.com/sharer/sharer.php?u=www.educa.co.mz"
-            } else {
-                showed();
+                location.href = "raffle.php"
+                // swalWithBootstrapButtons.fire(
+                //   'Deleted!',
+                //   'Your file has been deleted.',
+                //   'success'
+                // )
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                cancelPopup()
+                swalWithBootstrapButtons.fire(
+                    'Opppsss',
+                    'Voce perdeu a chance de ganhar :{',
+                    'error'
+                )
             }
         })
-
     }
 
-    // this function check if popup isShowed //
-    function isShowed() {
-        if (typeof(Storage) !== "undefined") {
-            if (localStorage.getItem('isShowed') !== null) {
-                return localStorage.getItem("isShowed");
-            } else {
-                return false;
-            }
-
-        } else {
-            return false;
+    function cancelPopup() {
+        status = "canceled";
+        var playGame = {
+            status: status,
+            isShowed: true,
+            date: getDate()
         }
-    }
 
-    function showed() {
-
-        if (typeof(Storage) !== "undefined") {
-            localStorage.setItem('isShowed', true)
-        } else {
-            //todo
-        }
+        localStorage.setItem('itemPlay2', JSON.stringify(playGame));
     }
     </script>
 </body>
