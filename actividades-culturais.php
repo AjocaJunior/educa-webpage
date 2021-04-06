@@ -189,7 +189,7 @@
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-md-3 bg-boxshadow">
-                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>">
+                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>"  target="_blank" >
 
                         <div class="text-center">
                             <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">

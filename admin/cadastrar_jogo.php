@@ -99,7 +99,8 @@
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-
+<script src="../js/db/app.js"></script>
+<script src="../js/db/real-time-database.js"></script>
         <script>
       
 
