@@ -155,11 +155,15 @@
 
 var played = sessionStorage.getItem('played');
 
-if () {
-                alert("Data could not be saved." + error);
-                location.href="intro.php";
+
+    if(played) {
+   //SE FOR VERDADE
+    alert('Já tiveste a tua tentativa, volte amanhã!');
+    location.href="index.php";
             } else {
-                location.href="index.php";
+                //SE FOR FALSO
+                
+                
          }
 
     function addButton() {
