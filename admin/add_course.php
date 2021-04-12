@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Cadastrar Cursos - Educa</title>
+  <title>Cadastrar Curso - Educa</title>
 
    <!-- Favicon -->
    <link rel="icon" href="../img/educa/logo.png">
@@ -24,27 +24,6 @@
 </head>
 
 <body style="background-color: #e9eef4">
-
-<?php 
-
-$id='';
-
-$uid;
-include_once('../includes/dbconfig.php');
-$reff = 'institution/'.$id.'/college';
-
-// $fetchdataa = $database->getReference($reff)->getValue();
-//  if($fetchdataa != null):
-//  foreach( $fetchdataa as $key => $row): 
-//  if($row['uidCollege']==$_GET['id']): 
-
-// $uid = $row['uid'];
-
-//  endif;
-//    endforeach; 
-//   endif;
-
-?>
 
   <div class="container">
 
@@ -111,7 +90,8 @@ $reff = 'institution/'.$id.'/college';
 
                 <br>
 
-               
+               <?php $href = "add_gallery.php?id=".$_GET['id']; ?>
+               <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">ADICIONAR FOTOS</button>
 
             </div>
           </div>
@@ -137,26 +117,21 @@ $reff = 'institution/'.$id.'/college';
   <script src="../js/db/real-time-database.js"></script>
 
   <script>
-  // console.log($uid);
+
 
 
     function addCourse(){
-      
-     
       var course         = document.getElementById("course").value;
       var description    = document.getElementById("description").value;
-      var uidCollege            = "<?php echo $_GET['id'] ?>";
-      var uid = "<?php echo $uid ?>";
-
+      var uid            = "<?php echo $_GET['id'] ?>";
 
       var data = {
         course : course,
         description : description,
-        uidCollege : uidCollege,
-        uid: uid
+        uid : uid
       }
 
-      firebase.database().ref().child('institution').child(uid).child("college").child(uidCollege).child("course").child(uuidv4()).set(data , function(error){
+      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
         if (error) {
           alert("Data could not be saved." + error);
         } else {
