@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
     <!-- Title -->
-    <title>Seja Bem-Vinda ao educa</title>
+    <title>Sorteio de Prémios - Educa</title>
 
     <!-- Favicon -->
     <link rel="icon" href="./img/educa/logo.png">
@@ -152,6 +152,16 @@
     <script src="js/db/real-time-database.js"></script>
     
     <script>
+
+var played = sessionStorage.getItem('played');
+
+if () {
+                alert("Data could not be saved." + error);
+                location.href="intro.php";
+            } else {
+                location.href="index.php";
+         }
+
     function addButton() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
