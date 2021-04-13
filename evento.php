@@ -283,8 +283,7 @@ endforeach;
                         <!-- Countdown Text -->
                         <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
                             <h6>DISPONÍVEL EM BREVE</h6>
-                            <h4 style="color:#414c52">Impacto da COVID-19 no Sistema Nacional de Educação: Lições e
-                                Perspectivas</h4>
+                            <h4 style="color:#414c52">WEBINAR</h4>
                         </div>
                     </div>
 
@@ -409,20 +408,13 @@ endforeach;
                 </div>
 
                 <?php
-}
-endforeach;
-?>
+                }
+                endforeach;
+                ?>
             </div>
         </div>
     </section>
     <!-- Our Blog Area End -->
-
-
-
-
-
-
-
 
     <!-- Our Blog Area Start -->
 
@@ -451,6 +443,7 @@ endforeach;
                     if($tipo==$tipodiscursofim ){
    
                 ?>
+
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">

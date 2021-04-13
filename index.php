@@ -209,8 +209,7 @@
                         <!-- Countdown Text -->
                         <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
                             <h6>Horario</h6>
-                            <h4 style="color:#414c52">Educação Digitalizada em Moçambique: Desafios e Perspectivas
-                                (Primeiro Dia).</h4>
+                            <h4 style="color:#414c52">WEBINAR A CAMINHO</h4>
                         </div>
                     </div>
 

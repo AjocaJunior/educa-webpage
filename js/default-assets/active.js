@@ -231,7 +231,7 @@
      //EDITAR A DATA PARA ACTIVAR A CONTAGEM
     if ($.fn.countdown) {
         
-        $("#clock").countdown("2020/10/26 10:00", function (event) {
+        $("#clock").countdown("2021/04/14 13:00", function (event) {
             $(this).html(event.strftime("<div>%m <span>Months</span></div> <div>%d <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>"));
         });
     }

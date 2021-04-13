@@ -40,6 +40,7 @@
       $email                   = "";
       $website                 = "";
       $video_link              = "";
+      
       $p1 = "";
       $p2 = "";
       $img1 = "";
@@ -56,7 +57,11 @@
             $phone                   = $row['contact'];
             $email                   = $row['email'];
             $website                 = $row['website'];
+            $visits                  = $row['visits'];
             $video_link              = $row['video_link'];
+
+            $visits = $visits + 1;
+
             $index = -1;
             if($video_link == null || $video_link == ""){
                 $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
@@ -471,7 +476,9 @@
                                                         required>
                                                 </div>
                                             </div>
+                                          
 
+                                    </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <span class="form-label">Hora</span>
@@ -484,11 +491,8 @@
                                                     <button onclick="add_agenda();"
                                                         class="submit-btn btn confer-btn-white">Agendar</button>
                                                 </div>
-
                                             </div>
-
                                             <input type="hidden" id="itemId" name="itemId" value="">
-
 
                                         </div>
                                     </div>
@@ -503,8 +507,6 @@
 
                     </div>
                     <div class="modal-footer">
-
-
 
                         <button type="button" class="btn confer-btn-white" data-dismiss="modal">Fechar</button>
 
@@ -525,11 +527,11 @@
                         <div class="single-footer-widget mb-60">
                             <!-- Footer Logo -->
 
-                            <p>Obrigado por visitar nosso stand para mais informações entre em contato conosco.</p>
+                            <p>Obrigado por visitar nosso stand para mais informações entre em contacto conosco.</p>
 
                             <!-- Social Info -->
                             <div class="social-info">
-                                <a href="https://www.google.com/maps/@-25.9740262,32.5711991,15z"><i
+                                <a href="<?php echo $localization ?>"><i
                                         class="zmdi zmdi-gps"></i></a>
                                 <a href="<?php echo $website; ?>"><i class="zmdi zmdi-view-web"></i></a>
                                 <a href="<?php echo "tel:".$phone; ?>"><i class="zmdi zmdi-phone"></i></a>
@@ -627,45 +629,41 @@
     <script src="js/db/real-time-database.js"></script>
 
     <script>
-    var user_name = "";
-    var useruid = "";
-    var emaill = "";
-
     firebase.auth().onAuthStateChanged(function(user) {
 
-        if (user) {
+    if (user) {
 
-            firebase.database().ref('users').on('value', function(snapshot) {
-                snapshot.forEach(function(item) {
+    firebase.database().ref('users').on('value', function(snapshot) {
+        snapshot.forEach(function(item) {
 
-                    if (item.val().userId !== null && item.val().userId !== undefined) {
-                        var db_uid = item.val().userId.toString().trim();
-                        var user_uid = user.uid.toString().trim();
+            if (item.val().userId !== null && item.val().userId !== undefined) {
+                var db_uid = item.val().userId.toString().trim();
+                var user_uid = user.uid.toString().trim();
 
-                        if (db_uid == user_uid) {
-                            var user_name = document.getElementById("user-name");
-                            var name = item.val().name;
+                if (db_uid == user_uid) {
+                    var user_name = document.getElementById("user-name");
+                    var name = item.val().name;
 
-
-                            user_name.innerHTML = name;
-                            email_user = document.getElementById("emaill");
-
-                            user_name.innerHTML = item.val().name;
-
-                            email_user.innerHTML = item.val().email;
-                            sessionStorage.setItem('usuarioId', item.val().userId);
-                        }
-
+                    if (item.val().name.length > 20) {
+                        name = item.val().name.substr(0, 20) + "..";
+                    } else {
+                        name = item.val().name;
                     }
+                    user_name.innerHTML = name;
+                    
+                    sessionStorage.setItem('usuarioId', item.val().userId);
+                }
 
-                });
-            });
+            }
 
-        } else {
-            location.href = 'intro.php';
-        }
-
+        });
     });
+
+} else {
+    location.href = 'intro.php';
+}
+
+});
     </script>
 
 
