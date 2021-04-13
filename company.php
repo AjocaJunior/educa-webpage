@@ -28,63 +28,63 @@
 
     <?php
 
-      include_once('includes/dbconfig.php');
-      $ref = 'institution/';
-      $fetchdata = $database->getReference($ref)->getValue();
-      $uid  = $_GET['id'];
-      $chat = "";
-      $title           = "";
-      $localization    = "";
-      $institution_description = "";
-      $phone                   = "";
-      $email                   = "";
-      $website                 = "";
-      $video_link              = "";
-      
-      $p1 = "";
-      $p2 = "";
-      $img1 = "";
-      $img2 = "";
+include_once('includes/dbconfig.php');
+$ref = 'institution/';
+$fetchdata = $database->getReference($ref)->getValue();
+$uid  = $_GET['id'];
+$chat = "";
+$title           = "";
+$localization    = "";
+$institution_description = "";
+$phone                   = "";
+$email                   = "";
+$website                 = "";
+$video_link              = "";
+$p1 = "";
+$p2 = "";
+$img1 = "";
+$img2 = "";
 
-      foreach($fetchdata as $key => $row){
-          if($row['uid'] == $uid ){
-            $chat = $row['chat'];
-            $title           = $row['institution_name'];
-            $localization    = $row['location'];
-            $institution_description = $row['institution_description'];
-            $img1                    = $row['img1'];
-            $img2                    = $row['img2'];
-            $phone                   = $row['contact'];
-            $email                   = $row['email'];
-            $website                 = $row['website'];
-            $visits                  = $row['visits'];
-            $video_link              = $row['video_link'];
+foreach($fetchdata as $key => $row){
+    if($row['uid'] == $uid ){
+      $chat = $row['chat'];
+      $title           = $row['institution_name'];
+      $localization    = $row['location'];
+      $institution_description = $row['institution_description'];
+      $img1                    = $row['img1'];
+      $img2                    = $row['img2'];
+      $phone                   = $row['phone'];
+      $email                   = $row['email'];
+      $website                 = $row['website'];
+      $video_link              = $row['video_link'];
+      $visits                  = $row['visits'];
+      $contact                 = $row['contact'];
 
-            $visits = $visits + 1;
+      $visits = $visits + 1;
 
-            $index = -1;
-            if($video_link == null || $video_link == ""){
-                $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
+      $index = -1;
+      if($video_link == null || $video_link == ""){
+          $video_link = "https://www.youtube.com/embed/eNUIvSlEk7E";
+      }
+      $str =  $institution_description;
+            if(preg_match("#Visão#", $str, $matches, PREG_OFFSET_CAPTURE)) {
+               $index = $matches[0][1];
+               $p1 = substr($str,0,$index);
+               $p2 = substr($str , $index , strlen($str));
+
+            }else{
+                 $p1 = $str;
             }
-            $str =  $institution_description;
-                  if(preg_match("#Visão#", $str, $matches, PREG_OFFSET_CAPTURE)) {
-                     $index = $matches[0][1];
-                     $p1 = substr($str,0,$index);
-                     $p2 = substr($str , $index , strlen($str));
+      setDescription($institution_description);
+      break;
+    }
+}
 
-                  }else{
-                       $p1 = $str;
-                  }
-            setDescription($institution_description);
-            break;
-          }
-      }
+function setDescription($str){
 
-      function setDescription($str){
+}
 
-      }
-
-    ?>
+?>
 
     <!-- Header Area Start -->
     <header class="header-area" style="background: #414c52">
@@ -116,7 +116,8 @@
                                 <li><a href="#college">Faculdades</a></li> -->
                                 <li><a href="#contact">Contacto</a></li>
                             </ul>
-
+                            <a hidden href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="emaill">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                             <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                         </div>
@@ -465,7 +466,7 @@
                     <div class="row">
                         <div class="col-12 mb-100">
 
-                            <form>
+                        <form>
                                 <div class="row no-margin">
                                     <div class="col-12">
                                         <div class="row no-margin">
@@ -476,9 +477,7 @@
                                                         required>
                                                 </div>
                                             </div>
-                                          
 
-                                    </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <span class="form-label">Hora</span>
@@ -488,11 +487,14 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-btn">
-                                                    <button onclick="add_agenda();"
+                                                    <button onclick="add_agenda()"
                                                         class="submit-btn btn confer-btn-white">Agendar</button>
                                                 </div>
+
                                             </div>
+
                                             <input type="hidden" id="itemId" name="itemId" value="">
+
 
                                         </div>
                                     </div>
@@ -629,47 +631,44 @@
     <script src="js/db/real-time-database.js"></script>
 
     <script>
+    var user_name = "";
+    var useruid = "";
     firebase.auth().onAuthStateChanged(function(user) {
 
-    if (user) {
+        if (user) {
 
-    firebase.database().ref('users').on('value', function(snapshot) {
-        snapshot.forEach(function(item) {
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
-            if (item.val().userId !== null && item.val().userId !== undefined) {
-                var db_uid = item.val().userId.toString().trim();
-                var user_uid = user.uid.toString().trim();
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
+                        var db_uid = item.val().userId.toString().trim();
+                        user_uid = user.uid.toString().trim();
+                        useruid.innerHTML = user_uid;
 
-                if (db_uid == user_uid) {
-                    var user_name = document.getElementById("user-name");
-                    var name = item.val().name;
+                        if (db_uid == user_uid) {
+                            user_name = document.getElementById("user-name");
+                            user_name.innerHTML = item.val().name;
+                            email_user = document.getElementById("emaill");
+                            email_user.innerHTML = item.val().email;
+                            sessionStorage.setItem('usuarioId', user_uid);
+                            return;
+                        }
 
-                    if (item.val().name.length > 20) {
-                        name = item.val().name.substr(0, 20) + "..";
-                    } else {
-                        name = item.val().name;
                     }
-                    user_name.innerHTML = name;
-                    
-                    sessionStorage.setItem('usuarioId', item.val().userId);
-                }
 
-            }
+                });
+            });
 
-        });
+        } else {
+            location.href = 'intro.php';
+        }
+
     });
 
-} else {
-    location.href = 'intro.php';
-}
-
-});
-    </script>
 
 
-    <script>
     function add_agenda() {
-        var userId = user_uid;
+        var userid = user_uid;
         var username = user_name.innerHTML;
         var email = email_user.innerHTML;
         var data = document.getElementById("data").value;
@@ -677,20 +676,18 @@
         var chat = "<?php  echo $chat ?>";
         var uid = "<?php echo $_GET['id'] ?>";
         var title = "<?php echo $title ?>"
-        var uidchat = uuidv4();
         var data = {
-            userId: userId,
+            userid: userid,
             username: username,
-            title: title,
             data: data,
             email: email,
             time: time,
             chat: chat,
-            uid: uid,
-            uidchat: uidchat
+            title:title,
+            uid: uid
         }
 
-        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uidchat).set(data,
+        firebase.database().ref().child('institution').child(uid).child("agendachat").child(uuidv4()).set(data,
             function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);
@@ -703,46 +700,24 @@
 
 
 
-        firebase.database().ref().child('users').child(userId).child("agendachat").child(uidchat).set(data,
-            function(error) {
-                if (error) {
-                    alert("Data could not be saved." + error);
-                } else {
 
+        firebase.database().ref().child('users').child(userid).child("agendachat").child(uuidv4()).set(data,
+        function(error) {
+            if (error) {
+                alert("Data could not be saved." + error);
+            } else {
+                // myFunction();
+                // location.href = "institute.php?id=<?php echo $uid?>";
 
-
-                }
-            });
+            }
+        });
 
 
     }
-    // myFunction();
-    //     function myFunction() {
-    //         setTimeout(function() {
-    //             alert("Chat Agendado com Sucesso, veja no seu perfil");
-    //         }, 1000);
-    //     }
 
-    function funcaosucess() {
-        $(".notify").toggleClass("active");
-        $("#notifyType").toggleClass("success");
-
-        setTimeout(function() {
-            $(".notify").removeClass("active");
-            $("#notifyType").removeClass("success");
-        }, 10000);
-    };
-
-    function funcaofailure() {
-        $(".notify").addClass("active");
-        $("#notifyType").addClass("failure");
-
-        setTimeout(function() {
-            $(".notify").removeClass("active");
-            $("#notifyType").removeClass("failure");
-        }, 5000);
-    };
-
+    function myFunction() {
+  setTimeout(function(){ alert("Chat Agendado com Sucesso, veja no seu perfil"); }, 10000);
+}
 
     countVisits();
 

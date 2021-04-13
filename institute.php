@@ -118,9 +118,9 @@
                             </ul>
                             <!-- ?php echo $uid; ?-->
                             <!-- Get Tickets Button -->
-                            <!-- <a href="" onClick="countContact()" target="_blank"
-                                class="btn confer-btn-white"> Chat <i class="zmdi zmdi-email"></i></a> -->
-                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                            <a hidden href="perfil/profile.html" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="emaill">Perfil<i class="zmdi zmdi-sign-in"></i></a>
+                            <a href="perfil/profile.php" target="_blank" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
                                 id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
                             </div>
                         <!-- Nav End -->
@@ -789,7 +789,7 @@
     <script>
     var user_name = "";
     var useruid = "";
-    var emaill = "";
+   
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -803,12 +803,14 @@
                         useruid.innerHTML = user_uid;
 
                         if (db_uid == user_uid) {
+                            if (item.val().name.length > 20) {
+                        name = item.val().name.substr(0, 20) + "..";
+                    } else {
+                        name = item.val().name;
+                    }
                             user_name = document.getElementById("user-name");
-
-                            email_user = document.getElementById("emaill");
-
                             user_name.innerHTML = item.val().name;
-
+                            email_user = document.getElementById("emaill");
                             email_user.innerHTML = item.val().email;
                             sessionStorage.setItem('usuarioId', item.val().userId);
                             return;
