@@ -354,10 +354,10 @@
 
 
                             <?php
-                        $ref = 'institution/'.$uid.'/college';
-                        $fetchdata = $database->getReference($ref)->getValue();
-                        $countCollege = 0;
-                        ?>
+                            $ref = 'institution/'.$uid.'/college';
+                            $fetchdata = $database->getReference($ref)->getValue();
+                            $countCollege = 0;
+                            ?>
 
                             <?php if($fetchdata != null):?>
                             <?php
@@ -438,18 +438,15 @@
                             <ul class="categories-list">
 
                                 <?php
-                        $ref = 'institution/'.$uid.'/course';
-                        $fetchdata = $database->getReference($ref)->getValue();
-                        ?>
+                            $ref = 'institution/'.$uid.'/course';
+                            $fetchdata = $database->getReference($ref)->getValue();
+                            ?>
 
                                 <?php
                         $count = 0;
                         if($fetchdata != null):?>
                                 <?php foreach( $fetchdata as $key => $row):
-                                $count++;
-                                if ($count == 10){
-                                    break;
-                                }
+                               
                                 ?>
 
                                 <li><a href="#"><?php echo $row["course"]; ?></a></li>

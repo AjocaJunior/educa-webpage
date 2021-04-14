@@ -231,55 +231,28 @@
 
 
                 <div class="col-12">
-                    <div class="schedule-tab">
-                        <!-- Nav Tabs -->
-                        <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab"
-                            role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab"
-                                    aria-controls="step-one" aria-expanded="true">Segunda-feira <br> <span>Agosto 14,
-                                        2019</span></a>
-                            </li>
-                            <!-- Nav Item -->
-                            <li class="nav-item">
-                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab"
-                                    aria-controls="step-two" aria-expanded="true">Terça-feira <br> <span>Agosto 15,
-                                        2020</span></a>
-                            </li>
-                            <!-- Nav Item -->
-                            <li class="nav-item">
-                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab"
-                                    aria-controls="step-three" aria-expanded="true">Quinta-feira <br> <span>Agosto 16,
-                                        2019</span></a>
-                            </li>
-                        </ul>
-                    </div>
+                  
 
-
-                    <div class="col-12">
-                        <div class="schedule-tab">
+                <div class="schedule-tab">
                             <!-- Nav Tabs -->
                             <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab"
                                 role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#step-six" role="tab"
-                                        aria-controls="step-six" aria-expanded="true">Sábado <br> <span>Agosto 14,
-                                            2019</span></a>
+                                    <a class="nav-link" id="monday-tab" data-toggle="tab" href="#step-one" role="tab"
+                                        aria-controls="step-one" aria-expanded="true">Quarta-feira <br> <span>14 de Abril,
+                                            2021</span></a>
                                 </li>
                                 <!-- Nav Item -->
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" id="friday-tab" data-toggle="tab" href="#step-five" role="tab"
-                                        aria-controls="step-five" aria-expanded="true">__________<br>
-                                        <span>________</span></a>
-                                </li>
-                                <!-- Nav Item -->
-                                <li class="nav-item">
-                                    <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-seven" role="tab"
-                                        aria-controls="step-three" aria-expanded="true">Domingo <br> <span>Agosto 16,
-                                            2019</span></a>
+                                    <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab"
+                                        aria-controls="step-two" aria-expanded="true">Quinta-feira <br> <span>15 de Abril,
+                                            2021</span></a>
                                 </li>
                             </ul>
                         </div>
+                    <div class="col-12">
+                      
 
 
 
@@ -296,35 +269,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Discurso de Abertura</h6>
-                                                            <p>por <span>Presidente da CADE</span></p>
-                                                            <p>e <span>Ministro de
-                                                                    Ciência e
-                                                                    tecnologia,
-                                                                    ensino superior
-                                                                    técnico
-                                                                    profissional
-                                                                </span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> Início do Evento</p>
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Ver Mais <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
+                                               
 
                                                 <!-- Single Schedule Area -->
                                                 <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
@@ -337,58 +282,24 @@
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>Live <i>“Educação
-                                                                    digitalizada em
-                                                                    Moçambique: desafios
-                                                                    e perspectivas”</i>
+                                                            <h6>WEBINAR <i>“Os desafios das mulheres que abraçam profissões categorizadas como masculinas”</i>
                                                             </h6>
-                                                            <p>Oradores <span>MINEDH</span></p>
-                                                            <p><span>MCTESTP</span></p>
-                                                            <p><span>MEPT</span></p>
-                                                            <p><span>Universidade do
-                                                                    Porto
+                                                            <p>Oradores <span>Destina Deolinda</span></p>
+                                                            <p><span>Antónia Mocha
                                                                 </span></p>
-                                                            <p>Moderador <span>UP</span></p>
+                                                            <p>Moderador <span>Elcidia Dabala</span></p>
                                                         </div>
                                                     </div>
                                                     <!-- Single Schedule Info -->
                                                     <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i>10:00h - 12:00h </p>
+                                                        <p><i class="zmdi zmdi-time"></i>13:00h - 14:00h </p>
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Assistir<i
+                                                    <a href="https://educa.co.mz/evento.php" class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
 
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Palestra
-                                                                <i>"Orientação vocacional
-                                                                    e Profissional"</i>
-                                                            </h6>
-                                                            <p>Palestrante <span>Isaías
-                                                                    Bezana
-                                                                </span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
+                                                
 
                                                 <!-- Single Schedule Area -->
 
@@ -414,26 +325,21 @@
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>Live <i>“Impacto de pandemia
-                                                                    COVID-19 no sistema
-                                                                    nacional de educação:
-                                                                    Lições e Perspectivas”</i>
+                                                            <h6>WEBINAR <i>“Feminismo, activismo e intervenção social: vozes e experiências”</i>
                                                             </h6>
-                                                            <p>Oradores <span>MINEDH</span></p>
-                                                            <p><span>CMCM</span></p>
-                                                            <p><span>INSS</span></p>
-                                                            <p><span>CISM
-                                                                </span></p>
-                                                            <p>Moderador <span>ISCISA</span></p>
+                                                            <p>Oradores <span>Mirna Chitsungo</span></p>
+                                                            <p><span>Benilde Mourana</span></p>
+                                                            
+                                                            <p>Moderador <span>Elcidia Dabala</span></p>
                                                         </div>
                                                     </div>
                                                     <!-- Single Schedule Info -->
                                                     <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
+                                                        <p><i class="zmdi zmdi-time"></i> 13:00 - 14:00h</p>
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Assistir<i
+                                                    <a href="https://educa.co.mz/evento.php" class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
                                                 <!-- Single Schedule Area -->
@@ -443,347 +349,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--TAB QUARTA-->
-                                <div class="tab-pane fade" id="step-three" role="tabpanel"
-                                    aria-labelledby="wednesday-tab">
-                                    <!-- Single Tab Content -->
-                                    <div class="single-tab-content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Live <i>“Pedagogia e
-                                                                    Tecnologia: Da
-                                                                    evolução a
-                                                                    projecção de uma
-                                                                    pedagogia digital
-                                                                    em Moçambique
-                                                                    ”</i>
-                                                            </h6>
-                                                            <p>Oradores <span>MCTESTP</span></p>
-                                                            <p><span>ISCED</span></p>
-                                                            <p><span>UP</span></p>
-                                                            <p><span>ISUTC</span></p>
-                                                            <p><span>Universidade de
-                                                                    Caixas do sul,
-                                                                    Brasil
-                                                                </span></p>
-                                                            <p>Moderador <span>Eder Mario</span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Webinar
-                                                                <i>"Gestão escolar:
-                                                                    uma visão sobre
-                                                                    os desafios na era
-                                                                    digital
-                                                                    "</i>
-                                                            </h6>
-                                                            <p>Oradores <span>António Cipriano
-                                                                </span></p>
-                                                            <p>e <span>José Uqueio
-                                                                </span></p>
-                                                            <p>Moderador <span>Ergimino Mucale</span></p>
-
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="#" class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--TAB QUINTA-->
-                                <div class="tab-pane fade" id="step-four" role="tabpanel"
-                                    aria-labelledby="thursday-tab">
-                                    <!-- Single Tab Content -->
-                                    <div class="single-tab-content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Live <i>“Educação online e a
-                                                                    educação a distância
-                                                                    em Moçambique:
-                                                                    Estágios e
-                                                                    expectativas”</i>
-                                                            </h6>
-                                                            <p>Oradores <span>ISCED</span></p>
-                                                            <p><span>UP</span></p>
-                                                            <p><span>Universidade Politécnica</span></p>
-                                                            <p><span>ISM</span></p>
-                                                            <p><span>Universidade de Lisboa
-                                                                </span></p>
-                                                            <p>Moderador <span>UEM</span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="evento.php#conferencias"
-                                                        class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-
-
-                                            </div>
-
-                                            <!-- More Schedule Btn -->
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--TAB SEXTA-->
-                                <div class="tab-pane fade" id="step-five" role="tabpanel" aria-labelledby="friday-tab">
-                                    <!-- Single Tab Content -->
-                                    <div class="single-tab-content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Live <i>“Conexão Global do
-                                                                    Sistema nacional de
-                                                                    educação.
-                                                                    ”</i>
-                                                            </h6>
-                                                            <p>Oradores <span>CADE</span></p>
-                                                            <p><span>MINEDH</span></p>
-                                                            <p><span>MCTESTP</span></p>
-                                                            <p><span>UEM</span></p>
-                                                            <p><span>CESC </span></p>
-                                                            <p>Moderador <span>CADE</span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="evento.php#conferencias"
-                                                        class="btn confer-btn-white">Assistirr <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Palestra
-                                                                <i>"Liderança e
-                                                                    empreendedorismo
-                                                                    "</i>
-                                                            </h6>
-                                                            <p>Palestrante <span>Arcélio Tivane
-                                                                </span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="evento.php#webinares"
-                                                        class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--TAB SÁBADO-->
-                                <div class="tab-pane fade" id="step-six" role="tabpanel" aria-labelledby="saturday-tab">
-                                    <!-- Single Tab Content -->
-                                    <div class="single-tab-content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Webinar
-                                                                <i>"Alfabetização digital e
-                                                                    o acesso à internet
-                                                                    como um direito humano: dos planos a
-                                                                    perspectivas pragmáticas no
-                                                                    contexto moçambicano
-                                                                    "</i>
-                                                            </h6>
-                                                            <p>Oradores <span>Régio Conrado
-                                                                </span>
-                                                            </p>
-                                                            <p><span>Dércio Tsandzana
-                                                                </span></p>
-                                                            <p>e<span>Uriel Menete
-                                                                </span></p>
-                                                            <p>Moderador
-                                                                <span>CADE</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 10:00 - 12:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="evento.php#webinares"
-                                                        class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-
-                                                <!-- Single Schedule Area -->
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--TAB DOMINGO-->
-                                <div class="tab-pane fade" id="step-seven" role="tabpanel" aria-labelledby="sunday-tab">
-                                    <!-- Single Tab Content -->
-                                    <div class="single-tab-content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Discurso de Encerramento</h6>
-                                                            <p>por <span>Presidente da CADE</span></p>
-                                                            <p>e <span>Ministra da
-                                                                    Educação e
-                                                                    desenvolvimento
-                                                                    Humano
-                                                                </span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 12:00 - 14:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="evento.php#encerramento" class="btn confer-btn-white">Ver
-                                                        Mais <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-
-                                                <!-- Single Schedule Area -->
-                                                <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
-                                                    data-wow-delay="300ms">
-                                                    <!-- Single Schedule Thumb and Info -->
-                                                    <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                        <!-- Single Schedule Thumb -->
-                                                        <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
-                                                        </div>
-                                                        <!-- Single Schedule Info -->
-                                                        <div class="single-schedule-info">
-                                                            <h6>Momento Cultural <i>Espetáculos</i></h6>
-
-                                                        </div>
-                                                    </div>
-                                                    <!-- Single Schedule Info -->
-                                                    <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 14:00 - 16:00h</p>
-
-                                                    </div>
-                                                    <!-- Schedule Btn -->
-                                                    <a href="actividades-culturais.html#espetaculos"
-                                                        class="btn confer-btn-white">Assistir <i
-                                                            class="zmdi zmdi-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
+                             
                             </div>
                         </div>
                     </div>
