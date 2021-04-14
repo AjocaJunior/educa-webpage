@@ -224,7 +224,7 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
+                                    <a href="https://educa.co.mz/informacoes-diversas.php#bolsas" target="_blank" class="post-title">
                                         Bolsas
                                     </a>
                                     <span><?php echo " ".$title; ?></span>
@@ -237,7 +237,7 @@
                                     <a href="#"><img src="img/educa/logo.png" alt=""></a>
                                 </div>
                                 <div class="post-meta">
-                                    <a href="single-blog.php?id=<?php  echo $uid;?>" class="post-title">Publicações e
+                                    <a href="single-blog.php?id=<?php  echo $uid;?>" target="_blank" class="post-title">Publicações e
                                         noticias</a>
                                     <!---institute-blog.php-->
                                     <span>Ver publicações</span>
