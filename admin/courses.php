@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Instituição - Cursos</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -188,7 +188,8 @@ if($uid == null){
         <thead>
             <tr class="d-flex">
                 <th class="col-1">Posição</th>
-                <th class="col-10">Curso</th>
+                <th class="col-3">Curso</th>
+                <th class="col-7">Descrição</th>
                 <th class="col-1">Delete</th>
             </tr>
         </thead>
@@ -202,18 +203,17 @@ if($uid == null){
         include_once('../includes/dbconfig.php');         
         $ref = 'institution/'.$uid.'/course';
         $fetchdata = $database->getReference($ref)->getValue();
-        
-                        $count = 0;
+                          $count = 0;
                         if($fetchdata != null):?>
                         <?php foreach( $fetchdata as $key => $row):
-                                $count++;
-                              
+                                $count++;                              
                                 ?>
 
             <tr class="d-flex">
                 <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["course"]; ?></td>
-                <td class="col-1"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                <td class="col-3"><?php echo $row["course"]; ?></td>
+                <td class="col-7"><?php echo $row["description"]; ?></td>
+                <td class="col-1"> <a href="" type="button" onclick="deleteCourse('<?php echo $row['uidCourse']; ?>')"><i class="fa fa-trash"></i> </a> </td>
             </tr>
   
                             <?php endforeach ?>
@@ -287,10 +287,23 @@ if($uid == null){
   <!-- Page level plugins -->
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
+  
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+<script>
+ function deleteCourse(uidCourse) {
+  
+firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("course").child(uidCourse).remove()
+    .then(function() {
+        window.location.reload();
+        alert("FEITO");
+    })
+    .catch(function(error) {
+        alert("Opsss ocoreu uma falha");
+    });
+}
 
+</script>
 </body>
 
 </html>

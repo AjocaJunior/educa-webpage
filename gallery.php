@@ -102,7 +102,7 @@
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp " data-wow-delay="300ms ">
                         <!-- Thumb -->
                         <div class="speaker-single-thumb ">
-                            <img src="<?php echo $row['url']; ?>" alt=" " style="min-height: 300px; max-height: 350px;">
+                            <img src="<?php echo $row['url']; ?>" alt="" style="min-height: 300px; max-height: 350px;">
                         </div>
                         <!-- Social Info -->
                         <div class="social-info ">

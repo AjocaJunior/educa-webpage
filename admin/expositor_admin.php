@@ -653,6 +653,7 @@ foreach($fetchdata as $key => $row){
 
     function updateLink() {
         var linkUrl = document.getElementById('link').value;
+        var id = "<?php echo $uid ?>";
         if (linkUrl != null) {
             firebase.database().ref().child('institution').child(id).child('video_link').set(linkUrl, function(error) {
                 window.location.reload(true);
@@ -666,7 +667,6 @@ foreach($fetchdata as $key => $row){
         var email = document.getElementById('inputEmail').value;
         var phone = document.getElementById("inputContact").value;
         var localization = document.getElementById("inputLocalization").value;
-
         var id = "<?php echo $uid ?>";
 
         firebase.database().ref().child('institution').child(id).child('email').set(email, function(error) {});

@@ -85,6 +85,7 @@
 
                                 <div class="form-group row">
 
+                                   
                                     <div class="col-sm-12">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -93,34 +94,11 @@
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input" id="photo"
                                                     aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="photo">Foto do Moderador</label>
+                                                <label class="custom-file-label" for="photo">Flyer do Evento</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <img src="img/logo.png" height="38" class="input-group-text" />
-                                            </div>
-                                            <div class="custom-file">
-                                                <input type="file" name="photo2" class="custom-file-input" id="photo2"
-                                                    aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="photo2">Flyer do Evento</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <img src="img/logo.png" height="38" class="input-group-text" />
-                                            </div>
-                                            <div class="custom-file">
-                                                <input type="file" name="photo3" class="custom-file-input" id="photo3"
-                                                    aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="photo3">Icon do Tipo de Evento</label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                 
                                 </div>
 
 
@@ -180,8 +158,7 @@
 
             const ref = firebase.storage().ref();
             const file = document.querySelector("#photo").files[0];
-            const file1 = document.querySelector("#photo2").files[0];
-            const file2 = document.querySelector("#photo3").files[0];
+            
             if (file != null) {
 
                 const name = +new Date() + "-" + file.name;
@@ -201,7 +178,7 @@
             }
         }
 
-        function addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, img_moderador, flyer, icon) {
+        function addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, flyer) {
 
             var data = {
                 tipo:tipo,
@@ -210,10 +187,8 @@
                 evento_descricao: evento_descricao,
                 start_time: start_time,
                 end_time: end_time,
-                moderador_nome: moderador_nome,
-                img_moderador: img_moderador,
+                moderador_nome: moderador_nome,   
                 flyer: flyer,
-                icon:icon,
                 data:data,
                 profissao : profissao,
                 chat: "",
