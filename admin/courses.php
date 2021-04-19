@@ -9,36 +9,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Instituição - Cursos</title>
+  <title>Cursos</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="icon" href="../img/educa/logo.png">
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <link rel="icon" href="../img/educa/logo.png">
+
 </head>
 
-<?php
-$uid  = $_GET['id'];
-
-if($uid == null){
-  if(isset($_SESSION['uidInstitute'])){
-    $uid = $_SESSION['uidInstitute'];
-  }else{
-    header("Location: login.html");
-  }
-  
-}
-    
-?>
-
 <body id="page-top">
-
+<?php $uid  = $_GET['id']; ?>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -73,9 +59,9 @@ if($uid == null){
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="college.php?id=<?php echo $uid; ?>" >
+        <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-cog"></i>
-          <span>Faculdades</span>
+          <span>Cursos</span>
         </a>
        
       </li>
@@ -89,8 +75,7 @@ if($uid == null){
       
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+     
 
       <!-- Heading -->
       <div class="sidebar-heading">
@@ -188,8 +173,8 @@ if($uid == null){
         <thead>
             <tr class="d-flex">
                 <th class="col-1">Posição</th>
-                <th class="col-3">Curso</th>
-                <th class="col-7">Descrição</th>
+                <th class="col-3">Cursos</th>
+                <th class="col-7">Detalhes</th>
                 <th class="col-1">Delete</th>
             </tr>
         </thead>
@@ -197,23 +182,35 @@ if($uid == null){
 
 
 
-      <?php
+                        <?php
 
-           
+
+if($uid == null){
+  if(isset($_SESSION['uidInstitute'])){
+    $uid = $_SESSION['uidInstitute'];
+  }else{
+    header("Location: login.html");
+  }
+  
+}
+               
         include_once('../includes/dbconfig.php');         
         $ref = 'institution/'.$uid.'/course';
         $fetchdata = $database->getReference($ref)->getValue();
-                          $count = 0;
+        
+                        $count = 0;
                         if($fetchdata != null):?>
                         <?php foreach( $fetchdata as $key => $row):
-                                $count++;                              
+                                $count++;
+                              
                                 ?>
 
             <tr class="d-flex">
-                <td class="col-1"><?php echo  $count; ?></td>
+                <td class="col-1"><?php echo $count; ?></td>
                 <td class="col-3"><?php echo $row["course"]; ?></td>
                 <td class="col-7"><?php echo $row["description"]; ?></td>
-                <td class="col-1"> <a href="" type="button" onclick="deleteCourse('<?php echo $row['uidCourse']; ?>')"><i class="fa fa-trash"></i> </a> </td>
+                <td class="col-1"> <a href="" type="button" onclick="deleteCourse('<?php echo $row['uid']; ?>')"><i
+                                    class="fa fa-trash"></i></a> </td>
             </tr>
   
                             <?php endforeach ?>
@@ -238,7 +235,7 @@ if($uid == null){
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Educa Dashboard 2021</span>
+            <span>Copyright &copy; Educa 2020</span>
           </div>
         </div>
       </footer>
@@ -287,23 +284,28 @@ if($uid == null){
   <!-- Page level plugins -->
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  
+
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
-<script>
- function deleteCourse(uidCourse) {
-  
-firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("course").child(uidCourse).remove()
-    .then(function() {
-        window.location.reload();
-        alert("FEITO");
-    })
-    .catch(function(error) {
-        alert("Opsss ocoreu uma falha");
-    });
-}
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+  <script src="../js/db/app.js"></script>
+    <script src="../js/db/real-time-database.js"></script>
 
-</script>
+  <script>
+    function deleteCourse(uidImg) {
+
+        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("course").child(uidImg)
+            .remove()
+            .then(function() {
+                window.location.reload();
+            })
+            .catch(function(error) {
+                alert("Opsss ocoreu uma falha");
+            });
+    }
+    </script>
+
+
 </body>
 
 </html>

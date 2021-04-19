@@ -24,7 +24,7 @@
 </head>
 
 <body style="background-color: #e9eef4">
-
+<?php $uid  = $_GET['id']; ?>
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -123,7 +123,7 @@
     function addCourse(){
       var course         = document.getElementById("course").value;
       var description    = document.getElementById("description").value;
-      var uid            = "<?php echo $_GET['id'] ?>";
+      var uid            = uuidv4();
 
       var data = {
         course : course,

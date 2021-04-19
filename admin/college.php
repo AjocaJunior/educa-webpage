@@ -174,7 +174,8 @@
             <tr class="d-flex">
                 <th class="col-1">Posição</th>
                 <th class="col-10">Faculdades</th>
-                <th class="col-1">Delete</th>
+                <th class="col-1">Del</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -207,7 +208,9 @@ if($uid == null){
             <tr class="d-flex">
                 <td class="col-1"><?php echo  $count; ?></td>
                 <td class="col-10"><?php echo $row["college"]; ?></td>
-                <td class="col-1"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                <td class="col-1"> <a href="" type="button" onclick="deleteFaculdade('<?php echo $row['uid']; ?>')"><i
+                                    class="fa fa-trash"></i></a> </td>
+                                    
             </tr>
   
                             <?php endforeach ?>
@@ -284,6 +287,24 @@ if($uid == null){
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+  <script src="../js/db/app.js"></script>
+    <script src="../js/db/real-time-database.js"></script>
+
+  <script>
+    function deleteFaculdade(uidImg) {
+
+        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("college").child(uidImg)
+            .remove()
+            .then(function() {
+                window.location.reload();
+            })
+            .catch(function(error) {
+                alert("Opsss ocoreu uma falha");
+            });
+    }
+    </script>
+
 
 </body>
 

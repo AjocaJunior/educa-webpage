@@ -24,7 +24,7 @@
 </head>
 
 <body style="background-color: #e9eef4">
-
+<?php $uid  = $_GET['id']; ?>
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -44,12 +44,18 @@
                   </div>
                 </div>
 
-                <button onclick="addCourse()" type="button" class="btn btn-lg btn-block" style="background:#f8871f;border-radius:0px; color: white;" >ADICIONAR FACULDADE</button>
+                <button onclick="addCollege()" type="button" class="btn btn-lg btn-block" style="background:#f8871f;border-radius:0px; color: white;" >ADICIONAR FACULDADE</button>
                 <br>
                 <div class="list-group">
-                  <a href="#" class="list-group-item list-group-item-action active">
-                    FACULDADE CADASTRADOS
-                  </a>
+                <div class="row">
+                <div class="col-12">
+                <li class="list-group-item list-group-item-action active">
+                    FACULDADES CADASTRADAS
+                  </li>
+                </div>
+               
+                </div>
+                 
 
                              <?php
                                  $id = '';
@@ -71,8 +77,16 @@
 
                                  <?php if($fetchdata != null):?>
                                    <?php foreach( $fetchdata as $key => $row): ?>
+                                    <div class="row">
+                <div class="col-11">
+                <input href="#" type="text" class="form-control" id="inputCollege" value="<?php echo $row['college']; ?>"/> 
+                </div>
 
-                                        <a href="#" class="list-group-item list-group-item-action"><?php echo $row['college']; ?></a>
+                <div class="col-1">
+                                        <a href="#" type="button" class="" onclick="editCollege('<?php echo $row['uid']; ?>')">
+                                        <i class="fa fa-edit"></i>
+                                        </a> 
+                                        </div>
 
                                    <?php endforeach ?>
 
@@ -112,7 +126,7 @@
   <script>
 
 
-    function addCourse(){
+    function addCollege(){
       var college         = document.getElementById("college").value;
       var uid            = "<?php echo $_GET['id']; ?>";
       var uidCollege     = uuidv4();
@@ -132,7 +146,16 @@
       });
     }
 
+    function editCollege(uidImg) {
+        var college = document.getElementById('inputCollege').value;
+        var uid = "<?php echo $uid ?>";
+        if (college != null) {
+            firebase.database().ref().child('institution').child(uid).child('college').child(uidImg).child("college").set(college, function(error) {
+                window.location.reload(true);
+            });
+        }
 
+    }
 
     function uuidv4() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
