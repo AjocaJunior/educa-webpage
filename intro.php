@@ -82,7 +82,7 @@
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="name" id="name"
-                                                    placeholder="nome completo">
+                                                    placeholder="nome completo" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -115,7 +115,7 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30 textbox-n"
                                                     onfocus="(this.type='date')" name="date_of_birth" id="date_of_birth"
-                                                    placeholder="Data de nascimento">
+                                                    placeholder="Data de nascimento" required>
                                             </div>
                                         </div>
 
@@ -123,7 +123,7 @@
                                         <div class="col-12 col-lg-6" id="level_of_schoolingDiv">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="level_of_schooling"
-                                                    id="level_of_schooling" placeholder="Nível académico">
+                                                    id="level_of_schooling" placeholder="Nível académico" required>
                                             </div>
                                         </div>
 
@@ -132,7 +132,7 @@
                                         <div class="col-12 col-lg-6" id="schoolDiv">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="school" id="school"
-                                                    placeholder="Instituição de ensino">
+                                                    placeholder="Instituição de ensino" required>
                                             </div>
                                         </div>
 
@@ -141,7 +141,7 @@
                                         <div class="col-12 col-lg-6" id="professionDiv">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="profession"
-                                                    id="profession" placeholder="Profissão">
+                                                    id="profession" placeholder="Profissão" required>
                                             </div>
                                         </div>
 
@@ -151,14 +151,14 @@
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="residence"
-                                                    id="residence" placeholder="Residência">
+                                                    id="residence" placeholder="Residência" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control mb-30" name="contact"
-                                                    id="contact" placeholder="Contacto">
+                                                    id="contact" placeholder="Contacto" required>
                                             </div>
                                         </div>
 
@@ -167,14 +167,14 @@
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="email" class="form-control mb-30" name="email" id="email"
-                                                    placeholder="E-mail">
+                                                    placeholder="E-mail" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
                                         <div class="col-12 col-lg-6">
                                             <div class="form-group">
                                                 <input type="password" class="form-control mb-30" name="password"
-                                                    id="password" placeholder="Password">
+                                                    id="password" placeholder="Password" required>
                                             </div>
                                         </div>
                                         <!-- Form Group -->
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center " style="margin: 2px;">
-                            <button type="submit" onclick="addButton()" class="btn btn-warning btn-lg btn-block"
+                            <button type="submit" onclick="" class="btn btn-warning btn-lg btn-block"
                                 style="background:#f8871f;color:white">Entrar<i
                                     class="zmdi zmdi-long-arrow-right"></i></button>
 
@@ -320,7 +320,7 @@
                 alert("Data could not be saved." + error);
                 location.href = "intro.php";
             } else {
-                location.href = "index.php";
+                location.href = "index.php?id="+result.user.uid;
             }
         });
 
