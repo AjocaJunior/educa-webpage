@@ -158,8 +158,10 @@ foreach($fetchdata as $key => $row){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Faculdades:</h6>
-                        <a class="collapse-item" target="_blank"  href="add_college.php?id=<?php echo $uid; ?>">Adicionar faculdades</a>
-                        <a class="collapse-item" target="_blank"  href="college.php?id=<?php echo $uid; ?>">Todas faculdades</a>
+                        <a class="collapse-item" target="_blank" href="add_college.php?id=<?php echo $uid; ?>">Adicionar
+                            faculdades</a>
+                        <a class="collapse-item" target="_blank" href="college.php?id=<?php echo $uid; ?>">Todas
+                            faculdades</a>
                     </div>
                 </div>
             </li>
@@ -175,8 +177,10 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cursos:</h6>
-                        <a class="collapse-item" target="_blank" href="add_course.php?id=<?php echo $uid; ?>">Publicar cursos</a>
-                        <a class="collapse-item" target="_blank" href="courses.php?id=<?php echo $uid; ?>">Todos cursos</a>
+                        <a class="collapse-item" target="_blank" href="add_course.php?id=<?php echo $uid; ?>">Publicar
+                            cursos</a>
+                        <a class="collapse-item" target="_blank" href="courses.php?id=<?php echo $uid; ?>">Todos
+                            cursos</a>
                     </div>
                 </div>
             </li>
@@ -194,7 +198,8 @@ foreach($fetchdata as $key => $row){
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cursos:</h6>
                         <a class="collapse-item" target="_blank" href="publish.php?id=<?php echo $uid; ?>">Publicar</a>
-                        <a class="collapse-item" target="_blank"  href="publicacoes.php?id=<?php echo $uid; ?>">Todas publicações </a>
+                        <a class="collapse-item" target="_blank" href="publicacoes.php?id=<?php echo $uid; ?>">Todas
+                            publicações </a>
                     </div>
                 </div>
             </li>
@@ -211,8 +216,10 @@ foreach($fetchdata as $key => $row){
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fotos:</h6>
-                        <a class="collapse-item" target="_blank"  href="add_gallery.php?id=<?php echo $uid; ?>">Publicar fotos</a>
-                        <a class="collapse-item" target="_blank"  href="../gallery.php?id=<?php echo $uid; ?>">Galeria </a>
+                        <a class="collapse-item" target="_blank" href="add_gallery.php?id=<?php echo $uid; ?>">Publicar
+                            fotos</a>
+                        <a class="collapse-item" target="_blank" href="../gallery.php?id=<?php echo $uid; ?>">Galeria
+                        </a>
                     </div>
                 </div>
             </li>
@@ -239,17 +246,22 @@ foreach($fetchdata as $key => $row){
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow text-center">
 
                     <!-- Sidebar Toggle (Topbar) -->
-
+                
+                    <a class="nav-link" href="#">
+                                <h4 class="text-gray-900">
+                                    <?php echo $title; ?> </h4>
+                             
+                            </a>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 
-
+                     
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -257,14 +269,22 @@ foreach($fetchdata as $key => $row){
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <?php echo substr($title , 0 , 15).".."; ?> </span>
+                                
                                 <img class="img-profile rounded-circle" src="<?php echo $img1; ?>">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in text-center"
                                 aria-labelledby="userDropdown">
-
+                                <div class="input-group">
+                           
+                                            <div class="custom-file">
+                                                <input type="file" name="photo" placeholder="Imagem" class="custom-file-input" id="photo" aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label" for="photo"></label>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <button type="button" onClick="uploadImage()"
+                                            class="btn btn-primary text-center">Actualizar</button>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -650,6 +670,38 @@ foreach($fetchdata as $key => $row){
 
     }
 
+    function uploadImage() {
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#photo").files[0];
+        const name = +new Date() + "-" + file.name;
+        const metadata = {
+            contentType: file.type
+        };
+        const task = ref.child(name).put(file, metadata);
+        task
+            .then(snapshot => snapshot.ref.getDownloadURL())
+            .then(url => {
+                console.log("1-" + url);
+                updateImage(url);
+                //document.querySelector("#image").src = url;
+            })
+            .catch(console.error);
+    }
+
+    function updateImage(url) {
+
+
+            var img1 = url;
+
+            var id = "<?php echo $uid ?>";
+
+        if (img1 != null) {
+            firebase.database().ref().child('institution').child(id).child('img1').set(img1, function(error) {
+                window.location.reload(true);
+            });
+        }
+
+    }
 
     function updateLink() {
         var linkUrl = document.getElementById('link').value;

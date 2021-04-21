@@ -24,6 +24,7 @@
 </head>
 
 <body style="background-color: #e9eef4">
+
 <?php $uid  = $_GET['id']; ?>
   <div class="container">
 
@@ -78,7 +79,19 @@
                                  <?php if($fetchdata != null):?>
                                    <?php foreach( $fetchdata as $key => $row): ?>
 
-                                        <a href="#" class="list-group-item list-group-item-action"><?php echo $row['course']; ?></a>
+                                    <div class="row">
+                                        <div class="col-11">
+                                            <input href="#" type="text" class="form-control" id="inputCourse"
+                                                value="<?php echo $row['course']; ?>" />
+                                        </div>
+
+                                        <div class="col-1">
+                                            <a href="#" type="button" class=""
+                                                onclick="editCourse('<?php echo $row['uid']; ?>')">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </div>
 
                                    <?php endforeach ?>
 
@@ -123,21 +136,34 @@
     function addCourse(){
       var course         = document.getElementById("course").value;
       var description    = document.getElementById("description").value;
-      var uid            = uuidv4();
+      var uid = "<?php echo $_GET['id']; ?>"
+      var uidCourse         = uuidv4();
 
       var data = {
         course : course,
         description : description,
-        uid : uid
+        uid : uidCourse
       }
 
-      firebase.database().ref().child('institution').child(uid).child("course").child(uuidv4()).set(data , function(error){
+      firebase.database().ref().child('institution').child(uid).child("course").child(uidCourse).set(data , function(error){
         if (error) {
           alert("Data could not be saved." + error);
         } else {
           window.location.reload();
         }
       });
+    }
+
+    function editCourse(uidImg) {
+        var course = document.getElementById('inputCourse').value;
+        var uid = "<?php echo $uid ?>";
+        if (course != null) {
+            firebase.database().ref().child('institution').child(uid).child('course').child(uidImg).child(
+                "course").set(course, function(error) {
+                window.location.reload(true);
+            });
+        }
+
     }
 
 
