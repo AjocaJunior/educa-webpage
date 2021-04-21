@@ -144,9 +144,8 @@ foreach($fetchdata as $key => $row){
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
+           
+            <img class="img-profile" src="<?php echo $img1; ?>" >
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
