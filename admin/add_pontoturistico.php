@@ -37,7 +37,7 @@
                             <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="ponto_name" class="form-control form-control-user" placeholder="Nome do Ponto Turístico">
+                                        <input type="text" id="ponto_name" class="form-control form-control-user" placeholder="Nome do Ponto Turístico" riquered>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" id="location" class="form-control form-control-user" placeholder="Localizacao">
@@ -57,13 +57,34 @@
                                     <input type="text" id="video_link" class="form-control form-control-user" placeholder="Link do video de apresentação">
                                 </div>
 
-                                <div class="form-group">
-                                    <select class="browser-default custom-select" id="category">
+                                <div class="form-group row">
+                                    <div class="col-12 col-md-6">
+
+                                    <select class="browser-default custom-select" id="category" required>
                                         <option selected>Seleciona categoria</option>
-                                        <option value="Museu">Museu</option>
+                                        <option value="alojamento">Alojamento</option>
+                                        
+                                        <option value="alimentacao">Alimentação</option>
+                                        <option value="jardim">Jardim</option>
+                                        <option value="livraria">Livraria</option>
                                        
-                                        <option value="Livraria">Livraria</option>
+                                        <option value="museu">Museu</option>
+                                        <option value="desporto">Desporto</option>
+                                        <option value="ginasio">Ginásio</option>
                                     </select>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                               
+                                    <select class="browser-default custom-select" id="subcategory">
+                                        <option selected>Seleciona sub-categoria</option>
+                                        <option value="hotel">Hotel</option>
+                                        <option value="pastelaria">Cafe e Pastelaria</option>
+                                        <option value="restaurante">Restaurante</option>
+                                       
+                                    </select>
+                                    </div>
+                                    
+                                   
                                 </div>
 
                                 <div class="form-group row">
@@ -144,8 +165,41 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="../js/db/app.js"></script>
     <script src="../js/db/real-time-database.js"></script>
+
+
     <script>
-        //add institution
+const source = document.querySelector("#category");
+const target = document.querySelector("#sub-category");
+
+// const displayWhenSelected = (source, value, target) => {
+//     const selectedIndex = source.selectedIndex;
+//     const isSelected = source[selectedIndex].value === value;
+//     target.classList[isSelected
+//         ? "add"
+//         : "remove"
+//     ]("show");
+// };
+// source.addEventListener("change", (evt) =>
+//     displayWhenSelected(source, "", target)
+// );
+
+
+
+
+// const target2 = document.querySelector("#sub-category2");
+
+// const displayWhenSelected = (source, value, target2) => {
+//     const selectedIndex = source.selectedIndex;
+//     const isSelected = source[selectedIndex].value === value;
+//     target2.classList[isSelected
+//         ? "add"
+//         : "remove"
+//     ]("show");
+// };
+
+
+
+        //add ponto
         function register_ponto() {
             var ponto_name = document.getElementById('ponto_name').value;
             var location = document.getElementById('location').value;
@@ -157,9 +211,10 @@
             var password = document.getElementById('password').value;
             var uid = uuidv4();
 
-            var e = document.getElementById("category");
-
-            var category = e.selectedIndex;
+            var e = document.getElementById("category").value;
+var f = document.getElementById("subcategory").value;
+var subcategory = f;
+            var category = e;
 
 
             //upload img perfil
@@ -177,20 +232,21 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, url, category);
+                        addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, url, category, subcategory);
                     })
                     .catch(console.error);
 
             } else {
-                addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, "", category);
+                addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, "", category, subcategory);
             }
         }
 
-        function addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, img1, category) {
+        function addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, img1, category, subcategory) {
 
 
             var data = {
                 category: category,
+                subcategory: subcategory,
                 ponto_name: ponto_name,
                 location: location,
                 phone: contact,
@@ -231,6 +287,17 @@
             });
         }
     </script>
+
+    <style>
+/* #sub-category {
+  display: none;
+}
+
+#sub-category.show {
+  display: block;
+} */
+
+    </style>
 </body>
 
 </html>
