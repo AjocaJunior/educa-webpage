@@ -130,13 +130,13 @@
 
 
 
-            <div class="row">
+            <div class="row justify-content-center">
                 <?php
                     if($fetchdata != null):?>
                 <?php foreach( $fetchdata as $key => $row):
 
                 ?>
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 align-self-center">
                     <div class="single-we-offer-content bg-boxshadow text-center wow fadeInUp" data-wow-delay="300ms">
                         <a href="novidade.php?id=<?php echo $row['uid'] ?>" target="_blank">
                             <?php
@@ -182,18 +182,16 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <?php
-              if($fetchdataaa != null):?>
+                 if($fetchdataaa != null):?>
                 <?php foreach( $fetchdataaa as $key => $row):
+                ?>
 
-                if($row['category']=='Livraria'){
-                
-             ?>
-
+                <?php if($row['category']=='Livraria'){ ?>
                 <!-- Heading -->
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
+                    <div class="section-heading text-center mt-5 wow fadeInUp" data-wow-delay="300ms"
                         style="margin-bottom: 10px;">
 
                         <h6 style="color:#414c52;"><?php echo $row['category']; ?></h6>
@@ -203,34 +201,69 @@
 
 
                 <!-- Single Speaker Area -->
-                <div class="col-12 col-md-3 bg-boxshadow">
-                    <div class="section-heading text-center">
-                        <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
+                <div class="col-12 col-md-3 align-self-center bg-boxshadow">
 
-                            <div class="text-center">
-                                <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
-                                    <!-- Thumb -->
-                                    <div class="speaker-single-thumb fill">
-                                        <img src="<?php echo $row["img1"]; ?>" alt="">
-                                    </div>
-                                    <!-- Social Info -->
+                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
 
-
+                        <div class="text-center">
+                            <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb fill">
+                                    <img src="<?php echo $row["img1"]; ?>" alt="">
                                 </div>
-                                <div class="speaker-info">
-                                    <h6><?php echo $row["ponto_name"]; ?></h6>
-
-                                </div>
+                                <!-- Social Info -->
+                            </div>
+                            <div class="speaker-info">
+                                <h6><?php echo $row["ponto_name"]; ?></h6>
 
                             </div>
-                        </a>
-                    </div>
 
+                        </div>
+                    </a>
                 </div>
 
+                <?php } ?>
+
+                
+                <?php if($row['category']=='Museu'){ ?>
+                <!-- Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center mt-5 wow fadeInUp" data-wow-delay="300ms"
+                        style="margin-bottom: 10px;">
+
+                        <h6 style="color:#414c52;"><?php echo $row['category']; ?></h6>
+                        <!-- <p class="mt-30">Categoria</p> -->
+                    </div>
+                </div>
+
+
+                <!-- Single Speaker Area -->
+                <div class="col-12 col-md-3 align-self-center bg-boxshadow">
+
+                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
+
+                        <div class="text-center">
+                            <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
+                                <!-- Thumb -->
+                                <div class="speaker-single-thumb fill">
+                                    <img src="<?php echo $row["img1"]; ?>" alt="">
+                                </div>
+                                <!-- Social Info -->
+                            </div>
+                            <div class="speaker-info">
+                                <h6><?php echo $row["ponto_name"]; ?></h6>
+
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <?php } ?>
+
                 <?php 
-                }
-            endforeach;?>
+                        
+                    endforeach;?>
                 <?php endif; ?>
 
 
@@ -257,14 +290,14 @@
             </div>
             <!-- <a data-toggle="collapse" data-target="#demo">Collapsible</a>
             <div class="col-12 collapse" id="demo"><div>COLLAPSE 1</div></div> -->
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- Single Ticket Pricing Table -->
                 <?php
        if($fetchdataa != null):?>
                 <?php foreach( $fetchdataa as $key => $row):
 
 ?>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4 align-self-center">
                     <div class="single-ticket-pricing-table bg-boxshadow text-center mb-100 wow fadeInUp"
                         data-wow-delay="300ms">
                         <h6 class="ticket-plan-jogo"><?php echo $row["name"]; ?></h6>

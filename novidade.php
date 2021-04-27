@@ -58,6 +58,11 @@ $fonte = "";
          $fonte = $row['fonte'];
 $video_link = $row['video_link'];
 
+if($video_link == null || $video_link == ""){
+    $video_link = "";
+}
+  break;
+
          if($img == null || $img == ""){
             $img = "SEM NOVIDADE";
         }
@@ -176,13 +181,14 @@ $video_link = $row['video_link'];
 
 
                             <p style="white-space: pre-line"><?php echo $text; ?></p>
-
+<?php if($video_link!=null){?>
                             <div class="post-blog-thumbnail mb-30">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" allowfullscreen width="640" height="480" src="<?php  echo $video_link;?>/autoplay=1"> </iframe>
-    </div>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" allowfullscreen width="640" height="480"
+                                        src="<?php  echo $video_link;?>/autoplay=1"> </iframe>
+                                </div>
                             </div>
-
+<?php }?>
                         </div>
 
 
