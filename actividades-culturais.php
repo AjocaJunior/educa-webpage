@@ -186,33 +186,51 @@
                 <?php
               if($fetchdataaa != null):?>
                 <?php foreach( $fetchdataaa as $key => $row):
+
+                if($row['category']=='Livraria'){
+                
              ?>
+
+                <!-- Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms"
+                        style="margin-bottom: 10px;">
+
+                        <h6 style="color:#414c52;"><?php echo $row['category']; ?></h6>
+                        <!-- <p class="mt-30">Categoria</p> -->
+                    </div>
+                </div>
+
 
                 <!-- Single Speaker Area -->
                 <div class="col-12 col-md-3 bg-boxshadow">
-                    <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
+                    <div class="section-heading text-center">
+                        <a href="ponto-turistico.php?id=<?php echo $row["uid"]; ?>" target="_blank">
 
-                        <div class="text-center">
-                            <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
-                                <!-- Thumb -->
-                                <div class="speaker-single-thumb fill">
-                                    <img src="<?php echo $row["img1"]; ?>" alt="">
+                            <div class="text-center">
+                                <div class="single-speaker-area wow fadeInUp" data-wow-delay="300ms">
+                                    <!-- Thumb -->
+                                    <div class="speaker-single-thumb fill">
+                                        <img src="<?php echo $row["img1"]; ?>" alt="">
+                                    </div>
+                                    <!-- Social Info -->
+
+
                                 </div>
-                                <!-- Social Info -->
+                                <div class="speaker-info">
+                                    <h6><?php echo $row["ponto_name"]; ?></h6>
 
-
-                            </div>
-                            <div class="speaker-info">
-                                <h6><?php echo $row["ponto_name"]; ?></h6>
+                                </div>
 
                             </div>
-
-                        </div>
-                    </a>
+                        </a>
+                    </div>
 
                 </div>
 
-                <?php endforeach;?>
+                <?php 
+                }
+            endforeach;?>
                 <?php endif; ?>
 
 
@@ -246,7 +264,7 @@
                 <?php foreach( $fetchdataa as $key => $row):
 
 ?>
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 ">
                     <div class="single-ticket-pricing-table bg-boxshadow text-center mb-100 wow fadeInUp"
                         data-wow-delay="300ms">
                         <h6 class="ticket-plan-jogo"><?php echo $row["name"]; ?></h6>
