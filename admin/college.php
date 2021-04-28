@@ -59,8 +59,16 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+      <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
+                    <span>Adicionar Faculdade</span>
+                   
+                    </a>
+                    <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
+                   
+                    <span>Editar Faculdade</span>
+                    </a>
         <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>" >
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="fas fa-fw fa-book-open"></i>
           <span>Cursos</span>
         </a>
        

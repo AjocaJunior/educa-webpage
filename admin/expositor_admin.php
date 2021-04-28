@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Seja Bem-Vinda ao Educa - Dashboard</title>
+    <title>Seja Bem-Vindo ao Educa - Dashboard</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../img/educa/logo.png">

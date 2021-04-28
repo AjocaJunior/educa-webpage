@@ -61,10 +61,20 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Cursos</span>
+            <a class="nav-link" href="add_course.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-book-open"></i>
+                    <span>Adicionar Curso</span>
+                   
+                    </a>
+                    <a class="nav-link" href="add_course.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-book-open"></i>
+                   
+                    <span>Editar Curso</span>
+                    </a>
+                <a class="nav-link" href="college.php?id=<?php echo $uid; ?>">
+                    <i class="fas fa-fw fa-university"></i>
+                    <span>Faculdades</span>
                 </a>
+              
+
 
             </li>
 
@@ -162,34 +172,7 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <table id="productSizes" class="table">
-                        <thead>
-                            <tr class="d-flex">
 
-                                <th class="col-4">Curso</th>
-                                <th class="col-7">Descrição</th>
-                                <th class="col-1">Salvar</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- <tr class="d-flex">
-                                <td class="col-4"><input type="text" id="course" class="form-control"></td>
-                                <td class="col-7">
-                                    <textarea class="form-control" id="description" rows="1"></textarea>
-                                </td>
-
-                                <td class="col-1"><a href="" type="button" onclick="addCourse()"><i
-                                            class="fa fa-save fa-2x"></i></a></td>
-                            </tr>
-                        </tbody> -->
-                    </table>
-
-
-
-                </div>
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -203,9 +186,9 @@
                                     <thead>
                                         <tr class="d-flex">
                                             <th class="col-1">Posição</th>
-                                            <th class="col-3">Cursos</th>
+                                            <th class="col-4">Cursos</th>
                                             <th class="col-6">Detalhes</th>
-                                            <th class="col-2">Delete | Update</th>
+                                            <th class="col-1">Del</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -237,17 +220,13 @@
 
                                         <tr class="d-flex">
                                             <td class="col-1"><?php echo $count; ?></td>
-                                            <td class="col-3"> <input href="#" type="text" class="form-control"
-                                                    id="inputCourse" value="<?php echo $row['course']; ?>"></td>
-                                            <td class="col-6"> <input href="#" type="text" class="form-control"
-                                                    id="inputDescription" value="<?php echo $row['description']; ?>">
+                                            <td class="col-4"> <?php echo $row['course']; ?></td>
+                                            <td class="col-6"><?php echo $row['description']; ?>
                                             </td>
                                             <td class="col-1"> <a href="" type="button"
                                                     onclick="deleteCourse('<?php echo $row['uid']; ?>')"><i
                                                         class="fa fa-trash"></i></a></td>
-                                            <td class="col-1"> <a href="" type="button"
-                                                    onclick="editCourse('<?php echo $row['uid']; ?>')"><i
-                                                        class="fa fa-edit"></i></a></td>
+
                                         </tr>
 
                                         <?php endforeach ?>
@@ -389,7 +368,7 @@
     function uuidv4() { // Public Domain/MIT
         var d = new Date().getTime(); //Timestamp
         var d2 = (performance && performance.now && (performance.now() * 1000)) ||
-        0; //Time in microseconds since page-load or 0 if unsupported
+            0; //Time in microseconds since page-load or 0 if unsupported
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16; //random number between 0 and 16
             if (d > 0) { //Use timestamp until depleted

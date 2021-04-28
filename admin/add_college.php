@@ -47,9 +47,8 @@
                                     </div>
                                 </div>
 
-                                <button onclick="addCollege()" type="button" class="btn btn-lg btn-block"
-                                    style="background:#f8871f;border-radius:0px; color: white;">ADICIONAR
-                                    FACULDADE</button>
+                                <button onclick="addCollege()" type="button" class="btn btn-secondary btn-lg btn-block"
+                                    >ADICIONAR FACULDADE</button>
                                 <br>
                                 <div class="list-group">
                                     <div class="row">
@@ -78,18 +77,26 @@
 
                                   ?>
 
-
+<div class="form-row">
+                                        <div class="col">
+                                          Faculdade
+                                        </div>
+                                        
+                                        <div class="col-1">
+                                           Edit
+                                        </div>
+                                    </div>
 
                                     <?php if($fetchdata != null):?>
                                     <?php foreach( $fetchdata as $key => $row): ?>
-                                    <div class="row">
-                                        <div class="col-11">
+                                    <div class="form-row">
+                                        <div class="col">
                                             <input href="#" type="text" class="form-control" id="inputCollege"
                                                 value="<?php echo $row['college']; ?>" />
                                         </div>
 
                                         <div class="col-1">
-                                            <a href="#" type="button" class=""
+                                            <a href="#" type="button" class="form-control btn btn-primary"
                                                 onclick="editCollege('<?php echo $row['uid']; ?>')">
                                                 <i class="fa fa-edit"></i>
                                             </a>
@@ -105,8 +112,10 @@
                                 <br>
 
                                 <?php $href = "add_course.php?id=".$_GET['id']; ?>
+                                <?php $href2 = "expositor_admin.php?id=".$_GET['id']; ?>
                                 <button type="button" onclick='window.location.href="<?php echo $href; ?>"'
                                     class="btn btn-link btn-lg btn-block">ADICIONAR CURSOS</button>
+                                    <button type="button" onclick='window.location.href="<?php echo $href2; ?>"' class="btn btn-link btn-lg btn-block" style="background:#f8871f;border-radius:0px; color: white;">Painel de Admin</button>
 
                         </div>
                     </div>
