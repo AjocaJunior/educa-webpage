@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Faculdades</title>
+  <title>Galeria de Expositor</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
   <link rel="icon" href="../img/educa/logo.png">
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -25,6 +25,16 @@
 
 <body id="page-top">
 <?php $uid  = $_GET['id']; ?>
+<?php 
+        include_once('../includes/dbconfig.php');
+        $ref = 'institution/';
+        $fetchdata = $database->getReference($ref)->getValue();
+        $uid  = $_GET['id'];
+
+        if($uid == null || $uid == "") {
+            header('Location: index.php');
+        }
+    ?>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -59,21 +69,18 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-      <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
-                    <span>Adicionar Faculdade</span>
+      <a class="nav-link" href="add_gallery.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-camera"></i>
+                    <span>Adicionar Fotos</span>
                    
                     </a>
-                    <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
-                   
-                    <span>Editar Faculdade</span>
-                    </a>
+                    
+        <a class="nav-link" href="college.php?id=<?php echo $uid; ?>" >
+          <i class="fas fa-fw fa-university"></i>
+          <span>Faculdades</span>
+        </a>
         <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-book-open"></i>
           <span>Cursos</span>
-        </a>
-        <a class="nav-link" href="gallery_expositor.php?id=<?php echo $uid; ?>" >
-          <i class="fas fa-fw fa-camera"></i>
-          <span>Galeria</span>
         </a>
        
       </li>
@@ -170,72 +177,51 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-         
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de faculdades</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-
-              <div class="container-fluid">
-    <table id="productSizes" class="table">
-        <thead>
-            <tr class="d-flex">
-                <th class="col-1">Posição</th>
-                <th class="col-10">Faculdades</th>
-                <th class="col-1">Del</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-
-
-
-                        <?php
-
-
-if($uid == null){
-  if(isset($_SESSION['uidInstitute'])){
-    $uid = $_SESSION['uidInstitute'];
-  }else{
-    header("Location: login.html");
-  }
-  
-}
-               
-        include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/college';
-        $fetchdata = $database->getReference($ref)->getValue();
         
-                        $count = 0;
-                        if($fetchdata != null):?>
-                        <?php foreach( $fetchdata as $key => $row):
-                                $count++;
-                              
-                                ?>
 
-            <tr class="d-flex">
-                <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["college"]; ?></td>
-                <td class="col-1"> <a href="" type="button" onclick="deleteFaculdade('<?php echo $row['uid']; ?>')"><i
-                                    class="fa fa-trash"></i></a> </td>
-                                    
-            </tr>
-  
-                            <?php endforeach ?>
-                        <?php endif?>
-                            
-                            
 
-           
-        </tbody>
-    </table>
-              </div>
+
+      
+        <section class="our-speaker-area section-padding-100 ">
+        <div class="container ">
+            <div class="row ">
+
+
+                <?php
+                $ref = 'institution/'.$uid.'/gallery';
+                $fetchdata = $database->getReference($ref)->getValue();
+           ?>
+                <?php if($fetchdata != null):?>
+                <?php
+            foreach( $fetchdata as $key => $row): ?>
+
+
+                <!-- Single Speaker Area -->
+                <div class="col-12 col-sm-6 col-lg-4 ">
+                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp " data-wow-delay="300ms ">
+                        <!-- Thumb -->
+                        <div class="speaker-single-thumb ">
+                            <img src="<?php echo $row['url']; ?>" alt="" style="min-height: 300px; max-height: 350px;">
+                        </div>
+                        <!-- Social Info -->
+                        <div class="social-info ">
+                            <a href="" type="button" onclick="deleteImg('<?php echo $row['uid']; ?>')"><i
+                                    class="fa fa-trash"></i></a>
+                        </div>
+                        <!-- Info -->
+                        <!-- <div class="speaker-info ">
+                            <h5>Albert Barnes</h5>
+                            <p>Founder</p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <?php endforeach ?>
+                <?php endif?>
+
             </div>
-          </div>
+        </div>
+    </section>
 
         </div>
         <!-- /.container-fluid -->
@@ -304,20 +290,134 @@ if($uid == null){
     <script src="../js/db/real-time-database.js"></script>
 
   <script>
-    function deleteFaculdade(uidImg) {
+     function deleteImg(uidImg) {
 
-        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("college").child(uidImg)
-            .remove()
-            .then(function() {
-                window.location.reload();
-            })
-            .catch(function(error) {
-                alert("Opsss ocoreu uma falha");
-            });
-    }
+firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("gallery").child(uidImg)
+    .remove()
+    .then(function() {
+        window.location.reload();
+    })
+    .catch(function(error) {
+        alert("Opsss ocoreu uma falha");
+    });
+}
     </script>
 
+<style>
+.single-speaker-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+ margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 5px 5px; 
 
+  
+}
+  .single-speaker-area .speaker-single-thumb {
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 5px 5px;
+  
+  }
+    .single-speaker-area .speaker-single-thumb img {
+      -webkit-transition-duration: 1500ms;
+      -o-transition-duration: 1500ms;
+      transition-duration: 1500ms;
+      border-radius: 0 0 5px 5px ;
+      width: 100%; }
+  .single-speaker-area .social-info {
+    position: absolute;
+    top: -180px;
+    right: 0;
+    z-index: 22;
+    background-color: #f2871c;
+    padding: 15px;
+    border-radius: 0 5px 0 5px;
+    text-align: center;
+    -webkit-transition-duration: 800ms;
+    -o-transition-duration: 800ms;
+    transition-duration: 800ms; }
+    .single-speaker-area .social-info a {
+      display: block;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 5px; }
+      .single-speaker-area .social-info a:last-child {
+        margin-bottom: 0; }
+  .single-speaker-area .speaker-info {
+    position: absolute;
+   
+    z-index: 22;
+    /* background-color: black; */
+    top:88%;
+    
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(39, 26, 26,0.3));
+   text-align: center;
+   text-transform: uppercase;
+   border-radius: 0 0 5px 5px;
+   
+  }
+  .single-speaker-area .speaker-info-orador {
+    position: absolute;
+   
+    z-index: 22;
+    /* background-color: black; */
+    top:73%;
+    
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(39, 26, 26,0.3));
+   text-align: center;
+   text-transform: uppercase;
+   border-radius: 0 0 5px 5px;
+   
+  }
+  .single-speaker-area .speaker-info-orador h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 8px; 
+  text-align: center;
+ 
+  
+  
+  }
+  .single-speaker-area .speaker-info-orador p {
+    color: #f2871c;
+    margin-bottom: 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1; }
+  /* .single-speaker-area .speaker-info-2{
+    border-bottom: black groove 5px;
+  } */
+
+    .single-speaker-area .speaker-info h5 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 10px; 
+    text-align: center;
+   
+    
+    
+    }
+    .single-speaker-area .speaker-info p {
+      color: #f2871c;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      line-height: 1; }
+  .single-speaker-area:hover .social-info, .single-speaker-area:focus .social-info {
+    top: 0; }
+
+
+
+</style>
 </body>
 
 </html>

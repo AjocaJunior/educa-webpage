@@ -217,7 +217,7 @@ foreach($fetchdata as $key => $row){
                         <h6 class="collapse-header">Fotos:</h6>
                         <a class="collapse-item" target="_blank" href="add_gallery.php?id=<?php echo $uid; ?>">Publicar
                             fotos</a>
-                        <a class="collapse-item" target="_blank" href="../gallery.php?id=<?php echo $uid; ?>">Galeria
+                        <a class="collapse-item" target="_blank" href="gallery_expositor.php?id=<?php echo $uid; ?>">Galeria
                         </a>
                     </div>
                 </div>

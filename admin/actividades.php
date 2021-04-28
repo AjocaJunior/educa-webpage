@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Faculdades</title>
+  <title>Actividades</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>">
+        <a class="nav-link" href="pontoturistico_admin.php?id=<?php echo $uid; ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>
@@ -59,28 +59,21 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-      <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
-                    <span>Adicionar Faculdade</span>
+      <a class="nav-link" href="add_actividade.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
+                    <span>Adicionar Actividade</span>
                    
                     </a>
-                    <a class="nav-link" href="add_college.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-university"></i>
+                    <a class="nav-link" href="add_pontosfotos.php?id=<?php echo $uid; ?>">   <i class="fas fa-fw fa-camera"></i>
                    
-                    <span>Editar Faculdade</span>
+                    <span>Fotos</span>
                     </a>
-        <a class="nav-link" href="courses.php?id=<?php echo $uid; ?>" >
-          <i class="fas fa-fw fa-book-open"></i>
-          <span>Cursos</span>
-        </a>
-        <a class="nav-link" href="gallery_expositor.php?id=<?php echo $uid; ?>" >
-          <i class="fas fa-fw fa-camera"></i>
-          <span>Galeria</span>
-        </a>
+        
        
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>" >
+        <a class="nav-link" href="pontoturistico_admin.php?id=<?php echo $uid; ?>" >
           <i class="fas fa-fw fa-wrench"></i>
           <span>Home</span>
         </a>
@@ -175,7 +168,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de faculdades</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Lista de actividades</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -185,7 +178,7 @@
         <thead>
             <tr class="d-flex">
                 <th class="col-1">Posição</th>
-                <th class="col-10">Faculdades</th>
+                <th class="col-10">Actividades</th>
                 <th class="col-1">Del</th>
                
             </tr>
@@ -197,17 +190,11 @@
                         <?php
 
 
-if($uid == null){
-  if(isset($_SESSION['uidInstitute'])){
-    $uid = $_SESSION['uidInstitute'];
-  }else{
-    header("Location: login.html");
-  }
   
-}
+
                
         include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/college';
+        $ref = 'pontoturistico/'.$uid.'/actividade';
         $fetchdata = $database->getReference($ref)->getValue();
         
                         $count = 0;
@@ -219,7 +206,7 @@ if($uid == null){
 
             <tr class="d-flex">
                 <td class="col-1"><?php echo  $count; ?></td>
-                <td class="col-10"><?php echo $row["college"]; ?></td>
+                <td class="col-10"><?php echo $row["actividade"]; ?></td>
                 <td class="col-1"> <a href="" type="button" onclick="deleteFaculdade('<?php echo $row['uid']; ?>')"><i
                                     class="fa fa-trash"></i></a> </td>
                                     
@@ -306,7 +293,7 @@ if($uid == null){
   <script>
     function deleteFaculdade(uidImg) {
 
-        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("college").child(uidImg)
+        firebase.database().ref().child('pontoturistico').child('<?php echo $uid; ?>').child("actividade").child(uidImg)
             .remove()
             .then(function() {
                 window.location.reload();

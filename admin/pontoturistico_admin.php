@@ -147,8 +147,8 @@ foreach($fetchdata as $key => $row){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Actividades:</h6>
-                        <a class="collapse-item" target="_blank"  href="add_college.php?id=<?php echo $uid; ?>">Adicionar Actividades</a>
-                        <a class="collapse-item" target="_blank"  href="college.php?id=<?php echo $uid; ?>">Todas Actividades</a>
+                        <a class="collapse-item" target="_blank"  href="add_actividades.php?id=<?php echo $uid; ?>">Adicionar Actividades</a>
+                        <a class="collapse-item" target="_blank"  href="actividades.php?id=<?php echo $uid; ?>">Todas Actividades</a>
                     </div>
                 </div>
             </li>
@@ -260,7 +260,7 @@ foreach($fetchdata as $key => $row){
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Pontos Turisticos</div>
+                                                Actividades</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $countCollege; ?></div>
                                         </div>

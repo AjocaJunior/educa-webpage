@@ -73,7 +73,10 @@
                     <i class="fas fa-fw fa-university"></i>
                     <span>Faculdades</span>
                 </a>
-              
+                <a class="nav-link" href="gallery_expositor.php?id=<?php echo $uid; ?>" >
+          <i class="fas fa-fw fa-camera"></i>
+          <span>Galeria</span>
+        </a>
 
 
             </li>
