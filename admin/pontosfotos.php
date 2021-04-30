@@ -26,7 +26,7 @@
     <!-- /Preloader -->
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'pontoturistico/';
+        $ref = 'pontoturisticov2/';
         $fetchdata = $database->getReference($ref)->getValue();
         $uid  = $_GET['id'];
 
@@ -89,12 +89,12 @@
 
 
                 <?php
-                $ref = 'pontoturistico/'.$uid.'/gallery';
-                $fetchdata = $database->getReference($ref)->getValue();
-           ?>
-                <?php if($fetchdata != null):?>
-                <?php
-            foreach( $fetchdata as $key => $row): ?>
+                        $ref = 'pontoturisticov2/'.$uid.'/gallery';
+                        $fetchdata = $database->getReference($ref)->getValue();
+                ?>
+                        <?php if($fetchdata != null):?>
+                        <?php
+                    foreach( $fetchdata as $key => $row): ?>
 
 
                 <!-- Single Speaker Area -->
@@ -144,13 +144,13 @@
     <script src="js/default-assets/active.js "></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-    <script src="js/db/app.js"></script>
-    <script src="js/db/real-time-database.js"></script>
+    <script src="../js/db/app.js"></script>
+    <script src="../js/db/real-time-database.js"></script>
 
     <script>
     function deleteImg(uidImg) {
 
-        firebase.database().ref().child('pontoturistico').child('<?php echo $uid; ?>').child("gallery").child(uidImg)
+        firebase.database().ref().child('pontoturisticov2').child('<?php echo $uid; ?>').child("gallery").child(uidImg)
             .remove()
             .then(function() {
                 window.location.reload();

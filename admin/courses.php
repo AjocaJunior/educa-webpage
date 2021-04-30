@@ -226,10 +226,8 @@
                                             <td class="col-4"> <?php echo $row['course']; ?></td>
                                             <td class="col-6"><?php echo $row['description']; ?>
                                             </td>
-                                            <td class="col-1"> <a href="" type="button"
-                                                    onclick="deleteCourse('<?php echo $row['uid']; ?>')"><i
-                                                        class="fa fa-trash"></i></a></td>
-
+                                            <td class="col-1"> <a href="#" type="button" onclick="deleteFaculdade('<?php echo $row['uid']; ?>')"><i
+                                    class="fa fa-trash"></i></a> </td>
                                         </tr>
 
                                         <?php endforeach ?>
@@ -312,60 +310,21 @@
     <script src="../js/db/real-time-database.js"></script>
 
     <script>
-    // function addCourse() {
-    //     var course = document.getElementById("course").value;
-    //     var description = document.getElementById("description").value;
-    //     var uid = "<?php echo $_GET['id']; ?>"
-    //     var uidCourse = uuidv4();
 
-    //     var data = {
-    //         course: course,
-    //         description: description,
-    //         uid: uidCourse
-    //     }
-
-    //     firebase.database().ref().child('institution').child(uid).child("course").child(uidCourse).set(data,
-    //         function(error) {
-    //             if (error) {
-    //                 alert("Data could not be saved." + error);
-    //             } else {
-    //               alert("Saved")
-    //                 window.location.reload();
-    //             }
-    //         });
-    // }
-
-    function deleteCourse(uidImg) {
-
-        firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("course").child(uidImg)
+function deleteFaculdade(uidImg) {
+    console.log(uidImg)
+    firebase.database().ref().child('institution').child('<?php echo $uid; ?>').child("course").child(uidImg)
             .remove()
             .then(function() {
-                window.location.reload();
+               
+                 window.location.reload();
             })
             .catch(function(error) {
                 alert("Opsss ocoreu uma falha");
             });
-    }
+}
 
-    function editCourse(uidImg) {
-        var course = document.getElementById('inputCourse').value;
-        var uid = "<?php echo $uid ?>";
-        var description = document.getElementById('inputDescription').value;
 
-        var data = {
-            course: course,
-            description: description,
-            uid: uidImg
-        }
-
-        if (course != null) {
-            firebase.database().ref().child('institution').child(uid).child('course').child(uidImg).set(data,
-                function(error) {
-                    window.location.reload(true);
-                });
-        }
-
-    }
 
 
     function uuidv4() { // Public Domain/MIT

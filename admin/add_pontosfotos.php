@@ -24,6 +24,12 @@
 
 <body style="background-color: #e9eef4">
 
+<?php
+ $uid  = $_GET['id'];
+ include_once('../includes/dbconfig.php');
+                        $ref = 'pontoturisticov2/'.$uid.'/gallery';
+                        $fetchdata = $database->getReference($ref)->getValue();
+                ?>
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -68,7 +74,42 @@
         </div>
       </div>
     </div>
+    <div class="container ">
+            <div class="row ">
 
+
+                        <?php if($fetchdata != null):?>
+                        <?php
+                    foreach( $fetchdata as $key => $row): ?>
+
+
+                <!-- Single Speaker Area -->
+                <div class="col-12 col-sm-6 col-lg-3 ">
+                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp " data-wow-delay="300ms ">
+                        <!-- Thumb -->
+                        <div class="speaker-single-thumb ">
+                            <img src="<?php echo $row['url']; ?>" alt=" ">
+                        </div>
+                        <!-- Social Info -->
+                        <div class="social-info ">
+                            <a href="" type="button" onclick="deleteImg('<?php echo $row['uid']; ?>')">
+                            <i class="fa fa-trash "></i> 
+                            
+                            </a>
+                        </div>
+                        <!-- Info -->
+                        <!-- <div class="speaker-info ">
+                            <h5>Albert Barnes</h5>
+                            <p>Founder</p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <?php endforeach ?>
+                <?php endif?>
+
+            </div>
+        </div>
   </div>
 
   <!-- Bootstrap core JavaScript-->
@@ -84,7 +125,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-
+  <script src="../js/db/app.js"></script>
+    <script src="../js/db/real-time-database.js"></script>
   <script>
 
   var firebaseConfig = {
@@ -131,7 +173,7 @@
                 uid : uidImg
               }
 
-              firebase.database().ref().child('pontoturistico').child(uid).child("gallery").child(uidImg).set(data , function(error){
+              firebase.database().ref().child('pontoturisticov2').child(uid).child("gallery").child(uidImg).set(data , function(error){
                 if (error) {
                   alert("Data could not be saved." + error);
                 } else {
@@ -159,8 +201,86 @@
     });
 }
 
+function deleteImg(uidImg) {
+
+firebase.database().ref().child('pontoturisticov2').child('<?php echo $uid; ?>').child("gallery").child(uidImg)
+    .remove()
+    .then(function() {
+        window.location.reload();
+    })
+    .catch(function(error) {
+        alert("Opsss ocoreu uma falha");
+    });
+}
    
   </script>
+
+  <style>
+  .single-speaker-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+ margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 5px 5px; 
+
+  
+}
+  .single-speaker-area .speaker-single-thumb {
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 5px 5px;
+  
+  }
+    .single-speaker-area .speaker-single-thumb img {
+      -webkit-transition-duration: 1500ms;
+      -o-transition-duration: 1500ms;
+      transition-duration: 1500ms;
+      border-radius: 0 0 5px 5px ;
+      width: 100%; }
+  .single-speaker-area .social-info {
+    position: absolute;
+    top: -180px;
+    right: 0;
+    z-index: 22;
+    background-color: #f2871c;
+    padding: 15px;
+    border-radius: 0 5px 0 5px;
+    text-align: center;
+    -webkit-transition-duration: 800ms;
+    -o-transition-duration: 800ms;
+    transition-duration: 800ms; }
+    .single-speaker-area .social-info a {
+      display: block;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 5px; }
+      .single-speaker-area .social-info a:last-child {
+        margin-bottom: 0; }
+  .single-speaker-area .speaker-info {
+    position: absolute;
+   
+    z-index: 22;
+    /* background-color: black; */
+    top:88%;
+    
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(39, 26, 26,0.3));
+   text-align: center;
+   text-transform: uppercase;
+   border-radius: 0 0 5px 5px;
+   
+  }
+  .single-speaker-area .speaker-info p {
+      color: #f2871c;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      line-height: 1; }
+  .single-speaker-area:hover .social-info, .single-speaker-area:focus .social-info {
+    top: 0; }
+
+  </style>
 </body>
 
 </html>

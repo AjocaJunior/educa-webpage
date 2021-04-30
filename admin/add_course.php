@@ -91,12 +91,12 @@
 
                                     <div class="form-row">
                                         <div class="col">
-                                            <input href="#" type="text" class="form-control" id="inputCourse"
-                                                value="<?php echo $row['course']; ?>" />
+                                            
+                                              <?php echo $row['course']; ?>
                                         </div>
                                         <div class="col">
-                                            <input href="#" type="text" class="form-control" id="inputDescription"
-                                                value="<?php echo $row['description']; ?>" />
+                                            
+                                            <?php echo $row['description']; ?>
                                         </div>
                                         <div class="col-1">
                                             <a href="#" type="button" class="form-control btn btn-primary"
@@ -119,7 +119,7 @@
                <?php $href = "add_gallery.php?id=".$_GET['id']; ?>
                       <?php $href2 = "expositor_admin.php?id=".$_GET['id']; ?>
                <button type="button" onclick='window.location.href="<?php echo $href; ?>"' class="btn btn-link btn-lg btn-block">ADICIONAR FOTOS</button>
-               <button type="button" onclick='window.location.href="<?php echo $href2; ?>"' class="btn btn-link btn-lg btn-block" style="background:#f8871f;border-radius:0px; color: white;">Painel de Admin</button>
+               <button type="button" onclick='window.location.href="<?php echo $href2; ?>"' class="btn btn-link btn-lg btn-block" target="_blank" style="background:#f8871f;border-radius:0px; color: white;">Painel de Admin</button>
 
             </div>
           </div>
@@ -170,18 +170,20 @@
     }
 
     function editCourse(uidImg) {
-        var course = document.getElementById('inputCourse').value;
+        var course = document.getElementById('course').value;
     
         var uid = "<?php echo $uid ?>";
-        var description = document.getElementById('inputDescription').value;
+        var description = document.getElementById('description').value;
 
-var data = {
-    course: course,
-    description: description,
-    uid: uidImg
-}
+          var data = {
+              course: course,
+              description: description,
+              uid: uidImg
+          }
+
+          
         if (course != null) {
-            firebase.database().ref().child('institution').child(uid).child('course').child(uidImg).set(data, function(error) {
+            firebase.database().ref().child('institution').child(uid).child('course').child(uidImg).update(data, function(error) {
                 window.location.reload(true);
             });
         }

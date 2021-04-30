@@ -263,7 +263,7 @@ var subcategory = f;
                 uid: uid
             }
 
-            firebase.database().ref().child('pontoturistico').child(uid).set(data, function(error) {
+            firebase.database().ref().child('pontoturisticov2').child(uid).set(data, function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);
                 } else {

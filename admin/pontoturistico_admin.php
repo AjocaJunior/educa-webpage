@@ -41,7 +41,7 @@ if($uid == null){
 }
 
 include_once('../includes/dbconfig.php');
-$ref = 'pontoturistico/';
+$ref = 'pontoturisticov2/';
 $fetchdata = $database->getReference($ref)->getValue();
 
 $title           = "";
@@ -79,7 +79,7 @@ foreach($fetchdata as $key => $row){
 
 
     <?php
-  $ref = 'pontoturistico/'.$uid.'/actividade';
+  $ref = 'pontoturisticov2/'.$uid.'/actividade';
   $fetchdata = $database->getReference($ref)->getValue();
   $countCollege = 0;
 
@@ -595,11 +595,11 @@ foreach($fetchdata as $key => $row){
 
         var id = "<?php echo $uid ?>";
 
-        firebase.database().ref().child('pontoturistico').child(id).child('email').set(email, function(error) {});
+        firebase.database().ref().child('pontoturisticov2').child(id).child('email').set(email, function(error) {});
 
-        firebase.database().ref().child('pontoturistico').child(id).child('phone').set(phone, function(error) {});
+        firebase.database().ref().child('pontoturisticov2').child(id).child('phone').set(phone, function(error) {});
 
-        firebase.database().ref().child('pontoturistico').child(id).child('location').set(localization, function(error) {
+        firebase.database().ref().child('pontoturisticov2').child(id).child('location').set(localization, function(error) {
             window.location.reload(true);
         });
 
@@ -609,7 +609,7 @@ foreach($fetchdata as $key => $row){
         var description = document.getElementById("about").textContent;
         var id = "<?php echo $uid ?>";
 
-        firebase.database().ref().child('pontoturistico').child(id).child("ponto_description").set(description,
+        firebase.database().ref().child('pontoturisticov2').child(id).child("ponto_description").set(description,
             function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);

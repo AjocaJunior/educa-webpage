@@ -79,7 +79,7 @@
 
     <?php 
         include_once('../includes/dbconfig.php');
-        $ref = 'pontoturistico/';
+        $ref = 'pontoturisticov2/';
         $fetchdata = $database->getReference($ref)->getValue();
 
 

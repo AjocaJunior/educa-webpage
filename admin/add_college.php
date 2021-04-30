@@ -91,8 +91,8 @@
                                     <?php foreach( $fetchdata as $key => $row): ?>
                                     <div class="form-row">
                                         <div class="col">
-                                            <input href="#" type="text" class="form-control" id="inputCollege"
-                                                value="<?php echo $row['college']; ?>" />
+                                            
+                                                <?php echo $row['college']; ?>
                                         </div>
 
                                         <div class="col-1">
@@ -115,7 +115,7 @@
                                 <?php $href2 = "expositor_admin.php?id=".$_GET['id']; ?>
                                 <button type="button" onclick='window.location.href="<?php echo $href; ?>"'
                                     class="btn btn-link btn-lg btn-block">ADICIONAR CURSOS</button>
-                                    <button type="button" onclick='window.location.href="<?php echo $href2; ?>"' class="btn btn-link btn-lg btn-block" style="background:#f8871f;border-radius:0px; color: white;">Painel de Admin</button>
+                                    <button type="button" onclick='window.location.href="<?php echo $href2; ?>"' class="btn btn-link btn-lg btn-block" target="_blank" style="background:#f8871f;border-radius:0px; color: white;">Painel de Admin</button>
 
                         </div>
                     </div>
@@ -163,7 +163,7 @@
     }
 
     function editCollege(uidImg) {
-        var college = document.getElementById('inputCollege').value;
+        var college = document.getElementById('college').value;
         var uid = "<?php echo $uid ?>";
         if (college != null) {
             firebase.database().ref().child('institution').child(uid).child('college').child(uidImg).child(
