@@ -1,881 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Educa - chat</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Educa - Chat</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/educa/logo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
+
 <body>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 
-<!DOCTYPE html><html class=''>
-<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" />
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
-
-<script src="https://use.typekit.net/hoy3lrg.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
-<style class="cp-pen-styles">body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #dddfe0;
-  font-family: "proxima-nova", "Source Sans Pro", sans-serif;
-  font-size: 1em;
-  letter-spacing: 0.1px;
-  color: #32465a;
-  text-rendering: optimizeLegibility;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-  -webkit-font-smoothing: antialiased;
-}
-
-#frame {
-  width: 95%;
-  min-width: 360px;
-  max-width: 1000px;
-  height: 92vh;
-  min-height: 300px;
-  max-height: 720px;
-  background: #E6EAEA;
-}
-@media screen and (max-width: 360px) {
-  #frame {
-    width: 100%;
-    height: 100vh;
-  }
-}
-#frame #sidepanel {
-  float: left;
-  min-width: 280px;
-  max-width: 340px;
-  width: 40%;
-  height: 100%;
-  background: #2c3e50;
-  color: #f5f5f5;
-  overflow: hidden;
-  position: relative;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel {
-    width: 58px;
-    min-width: 58px;
-  }
-}
-#frame #sidepanel #profile {
-  width: 80%;
-  margin: 25px auto;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile {
-    width: 100%;
-    margin: 0 auto;
-    padding: 5px 0 0 0;
-    background: #32465a;
-  }
-}
-#frame #sidepanel #profile.expanded .wrap {
-  height: 210px;
-  line-height: initial;
-}
-#frame #sidepanel #profile.expanded .wrap p {
-  margin-top: 20px;
-}
-#frame #sidepanel #profile.expanded .wrap i.expand-button {
-  -moz-transform: scaleY(-1);
-  -o-transform: scaleY(-1);
-  -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
-#frame #sidepanel #profile .wrap {
-  height: 60px;
-  line-height: 60px;
-  overflow: hidden;
-  -moz-transition: 0.3s height ease;
-  -o-transition: 0.3s height ease;
-  -webkit-transition: 0.3s height ease;
-  transition: 0.3s height ease;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap {
-    height: 55px;
-  }
-}
-#frame #sidepanel #profile .wrap img {
-  width: 50px;
-  border-radius: 50%;
-  padding: 3px;
-  border: 2px solid #e74c3c;
-  height: auto;
-  float: left;
-  cursor: pointer;
-  -moz-transition: 0.3s border ease;
-  -o-transition: 0.3s border ease;
-  -webkit-transition: 0.3s border ease;
-  transition: 0.3s border ease;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap img {
-    width: 40px;
-    margin-left: 4px;
-  }
-}
-#frame #sidepanel #profile .wrap img.online {
-  border: 2px solid #2ecc71;
-}
-#frame #sidepanel #profile .wrap img.away {
-  border: 2px solid #f1c40f;
-}
-#frame #sidepanel #profile .wrap img.busy {
-  border: 2px solid #e74c3c;
-}
-#frame #sidepanel #profile .wrap img.offline {
-  border: 2px solid #95a5a6;
-}
-#frame #sidepanel #profile .wrap p {
-  float: left;
-  margin-left: 15px;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap p {
-    display: none;
-  }
-}
-#frame #sidepanel #profile .wrap i.expand-button {
-  float: right;
-  margin-top: 23px;
-  font-size: 0.8em;
-  cursor: pointer;
-  color: #435f7a;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap i.expand-button {
-    display: none;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  width: 150px;
-  margin: 70px 0 0 0;
-  border-radius: 6px;
-  z-index: 99;
-  line-height: initial;
-  background: #435f7a;
-  -moz-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options {
-    width: 58px;
-    margin-top: 57px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options.active {
-  opacity: 1;
-  visibility: visible;
-  margin: 75px 0 0 0;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options.active {
-    margin-top: 62px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options:before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 8px solid #435f7a;
-  margin: -8px 0 0 24px;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options:before {
-    margin-left: 23px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options ul {
-  overflow: hidden;
-  border-radius: 6px;
-}
-#frame #sidepanel #profile .wrap #status-options ul li {
-  padding: 15px 0 30px 18px;
-  display: block;
-  cursor: pointer;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options ul li {
-    padding: 15px 0 35px 22px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options ul li:hover {
-  background: #496886;
-}
-#frame #sidepanel #profile .wrap #status-options ul li span.status-circle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 5px 0 0 0;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options ul li span.status-circle {
-    width: 14px;
-    height: 14px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options ul li span.status-circle:before {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  margin: -3px 0 0 -3px;
-  background: transparent;
-  border-radius: 50%;
-  z-index: 0;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options ul li span.status-circle:before {
-    height: 18px;
-    width: 18px;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options ul li p {
-  padding-left: 12px;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #profile .wrap #status-options ul li p {
-    display: none;
-  }
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-online span.status-circle {
-  background: #2ecc71;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-online.active span.status-circle:before {
-  border: 1px solid #2ecc71;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-away span.status-circle {
-  background: #f1c40f;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-away.active span.status-circle:before {
-  border: 1px solid #f1c40f;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-busy span.status-circle {
-  background: #e74c3c;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-busy.active span.status-circle:before {
-  border: 1px solid #e74c3c;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-offline span.status-circle {
-  background: #95a5a6;
-}
-#frame #sidepanel #profile .wrap #status-options ul li#status-offline.active span.status-circle:before {
-  border: 1px solid #95a5a6;
-}
-#frame #sidepanel #profile .wrap #expanded {
-  padding: 100px 0 0 0;
-  display: block;
-  line-height: initial !important;
-}
-#frame #sidepanel #profile .wrap #expanded label {
-  float: left;
-  clear: both;
-  margin: 0 8px 5px 0;
-  padding: 5px 0;
-}
-#frame #sidepanel #profile .wrap #expanded input {
-  border: none;
-  margin-bottom: 6px;
-  background: #32465a;
-  border-radius: 3px;
-  color: #f5f5f5;
-  padding: 7px;
-  width: calc(100% - 43px);
-}
-#frame #sidepanel #profile .wrap #expanded input:focus {
-  outline: none;
-  background: #435f7a;
-}
-#frame #sidepanel #search {
-  border-top: 1px solid #32465a;
-  border-bottom: 1px solid #32465a;
-  font-weight: 300;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #search {
-    display: none;
-  }
-}
-#frame #sidepanel #search label {
-  position: absolute;
-  margin: 10px 0 0 20px;
-}
-#frame #sidepanel #search input {
-  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
-  padding: 10px 0 10px 46px;
-  width: calc(100% - 25px);
-  border: none;
-  background: #32465a;
-  color: #f5f5f5;
-}
-#frame #sidepanel #search input:focus {
-  outline: none;
-  background: #435f7a;
-}
-#frame #sidepanel #search input::-webkit-input-placeholder {
-  color: #f5f5f5;
-}
-#frame #sidepanel #search input::-moz-placeholder {
-  color: #f5f5f5;
-}
-#frame #sidepanel #search input:-ms-input-placeholder {
-  color: #f5f5f5;
-}
-#frame #sidepanel #search input:-moz-placeholder {
-  color: #f5f5f5;
-}
-#frame #sidepanel #contacts {
-  height: calc(100% - 177px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #contacts {
-    height: calc(100% - 149px);
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  #frame #sidepanel #contacts::-webkit-scrollbar {
-    display: none;
-  }
-}
-#frame #sidepanel #contacts.expanded {
-  height: calc(100% - 334px);
-}
-#frame #sidepanel #contacts::-webkit-scrollbar {
-  width: 8px;
-  background: #2c3e50;
-}
-#frame #sidepanel #contacts::-webkit-scrollbar-thumb {
-  background-color: #243140;
-}
-#frame #sidepanel #contacts ul li.contact {
-  position: relative;
-  padding: 10px 0 15px 0;
-  font-size: 0.9em;
-  cursor: pointer;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #contacts ul li.contact {
-    padding: 6px 0 46px 8px;
-  }
-}
-#frame #sidepanel #contacts ul li.contact:hover {
-  background: #32465a;
-}
-#frame #sidepanel #contacts ul li.contact.active {
-  background: #32465a;
-  border-right: 5px solid #435f7a;
-}
-#frame #sidepanel #contacts ul li.contact.active span.contact-status {
-  border: 2px solid #32465a !important;
-}
-#frame #sidepanel #contacts ul li.contact .wrap {
-  width: 88%;
-  margin: 0 auto;
-  position: relative;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #contacts ul li.contact .wrap {
-    width: 100%;
-  }
-}
-#frame #sidepanel #contacts ul li.contact .wrap span {
-  position: absolute;
-  left: 0;
-  margin: -2px 0 0 -2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid #2c3e50;
-  background: #95a5a6;
-}
-#frame #sidepanel #contacts ul li.contact .wrap span.online {
-  background: #2ecc71;
-}
-#frame #sidepanel #contacts ul li.contact .wrap span.away {
-  background: #f1c40f;
-}
-#frame #sidepanel #contacts ul li.contact .wrap span.busy {
-  background: #e74c3c;
-}
-#frame #sidepanel #contacts ul li.contact .wrap img {
-  width: 40px;
-  border-radius: 50%;
-  float: left;
-  margin-right: 10px;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #contacts ul li.contact .wrap img {
-    margin-right: 0px;
-  }
-}
-#frame #sidepanel #contacts ul li.contact .wrap .meta {
-  padding: 5px 0 0 0;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #contacts ul li.contact .wrap .meta {
-    display: none;
-  }
-}
-#frame #sidepanel #contacts ul li.contact .wrap .meta .name {
-  font-weight: 600;
-}
-#frame #sidepanel #contacts ul li.contact .wrap .meta .preview {
-  margin: 5px 0 0 0;
-  padding: 0 0 1px;
-  font-weight: 400;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -moz-transition: 1s all ease;
-  -o-transition: 1s all ease;
-  -webkit-transition: 1s all ease;
-  transition: 1s all ease;
-}
-#frame #sidepanel #contacts ul li.contact .wrap .meta .preview span {
-  position: initial;
-  border-radius: initial;
-  background: none;
-  border: none;
-  padding: 0 2px 0 0;
-  margin: 0 0 0 1px;
-  opacity: .5;
-}
-#frame #sidepanel #bottom-bar {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-#frame #sidepanel #bottom-bar button {
-  float: left;
-  border: none;
-  width: 50%;
-  padding: 10px 0;
-  background: #32465a;
-  color: #f5f5f5;
-  cursor: pointer;
-  font-size: 0.85em;
-  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #bottom-bar button {
-    float: none;
-    width: 100%;
-    padding: 15px 0;
-  }
-}
-#frame #sidepanel #bottom-bar button:focus {
-  outline: none;
-}
-#frame #sidepanel #bottom-bar button:nth-child(1) {
-  border-right: 1px solid #2c3e50;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #bottom-bar button:nth-child(1) {
-    border-right: none;
-    border-bottom: 1px solid #2c3e50;
-  }
-}
-#frame #sidepanel #bottom-bar button:hover {
-  background: #435f7a;
-}
-#frame #sidepanel #bottom-bar button i {
-  margin-right: 3px;
-  font-size: 1em;
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #bottom-bar button i {
-    font-size: 1.3em;
-  }
-}
-@media screen and (max-width: 735px) {
-  #frame #sidepanel #bottom-bar button span {
-    display: none;
-  }
-}
-#frame .content {
-  float: right;
-  width: 60%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-@media screen and (max-width: 735px) {
-  #frame .content {
-    width: calc(100% - 58px);
-    min-width: 300px !important;
-  }
-}
-@media screen and (min-width: 900px) {
-  #frame .content {
-    width: calc(100% - 340px);
-  }
-}
-#frame .content .contact-profile {
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background: #f5f5f5;
-}
-#frame .content .contact-profile img {
-  width: 40px;
-  border-radius: 50%;
-  float: left;
-  margin: 9px 12px 0 9px;
-}
-#frame .content .contact-profile p {
-  float: left;
-}
-#frame .content .contact-profile .social-media {
-  float: right;
-}
-#frame .content .contact-profile .social-media i {
-  margin-left: 14px;
-  cursor: pointer;
-}
-#frame .content .contact-profile .social-media i:nth-last-child(1) {
-  margin-right: 20px;
-}
-#frame .content .contact-profile .social-media i:hover {
-  color: #435f7a;
-}
-#frame .content .messages {
-  height: auto;
-  min-height: calc(100% - 93px);
-  max-height: calc(100% - 93px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 735px) {
-  #frame .content .messages {
-    max-height: calc(100% - 105px);
-  }
-}
-#frame .content .messages::-webkit-scrollbar {
-  width: 8px;
-  background: transparent;
-}
-#frame .content .messages::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-#frame .content .messages ul li {
-  display: inline-block;
-  clear: both;
-  float: left;
-  margin: 15px 15px 5px 15px;
-  width: calc(100% - 25px);
-  font-size: 0.9em;
-}
-#frame .content .messages ul li:nth-last-child(1) {
-  margin-bottom: 20px;
-}
-#frame .content .messages ul li.sent img {
-  margin: 6px 8px 0 0;
-}
-#frame .content .messages ul li.sent p {
-  background: #435f7a;
-  color: #f5f5f5;
-}
-#frame .content .messages ul li.replies img {
-  float: right;
-  margin: 6px 0 0 8px;
-}
-#frame .content .messages ul li.replies p {
-  background: #f5f5f5;
-  float: right;
-}
-#frame .content .messages ul li img {
-  width: 22px;
-  border-radius: 50%;
-  float: left;
-}
-#frame .content .messages ul li p {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 20px;
-  max-width: 205px;
-  line-height: 130%;
-}
-@media screen and (min-width: 735px) {
-  #frame .content .messages ul li p {
-    max-width: 300px;
-  }
-}
-#frame .content .message-input {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 99;
-}
-#frame .content .message-input .wrap {
-  position: relative;
-}
-#frame .content .message-input .wrap input {
-  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
-  float: left;
-  border: none;
-  width: calc(100% - 90px);
-  padding: 11px 32px 10px 8px;
-  font-size: 0.8em;
-  color: #32465a;
-}
-@media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap input {
-    padding: 15px 32px 16px 8px;
-  }
-}
-#frame .content .message-input .wrap input:focus {
-  outline: none;
-}
-#frame .content .message-input .wrap .attachment {
-  position: absolute;
-  right: 60px;
-  z-index: 4;
-  margin-top: 10px;
-  font-size: 1.1em;
-  color: #435f7a;
-  opacity: .5;
-  cursor: pointer;
-}
-@media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap .attachment {
-    margin-top: 17px;
-    right: 65px;
-  }
-}
-#frame .content .message-input .wrap .attachment:hover {
-  opacity: 1;
-}
-#frame .content .message-input .wrap button {
-  float: right;
-  border: none;
-  width: 50px;
-  padding: 12px 0;
-  cursor: pointer;
-  background: #32465a;
-  color: #f5f5f5;
-}
-@media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap button {
-    padding: 16px 0;
-  }
-}
-#frame .content .message-input .wrap button:hover {
-  background: #435f7a;
-}
-#frame .content .message-input .wrap button:focus {
-  outline: none;
-}
-</style></head><body>
-<!-- 
-
-A concept for a chat interface. 
-
-Try writing a new message! :)
+    <?php
+  include_once('includes/dbconfig.php');         
+  $ref = 'chat/';
+  $fetchdata = $database->getReference($ref)->getValue();
 
 
-Follow me here:
-Twitter: https://twitter.com/thatguyemil
-Codepen: https://codepen.io/emilcarlsson/
-Website: http://emilcarlsson.se/
-
--->
-
-<div id="frame">
-	<div id="sidepanel">
-		<div id="profile">
-			<div class="wrap">
-				<img id="profile-img" src="img/educa/dev.jpg" class="online" alt="" />
-				<p>Agostinho Dos Santos</p>
-				<i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
-				<div id="status-options">
-					<ul>
-						<li id="status-online" class="active"><span class="status-circle"></span> <p>Online</p></li>
-						<li id="status-away"><span class="status-circle"></span> <p>Away</p></li>
-						<li id="status-busy"><span class="status-circle"></span> <p>Busy</p></li>
-						<li id="status-offline"><span class="status-circle"></span> <p>Offline</p></li>
-					</ul>
-				</div>
-				<div id="expanded">
-        
-          <a href="http://localhost:3040/1bb551ad-c0a6-4a5d-a14e-95c65be93521">
-            <label for="twitter"><i class="fa fa-video-camera fa-fw" aria-hidden="true"></i></label>
-          </a>
-				
-				</div>
-			</div>
-		</div>
-		<div id="search">
-			<label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-			<input type="text" placeholder="Pesquisar..." />
-		</div>
-		<div id="contacts">
-			<ul>
-				<li class="contact">
-					<div class="wrap">
-						<span class="contact-status online"></span>
-						<img src="img/educa/noperfil.jpg" alt="" />
-						<div class="meta">
-							<p class="name">UEM</p>
-							<p class="preview">Estou bem e ai?</p>
-						</div>
-					</div>
-				</li>
+?>
 
 
-				<li class="contact">
-					<div class="wrap">
-						<span class="contact-status"></span>
-						<img src="img/educa/noperfil.jpg" alt="" />
-						<div class="meta">
-							<p class="name">Assis Junior</p>
-							<p class="preview">Obrigado man! :)</p>
-						</div>
-					</div>
-				</li>
+    <!-- Preloader -->
+    <!-- <div id="preloader">
+        <div class="loader"></div>
+    </div> -->
+    <!-- /Preloader -->
 
-				<li class="contact">
-					<div class="wrap">
-						<span class="contact-status"></span>
-						<img src="img/educa/noperfil.jpg" alt="" />
-						<div class="meta">
-							<p class="name">Felcio Edmundo</p>
-							<p class="preview"><span>Voce:</span>Isso é ... Este negócio é sólido.</p>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div id="bottom-bar">
-			<button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Mais contactos</span></button>
-			<button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Definições</span></button>
-		</div>
-	</div>
-	<div class="content">
-		<div class="contact-profile">
-			<img src="img/educa/noperfil.jpg" alt="" />
-			<p>Universidade Eduardo Modlane</p>
-			<div class="social-media">
-        <a href="http://localhost:3040/1bb551ad-c0a6-4a5d-a14e-95c65be93521">
-          <i class="fa fa-video-camera" aria-hidden="true"></i>
-       </a>
-		
-			</div>
-		</div>
-		<div class="messages">
-			<ul>
-				<li class="sent">
-					<img src="img/educa/dev.jpg" alt="" />
-					<p> Bom dia?</p>
-				</li>
-				
-        <li class="replies">
-					<img src="img/educa/noperfil.jpg" alt="" />
-					<p>Bom dia ,como esta?</p>
-        </li>
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <div class="classy-nav-container breakpoint-off" style="background:#414c52">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="conferNav">
 
-       
-			</ul>
-		</div>
-		<div class="message-input">
-			<div class="wrap">
-			<input type="text" placeholder="escreve sua mensagem..." />
-			<i class="fa fa-paperclip attachment" aria-hidden="true"></i>
-			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-			</div>
-		</div>
-	</div>
-</div>
-<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script >$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+                    <!-- Logo -->
+                    <a class="nav-brand" href="./index.php"><img src="./img/educa/Simboloeduca-01.png" alt=""></a>
 
-$("#profile-img").click(function() {
-	$("#status-options").toggleClass("active");
-});
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
 
-$(".expand-button").click(function() {
-  $("#profile").toggleClass("expanded");
-	$("#contacts").toggleClass("expanded");
-});
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="active"><a href="index.php">Inicio</a></li>
+                                <li><a href="evento.php">Evento</a>
+                                    <ul class="dropdown">
+                                        <li><a href="evento.php#abertura">Abertura</a></li>
+                                        <li><a href="evento.php#conferencias">Conferências</a></li>
+                                        <li><a href="evento.php#webinares">Webinares</a></li>
+                                        <li><a href="evento.php#encerramento">Encerramento</a></li>
 
-$("#status-options ul li").click(function() {
-	$("#profile-img").removeClass();
-	$("#status-online").removeClass("active");
-	$("#status-away").removeClass("active");
-	$("#status-busy").removeClass("active");
-	$("#status-offline").removeClass("active");
-	$(this).addClass("active");
-	
-	if($("#status-online").hasClass("active")) {
-		$("#profile-img").addClass("online");
-	} else if ($("#status-away").hasClass("active")) {
-		$("#profile-img").addClass("away");
-	} else if ($("#status-busy").hasClass("active")) {
-		$("#profile-img").addClass("busy");
-	} else if ($("#status-offline").hasClass("active")) {
-		$("#profile-img").addClass("offline");
-	} else {
-		$("#profile-img").removeClass();
-	};
-	
-	$("#status-options").removeClass("active");
-});
+                                    </ul>
+                                </li>
+                                <li><a href="feira.php">Feira</a>
+                                    <ul class="dropdown">
+                                        <li><a href="feira.php#testes">Testes</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="actividades-culturais.php">Cultura</a>
+                                    <ul class="dropdown">
+                                        <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
+                                        <li><a href="actividades-culturais.php#pontos">Turismo</a></li>
+                                        <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
+                                        <li><a href="raffle.php">Sorteio</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="informacoes-diversas.php">Informações</a>
+                                    <ul class="dropdown">
+                                        <li><a href="informacoes-diversas.php#blog">Blog</a></li>
+                                        <li><a href="informacoes-diversas.php#calendario">Calendário</a></li>
+                                        <li><a href="informacoes-diversas.php#bolsas">Bolsas</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index.php#contact">Contactos</a></li>
+                            </ul>
 
-function newMessage() {
-	message = $(".message-input input").val();
-	if($.trim(message) == '') {
-		return false;
-	}
-	$('<li class="sent"><img src="img/educa/dev.jpg" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
-	$('.message-input input').val(null);
-	$('.contact.active .preview').html('<span>You: </span>' + message);
-	$(".messages").animate({ scrollTop: $(document).height() }, "fast");
-};
+                            <!-- Get Tickets Button -->
+                            <a href="perfil/profile.php" class="btn confer-btn-white mt-3 mt-lg-0 ml-3 ml-lg-5"
+                                id="user-name">Perfil<i class="zmdi zmdi-sign-in"></i></a>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
 
-$('.submit').click(function() {
-  newMessage();
-});
+    <!-- Breadcrumb Area Start -->
 
-$(window).on('keydown', function(e) {
-  if (e.which == 13) {
-    newMessage();
-    return false;
-  }
-});
-//# sourceURL=pen.js
-</script>
-</body></html>
-<script type="text/javascript">
 
-</script>
+
+    <!-- Our Ticket Pricing Table Area Start -->
+
+    <section id="tickets" class="our-ticket-pricing-table-area section-padding-150 jarallax">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
+                        <p id="chat">CHAT ENTRE ESTUDANTES</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <div class="card chat-app">
+                            <div id="plist" class="people-list">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Pesquisar...">
+                                </div>
+                                <ul class="list-unstyled chat-list mt-2 mb-0">
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Vincent Porter</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix active">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Aiden Chavez</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Mike Thomas</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Christian Kelly</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Monica Ward</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Dean Henry</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct
+                                                28 </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chat">
+                                <div class="chat-header clearfix">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                    alt="avatar">
+                                            </a>
+                                            <div class="chat-about">
+                                                <h6 class="m-b-0"></h6>
+                                                <small>Last seen: 2 hours ago</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 hidden-sm text-right">
+                                            <a href="javascript:void(0);" class="btn btn-outline-secondary"><i
+                                                    class="fa fa-camera"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-primary"><i
+                                                    class="fa fa-image"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-info"><i
+                                                    class="fa fa-cogs"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-warning"><i
+                                                    class="fa fa-question"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-history">
+                                    <ul class="m-b-0">
+                                        <li class="clearfix">
+                                            <div class="message-data text-right">
+                                                <span class="message-data-time">10:10 AM, Today</span>
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                    alt="avatar">
+                                            </div>
+                                            <div class="message other-message float-right"> Hi Aiden, how are you? How
+                                                is the project coming along? </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">10:12 AM, Today</span>
+                                            </div>
+                                            <div class="message my-message">Are we meeting today?</div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="chat-message clearfix">
+                                    <div class="input-group mb-0">
+
+                                        <div class="input-group-prepend">
+                                            <a type="button" onclick="enviarMensagem();">
+                                                <span class="input-group-text"><i class="fa fa-send"></i></span>
+                                            </a>
+                                        </div>
+
+                                        <input type="text" class="form-control" id="message"
+                                            placeholder="Escreva a mensagem...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area section-padding-100-0" style="background-color: #414c52;">
+        <!-- Main Footer Area -->
+
+
+        <!-- Copywrite Area -->
+        <div class="container">
+            <div class="copywrite-content">
+                <div class="row">
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p style="color: white;">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>
+                                document.write(new Date().getFullYear());
+                                </script> <i class="fa fa-heart-o" aria-hidden="true"></i> EDUCA MOÇAMBIQUE</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Footer Menu -->
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/confer.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
+
+
+
+    <script>
+    var user_name = "";
+
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+
+            firebase.database().ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    if (item.val().userId !== null && item.val().userId !== undefined) {
+                        var db_uid = item.val().userId.toString().trim();
+                        var user_uid = user.uid.toString().trim();
+
+                        if (db_uid == user_uid) {
+                            user_name = document.getElementById("user-name");
+                            var name = item.val().name;
+
+                            if (item.val().name.length > 20) {
+                                name = item.val().name.substr(0, 20) + "..";
+                            } else {
+                                name = item.val().name;
+                            }
+                            user_name.innerHTML = name;
+
+                            sessionStorage.setItem('usuarioId', item.val().userId);
+                        }
+
+                    }
+
+                });
+            });
+
+        } else {
+            location.href = 'intro.php';
+        }
+
+    });
+
+
+    var nameuser = "Assis";
+
+    function enviarMensagem() {
+
+        var message = document.getElementById('message').value;
+
+        firebase.database().ref('chat').push().set({
+            "sender": nameuser,
+            "message:": message
+        });
+
+        return false;
+    }
+
+
+    firebase.database().ref('chat').on('child_added',function(snapshot){
+
+    });
+    </script>
+
+
+
+
+
 </body>
+
+<style>
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fill a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+}
+
+body {
+    background-color: #f4f7f6;
+
+}
+
+.card {
+    background: #fff;
+    transition: .5s;
+    border: 0;
+    margin-bottom: 30px;
+    border-radius: .55rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+
+.chat-app .people-list {
+    width: 280px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 7
+}
+
+.chat-app .chat {
+    margin-left: 280px;
+    border-left: 1px solid #eaeaea
+}
+
+.people-list {
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s
+}
+
+.people-list .chat-list li {
+    padding: 10px 15px;
+    list-style: none;
+    border-radius: 3px
+}
+
+.people-list .chat-list li:hover {
+    background: #efefef;
+    cursor: pointer
+}
+
+.people-list .chat-list li.active {
+    background: #efefef
+}
+
+.people-list .chat-list li .name {
+    font-size: 15px
+}
+
+.people-list .chat-list img {
+    width: 45px;
+    border-radius: 50%
+}
+
+.people-list img {
+    float: left;
+    border-radius: 50%
+}
+
+.people-list .about {
+    float: left;
+    padding-left: 8px
+}
+
+.people-list .status {
+    color: #999;
+    font-size: 13px
+}
+
+.chat .chat-header {
+    padding: 15px 20px;
+    border-bottom: 2px solid #f4f7f6
+}
+
+.chat .chat-header img {
+    float: left;
+    border-radius: 40px;
+    width: 40px
+}
+
+.chat .chat-header .chat-about {
+    float: left;
+    padding-left: 10px
+}
+
+.chat .chat-history {
+    padding: 20px;
+    border-bottom: 2px solid #fff
+}
+
+.chat .chat-history ul {
+    padding: 0
+}
+
+.chat .chat-history ul li {
+    list-style: none;
+    margin-bottom: 30px
+}
+
+.chat .chat-history ul li:last-child {
+    margin-bottom: 0px
+}
+
+.chat .chat-history .message-data {
+    margin-bottom: 15px
+}
+
+.chat .chat-history .message-data img {
+    border-radius: 40px;
+    width: 40px
+}
+
+.chat .chat-history .message-data-time {
+    color: #434651;
+    padding-left: 6px
+}
+
+.chat .chat-history .message {
+    color: #444;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    display: inline-block;
+    position: relative
+}
+
+.chat .chat-history .message:after {
+    bottom: 100%;
+    left: 7%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.chat .chat-history .my-message {
+    background: #efefef
+}
+
+.chat .chat-history .my-message:after {
+    bottom: 100%;
+    left: 30px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #efefef;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.chat .chat-history .other-message {
+    background: #e8f1f3;
+    text-align: right
+}
+
+.chat .chat-history .other-message:after {
+    border-bottom-color: #e8f1f3;
+    left: 93%
+}
+
+.chat .chat-message {
+    padding: 20px
+}
+
+.online,
+.offline,
+.me {
+    margin-right: 2px;
+    font-size: 8px;
+    vertical-align: middle
+}
+
+.online {
+    color: #86c541
+}
+
+.offline {
+    color: #e47297
+}
+
+.me {
+    color: #1d8ecd
+}
+
+.float-right {
+    float: right
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+@media only screen and (max-width: 767px) {
+    .chat-app .people-list {
+        height: 465px;
+        width: 100%;
+        overflow-x: auto;
+        background: #fff;
+        left: -400px;
+        display: none
+    }
+
+    .chat-app .people-list.open {
+        left: 0
+    }
+
+    .chat-app .chat {
+        margin: 0
+    }
+
+    .chat-app .chat .chat-header {
+        border-radius: 0.55rem 0.55rem 0 0
+    }
+
+    .chat-app .chat-history {
+        height: 300px;
+        overflow-x: auto
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .chat-app .chat-list {
+        height: 650px;
+        overflow-x: auto
+    }
+
+    .chat-app .chat-history {
+        height: 600px;
+        overflow-x: auto
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .chat-app .chat-list {
+        height: 480px;
+        overflow-x: auto
+    }
+
+    .chat-app .chat-history {
+        height: calc(100vh - 350px);
+        overflow-x: auto
+    }
+}
+
+</style>
+
 </html>
