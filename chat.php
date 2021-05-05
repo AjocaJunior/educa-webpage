@@ -194,7 +194,7 @@
                                                     alt="avatar">
                                             </a>
                                             <div class="chat-about">
-                                                <h6 class="m-b-0"></h6>
+                                                <h6 class="m-b-0" id="user-name2"></h6>
                                                 <small>Last seen: 2 hours ago</small>
                                             </div>
                                         </div>
@@ -214,15 +214,14 @@
                                     <ul class="m-b-0" id="messages">
                                         <li class="clearfix msg">
                                             <div class="message-data text-right">
-                                                <span class="message-data-time">10:10 AM, Today</span>
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                                    alt="avatar">
+                                                <span class="time"></span>
+
                                             </div>
                                             <div class="name my-message float-right"> </div>
                                         </li>
-                                        <li class="clearfix msg my">
+                                        <li class="name msg my">
                                             <div class="message-data">
-                                                <span class="message-data-time">10:12 AM, Today</span>
+                                                <span class="time"></span>
                                             </div>
                                             <div class="name other-message"></div>
                                         </li>
@@ -303,8 +302,7 @@
 
 
     <script>
-    var user_name = "";
-
+    var name2 = "";
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -317,7 +315,8 @@
                         var user_uid = user.uid.toString().trim();
 
                         if (db_uid == user_uid) {
-                            user_name = document.getElementById("user-name");
+                            var user_name = document.getElementById("user-name");
+                            var user_name2 = document.getElementById("user-name2");
                             var name = item.val().name;
 
                             if (item.val().name.length > 20) {
@@ -326,7 +325,8 @@
                                 name = item.val().name;
                             }
                             user_name.innerHTML = name;
-
+                            user_name2.innerHTML = name;
+                            name2 = item.val().name;
                             sessionStorage.setItem('usuarioId', item.val().userId);
                         }
 
@@ -344,7 +344,7 @@
     function init() {
         msgRef.on("child_added", updateMsgs)
     }
-        
+
     document.addEventListener('DOMContentLoaded', init);
 
 
@@ -352,10 +352,12 @@
     const msgForm = document.getElementById("messageForm"); //the input form
     const msgInput = document.getElementById("msg-input"); //the input element to write messages
     const msgBtn = document.getElementById("msg-btn");
+    const datanow = new Date().toLocaleString();
+
 
     const db = firebase.database();
     const msgRef = db.ref("chat");
-    var nameuser = "Assis";
+    // const nameuser = item.val().name;
 
     msgForm.addEventListener('submit', enviarMensagem);
 
@@ -368,8 +370,9 @@
 
         if (!text.trim()) return alert('Porfavor, escreve uma mensagem'); //no msg submitted
         const msg = {
-            name: nameuser,
-            text: text
+            name: name2,
+            text: text,
+            time: datanow
         };
 
         msgRef.push(msg);
@@ -378,21 +381,27 @@
     }
 
 
-    const updateMsgs = data =>{
-  const {name, text} = data.val(); //get name and text
+    const updateMsgs = data => {
+        const {
+            name,
+            text,
+            time
+        } = data.val(); //get name and text
 
-  //load messages, display on left if not the user's name. Display on right if it is the user.
-  const msg = `<li class="${name == name ? "msg my": "msg"}"><span class = "msg-span">
-    <i class = "name">${name}: </i>${text}
+        //load messages, display on left if not the user's name. Display on right if it is the user.
+        const msg = `<li class="${name == name ? "msg my": "msg"}"><span class = "msg-span">
+    <i class = "name"></i><strong>${name}</strong>: ${text}
     </span>
+    <div class="message-data">
+    <span class="time">${time}</span>
+    </div>
   </li>`
 
-  msgScreen.innerHTML += msg; //add the <li> message to the chat window
+        msgScreen.innerHTML += msg; //add the <li> message to the chat window
 
-  //auto scroll to bottom
-   document.getElementById("chat-window").scrollTop = document.getElementById("chat-window").scrollHeight;
-}
-
+        //auto scroll to bottom
+        document.getElementById("chat-window").scrollTop = document.getElementById("chat-window").scrollHeight;
+    }
     </script>
 
 
