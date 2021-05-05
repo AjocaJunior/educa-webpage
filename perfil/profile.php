@@ -37,12 +37,11 @@ Coded by www.creative-tim.com
 
 <body class="profile-page">
 
-<input type="hidden" name="uid" id="uid">
+    <input type="hidden" name="uid" id="uid">
 
-<script>
-var uiduserjs = sessionStorage.getItem('usuarioId');
-
-</script>
+    <script>
+    var uiduserjs = sessionStorage.getItem('usuarioId');
+    </script>
     <?php 
 
 if(isset($_GET["uid"])){
@@ -52,7 +51,7 @@ if(isset($_GET["uid"])){
 }
 
  include_once('../includes/dbconfig.php');  
-    
+
 
 
 ?>
@@ -76,14 +75,15 @@ if(isset($_GET["uid"])){
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image mb-md">
 
-                                    <label for="fotoperfil">
-                                        <img src="assets/img/noperfil.jpg" class="rounded-circle"
+                                    <label for="photo">
+                                        <img src="" id="imageUrl" class="rounded-circle"
                                             style="width: 140px; height: 140px;" />
+                                                        <input id="photo" name="photo" type="file" style="display: none;" />
                                     </label>
-
-                                    <input id="fotoperfil" type="file" style="display: none;"
-                                        onseeked="uploadImage()" />
-
+                                 
+                        
+                                    <a type="button" onClick="uploadImage()"
+                                            class="btn btn-primary text-center"> <i class="fas fa-fw fa-upload"></i></a>
                                     <!-- <img id="fotoperfil" src="assets/img/noperfil.jpg"  class="rounded-circle" style="width: 140px; height: 140px;"> </img>
                      -->
 
@@ -128,12 +128,13 @@ if(isset($_GET["uid"])){
                             <h3 id="user-name">Carregando...<span class="font-weight-light"></span></h3>
                             <div id="email" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                             <div id="category" class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-                            <div id="contact" class="h6 font-weight-300"><i class="ni business_briefcase-24 mr-2"></i></div>
+                            <div id="contact" class="h6 font-weight-300"><i class="ni business_briefcase-24 mr-2"></i>
+                            </div>
                             <div id="date_of_birth" class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
                             </div>
                             <div id="residence" class="h6 mb-4"><i class="ni business_briefcase-24 mr-2"></i></div>
-                            
-                            
+
+
                         </div>
                         <div class="col-xl-12 col-lg-12">
 
@@ -171,7 +172,7 @@ if(isset($_GET["uid"])){
                                                     
                                                 ?>
                                                 <tr>
-                                                
+
                                                     <td><?php echo $row['title'] ?></td>
                                                     <td><?php echo $row['data'] ?> </td>
                                                     <td><?php echo $row['time'] ?></td>
@@ -260,7 +261,7 @@ if(isset($_GET["uid"])){
             </div>
         </footer>
     </div>
-    
+
 
     <!--   Core JS Files   -->
     <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -315,6 +316,27 @@ if(isset($_GET["uid"])){
     }
 
 
+    // function uploaage() {
+    //     const ref = firebase.storage().ref().child("profileImg");
+    //     const file = document.querySelector("#photo").files[0];
+    //     const name = +new Date() + "-" + file.name;
+    //     const metadata = {
+    //         contentType: file.type
+    //     };
+    //     const task = ref.child(name).put(file, metadata);
+    //     task
+    //         .then(snapshot => snapshot.ref.getDownloadURL())
+    //         .then(url => {
+    //             firebase.auth().onAuthStateChanged(function(user) {
+    //                 var db = firebase.database();
+    //                 db.ref("users/" + user.uid + "/imageUrl").set(url);
+    //                 location.href = 'profile.php';
+    //                 console.log(user.uid);
+    //             });
+    //             //document.querySelector("#image").src = url;
+    //         })
+    //         .catch(console.error);
+    // }
     function uploadImage() {
         const ref = firebase.storage().ref();
         const file = document.querySelector("#photo").files[0];
@@ -328,16 +350,29 @@ if(isset($_GET["uid"])){
             .then(url => {
                 firebase.auth().onAuthStateChanged(function(user) {
                     var db = firebase.database();
-                    db.ref("users/"+user.uid+"/imageUrl").set(url);
+                    db.ref("users/" + user.uid + "/imageUrl").set(url);
                     location.href = 'profile.php';
                     console.log(user.uid);
                 });
+                updateImage(url);
                 //document.querySelector("#image").src = url;
             })
             .catch(console.error);
     }
+    function updateImage(url) {
 
 
+var img1 = url;
+
+var id = "<?php echo $uiduser ?>";
+
+if (img1 != null) {
+firebase.database().ref().child('users').child(id).child('imageUrl').set(imageUrl, function(error) {
+    window.location.reload(true);
+});
+}
+
+}
 
     function signOut() {
         firebase.auth().signOut().then(function() {
@@ -350,7 +385,7 @@ if(isset($_GET["uid"])){
     firebase.auth().onAuthStateChanged(function(user) {
         var useruid = "";
         var uid = document.getElementById("uid");
-        
+
         if (user) {
             firebase.database().ref('users').on('value', function(snapshot) {
                 snapshot.forEach(function(item) {
@@ -358,10 +393,10 @@ if(isset($_GET["uid"])){
                     if (item.val().userId !== null && item.val().userId !== undefined) {
                         var db_uid = item.val().userId.toString().trim();
                         var user_uid = user.uid.toString().trim();
-                        
+
 
                         if (db_uid == user_uid) {
-                            var fotoperfil = document.getElementById("fotoperfil");
+                            var imageUrl = document.getElementById("imageUrl");
                             var user_name = document.getElementById("user-name");
                             var email = document.getElementById("email");
                             var category = document.getElementById('category');
@@ -377,11 +412,11 @@ if(isset($_GET["uid"])){
                             data_de_nascimento.innerHTML = item.val().date_of_birth;
                             useruid.innerHTML = item.val().userId;
                             sessionStorage.setItem('usuarioId', item.val().userId);
-                            
-                            var fotoperfil = document.getElementById("fotoperfil");
-                           
+
+
+
                             if (item.val().imageUrl != null && item.val().imageUrl != "ddd") {
-                                fotoperfil.src = item.val().imageUrl;
+                                imageUrl.src = item.val().imageUrl;
                             }
                             return;
                         }
@@ -395,7 +430,7 @@ if(isset($_GET["uid"])){
             location.href = '../login.html';
         }
 
-       
+
 
     });
     </script>

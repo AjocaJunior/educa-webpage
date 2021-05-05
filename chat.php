@@ -213,11 +213,11 @@
                                 <div class="chat-history">
                                     <ul class="m-b-0" id="messages">
                                         <li class="clearfix msg">
-                                            <div class="message-data text-right">
+                                            <!-- <div class="message-data text-right">
                                                 <span class="time"></span>
 
                                             </div>
-                                            <div class="name my-message float-right"> </div>
+                                            <div class="name my-message float-right"> </div> -->
                                         </li>
                                         <li class="name msg my">
                                             <div class="message-data">
