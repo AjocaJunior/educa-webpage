@@ -561,7 +561,7 @@ input:required {
         font-size: 30px; } }
 
 /* :: 5.0 Backtotop Area CSS */
-#scrollUp {
+/* #scrollUp {
   position: fixed;
   right: 40px;
   font-size: 20px;
@@ -585,7 +585,7 @@ input:required {
       bottom: 20px; } }
   #scrollUp:focus, #scrollUp:hover {
     background-color: #000000;
-    color: #ffffff; }
+    color: #ffffff; } */
 
 /* :: 6.0 Buttons Area CSS */
 .btn:focus {
