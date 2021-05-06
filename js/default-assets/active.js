@@ -1,3 +1,25 @@
+// var firebaseConfig = {
+//     apiKey: "AIzaSyCcU1JVVV7WU1vvlsKN-12_z80U-ncDsoI",
+//     authDomain: "educa-mozambique.firebaseapp.com",
+//     databaseURL: "https://educa-mozambique.firebaseio.com",
+//     projectId: "educa-mozambique",
+//     storageBucket: "educa-mozambique.appspot.com",
+//     messagingSenderId: "812293792882",
+//     appId: "1:812293792882:web:2cb3eb0096285cfdec0eeb",
+//     measurementId: "G-29BMBQ8P6Y"
+// }
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+
+//  import {fireb} from '../db/app';
+
+//  document.addEventListener('DOMContentLoaded', fireb);
+
+
+
+ 
+
+
 (function ($) {
     'use strict';
 
@@ -188,17 +210,17 @@
         });
         $('.single-gallery-item').magnificPopup({
             type: 'image',
-            gallery: {      
+            gallery: {
                 enabled: true,
                 preload: [0, 2],
                 navigateByImgClick: true,
                 tPrev: 'Previous',
                 tNext: 'Next'
             },
-               
+
 
         });
-        
+
 
     }
 
@@ -224,19 +246,25 @@
             speed: 0.5
         });
     }
+    const data='2021/07/28 11:00';
+    // var db = firebase.database();
+    // var ref = db.ref('live/8563fdc0-181e-41a0-bca6-551d35d77b32/count');
+    // ref.on('value', (snapshot) => {
+    //     data = snapshot.val();
 
+    // });
     // ****************************
     // :: 13.0 Countdown Active Code
     // ****************************
-     //EDITAR A DATA PARA ACTIVAR A CONTAGEM
+    //EDITAR A DATA PARA ACTIVAR A CONTAGEM
     if ($.fn.countdown) {
-        
-        $("#clock").countdown("2021/04/14 13:00", function (event) {
+
+        $("#clock").countdown(data, function (event) {
             $(this).html(event.strftime("<div>%m <span>Months</span></div> <div>%d <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>"));
         });
     }
 
-   
+
 
     // ****************************
     // :: 13.0 Scrollup Active Code
@@ -266,3 +294,4 @@
     });
 
 })(jQuery);
+
