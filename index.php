@@ -16,8 +16,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/carousel.css">
-    <!-- <link href="owl.carousel.css" rel="stylesheet">
-    <link href="owl.theme.css" rel="stylesheet"> -->
+
 </head>
 
 <body>
@@ -121,9 +120,9 @@
 
     <!-- Welcome Area Start -->
     <section class="welcome-area">
-        <div class="welcome-slides owl-carousel" id="owl-demo">
+        <div class="welcome-slides owl-carousel" id="carousel-example">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img item jarallax"
+            <div class="single-welcome-slide bg-img item jarallax "
                 >
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
@@ -762,13 +761,13 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<!-- <script src="js/owl.carousel.min.js"></script> -->
     <!-- <script src="mail.js"></script> -->
     <script src="js/jquery-1.9.1.min.js"></script> 
-    <script src="js/owl.carousel.js"></script>
+    <!-- <script src="js/owl.carousel.js"></script> -->
 
 
-    <!-- <script src="js/carousel.js"></script> -->
+    <script src="js/carousel.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
@@ -848,23 +847,20 @@
   
 <script>
 
- $(document).ready(function() {
-      $("#owl-run").owlCarousel({
+var slideIndex = 0;
+carousel();
 
-      navigation : true,
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true,
-      autoPlay : true
-      // "singleItem:true" is a shortcut for:
-      // items : 1, 
-      // itemsDesktop : false,
-      // itemsDesktopSmall : false,
-      // itemsTablet: false,
-      // itemsMobile : false
-
-      });
-    });
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
 
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -907,10 +903,8 @@
 
 <style>
     
-    #owl-demo .item{
-        
-        
-    }
+  
+
 
     .filla img {
         /* flex-shrink: 0;
