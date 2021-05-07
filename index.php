@@ -16,6 +16,8 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/carousel.css">
+    <!-- <link href="owl.carousel.css" rel="stylesheet">
+    <link href="owl.theme.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -119,9 +121,9 @@
 
     <!-- Welcome Area Start -->
     <section class="welcome-area">
-        <div class="welcome-slides owl-carousel">
+        <div class="welcome-slides owl-carousel" id="owl-demo">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img  jarallax"
+            <div class="single-welcome-slide bg-img item jarallax"
                 >
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
@@ -133,7 +135,7 @@
                                 <h6 data-animation="fadeInUp" data-delay="500ms">Feira e Conferência Internacional de
                                     Educação</h6>
                                 <div class="hero-btn-group margin-btn" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="live.html" target="_blank" class="btn confer-btn-white"> Ver live <i
+                                    <a href="live.php" target="_blank" class="btn confer-btn-white"> Ver live <i
                                             class="zmdi zmdi-play-circle"></i></a>
                                 </div>
 
@@ -144,7 +146,7 @@
             </div>
 
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img jarallax">
+            <div class="single-welcome-slide bg-img item jarallax">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -155,7 +157,7 @@
                                 <!-- Event Meta -->
 
                                 <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                                    <a href="live.html" target="_blank" class="btn confer-btn-white m-2">VER LIVE<i
+                                    <a href="live.php" target="_blank" class="btn confer-btn-white m-2">VER LIVE<i
                                             class="zmdi zmdi-play-circle"></i></a>
                                 </div>
                             </div>
@@ -184,7 +186,7 @@
                             Participe das mesas de debate onde poderás aprender e discutir sobre assuntos relacionados a
                             educação
                         </p>
-                        <a href="live.html" class="btn confer-btn-white  mt-50 wow fadeInUp" target="_blank"
+                        <a href="live.php" class="btn confer-btn-white  mt-50 wow fadeInUp" target="_blank"
                             data-wow-delay="300ms">Ver
                             Live<i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
@@ -192,7 +194,7 @@
 
                 <!-- About Thumb -->
                 <div class="col-12 col-md-6">
-                    <a href="live.html" target="_blank">
+                    <a href="live.php" target="_blank">
                         <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
                             <img src="img/live/live3.jpg" alt="">
                         </div>
@@ -760,16 +762,22 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-
+<script src="js/owl.carousel.min.js"></script>
     <!-- <script src="mail.js"></script> -->
+    <script src="js/jquery-1.9.1.min.js"></script> 
+    <script src="js/owl.carousel.js"></script>
 
 
-
+    <!-- <script src="js/carousel.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
+    <script src="js/db/app.js"></script>
+    <script src="js/db/real-time-database.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    
     <!-- custom lib popup -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <!-- end custom lib popup  -->
-
 
     <script>
     window.addEventListener('scroll', () => {
@@ -837,12 +845,28 @@
     }
     </script>
 
-    <script src="js/carousel.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-    <script src="js/db/app.js"></script>
-    <script src="js/db/real-time-database.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    <script>
+  
+<script>
+
+ $(document).ready(function() {
+      $("#owl-run").owlCarousel({
+
+      navigation : true,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true,
+      autoPlay : true
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+
+
     firebase.auth().onAuthStateChanged(function(user) {
 
         if (user) {
@@ -866,6 +890,7 @@
                             user_name.innerHTML = name;
                             
                             sessionStorage.setItem('usuarioId', item.val().userId);
+                            localStorage.setItem('usuarioId', item.val().userId);
                         }
 
                     }
@@ -882,6 +907,11 @@
 
 <style>
     
+    #owl-demo .item{
+        
+        
+    }
+
     .filla img {
         /* flex-shrink: 0;
         min-width: 100%;

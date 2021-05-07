@@ -25,6 +25,14 @@
 </head>
 
 <body style="background-color: #e9eef4">
+
+  <?php
+  include_once('includes/dbconfig.php');         
+  $ref = 'livechat/';
+  $fetchdata = $database->getReference($ref)->getValue();
+
+
+?>
   <div id="preloader">
     <div class="loader"></div>
   </div>
@@ -155,7 +163,7 @@
   <!-- Active -->
   <script src="js/default-assets/active.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script>
-  <!-- <script src="js/db/app.js"></script> -->
+  <script src="js/db/app.js"></script>
   <script src="js/db/real-time-database.js"></script>
 
   <script>
@@ -185,6 +193,7 @@
                 user_name2.innerHTML = name;
                 name2 = item.val().name;
                 sessionStorage.setItem('usuarioId', item.val().userId);
+                localStorage.setItem('usuarioId', item.val().userId);
               }
 
             }
