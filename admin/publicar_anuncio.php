@@ -42,14 +42,7 @@
                                    
                                 </div>
 
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="tel" id="contact" class="form-control form-control-user" placeholder="Contacto">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" id="website" class="form-control form-control-user" placeholder="Website">
-                                    </div>
-                                </div>
+                               
                                 
                           
 
@@ -60,11 +53,13 @@
                                         <option selected>Direccionamento</option>
                                         <option value="website">Website</option>
                                         <option value="Whatsapp">Whatsapp</option>
-                                        <option value="">Whatsapp</option>
+                                        
                                     </select>
                                     </div>
                                     <div class="col-12 col-md-6">
-                               
+                                    <div class="col-sm-6">
+                                        <input type="text" id="website" class="form-control form-control-user" placeholder="Website">
+                                    </div>
                                
                                     </div>
                                     
@@ -80,45 +75,19 @@
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input" id="photo" aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="photo">Foto de Destaque</label>
+                                                <label class="custom-file-label" for="photo">Imagem do anúncio</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1" class="text-uppercase">Descreva o ponto turístico</label>
-                                    <textarea class="form-control" id="ponto_description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1" class="text-uppercase">Dados de Login</label>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" id="verification_code" class="form-control form-control-user" placeholder="Codigo de verificação">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" id="email" class="form-control form-control-user" placeholder="Email">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" id="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" id="confirm_password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repetir  Password">
-                                    </div>
-                                </div>
-
 
                                 </button>
                                 <hr>
 
 
                             </form>
-                            <button onclick="register_ponto()" class="btn  btn-user btn-block" style="background:#f8871f;border-radius:0px; color: white;">
-                <i class="fab fa-sign-in fa-fw"></i> Registrar Ponto Turístico
+                            <button onclick="publicar_anuncio()" class="btn  btn-user btn-block" style="background:#f8871f;border-radius:0px; color: white;">
+                <i class="fab fa-sign-in fa-fw"></i> Publicar anuncio
             </button>
                             <hr>
                             <div class="text-center">
@@ -184,7 +153,7 @@ const target = document.querySelector("#sub-category");
 
 
         //add ponto
-        function register_ponto() {
+        function publicar_anuncio() {
             var ponto_name = document.getElementById('ponto_name').value;
             var location = document.getElementById('location').value;
             var contact = document.getElementById('contact').value;
@@ -247,7 +216,7 @@ var subcategory = f;
                 uid: uid
             }
 
-            firebase.database().ref().child('pontoturisticov2').child(uid).set(data, function(error) {
+            firebase.database().ref().child('anuncio').child(uid).set(data, function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);
                 } else {
