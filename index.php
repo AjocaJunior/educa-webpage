@@ -89,7 +89,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="actividades-culturais.php">Cultura</a>
-                                <ul class="dropdown">
+                                    <ul class="dropdown">
                                         <li><a href="actividades-culturais.php#novidade">Novidades</a></li>
                                         <li><a href="actividades-culturais.php#pontos">Pontos</a></li>
                                         <li><a href="actividades-culturais.php#jogos">Jogos</a></li>
@@ -98,7 +98,7 @@
                                 </li>
                                 <li><a href="informacoes-diversas.php">Informações</a>
                                     <ul class="dropdown">
-                                    <li><a href="informacoes-diversas.php#blog">Blog</a></li>
+                                        <li><a href="informacoes-diversas.php#blog">Blog</a></li>
                                         <li><a href="informacoes-diversas.php#calendario">Calendário</a></li>
                                         <li><a href="informacoes-diversas.php#bolsas">Bolsas</a></li>
                                     </ul>
@@ -122,8 +122,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel" id="carousel-example">
             <!-- Single Slide -->
-            <div class="single-welcome-slide bg-img item jarallax "
-                >
+            <div class="single-welcome-slide bg-img item jarallax ">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <!-- Welcome Text -->
@@ -191,6 +190,8 @@
                     </div>
                 </div>
 
+               
+
                 <!-- About Thumb -->
                 <div class="col-12 col-md-6">
                     <a href="live.php" target="_blank">
@@ -223,14 +224,27 @@
             </div>
         </div>
     </section>
+    <?php           
+include_once('includes/dbconfig.php');         
+$ref = 'anuncio/';
+$fetchdata = $database->getReference($ref)->getValue();
 
+                $count = 0;
+                if($fetchdata != null):?>
+                <?php foreach( $fetchdata as $key => $row):
+                        $count++;
+                    //   shuffle($row['data']); 
+                        ?>
     <section style="background: #e9eef4;">
-        <div class="container" >
-            <a href="https://www.vm.co.mz" target="_blank">
-                <img src="img/anuncio/vodacom-banner.jpg"/>
+        <div class="container">
+            <a href="<?php echo $row['data']; ?>" target="_blank">
+                <img src="<?php echo $row['img1']; ?>" />
             </a>
         </div>
     </section>
+    <?php endforeach ?>
+                        <?php endif?>
+                            
     <!-- About Us And Countdown Area End -->
     <!-- Our Schedule Area Start -->
     <section class="our-schedule-area section-padding-80-0" style="background: #e9eef4;">
@@ -240,28 +254,28 @@
 
 
                 <div class="col-12">
-                  
 
-                <div class="schedule-tab">
-                            <!-- Nav Tabs -->
-                            <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab"
-                                role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link" id="monday-tab" data-toggle="tab" href="#step-one" role="tab"
-                                        aria-controls="step-one" aria-expanded="true">Quarta-feira <br> <span>14 de Abril,
-                                            2021</span></a>
-                                </li>
-                                <!-- Nav Item -->
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab"
-                                        aria-controls="step-two" aria-expanded="true">Quinta-feira <br> <span>15 de Abril,
-                                            2021</span></a>
-                                </li>
-                            </ul>
-                        </div>
+
+                    <div class="schedule-tab">
+                        <!-- Nav Tabs -->
+                        <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab"
+                            role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="monday-tab" data-toggle="tab" href="#step-one" role="tab"
+                                    aria-controls="step-one" aria-expanded="true">Quarta-feira <br> <span>14 de Abril,
+                                        2021</span></a>
+                            </li>
+                            <!-- Nav Item -->
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab"
+                                    aria-controls="step-two" aria-expanded="true">Quinta-feira <br> <span>15 de Abril,
+                                        2021</span></a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="col-12">
-                      
+
 
 
 
@@ -278,7 +292,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <!-- Single Schedule Area -->
-                                               
+
 
                                                 <!-- Single Schedule Area -->
                                                 <div class="single-schedule-area single-page d-flex flex-wrap justify-content-between align-items-center wow fadeInUp"
@@ -291,7 +305,8 @@
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>WEBINAR <i>“Os desafios das mulheres que abraçam profissões categorizadas como masculinas”</i>
+                                                            <h6>WEBINAR <i>“Os desafios das mulheres que abraçam
+                                                                    profissões categorizadas como masculinas”</i>
                                                             </h6>
                                                             <p>Oradores <span>Destina Deolinda</span></p>
                                                             <p><span>Antónia Mocha
@@ -304,11 +319,12 @@
                                                         <p><i class="zmdi zmdi-time"></i>13:00h - 14:00h </p>
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="https://educa.co.mz/evento.php" class="btn confer-btn-white">Assistir<i
+                                                    <a href="https://educa.co.mz/evento.php"
+                                                        class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
 
-                                                
+
 
                                                 <!-- Single Schedule Area -->
 
@@ -334,11 +350,12 @@
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>WEBINAR <i>“Feminismo, activismo e intervenção social: vozes e experiências”</i>
+                                                            <h6>WEBINAR <i>“Feminismo, activismo e intervenção social:
+                                                                    vozes e experiências”</i>
                                                             </h6>
                                                             <p>Oradores <span>Mirna Chitsungo</span></p>
                                                             <p><span>Benilde Mourana</span></p>
-                                                            
+
                                                             <p>Moderador <span>Elcidia Dabala</span></p>
                                                         </div>
                                                     </div>
@@ -348,7 +365,8 @@
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="https://educa.co.mz/evento.php" class="btn confer-btn-white">Assistir<i
+                                                    <a href="https://educa.co.mz/evento.php"
+                                                        class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
                                                 <!-- Single Schedule Area -->
@@ -358,7 +376,7 @@
                                         </div>
                                     </div>
                                 </div>
-                             
+
                             </div>
                         </div>
                     </div>
@@ -382,15 +400,15 @@
         <div class="top-content">
             <div class="container-fluid">
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
-                <?php
+                    <?php
                 include_once('includes/dbconfig.php');
                 $ref = 'speaker/';
                 $fetchdata = $database->getReference($ref)->getValue();
                 $count = 0;
                 ?>
-                    <div class=" row w-100 mx-auto" >
+                    <div class=" row w-100 mx-auto">
 
-                    <?php
+                        <?php
                 foreach( $fetchdata as $key => $row):
                     $count++;
                     if ($count == 9){
@@ -419,16 +437,17 @@
 
 
                         </div>
-                        
-                     
+
+
                         <?php
                 endforeach;
                 ?>
-                      
-                        
-                    </div> <!--ROW END -->
 
-                 
+
+                    </div>
+                    <!--ROW END -->
+
+
                 </div>
                 <div class="col-md-12 text-center">
                     <a href="evento.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
@@ -473,7 +492,8 @@
                                 href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
 
                                 <img class="" src="<?php echo $row['img1']; ?>"
-                                    style="object-fit:cover; height:200px;width:100%; background:white; text-align:center;" alt="">
+                                    style="object-fit:cover; height:200px;width:100%; background:white; text-align:center;"
+                                    alt="">
                             </a>
                         </div>
                         <div class="single-blog-text text-center">
@@ -507,14 +527,14 @@
                 endforeach;
                 ?>
 
-            <div class="col-md-12 text-center">
-                <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
-                    style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Expositores<i
-                        class="zmdi zmdi-long-arrow-right"></i></a>
-            </div>
+                <div class="col-md-12 text-center">
+                    <a href="feira.php" class="btn confer-btn-white  mt-50 wow fadeInUp text-center"
+                        style="background:#f8871f;border-radius:0px;" data-wow-delay="300ms">Ver Expositores<i
+                            class="zmdi zmdi-long-arrow-right"></i></a>
+                </div>
 
             </div>
-           
+
 
 
         </div>
@@ -528,7 +548,7 @@
 
     <!-- Our Ticket Pricing Table Area End -->
 
-   
+
 
     <!-- Our Blog Area Start -->
 
@@ -537,7 +557,7 @@
 
     <!-- Contact Area Start -->
     <section id="contact" class="contact-our-area section-padding-80-0 bg-design">
-        
+
         <div class="container">
             <div class="row">
                 <!-- Heading -->
@@ -639,8 +659,8 @@
         </div>
     </section>
     <!-- Contact Area End -->
- <!-- Our Sponsor And Client Area Start -->
- <section class="our-sponsor-client-area section-padding-50">
+    <!-- Our Sponsor And Client Area Start -->
+    <section class="our-sponsor-client-area section-padding-50">
         <div class="container-fluid">
 
 
@@ -648,7 +668,7 @@
                 <div class="col-2">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6 >ORGANIZAÇÃO</h6>
+                        <h6>ORGANIZAÇÃO</h6>
                     </div>
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex flex-wrap">
@@ -663,7 +683,7 @@
                 <div class="col-2">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
                         <!-- <p>Partners &amp; Sponsors</p> -->
-                        <h6 >PRODUÇÃO</h6>
+                        <h6>PRODUÇÃO</h6>
                     </div>
                     <!-- Our Sponsor area -->
                     <div class="our-sponsor-area d-flex  flex-wrap">
@@ -677,12 +697,12 @@
 
                 <div class="col-8">
                     <div class="section-heading-4 sponsor-h4 text-left wow fadeInUp" data-wow-delay="300ms">
-                      
-                        <h6 >PARCEIROS</h6>
+
+                        <h6>PARCEIROS</h6>
                     </div>
-                
+
                     <div class="our-sponsor-area d-flex flex-wrap">
-                    <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
+                        <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
                             <a href="#"><img src="img/logos/Radio.png" alt=""></a>
                         </div>
                         <div class="single-spons wow fadeInUp" data-wow-delay="300ms">
@@ -740,7 +760,7 @@
                                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         </p>
                                     </div>
-                                    
+
                                 </div>
                                 <!-- Footer Menu -->
 
@@ -761,9 +781,9 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
-<!-- <script src="js/owl.carousel.min.js"></script> -->
+    <!-- <script src="js/owl.carousel.min.js"></script> -->
     <!-- <script src="mail.js"></script> -->
-    <script src="js/jquery-1.9.1.min.js"></script> 
+    <script src="js/jquery-1.9.1.min.js"></script>
     <!-- <script src="js/owl.carousel.js"></script> -->
 
 
@@ -772,7 +792,7 @@
     <script src="js/db/app.js"></script>
     <script src="js/db/real-time-database.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    
+
     <!-- custom lib popup -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
@@ -844,23 +864,24 @@
     }
     </script>
 
-  
-<script>
 
-var slideIndex = 0;
-carousel();
+    <script>
+    var slideIndex = 0;
+    carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+            slideIndex = 1
+        }
+        x[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
 
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -884,7 +905,7 @@ function carousel() {
                                 name = item.val().name;
                             }
                             user_name.innerHTML = name;
-                            
+
                             sessionStorage.setItem('usuarioId', item.val().userId);
                             localStorage.setItem('usuarioId', item.val().userId);
                         }
@@ -901,11 +922,7 @@ function carousel() {
     });
     </script>
 
-<style>
-    
-  
-
-
+    <style>
     .filla img {
         /* flex-shrink: 0;
         min-width: 100%;
@@ -930,16 +947,49 @@ function carousel() {
         height: 200px;
         object-fit: cover;
     }
-</style>
 
-<!-- Start of LiveChat (www.livechatinc.com) code -->
-<script>
+    </style>
+
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+    <script>
     window.__lc = window.__lc || {};
-    window.__lc.license = 12799908;
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-</script>
-<noscript><a href="https://www.livechatinc.com/chat-with/12799908/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-<!-- End of LiveChat code -->
+    window.__lc.license = 12799908;;
+    (function(n, t, c) {
+        function i(n) {
+            return e._h ? e._h.apply(null, n) : e._q.push(n)
+        }
+        var e = {
+            _q: [],
+            _h: null,
+            _v: "2.0",
+            on: function() {
+                i(["on", c.call(arguments)])
+            },
+            once: function() {
+                i(["once", c.call(arguments)])
+            },
+            off: function() {
+                i(["off", c.call(arguments)])
+            },
+            get: function() {
+                if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load.");
+                return i(["get", c.call(arguments)])
+            },
+            call: function() {
+                i(["call", c.call(arguments)])
+            },
+            init: function() {
+                var n = t.createElement("script");
+                n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js",
+                    t.head.appendChild(n)
+            }
+        };
+        !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e
+    }(window, document, [].slice))
+    </script>
+    <noscript><a href="https://www.livechatinc.com/chat-with/12799908/" rel="nofollow">Chat with us</a>, powered by <a
+            href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+    <!-- End of LiveChat code -->
 
 </body>
 

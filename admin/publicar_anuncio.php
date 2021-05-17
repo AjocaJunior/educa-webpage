@@ -37,7 +37,7 @@
                             <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" id="" class="form-control form-control-user" placeholder="Nome do anúncio" riquered>
+                                        <input type="text" id="anuncio_name" class="form-control form-control-user" placeholder="Nome do anúncio" riquered>
                                     </div>
                                    
                                 </div>
@@ -49,17 +49,18 @@
                                 <div class="form-group row">
                                     <div class="col-12 col-md-6">
 
-                                    <select class="browser-default custom-select" id="direccionamento" required>
+                                    <select class="browser-default custom-select" id="direcionamento" required>
                                         <option selected>Direccionamento</option>
                                         <option value="website">Website</option>
                                         <option value="Whatsapp">Whatsapp</option>
+                                        <option value="Chamada">Chamada</option>
                                         
                                     </select>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                    <div class="col-sm-6">
-                                        <input type="text" id="website" class="form-control form-control-user" placeholder="Website">
-                                    </div>
+                                    
+                                        <input type="text" id="data" class="form-control form-control-user" placeholder="">
+                                    
                                
                                     </div>
                                     
@@ -93,9 +94,9 @@
                             <div class="text-center">
                                 <!--                <a class="small" href="forgot-password.html">Forgot Password?</a>-->
                             </div>
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <a class="small" href="expositor_login.php">Já tem uma conta? Conecte-se!</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -121,7 +122,7 @@
 
 
     <script>
-const source = document.querySelector("#category");
+const source = document.querySelector("#direcionamento");
 const target = document.querySelector("#sub-category");
 
 // const displayWhenSelected = (source, value, target) => {
@@ -154,20 +155,13 @@ const target = document.querySelector("#sub-category");
 
         //add ponto
         function publicar_anuncio() {
-            var ponto_name = document.getElementById('ponto_name').value;
-            var location = document.getElementById('location').value;
-            var contact = document.getElementById('contact').value;
-            var website = document.getElementById('website').value;
-            var video_link = document.getElementById('video_link').value;
-            var ponto_description = document.getElementById('ponto_description').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
+            var anuncio_name = document.getElementById('anuncio_name').value;
+           
+            var data = document.getElementById('data').value;
+             
             var uid = uuidv4();
-
-            var e = document.getElementById("category").value;
-var f = document.getElementById("subcategory").value;
-var subcategory = f;
-            var category = e;
+            var e = document.getElementById("direcionamento").value;
+            var direcionamento = e;
 
 
             //upload img perfil
@@ -185,34 +179,25 @@ var subcategory = f;
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, url, category, subcategory);
+                        addAnuncio(anuncio_name, data, direcionamento, url, uid);
                     })
                     .catch(console.error);
 
             } else {
-                addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, "", category, subcategory);
+                addAnuncio(anuncio_name, data, direcionamento, "", uid);
             }
         }
 
-        function addInstitution(ponto_name, location, contact, website, video_link, ponto_description, email, password, uid, img1, category, subcategory) {
+        function addAnuncio(anuncio_name,data, direcionamento, img1,uid) {
 
 
             var data = {
-                category: category,
-                subcategory: subcategory,
-                ponto_name: ponto_name,
-                location: location,
-                phone: contact,
-                website: website,
-                video_link: video_link,
-                visits: '0',
-                contact: '0',
-                ponto_description: ponto_description,
-                email: email,
-                password: password,
-                img1: img1,
-                img2: "",
-                chat: "",
+            
+                anuncio_name: anuncio_name,
+                data: data,
+                direcionamento: direcionamento,
+                clicks: '0',
+                img1: img1,                          
                 uid: uid
             }
 
@@ -221,10 +206,9 @@ var subcategory = f;
                     alert("Data could not be saved." + error);
                 } else {
 
-                    var e = document.getElementById("category");
-                    var positionSelected = e.selectedIndex;
+                   
 
-                    window.location.replace("add_actividades.php?id="+uid);
+                    window.location.href="anuncios.php";
                    
 
                 }

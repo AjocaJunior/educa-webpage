@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Lista de Publicações</title>
+  <title>Lista de Anuncios</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,7 +46,7 @@
     <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #414c52">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-home"></i>
         </div>
@@ -58,13 +58,13 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="expositor_admin.php?id=<?php echo $uid; ?>">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Admin</span></a>
       </li>
 
 
-      </li>
+    
 
      
 
@@ -74,7 +74,11 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
+      <li class="nav-item">
+        <a class="nav-link" href="publicar_anuncio.php">
+          <i class="fas fa-fw fa-save"></i>
+          <span>Publicar Anuncio</span></a>
+      </li>
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -155,7 +159,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Lista de publicações</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Lista de Anuncios</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -164,8 +168,8 @@
     <table id="productSizes" class="table">
         <thead>
             <tr class="d-flex">
-                <th class="col-2">Categoria</th>
-                <th class="col-6">Título</th>
+                <th class="col-4">Nome</th>
+                <th class="col-4">Direcionamento</th>
                 <th class="col-2">Data</th>
                 <th class="col-2">Delete</th>
             </tr>
@@ -178,7 +182,7 @@
 
            
         include_once('../includes/dbconfig.php');         
-        $ref = 'institution/'.$uid.'/publication';
+        $ref = 'anuncio/';
         $fetchdata = $database->getReference($ref)->getValue();
         
                         $count = 0;
@@ -189,10 +193,10 @@
                                 ?>
 
             <tr class="d-flex">
-                <td class="col-2"><?php echo  $row['category']; ?></td>
-                <td class="col-6"><?php echo $row["title"]; ?></td>
-                <td class="col-2"><?php echo $row["date"]; ?></td>
-                <td class="col-2"> <button class="btn btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                <td class="col-4"><?php echo  $row['anuncio_name']; ?></td>
+                <td class="col-4"><?php echo $row["direcionamento"]; ?></td>
+                <td class="col-2"><?php echo $row["data"]; ?></td>
+                <td class="col-2"> <button class="btn btn-danger" onclick=""><i class="fa fa-trash"></i> </button> </td>
             </tr>
   
                             <?php endforeach ?>
