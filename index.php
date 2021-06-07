@@ -30,7 +30,11 @@
 
     <?php
 
-
+$data1= '2021-04-16';
+$data2 = '';
+$data3 = '';
+$data4 = '';
+$data5 = '';
     // session_start();
 
     // $timeout = 7200; 
@@ -190,7 +194,7 @@
                     </div>
                 </div>
 
-               
+
 
                 <!-- About Thumb -->
                 <div class="col-12 col-md-6">
@@ -231,24 +235,41 @@ $fetchdata = $database->getReference($ref)->getValue();
 
                 $count = 0;
                 if($fetchdata != null):?>
-                <?php foreach( $fetchdata as $key => $row):
+    <?php foreach( $fetchdata as $key => $row):
                         $count++;
+                        if ($row['anuncio_name']=='Vodacom Banner Website'):
                     //   shuffle($row['data']); 
                         ?>
     <section style="background: #e9eef4;">
         <div class="container">
-            <a href="<?php echo $row['data']; ?>" target="_blank">
+            <?php if($row['direcionamento']=='Website'){?>
+            <a href="https://<?php echo $row['data']; ?>" class="" target="_blank">
                 <img src="<?php echo $row['img1']; ?>" />
             </a>
+            <?php }else if($row['direcionamento']=='Chamada'){?>
+            <a href="tel:<?php echo $row['data']; ?>" class="" target="_blank">
+                <img src="<?php echo $row['img1']; ?>" />
+            </a>
+            <?php } ?>
         </div>
     </section>
+    <?php endif ?>
     <?php endforeach ?>
-                        <?php endif?>
-                            
+    <?php endif?>
+
     <!-- About Us And Countdown Area End -->
     <!-- Our Schedule Area Start -->
+
     <section class="our-schedule-area section-padding-80-0" style="background: #e9eef4;">
+
         <div class="container">
+            <?php           
+include_once('includes/dbconfig.php');         
+$ref = 'evento/';
+$fetchdata = $database->getReference($ref)->getValue();
+
+                $count = 0;
+                if($fetchdata != null):?>
             <div class="row">
 
 
@@ -287,6 +308,13 @@ $fetchdata = $database->getReference($ref)->getValue();
                             <div class="tab-content" id="conferScheduleTabContent">
                                 <div class="tab-pane fade show active" id="step-one" role="tabpanel"
                                     aria-labelledby="monday-tab">
+                                    <?php
+                                    foreach( $fetchdata as $key => $row):
+                                        $count++;
+                                        $data=  $row['data'];
+                                        if($data1==$data ){
+                                            
+                                    ?>
                                     <!-- Single Tab Content -->
                                     <div class="single-tab-content">
                                         <div class="row">
@@ -305,8 +333,7 @@ $fetchdata = $database->getReference($ref)->getValue();
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>WEBINAR <i>“Os desafios das mulheres que abraçam
-                                                                    profissões categorizadas como masculinas”</i>
+                                                            <h6><?php echo $row['tipo'] ?> <i>“<?php echo $row['evento_titulo'] ?>”</i>
                                                             </h6>
                                                             <p>Oradores <span>Destina Deolinda</span></p>
                                                             <p><span>Antónia Mocha
@@ -332,6 +359,12 @@ $fetchdata = $database->getReference($ref)->getValue();
 
                                         </div>
                                     </div>
+                                    <?php
+
+                                            }
+                                            endforeach;
+                                            ?>
+
                                 </div>
                                 <!--TAB TERÇA-->
                                 <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
@@ -380,6 +413,7 @@ $fetchdata = $database->getReference($ref)->getValue();
                             </div>
                         </div>
                     </div>
+                    <?php endif?>
                 </div>
     </section>
 
