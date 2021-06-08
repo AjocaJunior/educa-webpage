@@ -202,22 +202,79 @@
                 
                 ?>
 
-
                 <div class="col-12">
                     <!-- Heading -->
                     <div class="section-heading text-center wow fadeInUp" style="margin-top:20px"
                         data-wow-delay="300ms">
                         <p>EXPOSIÇÕES</p>
-                        <h4>Expositores da Feira</h4>
+                        
+                        <h5>Instituições de Ensino</h5>
                     </div>
                 </div>
                 <?php
+               
                 foreach( $fetchdata as $key => $row):
-                    
+                    if($row['category']==2){
                     
                 ?>
                 <!-- Single Blog Area -->
+               
                 <div class="col-12 col-md-6 col-lg-3" style="height:450px;">
+                    <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Single blog Thumb -->
+                        <div class="single-blog-thumb filla">
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>">
+
+                                <img src="<?php echo $row['img1']; ?>"
+                                    style=" background:white; text-align:center;" alt="">
+                            </a>
+                        </div>
+                        <div class="single-blog-text text-center">
+
+                            <?php
+                              $title = "";
+
+                              if(strlen($row['institution_name']) > 20){
+                                  $title = substr($row['institution_name'],0, 20)."..";
+                              }else{
+                                  $title = $row['institution_name']."";
+                              }                            
+                             ?>
+
+                            <a class="" style="white-space: pre-line"
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><?php echo $title; ?></a>
+                            <!-- Post Meta -->
+
+                        </div>
+                        <div class="blog-btn">
+                            <a
+                                href="<?php echo  $row['category'] == 2 ? "institute.php?id=".$row['uid'] : "company.php?id=".$row['uid'];  ?>"><i
+                                    class="zmdi zmdi-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                            }
+                endforeach;
+                ?>
+
+                <div class="col-12">
+                    <!-- Heading -->
+                    <div class="text-center wow fadeInUp" style=""
+                        data-wow-delay="300ms">  
+                        <h5>Empresas<h5>
+                    </div>
+                </div>
+                <?php
+               
+                foreach( $fetchdata as $key => $row):
+                    if($row['category']==1){
+                    
+                ?>
+                <!-- Single Blog Area -->
+               
+                <div class="col-12 col-md-6 col-lg-3 text-center" style="height:450px;">
                     <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Single blog Thumb -->
                         <div class="single-blog-thumb filla">
@@ -257,7 +314,9 @@
 
                 </div>
                 <?php
+                            }
                 endforeach;
+            
                 ?>
 
 

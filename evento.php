@@ -338,7 +338,7 @@ endforeach;
                             <p><?php echo $row['evento_descricao'] ?></p>
                         </div>
                         <div class="blog-btn">
-                            <a href="#" data-toggle="modal" data-target="#myModal4"><i class="zmdi zmdi-eye"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#"><i class="zmdi zmdi-eye"></i></a>
                         </div>
                     </div>
                 </div>

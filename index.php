@@ -30,11 +30,12 @@
 
     <?php
 
-$data1= '2021-04-16';
-$data2 = '';
+$data1= '2021-04-14';
+$data2 = '2021-04-15';
 $data3 = '';
 $data4 = '';
 $data5 = '';
+
     // session_start();
 
     // $timeout = 7200; 
@@ -266,10 +267,11 @@ $fetchdata = $database->getReference($ref)->getValue();
             <?php           
 include_once('includes/dbconfig.php');         
 $ref = 'evento/';
+
 $fetchdata = $database->getReference($ref)->getValue();
 
-                $count = 0;
-                if($fetchdata != null):?>
+            $count = 0;
+            if($fetchdata != null):?>
             <div class="row">
 
 
@@ -329,24 +331,41 @@ $fetchdata = $database->getReference($ref)->getValue();
                                                     <div class="single-schedule-tumb-info d-flex align-items-center">
                                                         <!-- Single Schedule Thumb -->
                                                         <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
+                                                            <img src="<?php echo $row['icon']?>" alt="">
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
                                                             <h6><?php echo $row['tipo'] ?> <i>“<?php echo $row['evento_titulo'] ?>”</i>
                                                             </h6>
-                                                            <p>Oradores <span>Destina Deolinda</span></p>
-                                                            <p><span>Antónia Mocha
-                                                                </span></p>
-                                                            <p>Moderador <span>Elcidia Dabala</span></p>
+                                                           
+                                                            <?php 
+                                                            $reff = 'evento/'.$row['uid'].'/orador';
+
+                                                            $fetchdataa = $database->getReference($reff)->getValue();
+                                                            if($fetchdata!=null){?>
+                                                                <p>Oradores</p>
+                                                                <?php
+                                                                 foreach( $fetchdataa as $key => $roww):
+                                                                
+                                                                ?>
+                                                               
+                                                                  <p><span><?php echo $roww['orador_nome']?></span></p>
+                                                            <?php
+                                                        endforeach;
+                                                            }
+                                                         ?>
+                                                            
+                                                                <?php if($row['profissao'] ==true):?>
+                                                            <p>Moderador: <span><?php echo $row['profissao']?> - <?php echo $row['moderador_nome']?></span></p>
+                                                            <?php endif; ?> 
                                                         </div>
                                                     </div>
                                                     <!-- Single Schedule Info -->
                                                     <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i>13:00h - 14:00h </p>
+                                                        <p><i class="zmdi zmdi-time"></i><?php echo $row['start_time'] ?>  - <?php echo $row['end_time'] ?>  </p>
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="https://educa.co.mz/evento.php"
+                                                    <a href="<?php echo $row['botao_link']; ?>"
                                                         class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -360,7 +379,6 @@ $fetchdata = $database->getReference($ref)->getValue();
                                         </div>
                                     </div>
                                     <?php
-
                                             }
                                             endforeach;
                                             ?>
@@ -369,6 +387,13 @@ $fetchdata = $database->getReference($ref)->getValue();
                                 <!--TAB TERÇA-->
                                 <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
                                     <!-- Single Tab Content -->
+                                    <?php
+                                    foreach( $fetchdata as $key => $row):
+                                        $count++;
+                                        $data=  $row['data'];
+                                        if($data2==$data ){
+                                            
+                                    ?>
                                     <div class="single-tab-content">
                                         <div class="row">
                                             <div class="col-12">
@@ -379,26 +404,44 @@ $fetchdata = $database->getReference($ref)->getValue();
                                                     <div class="single-schedule-tumb-info d-flex align-items-center">
                                                         <!-- Single Schedule Thumb -->
                                                         <div class="single-schedule-tumb">
-                                                            <img src="img/educa/logo.png" alt="">
+                                                            <img src="<?php echo $row['icon']?>" alt="">
                                                         </div>
                                                         <!-- Single Schedule Info -->
                                                         <div class="single-schedule-info">
-                                                            <h6>WEBINAR <i>“Feminismo, activismo e intervenção social:
-                                                                    vozes e experiências”</i>
+                                                            <h6><?php echo $row['tipo'] ?> <i>“<?php echo $row['evento_titulo'] ?>”</i>
                                                             </h6>
-                                                            <p>Oradores <span>Mirna Chitsungo</span></p>
-                                                            <p><span>Benilde Mourana</span></p>
+                                                            
+                                                            <?php 
+                                                            $reff = 'evento/'.$row['uid'].'/orador';
 
-                                                            <p>Moderador <span>Elcidia Dabala</span></p>
+                                                            $fetchdataa = $database->getReference($reff)->getValue();
+                                                            if($fetchdata!=null){
+                                                            ?>
+                                                            <p>Oradores </p>
+                                                              <?php   foreach( $fetchdataa as $key => $roww):
+                                                                
+                                                                ?>
+                                                                
+                                                                  <p><span><?php echo $roww['orador_nome']?></span></p>
+                                                            <?php
+                                                        endforeach;
+                                                    }
+                                                         ?>
+                                                           
+                                                         
+
+                                                            <?php if($row['profissao'] ==true):?>
+                                                            <p>Moderador:<span> <?php echo $row['profissao']?> - <?php echo $row['moderador_nome']?></span></p>
+                                                            <?php endif; ?> 
                                                         </div>
                                                     </div>
                                                     <!-- Single Schedule Info -->
                                                     <div class="schedule-time-place">
-                                                        <p><i class="zmdi zmdi-time"></i> 13:00 - 14:00h</p>
+                                                        <p><i class="zmdi zmdi-time"></i> <?php echo $row['start_time'] ?>  - <?php echo $row['end_time'] ?> </p>
 
                                                     </div>
                                                     <!-- Schedule Btn -->
-                                                    <a href="https://educa.co.mz/evento.php"
+                                                    <a href="<?php echo $row['botao_link']; ?>"
                                                         class="btn confer-btn-white">Assistir<i
                                                             class="zmdi zmdi-long-arrow-right"></i></a>
                                                 </div>
@@ -408,6 +451,10 @@ $fetchdata = $database->getReference($ref)->getValue();
                                             </div>
                                         </div>
                                     </div>
+                                    <?php
+                                            }
+                                            endforeach;
+                                            ?>
                                 </div>
 
                             </div>

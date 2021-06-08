@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -38,67 +36,60 @@
                             </div>
                             <form class="user">
                                 <div class="form-group">
-                                    <input type="text" id="tipo" class="form-control form-control-user"
-                                        placeholder="conferencia, palestra, discurso ou webinar">
+                                    <input type="text" id="tipo" class="form-control form-control-user" placeholder="conferencia, palestra, discurso ou webinar">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="evento_titulo" class="form-control form-control-user"
-                                        placeholder="Título do Evento">
+                                    <input type="text" id="evento_titulo" class="form-control form-control-user" placeholder="Título do Evento">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="video_link" class="form-control form-control-user"
-                                        placeholder="Link do video do Evento">
+                                    <input type="text" id="video_link" class="form-control form-control-user" placeholder="Link do video do Evento">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="botao_link" class="form-control form-control-user" placeholder="Botão Assistir Evento">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1" class="text-uppercase">Descrição do
                                         Evento</label>
-                                    <textarea class="form-control" id="evento_descricao"
-                                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="evento_descricao" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="start_time" class="form-control form-control-user"
-                                            placeholder="Horário de Início">
+                                        <input type="text" id="start_time" class="form-control form-control-user" placeholder="Horário de Início">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" id="end_time" class="form-control form-control-user"
-                                            placeholder="Horário de Fim">
+                                        <input type="text" id="end_time" class="form-control form-control-user" placeholder="Horário de Fim">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" id="data" class="form-control form-control-user"
-                                        placeholder="Data do Evento">
+                                    <input type="date" id="data" class="form-control form-control-user" placeholder="Data do Evento">
                                 </div>
 
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="moderador_nome" class="form-control form-control-user"
-                                            placeholder="Nome do Moderador">
+                                        <input type="text" id="moderador_nome" class="form-control form-control-user" placeholder="Nome do Moderador">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" id="profissao" class="form-control form-control-user"
-                                            placeholder="Profissão">
+                                        <input type="text" id="profissao" class="form-control form-control-user" placeholder="Profissão">
                                     </div>
 
                                 </div>
 
                                 <div class="form-group row">
 
-                                   
+
                                     <div class="col-sm-12">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <img src="img/logo.png" height="38" class="input-group-text" />
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input" id="photo"
-                                                    aria-describedby="inputGroupFileAddon01">
+                                                <input type="file" name="photo" class="custom-file-input" id="photo" aria-describedby="inputGroupFileAddon01">
                                                 <label class="custom-file-label" for="photo">Flyer do Evento</label>
                                             </div>
                                         </div>
                                     </div>
-                                 
+
                                 </div>
 
 
@@ -108,8 +99,7 @@
 
 
                             </form>
-                            <button onclick="registrar_evento()" class="btn btn-user btn-block"
-                                style="background:#f8871f;border-radius:0px; color: white;">
+                            <button onclick="registrar_evento()" class="btn btn-user btn-block" style="background:#f8871f;border-radius:0px; color: white;">
                                 <i class="fab fa-sign-in fa-fw"></i> Registrar Evento
                             </button>
                             <hr>
@@ -143,10 +133,11 @@
     <script src="../js/db/real-time-database.js"></script>
     <script>
         //add event
-        function registrar_evento() { 
+        function registrar_evento() {
             var tipo = document.getElementById('tipo').value;
             var evento_titulo = document.getElementById('evento_titulo').value;
             var video_link = document.getElementById('video_link').value;
+            var botao_link = document.getElementById('botao_link').value;
             var evento_descricao = document.getElementById('evento_descricao').value;
             var start_time = document.getElementById('start_time').value;
             var end_time = document.getElementById('end_time').value;
@@ -158,7 +149,7 @@
 
             const ref = firebase.storage().ref();
             const file = document.querySelector("#photo").files[0];
-            
+
             if (file != null) {
 
                 const name = +new Date() + "-" + file.name;
@@ -169,33 +160,34 @@
                 task
                     .then(snapshot => snapshot.ref.getDownloadURL())
                     .then(url => {
-                        addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, url);
+                        addEvento(tipo, evento_titulo, video_link, botao_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, url);
                     })
                     .catch(console.error);
 
             } else {
-                addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome,profissao, data, uid, "");
+                addEvento(tipo, evento_titulo, video_link, botao_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, "");
             }
         }
 
-        function addEvento(tipo, evento_titulo, video_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, flyer) {
+        function addEvento(tipo, evento_titulo, video_link, botao_link, evento_descricao, start_time, end_time, moderador_nome, profissao, data, uid, flyer) {
 
             var data = {
-                tipo:tipo,
+                tipo: tipo,
                 evento_titulo: evento_titulo,
                 video_link: video_link,
+                botao_link: botao_link,
                 evento_descricao: evento_descricao,
                 start_time: start_time,
                 end_time: end_time,
-                moderador_nome: moderador_nome,   
+                moderador_nome: moderador_nome,
                 flyer: flyer,
-                data:data,
-                profissao : profissao,
+                data: data,
+                profissao: profissao,
                 chat: "",
                 uid: uid
             }
 
-            firebase.database().ref().child('evento').child(uid).set(data, function (error) {
+            firebase.database().ref().child('evento').child(uid).set(data, function(error) {
                 if (error) {
                     alert("Data could not be saved." + error);
                 } else {
@@ -209,7 +201,7 @@
 
 
         function uuidv4() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                 var r = Math.random() * 16 | 0,
                     v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
