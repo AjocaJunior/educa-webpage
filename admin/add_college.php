@@ -85,6 +85,9 @@
                                         <div class="col-1">
                                            Edit
                                         </div>
+                                        <div class="col-2">
+                                           Curso
+                                        </div>
                                     </div>
 
                                     <?php if($fetchdata != null):?>
@@ -101,6 +104,13 @@
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                         </div>
+                                        <?php $href = "add_course.php?id=".$_GET['id']; ?>
+                                        <div class="col-2">
+                                            <a href="#" type="button" class="form-control btn btn-primary"
+                                                onclick='window.location.href="<?php echo $href; ?>"'>
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <?php endforeach ?>
 
@@ -111,7 +121,7 @@
 
                                 <br>
 
-                                <?php $href = "add_course.php?id=".$_GET['id']; ?>
+                               
                                 <?php $href2 = "expositor_admin.php?id=".$_GET['id']; ?>
                                 <button type="button" onclick='window.location.href="<?php echo $href; ?>"'
                                     class="btn btn-link btn-lg btn-block">ADICIONAR CURSOS</button>
